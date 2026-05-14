@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "versao_protocolo": "v1",
+    "data": "YYYY-MM-DD",
+    "responsavel": "",
+    "link_funil_unificado_a2": "",
+    "link_plano_midia": "",
+    "link_deoc": "",
+    "link_crm_sla_07": ""
+  },
+  "concordancia": {
+    "marketing_concorda": false,
+    "vendas_concorda": false,
+    "data_acordo": ""
+  },
+  "lead_correto": {
+    "resumo_icp": "",
+    "anti_icp_operacional": ""
+  },
+  "mql": {
+    "condicao_entrada": "",
+    "evidencia_minima": "",
+    "criterio_passa": "",
+    "criterio_nao_passa": ""
+  },
+  "sql": {
+    "condicao_entrada": "",
+    "evidencia_minima": "",
+    "criterio_passa": "",
+    "criterio_nao_passa": ""
+  },
+  "aceitacao_rejeicao": {
+    "criterios_aceitacao_resumo": "",
+    "motivos_rejeicao": [
+      {
+        "codigo": "R01",
+        "label": "",
+        "quando_usar": ""
+      },
+      {
+        "codigo": "R02",
+        "label": "",
+        "quando_usar": ""
+      },
+      {
+        "codigo": "R03",
+        "label": "",
+        "quando_usar": ""
+      }
+    ]
+  },
+  "crm_campos": [
+    {
+      "campo": "",
+      "obrigatorio": true,
+      "regra_preenchimento": ""
+    },
+    {
+      "campo": "",
+      "obrigatorio": true,
+      "regra_preenchimento": ""
+    }
+  ],
+  "sla": {
+    "primeiro_contato_horas": "",
+    "unidade_tempo": "horas úteis",
+    "canal_preferencial": "",
+    "responsavel_papel": "",
+    "regra_redistribuicao": "",
+    "regra_excecao": ""
+  },
+  "rotina": {
+    "cadencia_operacional": "semanal",
+    "cadencia_estrutural": "mensal",
+    "registro_decisoes": "",
+    "change_log_ajustes": "",
+    "kpis": [
+      {
+        "nome": "Taxa MQL → SQL",
+        "descricao_calculo": "Leads SQL / MQL no período (definir janela)",
+        "threshold_verde": "",
+        "threshold_amarelo": "",
+        "threshold_vermelho": "",
+        "acao_se_vermelho": ""
+      },
+      {
+        "nome": "Taxa SQL → venda",
+        "descricao_calculo": "Vendas ou oportunidades ganhas / SQL",
+        "threshold_verde": "",
+        "threshold_amarelo": "",
+        "threshold_vermelho": "",
+        "acao_se_vermelho": ""
+      },
+      {
+        "nome": "Tempo até 1º contato",
+        "descricao_calculo": "Média ou mediana após handoff/MQL",
+        "threshold_verde": "",
+        "threshold_amarelo": "",
+        "threshold_vermelho": "",
+        "acao_se_vermelho": ""
+      },
+      {
+        "nome": "% rejeições por motivo",
+        "descricao_calculo": "Distribuição por código de motivo",
+        "threshold_verde": "",
+        "threshold_amarelo": "",
+        "threshold_vermelho": "",
+        "acao_se_vermelho": ""
+      },
+      {
+        "nome": "% leads sem status válido",
+        "descricao_calculo": "Leads em branco ou status inválido / total",
+        "threshold_verde": "",
+        "threshold_amarelo": "",
+        "threshold_vermelho": "",
+        "acao_se_vermelho": ""
+      }
+    ]
+  },
+  "evidencia_auditavel": {
+    "rastro_obrigatorio": "",
+    "exemplos_registro": "",
+    "proxima_auditoria_aderencia": ""
+  },
+  "loop_ajuste": {
+    "dono_ajuste_marketing": "",
+    "notas": ""
+  }
+}

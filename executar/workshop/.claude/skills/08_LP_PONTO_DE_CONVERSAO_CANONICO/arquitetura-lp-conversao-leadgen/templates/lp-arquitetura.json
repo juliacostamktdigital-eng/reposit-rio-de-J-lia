@@ -1,0 +1,86 @@
+{
+  "cliente": "HS Prevent",
+  "campanha": "Onboarding digital seguro",
+  "tipo_ponto_conversao": "landing_page",
+  "persona": "CFO",
+  "etapa_funil": "tofu",
+  "oferta": "Diagnóstico de risco no onboarding digital",
+  "promessa": "identificar pontos de risco sem travar bons usuários",
+  "cta_principal": "Solicitar diagnóstico",
+  "proximo_passo_comercial": "contato consultivo para entender risco e fit",
+  "secoes": [
+    {
+      "ordem": 1,
+      "secao": "hero",
+      "objetivo": "continuar a promessa do anúncio e converter",
+      "titulo": "Seu onboarding pode estar deixando fraude passar sem você ver",
+      "subtitulo": "Solicite um diagnóstico para identificar pontos de risco sem travar bons usuários.",
+      "conteudo": "Mensagem direta para CFOs preocupados com margem, risco e aprovação.",
+      "prova_asset": "dashboard/ilustração de risco",
+      "cta": "Solicitar diagnóstico",
+      "evento": "lp_view",
+      "tracking": "capturar UTMs na entrada"
+    },
+    {
+      "ordem": 2,
+      "secao": "problema e tensão",
+      "objetivo": "amplificar dor financeira",
+      "titulo": "O risco nem sempre aparece onde o dashboard mostra",
+      "subtitulo": "Fraude, falso positivo e fricção podem corroer margem em silêncio.",
+      "conteudo": "Explicar custo de não agir e impacto operacional.",
+      "prova_asset": "exemplo de fluxo",
+      "cta": "",
+      "evento": "",
+      "tracking": ""
+    },
+    {
+      "ordem": 3,
+      "secao": "formulario",
+      "objetivo": "capturar lead qualificado",
+      "titulo": "Receba o diagnóstico de risco",
+      "subtitulo": "Conte para qual cenário seu time quer olhar primeiro.",
+      "conteudo": "Campos visíveis e ocultos para CRM e backup.",
+      "prova_asset": "LGPD/política",
+      "cta": "Enviar diagnóstico",
+      "evento": "form_start,form_submit,lead_created",
+      "tracking": "campos ocultos UTMs, v4 IDs, first/last touch"
+    }
+  ],
+  "campos_visiveis": [
+    "nome",
+    "email",
+    "telefone",
+    "empresa",
+    "cargo",
+    "segmento",
+    "principal_desafio",
+    "consentimento_lgpd"
+  ],
+  "campos_ocultos": [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content",
+    "utm_term",
+    "v4_client_id",
+    "v4_campaign_id",
+    "v4_adgroup_id",
+    "v4_creative_id",
+    "v4_test_id",
+    "landing_page_url",
+    "conversion_page_url",
+    "first_touch_source",
+    "first_touch_campaign",
+    "last_touch_source",
+    "last_touch_campaign",
+    "timestamp"
+  ],
+  "eventos": [
+    "page_view",
+    "lp_view",
+    "form_start",
+    "form_submit",
+    "lead_created",
+    "thank_you_view"
+  ]
+}

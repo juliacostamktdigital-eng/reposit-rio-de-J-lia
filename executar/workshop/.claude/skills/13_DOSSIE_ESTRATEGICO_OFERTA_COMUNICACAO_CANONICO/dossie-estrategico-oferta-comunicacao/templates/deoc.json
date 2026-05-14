@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "cliente_ou_produto": "[Nome]",
+    "versao": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel": "",
+    "status": "rascunho"
+  },
+  "resumo_estrategico": {
+    "oferta_e_categoria": "",
+    "publico_e_anti_publico": "",
+    "problema_central": "",
+    "proposta_valor_fracao": "",
+    "diferenciais_defensaveis": "",
+    "cta_macro": "",
+    "observacoes_execucao": ""
+  },
+  "esqueleto_dunford": {
+    "pov_insight_nomeado": "",
+    "alternatives_approaches": [
+      {
+        "approach": "Status quo / não fazer nada",
+        "descricao": ""
+      }
+    ],
+    "perfect_world": "",
+    "differentiated_value": [],
+    "proof_por_differentiator": [
+      {
+        "differentiator": "",
+        "prova": "",
+        "status": "permitido"
+      }
+    ]
+  },
+  "puv_3_versoes": {
+    "completa": "",
+    "headline_5s": "",
+    "one_liner_2s": "",
+    "teste_qualidade_dunford": {
+      "compreensivel_em_5s": false,
+      "menciona_icp": false,
+      "promete_resultado_concreto": false,
+      "memoravel": false
+    }
+  },
+  "piramide_emocional": [
+    {
+      "feature": "",
+      "vantagem": "",
+      "beneficio_funcional": "",
+      "beneficio_emocional": "",
+      "prova": "",
+      "status": "permitido"
+    }
+  ],
+  "output_executivo": {
+    "puv_completa": "",
+    "puv_headline_5s": "",
+    "puv_one_liner_2s": "",
+    "pov": "",
+    "differentiated_value_bullets": [],
+    "perfect_world_paragrafo": "",
+    "prova_ancora": ""
+  },
+  "oferta_mecanismo": {
+    "descricao_oferta": "",
+    "brainer": "",
+    "inclui": [],
+    "exclui_limites": [],
+    "anti_icp_quando_nao_recomendar": "",
+    "modelo_preco_logica": "",
+    "prova_minima_claims_fortes": ""
+  },
+  "icp_personas": [
+    {
+      "nome_ou_rotulo": "ICP primário",
+      "contexto_uso": "",
+      "jobs_to_be_done": [],
+      "gatilhos_mudanca": [],
+      "objecoes_tipicas": [],
+      "criterios_escolha": []
+    }
+  ],
+  "problemas": [
+    {
+      "problema": "",
+      "custo_atual": "",
+      "risco_percebido": "",
+      "friccao_troca": ""
+    }
+  ],
+  "alternativas": [
+    {
+      "nome": "Status quo",
+      "promessa_tipica": "",
+      "como_vendem": "",
+      "fraquezas_para_nosso_icp": "",
+      "quando_ainda_ganha": ""
+    }
+  ],
+  "proposta_valor_expandida": {
+    "frase_principal": "",
+    "paragrafo_suporte": ""
+  },
+  "narrativa": {
+    "inimigo": "",
+    "crenca_atual": "",
+    "nova_crenca": "",
+    "hero_guide_plano": "",
+    "pontos_virada": []
+  },
+  "claims": {
+    "permitidos": [
+      {
+        "claim": "",
+        "ancora_prova": ""
+      }
+    ],
+    "proibidos": [
+      {
+        "claim": "",
+        "motivo": ""
+      }
+    ],
+    "pendentes": [
+      {
+        "claim": "",
+        "tipo_evidencia": "",
+        "owner_sugerido": ""
+      }
+    ]
+  },
+  "traducao_execucao": {
+    "plano_midia": {
+      "segmentos": "",
+      "mensagens": "",
+      "formatos": "",
+      "provas": ""
+    },
+    "briefing_criativo": {
+      "tom": "",
+      "tabus": "",
+      "hero_inimigo_cta": ""
+    },
+    "lp_site": {
+      "h1": "",
+      "promessa_secundaria": "",
+      "provas": "",
+      "faq_objecoes": ""
+    },
+    "materiais_comerciais": {
+      "pitch_one_liner": "",
+      "objecoes_respostas": "",
+      "pricing_story": ""
+    },
+    "tracking": {
+      "eventos_conversoes": "",
+      "atribuicao_north_star": ""
+    }
+  },
+  "changelog_n3": [
+    {
+      "versao": "",
+      "data": "",
+      "mudanca": ""
+    }
+  ]
+}

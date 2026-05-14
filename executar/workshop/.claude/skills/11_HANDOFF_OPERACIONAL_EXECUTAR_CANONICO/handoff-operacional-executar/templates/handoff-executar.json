@@ -1,0 +1,26 @@
+{
+  "cliente": "Cliente exemplo",
+  "produto_contratado": "Growth OS - ciclo Q2",
+  "data_fechamento": "2026-04-15",
+  "data_growth_class": "2026-04-22",
+  "squad_responsavel": "Squad Alpha",
+  "links": {
+    "plano_roi": "https://docs.example.com/roi",
+    "transcricao_vendas": "https://docs.example.com/vendas",
+    "transcricao_growth_class": "https://docs.example.com/growth-class"
+  },
+  "resumo_executivo": "Cliente busca escalar aquisição com governança de dados; fechamento alinhado ao pacote Growth.",
+  "escopo_contratado": "Planning, plano de mídia, setup tracking backup, 1 ciclo de testes.",
+  "premissas_roi": "CPL referência R$ 80; conversão funil conforme cenário provável do plano.",
+  "promessas_expectativas": "Entrega de pacote operacional em 10 dias úteis após kickoff.",
+  "dores_objetivos": "Lead sem origem; time comercial sem contexto de campanha.",
+  "stakeholders": "CMO, head de growth, gerente comercial.",
+  "riscos_red_flags": "Cliente espera resultado em 30 dias com budget abaixo do cenário otimista.",
+  "divergencias": "Detalhar na matriz de desvios.",
+  "pendencias": "Acesso ao CRM; aprovação jurídica de copy.",
+  "proximos_passos": "Kickoff planning; enviar checklist de acessos.",
+  "sintese_vendas": "Cliente quer previsibilidade e rastreio ponta a ponta; prioriza Q2.",
+  "sintese_growth_class": "Cliente entendeu escopo de ciclo único; dúvidas sobre prazo de primeiros leads.",
+  "status_completude": "rascunho",
+  "decisao_responsavel": "Revisar após matriz de desvios."
+}

@@ -1,0 +1,143 @@
+{
+  "defaultVersionId": "knowledge-os-v3",
+  "versions": [
+    {
+      "id": "knowledge-os-v3",
+      "label": "Knowledge OS v3 · canônicos finais",
+      "workflowFile": "./workflow.knowledge-os.v3.json",
+      "engine": {
+        "splitMicrosFromAssets": true,
+        "applyTieredLayoutToMacros": true,
+        "layoutModel": {
+          "tierBaseStartY": 120,
+          "verticalTierGap": 112,
+          "bottomRowOffsetFromMain": 260,
+          "microStripBottomPad": 56,
+          "microLayout": {
+            "topGap": 42,
+            "rowGap": 18,
+            "rowH": 82,
+            "maxCols": 2,
+            "gap": 14
+          },
+          "groupPadding": 28,
+          "groupLabelReserveY": 52,
+          "marginLeftMain": 72,
+          "columnGap": 96,
+          "mainMacroOrder": [
+            "k00-narrative",
+            "k04-diagnosis",
+            "k04-benchmark",
+            "k06-assets",
+            "k07-tracking",
+            "k08-campaign-setup",
+            "k08-execution",
+            "k09-evidence",
+            "k10-n2-audit",
+            "k11-n3-growth",
+            "k12-canonize",
+            "k13-rebrief"
+          ],
+          "bottomMacrosOrder": [
+            "k03-maturity",
+            "s07-assets-catalog",
+            "s01-cohort-map"
+          ]
+        },
+        "syncGroupBoundsToMacros": true
+      }
+    },
+    {
+      "id": "knowledge-os-v2",
+      "label": "Knowledge OS v2 · canônicos consolidados (pré-v3)",
+      "workflowFile": "./workflow.knowledge-os.v2.json",
+      "engine": {
+        "splitMicrosFromAssets": true,
+        "applyTieredLayoutToMacros": true,
+        "layoutModel": {
+          "tierBaseStartY": 120,
+          "verticalTierGap": 112,
+          "bottomRowOffsetFromMain": 260,
+          "microStripBottomPad": 56,
+          "microLayout": {
+            "topGap": 42,
+            "rowGap": 18,
+            "rowH": 82,
+            "maxCols": 2,
+            "gap": 14
+          },
+          "groupPadding": 28,
+          "groupLabelReserveY": 52,
+          "marginLeftMain": 72,
+          "columnGap": 96,
+          "mainMacroOrder": [
+            "k00-narrative",
+            "k04-diagnosis",
+            "k04-benchmark",
+            "k06-assets",
+            "k07-tracking",
+            "k08-campaign-setup",
+            "k08-execution",
+            "k09-evidence",
+            "k10-n2-audit",
+            "k11-n3-growth",
+            "k12-canonize",
+            "k13-rebrief"
+          ],
+          "bottomMacrosOrder": [
+            "k03-maturity",
+            "s07-assets-catalog",
+            "s01-cohort-map"
+          ]
+        },
+        "syncGroupBoundsToMacros": true
+      }
+    },
+    {
+      "id": "knowledge-os-v1",
+      "label": "Knowledge OS v1 · baseline (pre-merge)",
+      "workflowFile": "./workflow.knowledge-os.v1.json",
+      "engine": {
+        "splitMicrosFromAssets": true,
+        "applyTieredLayoutToMacros": true,
+        "layoutModel": {
+          "tierBaseStartY": 120,
+          "verticalTierGap": 112,
+          "bottomRowOffsetFromMain": 260,
+          "microStripBottomPad": 56,
+          "microLayout": {
+            "topGap": 42,
+            "rowGap": 18,
+            "rowH": 82,
+            "maxCols": 2,
+            "gap": 14
+          },
+          "groupPadding": 28,
+          "groupLabelReserveY": 52,
+          "marginLeftMain": 72,
+          "columnGap": 96,
+          "mainMacroOrder": [
+            "k00-narrative",
+            "k04-diagnosis",
+            "k04-benchmark",
+            "k06-assets",
+            "k07-tracking",
+            "k08-campaign-setup",
+            "k08-execution",
+            "k09-evidence",
+            "k10-n2-audit",
+            "k11-n3-growth",
+            "k12-canonize",
+            "k13-rebrief"
+          ],
+          "bottomMacrosOrder": [
+            "k03-maturity",
+            "s07-assets-catalog",
+            "s01-cohort-map"
+          ]
+        },
+        "syncGroupBoundsToMacros": true
+      }
+    }
+  ]
+}

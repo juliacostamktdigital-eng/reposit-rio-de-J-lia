@@ -1,0 +1,32 @@
+{
+  "cliente": "HS Prevent",
+  "lp": "lp-onboarding-digital",
+  "testes": [
+    {
+      "hipotese": "Headline com risco financeiro aumenta MQL sem reduzir qualidade",
+      "evidencia": "Feedback comercial cita margem e fraude como dor forte",
+      "alavanca": "headline",
+      "variacao": "Seu onboarding pode estar deixando fraude corroer margem",
+      "metrica_primaria": "mql_rate",
+      "metrica_secundaria": "lead_quality",
+      "impacto": 5,
+      "confianca": 4,
+      "esforco": 2,
+      "risco": 2,
+      "criterio_sucesso": "MQL rate +15% com lead_quality media/alta"
+    },
+    {
+      "hipotese": "Reduzir campos do formulário aumenta submit sem piorar SQL",
+      "evidencia": "form_start alto e submit baixo",
+      "alavanca": "formulario",
+      "variacao": "Mover principal desafio para etapa pós-submit",
+      "metrica_primaria": "form_submit_rate",
+      "metrica_secundaria": "sql_rate",
+      "impacto": 4,
+      "confianca": 3,
+      "esforco": 2,
+      "risco": 3,
+      "criterio_sucesso": "Submit +20% sem queda de SQL rate"
+    }
+  ]
+}

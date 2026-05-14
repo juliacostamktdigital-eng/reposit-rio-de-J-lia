@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "cliente": "[Nome]",
+    "versao_doc": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel": "",
+    "link_plano_midia_display": "",
+    "link_setup_google_base": ""
+  },
+  "funcao_funil": {
+    "tipo": "remarketing",
+    "descricao": "",
+    "metrica_leitura": ""
+  },
+  "compromisso_nao_sobra_verba": false,
+  "exclusoes": {
+    "anti_icp": [
+      {
+        "item": "[ex.: tópico ou sinal de baixa intenção]",
+        "motivo": "Fora de escopo / anti-ICP"
+      }
+    ],
+    "placements_apps_bloqueados": [
+      {
+        "item": "[ex.: app ou placement a bloquear]",
+        "motivo": "Brand safety / tráfego de baixa qualidade"
+      }
+    ]
+  },
+  "brand_safety": "[nível / exclusões sensíveis / listas — preencher]",
+  "frequencia": {
+    "regra": "[ex.: cap de impressões por usuário / cadência alvo]",
+    "notas": ""
+  },
+  "janela_remarketing": "[ex.: visitantes site 30D; excluir convertidos quando aplicável]",
+  "matriz_testes": {
+    "o_que_varia": "",
+    "o_que_constante": ""
+  },
+  "campanhas": [
+    {
+      "campaign_id": "",
+      "nome_taxonomia": "",
+      "url_final": "",
+      "objetivo_display": "",
+      "orcamento_lances_resumo": "",
+      "hipotese": "",
+      "grupos": [
+        {
+          "adgroup_id": "",
+          "nome_taxonomia": "",
+          "temperatura_audiencia": "",
+          "targeting_resumo": "",
+          "exclusoes_grupo": "",
+          "criativos": [
+            {
+              "creative_id": "",
+              "formato": "",
+              "hipotese_leitura": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pre_go_live_display": {
+    "placements_apps_ok": false,
+    "frequencia_ok": false,
+    "exclusoes_ok": false,
+    "brand_safety_ok": false,
+    "urls_rastreio_ok": false,
+    "hipotese_planilha": false,
+    "changelog": false
+  },
+  "n2_gaps": ""
+}

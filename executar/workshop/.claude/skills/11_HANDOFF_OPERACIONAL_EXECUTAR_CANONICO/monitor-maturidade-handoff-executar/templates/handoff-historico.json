@@ -1,0 +1,38 @@
+{
+  "periodo": "2026-05",
+  "handoffs": [
+    {
+      "cliente_id": "cli-001",
+      "pacote_completo": true,
+      "dias_fechamento_ate_completo": 5,
+      "completude_pct": 100,
+      "pendencias_abertas": 0,
+      "num_desvios_venda_gc": 0,
+      "severidade_max_desvio": "baixo",
+      "retrabalho_planning": false,
+      "risco_churn_m0": "baixo"
+    },
+    {
+      "cliente_id": "cli-002",
+      "pacote_completo": false,
+      "dias_fechamento_ate_completo": 14,
+      "completude_pct": 70,
+      "pendencias_abertas": 4,
+      "num_desvios_venda_gc": 2,
+      "severidade_max_desvio": "alto",
+      "retrabalho_planning": true,
+      "risco_churn_m0": "alto"
+    },
+    {
+      "cliente_id": "cli-003",
+      "pacote_completo": true,
+      "dias_fechamento_ate_completo": 8,
+      "completude_pct": 95,
+      "pendencias_abertas": 1,
+      "num_desvios_venda_gc": 1,
+      "severidade_max_desvio": "medio",
+      "retrabalho_planning": false,
+      "risco_churn_m0": "medio"
+    }
+  ]
+}

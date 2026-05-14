@@ -1,0 +1,52 @@
+{
+  "cliente": "HS Prevent",
+  "ciclo": "go-live maio/2026",
+  "go_live": "2026-05-15",
+  "gaps": [
+    {
+      "gap": "tracking sem lead teste ponta a ponta",
+      "categoria": "tracking",
+      "componente": "UTM/CRM/planilha",
+      "impacto": "go-live sem leitura confiável de origem e qualidade",
+      "severidade": "critica",
+      "urgencia": "alta",
+      "esforco": "medio",
+      "dono": "midia",
+      "prazo": "2026-05-10",
+      "dependencia": "URL final e formulário publicado",
+      "evidencia": "print CRM + planilha backup + URL teste",
+      "decisao": "bloquear_go_live",
+      "status": "aberto"
+    },
+    {
+      "gap": "case usado como prova sem número validado",
+      "categoria": "prova",
+      "componente": "criativo",
+      "impacto": "claim pode ficar fraco ou arriscado",
+      "severidade": "alta",
+      "urgencia": "media",
+      "esforco": "baixo",
+      "dono": "growth",
+      "prazo": "2026-05-08",
+      "dependencia": "aprovação do cliente",
+      "evidencia": "fonte do número ou troca de claim",
+      "decisao": "resolver_antes_go_live",
+      "status": "em_andamento"
+    },
+    {
+      "gap": "biblioteca de anti-padrões ainda ausente",
+      "categoria": "aprendizado",
+      "componente": "N3",
+      "impacto": "aprendizado não escala entre cohorts",
+      "severidade": "baixa",
+      "urgencia": "baixa",
+      "esforco": "medio",
+      "dono": "growth",
+      "prazo": "2026-06-01",
+      "dependencia": "primeiro debrief N3",
+      "evidencia": "biblioteca criada",
+      "decisao": "retirar_pacote_v1",
+      "status": "planejado"
+    }
+  ]
+}

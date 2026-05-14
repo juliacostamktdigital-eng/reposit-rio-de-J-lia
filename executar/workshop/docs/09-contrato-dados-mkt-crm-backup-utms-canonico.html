@@ -1,0 +1,430 @@
+<article class="doc-content-inner" data-doc-slug="09-contrato-dados-mkt-crm-backup-utms-canonico">
+<h1>Contrato de Dados Marketing -&gt; CRM e Backup de UTMs</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + canônico original sem skill merge dedicada.  </p>
+<p><strong>Decisão de merge:</strong> sem skill dedicada; mantido como contrato de dados transversal.</p>
+<p>Status: v1 para workshop  </p>
+<p>Escopo: armazenamento, match e análise pós-campanha de UTMs, IDs, leads e avanço no funil  </p>
+<p>Objetivo: definir onde armazenar UTMs e como estruturar uma fonte de verdade analisável para retro-otimizar campanhas.</p>
+<h2>1. Princípio</h2>
+<p>O tracking não termina quando a UTM chega no formulário. O tracking só está útil quando permite responder depois:</p>
+<pre><code>qual campanha, conjunto e criativo geraram leads que avançaram no funil?</code></pre>
+<p>Para isso, a operação precisa de um contrato de dados entre:</p>
+<ul>
+<li>mídia;</li>
+<li>LP/formulário/WhatsApp;</li>
+<li>planilha backup;</li>
+<li>CRM;</li>
+<li>planilha de testes;</li>
+<li>dashboard/debrief.</li>
+</ul>
+<h2>2. Onde armazenar as UTMs</h2>
+<h3>Camada 1 - URL</h3>
+<p>UTMs vêm na URL de entrada.</p>
+<p>Função:</p>
+<ul>
+<li>transportar origem até a LP ou ponto de conversão.</li>
+</ul>
+<p>Limitação:</p>
+<ul>
+<li>pode se perder se usuário navegar, voltar depois ou converter em outro canal.</li>
+</ul>
+<h3>Camada 2 - Browser/session storage/cookie</h3>
+<p>Guardar first-touch e last-touch no navegador.</p>
+<p>Função:</p>
+<ul>
+<li>preservar origem mesmo se o usuário navegar antes de converter.</li>
+</ul>
+<p>Regras:</p>
+<ul>
+<li>first-touch: gravar uma vez e não sobrescrever;</li>
+<li>last-touch: atualizar a cada nova visita/conversão relevante;</li>
+<li>TTL sugerido: 90 a 180 dias em B2B/inside sales.</li>
+</ul>
+<h3>Camada 3 - Campos ocultos no formulário</h3>
+<p>Enviar UTMs e IDs junto com o lead.</p>
+<p>Função:</p>
+<ul>
+<li>garantir que a origem vire dado do lead.</li>
+</ul>
+<p>Campos:</p>
+<ul>
+<li><code>first_utm_*</code>;</li>
+<li><code>last_utm_*</code>;</li>
+<li><code>v4_client_id</code>;</li>
+<li><code>v4_campaign_id</code>;</li>
+<li><code>v4_adgroup_id</code>;</li>
+<li><code>v4_creative_id</code>;</li>
+<li><code>v4_test_id</code>;</li>
+<li>URL da LP;</li>
+<li>timestamp.</li>
+</ul>
+<h3>Camada 4 - Planilha de backup</h3>
+<p>Armazenar todo lead capturado em uma tabela padronizada, independente do CRM do cliente.</p>
+<p>Função:</p>
+<ul>
+<li>evitar perda de dados quando o CRM não recebe UTMs;</li>
+<li>permitir deduplicação;</li>
+<li>permitir export/análise;</li>
+<li>servir como fallback para projetos com CRM frágil.</li>
+</ul>
+<h3>Camada 5 - CRM</h3>
+<p>Armazenar origem, status e avanço comercial.</p>
+<p>Função:</p>
+<ul>
+<li>permitir leitura de funil e receita por origem.</li>
+</ul>
+<h3>Camada 6 - Base analítica / planilha de testes</h3>
+<p>Cruzar mídia + leads + CRM.</p>
+<p>Função:</p>
+<ul>
+<li>retro-otimizar campanhas por qualidade real.</li>
+</ul>
+<h2>3. Resposta direta: precisa de planilha de backup?</h2>
+<p>Sim. Sempre.</p>
+<p>Todo cliente deve ter uma planilha de backup padronizada, mesmo quando o CRM parece confiável.</p>
+<p>Motivos:</p>
+<ul>
+<li>o CRM pode não receber todos os campos;</li>
+<li>integrações podem falhar sem aviso;</li>
+<li>o cliente pode alterar etapas/campos;</li>
+<li>exportações de mídia e CRM podem não bater;</li>
+<li>a operação precisa de uma fonte mínima para auditoria e análise pós-campanha;</li>
+<li>a planilha de growth precisa de uma base estável para cruzar campanha, conjunto, criativo, lead e qualidade comercial.</li>
+</ul>
+<p>Ela não substitui o CRM. Ela é o cinto de segurança do tracking.</p>
+<h2>4. Formato padrão da planilha de backup</h2>
+<p>Nome sugerido:</p>
+<pre><code>backup_leads_{client_id}_{ano_mes}</code></pre>
+<p>Exemplo:</p>
+<pre><code>backup_leads_cli-hs-prevent_2026-05</code></pre>
+<h2>5. Abas recomendadas</h2>
+<h3>Aba 00_README</h3>
+<p>Campos/conteúdo:</p>
+<ul>
+<li>cliente;</li>
+<li>período;</li>
+<li>dono;</li>
+<li>origem dos dados;</li>
+<li>link da LP;</li>
+<li>link CRM;</li>
+<li>link plano de mídia;</li>
+<li>link taxonomia UTM;</li>
+<li>data da última atualização;</li>
+<li>observações de qualidade de dados.</li>
+</ul>
+<h3>Aba 01_RAW_LEADS</h3>
+<p>Registro bruto de todo lead capturado.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>raw_row_id</code></li>
+<li><code>captured_at</code></li>
+<li><code>source_form</code></li>
+<li><code>landing_page_url</code></li>
+<li><code>conversion_url</code></li>
+<li><code>thank_you_url</code></li>
+<li><code>ip_hash</code> quando aplicável</li>
+<li><code>user_agent</code> quando aplicável</li>
+<li><code>name</code></li>
+<li><code>email</code></li>
+<li><code>phone</code></li>
+<li><code>company</code></li>
+<li><code>role</code></li>
+<li><code>segment</code></li>
+<li><code>message</code></li>
+<li><code>consent_lgpd</code></li>
+<li><code>raw_payload</code></li>
+</ul>
+<h3>Aba 02_ATTRIBUTION</h3>
+<p>Origem e IDs.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>raw_row_id</code></li>
+<li><code>client_id</code></li>
+<li><code>first_utm_source</code></li>
+<li><code>first_utm_medium</code></li>
+<li><code>first_utm_campaign</code></li>
+<li><code>first_utm_content</code></li>
+<li><code>first_utm_term</code></li>
+<li><code>first_landing_page_url</code></li>
+<li><code>first_seen_at</code></li>
+<li><code>last_utm_source</code></li>
+<li><code>last_utm_medium</code></li>
+<li><code>last_utm_campaign</code></li>
+<li><code>last_utm_content</code></li>
+<li><code>last_utm_term</code></li>
+<li><code>last_landing_page_url</code></li>
+<li><code>last_seen_at</code></li>
+<li><code>v4_campaign_id</code></li>
+<li><code>v4_adgroup_id</code></li>
+<li><code>v4_creative_id</code></li>
+<li><code>v4_test_id</code></li>
+</ul>
+<h3>Aba 03_PARSED_PARAMS</h3>
+<p>Campos já quebrados para análise.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>test_id</code></li>
+<li><code>objetivo</code></li>
+<li><code>tipo_campanha</code></li>
+<li><code>movimento</code></li>
+<li><code>campaign_slug</code></li>
+<li><code>cohort</code></li>
+<li><code>segmento</code></li>
+<li><code>periodo</code></li>
+<li><code>publico</code></li>
+<li><code>temperatura</code></li>
+<li><code>posicionamento</code></li>
+<li><code>adgroup_slug</code></li>
+<li><code>formato</code></li>
+<li><code>persona</code></li>
+<li><code>hook</code></li>
+<li><code>creative_slug</code></li>
+<li><code>dor</code></li>
+<li><code>angulo</code></li>
+<li><code>stage</code></li>
+<li><code>versao</code></li>
+<li><code>placement</code></li>
+<li><code>geo</code></li>
+<li><code>keyword</code></li>
+<li><code>match_type</code></li>
+</ul>
+<h3>Aba 04_CRM_MATCH</h3>
+<p>Resultado do cruzamento com CRM.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>crm_contact_id</code></li>
+<li><code>crm_deal_id</code></li>
+<li><code>crm_owner</code></li>
+<li><code>crm_created_at</code></li>
+<li><code>lead_status</code></li>
+<li><code>mql_status</code></li>
+<li><code>mql_at</code></li>
+<li><code>sql_status</code></li>
+<li><code>sql_at</code></li>
+<li><code>opportunity_status</code></li>
+<li><code>opportunity_at</code></li>
+<li><code>deal_status</code></li>
+<li><code>won_at</code></li>
+<li><code>lost_at</code></li>
+<li><code>deal_value</code></li>
+<li><code>disqualification_reason</code></li>
+<li><code>lost_reason</code></li>
+<li><code>feedback_quality</code></li>
+<li><code>feedback_notes</code></li>
+<li><code>match_method</code></li>
+<li><code>match_confidence</code></li>
+</ul>
+<p>Valores para <code>match_method</code>:</p>
+<pre><code>lead_id
+email
+phone
+email_phone
+crm_native
+manual
+no_match</code></pre>
+<p>Valores para <code>match_confidence</code>:</p>
+<pre><code>high
+medium
+low
+none</code></pre>
+<h3>Aba 05_MEDIA_EXPORT</h3>
+<p>Export da plataforma de mídia.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>date</code></li>
+<li><code>source</code></li>
+<li><code>campaign_id</code></li>
+<li><code>campaign_name</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>adgroup_name</code></li>
+<li><code>creative_id</code></li>
+<li><code>creative_name</code></li>
+<li><code>spend</code></li>
+<li><code>impressions</code></li>
+<li><code>clicks</code></li>
+<li><code>ctr</code></li>
+<li><code>cpc</code></li>
+<li><code>cpm</code></li>
+<li><code>platform_leads</code></li>
+<li><code>platform_conversions</code></li>
+</ul>
+<h3>Aba 06_ANALYTICS_READY</h3>
+<p>Tabela pronta para análise.</p>
+<p>Grão recomendado:</p>
+<pre><code>1 linha por lead_id</code></pre>
+<p>Colunas:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>captured_at</code></li>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>test_id</code></li>
+<li><code>source</code></li>
+<li><code>medium</code></li>
+<li><code>cohort</code></li>
+<li><code>segmento</code></li>
+<li><code>tipo_campanha</code></li>
+<li><code>movimento</code></li>
+<li><code>publico</code></li>
+<li><code>temperatura</code></li>
+<li><code>posicionamento</code></li>
+<li><code>persona</code></li>
+<li><code>formato</code></li>
+<li><code>hook</code></li>
+<li><code>creative_slug</code></li>
+<li><code>dor</code></li>
+<li><code>angulo</code></li>
+<li><code>stage</code></li>
+<li><code>versao</code></li>
+<li><code>lead_status</code></li>
+<li><code>is_mql</code></li>
+<li><code>is_sql</code></li>
+<li><code>is_opportunity</code></li>
+<li><code>is_won</code></li>
+<li><code>deal_value</code></li>
+<li><code>disqualification_reason</code></li>
+<li><code>feedback_quality</code></li>
+<li><code>speed_to_lead_minutes</code></li>
+</ul>
+<h3>Aba 07_PIVOTS</h3>
+<p>Visões recomendadas:</p>
+<ul>
+<li>leads por campanha;</li>
+<li>MQL por campanha;</li>
+<li>CPMQL por campanha;</li>
+<li>MQL por criativo;</li>
+<li>MQL por formato;</li>
+<li>MQL por hook;</li>
+<li>MQL por persona;</li>
+<li>MQL por dor;</li>
+<li>MQL por ângulo;</li>
+<li>SQL por criativo;</li>
+<li>vendas por campanha;</li>
+<li>taxa de fonte desconhecida;</li>
+<li>leads sem match CRM;</li>
+<li>leads sem atendimento.</li>
+</ul>
+<h2>6. Dicionário de dados</h2>
+<p>Todo campo deve ter:</p>
+<ul>
+<li>nome;</li>
+<li>tipo;</li>
+<li>descrição;</li>
+<li>exemplo;</li>
+<li>obrigatório;</li>
+<li>fonte;</li>
+<li>regra de atualização.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="doc-table-wrap"><table><tr><th>Campo</th><th>Tipo</th><th>Fonte</th><th>Obrigatório</th><th>Regra</th></tr><tr><td><code>lead_id</code></td><td>string</td><td>backup/CRM</td><td>sim</td><td>único por lead</td></tr><tr><td><code>first_utm_source</code></td><td>string</td><td>cookie/form</td><td>sim</td><td>write-once</td></tr><tr><td><code>last_utm_source</code></td><td>string</td><td>cookie/form</td><td>sim</td><td>update on conversion</td></tr><tr><td><code>creative_id</code></td><td>string</td><td>UTM/content</td><td>sim</td><td>parseado ou informado</td></tr><tr><td><code>is_mql</code></td><td>boolean</td><td>CRM</td><td>sim</td><td>atualizado no match</td></tr></table></div>
+<h2>7. Como gerar o lead_id</h2>
+<p>Opções:</p>
+<h3>Ideal</h3>
+<p>Gerar UUID no momento da conversão e enviar para:</p>
+<ul>
+<li>planilha backup;</li>
+<li>CRM;</li>
+<li>automação;</li>
+<li>thank you page;</li>
+<li>eventos.</li>
+</ul>
+<h3>Aceitável na v1</h3>
+<p>Criar hash/dedup por:</p>
+<pre><code>email_normalizado + telefone_normalizado + data</code></pre>
+<h3>Evitar</h3>
+<p>Usar só nome ou só telefone sem normalização.</p>
+<h2>8. Como retro-otimizar campanhas com a planilha</h2>
+<p>Processo:</p>
+<p>1. Exportar mídia por campanha/conjunto/criativo.</p>
+<p>2. Capturar leads na planilha backup.</p>
+<p>3. Atualizar status CRM.</p>
+<p>4. Cruzar por <code>lead_id</code>, email/telefone ou campos de origem.</p>
+<p>5. Parsear UTMs e creative_id.</p>
+<p>6. Agrupar por atributos.</p>
+<p>7. Comparar lead barato vs lead qualificado.</p>
+<p>8. Registrar decisão na planilha de testes.</p>
+<p>9. Rebriefar próximo ciclo.</p>
+<h2>9. Perguntas que a base deve responder</h2>
+<ul>
+<li>Qual campanha trouxe mais MQLs?</li>
+<li>Qual criativo trouxe MQLs mais baratos?</li>
+<li>Qual hook trouxe SQLs?</li>
+<li>Qual formato trouxe lead ruim?</li>
+<li>Qual persona avança mais?</li>
+<li>Qual dor gera conversa comercial melhor?</li>
+<li>Qual canal gera lead barato mas sem fit?</li>
+<li>Qual campanha tem problema de SLA?</li>
+<li>Qual percentual de leads está sem origem?</li>
+<li>Qual percentual de leads não deu match no CRM?</li>
+</ul>
+<h2>10. Critérios de qualidade de dados</h2>
+<h3>Bom</h3>
+<ul>
+<li><code>unknown_source_rate</code> menor que 10%;</li>
+<li><code>crm_match_rate</code> maior que 90%;</li>
+<li><code>creative_id_fill_rate</code> maior que 95%;</li>
+<li><code>mql_feedback_rate</code> maior que 80%;</li>
+<li><code>lead_id_duplicate_rate</code> baixo e monitorado.</li>
+</ul>
+<h3>Alerta</h3>
+<ul>
+<li>mais de 15% de origem desconhecida;</li>
+<li>leads sem <code>creative_id</code>;</li>
+<li>CRM sem motivo de desqualificação;</li>
+<li>muitos leads sem primeiro contato;</li>
+<li>planilha backup e CRM divergentes.</li>
+</ul>
+<h2>11. Critério N2</h2>
+<p>Contrato de dados está N2 quando:</p>
+<ul>
+<li>existe planilha backup padronizada;</li>
+<li>UTMs chegam na conversão;</li>
+<li>IDs chegam na planilha;</li>
+<li>CRM recebe origem ou existe match confiável;</li>
+<li>first-touch e last-touch são preservados;</li>
+<li>existe dicionário de dados;</li>
+<li>existe teste ponta a ponta;</li>
+<li>análise pós-campanha é possível.</li>
+</ul>
+<h2>12. Critério N3</h2>
+<p>Contrato de dados está N3 quando:</p>
+<ul>
+<li>dados são atualizados em cadência;</li>
+<li>debrief usa qualidade comercial;</li>
+<li>campanhas são otimizadas por MQL/SQL/venda;</li>
+<li>padrões de criativo são analisados;</li>
+<li>erros de dados viram ação corretiva;</li>
+<li>aprendizados alimentam DCC, plano de mídia e briefing.</li>
+</ul>
+<h2>13. Próximo estado ideal</h2>
+<p>V1:</p>
+<ul>
+<li>planilha backup padronizada;</li>
+<li>export manual de mídia;</li>
+<li>atualização manual/semi-manual de CRM;</li>
+<li>análise por planilha.</li>
+</ul>
+<p>V2:</p>
+<ul>
+<li>sync automático mídia -&gt; base;</li>
+<li>sync CRM -&gt; base;</li>
+<li>dashboard;</li>
+<li>alertas de tracking quebrado;</li>
+<li>parsing automático de UTMs.</li>
+</ul>
+<p>V3:</p>
+<ul>
+<li>MCP/API direto nas plataformas;</li>
+<li>agente analisando performance;</li>
+<li>sugestão de otimização;</li>
+<li>geração automática de debrief e rebrief.</li>
+</ul>
+</article>

@@ -1,0 +1,12 @@
+---
+description: Contexto do starter Vibe Coding — aponta para AGENTS.md e docs
+alwaysApply: true
+---
+
+# Projeto
+
+Leia **`AGENTS.md`** e **`CLAUDE.md`** na raiz do repositorio antes de mudancas amplas.
+
+Documentacao canonica: `docs/00-DOC-STANDARDS.md` (inclui **Skill versus interface**), `docs/05-ARCHITECTURE-DECISIONS.md`, `docs/08-AI-TOOL-CONFIG.md` (mapa de pastas por ferramenta).
+
+App React em **`app/`**. Skills espelhadas em `.claude/skills/` etc.: starter (`sabatina-prd`, `onboarding-vibe-coding`, `organizar-temp-repositorio`, `relatorio-deck-html`) + documentos Anthropic (`docx`, `pptx`, `xlsx`, `pdf`). Fonte: `.claude/skills/` + `scripts/sync-skills.sh`. Ver `docs/08-AI-TOOL-CONFIG.md` e `docs/references/ANTHROPIC-DOCUMENT-SKILLS.md`.

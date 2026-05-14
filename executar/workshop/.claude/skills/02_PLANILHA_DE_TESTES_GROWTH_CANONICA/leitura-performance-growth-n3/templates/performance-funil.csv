@@ -1,0 +1,3 @@
+campaign_id,adgroup_id,creative_id,test_id,leads,mqls,sqls,opportunities,sales,revenue,avg_speed_to_lead_minutes,feedback_quality,unknown_source_rate
+cmp-hs-prevent-202605-001,adg-hs-prevent-202605-003,crv-hs-prevent-202605-014,tst-hs-prevent-202605-004,40,12,5,2,1,10000,8,bom,0.02
+cmp-hs-prevent-202605-001,adg-hs-prevent-202605-003,crv-hs-prevent-202605-015,tst-hs-prevent-202605-004,35,5,1,0,0,0,45,medio,0.05

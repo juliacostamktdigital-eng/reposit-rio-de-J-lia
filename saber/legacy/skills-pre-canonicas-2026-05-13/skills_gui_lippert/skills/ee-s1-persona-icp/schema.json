@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PersonaICP",
+  "description": "Output estruturado da skill persona-icp: ICP completo com JTBD, persona detalhada, canais de aquisição e mensagem-chave.",
+  "type": "object",
+  "required": ["summary", "icp", "persona", "where_to_find", "key_message"],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "description": "Resumo executivo de 2-3 frases do ICP e persona. Usado como referência rápida por outras skills."
+    },
+    "icp": {
+      "type": "object",
+      "required": ["demographics", "behavior", "jobs", "pains", "gains"],
+      "properties": {
+        "demographics": {
+          "type": "object",
+          "description": "Perfil demográfico do cliente ideal.",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["B2B", "B2C", "mixed"],
+              "description": "Tipo de cliente: B2B, B2C, ou misto."
+            },
+            "age_range": {
+              "type": "string",
+              "description": "Faixa etária (B2C) ou faixa de faturamento (B2B)."
+            },
+            "income_or_revenue": {
+              "type": "string",
+              "description": "Renda mensal (B2C) ou faturamento anual (B2B)."
+            },
+            "location": {
+              "type": "string",
+              "description": "Região geográfica principal."
+            },
+            "company_size": {
+              "type": "string",
+              "description": "B2B: número de funcionários. B2C: omitir ou null."
+            },
+            "decision_maker_role": {
+              "type": "string",
+              "description": "B2B: cargo do decisor. B2C: perfil pessoal."
+            },
+            "education": {
+              "type": "string",
+              "description": "Nível de escolaridade típico."
+            },
+            "other": {
+              "type": "object",
+              "description": "Campos adicionais específicos do segmento.",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        },
+        "behavior": {
+          "type": "object",
+          "description": "Como o ICP se comporta no processo de compra.",
+          "properties": {
+            "decision_process": {
+              "type": "string",
+              "description": "Como toma decisão de compra (racional/emocional, individual/comitê)."
+            },
+            "research_channels": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Onde pesquisa antes de comprar."
+            },
+            "main_objections": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Principais objeções na hora da compra."
+            },
+            "switching_triggers": {
+              "type": "string",
+              "description": "O que faz trocar de fornecedor."
+            },
+            "purchase_frequency": {
+              "type": "string",
+              "description": "Frequência de compra e ciclo de decisão."
+            }
+          }
+        },
+        "jobs": {
+          "type": "object",
+          "required": ["functional", "emotional", "social"],
+          "description": "Jobs-to-be-Done: tarefas que o cliente está tentando cumprir.",
+          "properties": {
+            "functional": {
+              "type": "string",
+              "description": "Job funcional no formato: 'Quando [situação], eu quero [motivação], para que [resultado]'."
+            },
+            "emotional": {
+              "type": "string",
+              "description": "Job emocional: como o cliente quer se sentir durante e após a compra."
+            },
+            "social": {
+              "type": "string",
+              "description": "Job social: como o cliente quer ser visto pelos outros."
+            }
+          }
+        },
+        "pains": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["pain", "intensity"],
+            "properties": {
+              "pain": {
+                "type": "string",
+                "description": "Descrição da dor na linguagem do cliente."
+              },
+              "intensity": {
+                "type": "string",
+                "enum": ["critical", "high", "medium"],
+                "description": "Intensidade da dor."
+              },
+              "current_workaround": {
+                "type": "string",
+                "description": "Como o cliente lida com essa dor hoje (se aplicável)."
+              }
+            }
+          },
+          "description": "Dores do ICP, ordenadas da mais intensa para a menos."
+        },
+        "gains": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["gain", "type"],
+            "properties": {
+              "gain": {
+                "type": "string",
+                "description": "Ganho desejado pelo cliente."
+              },
+              "type": {
+                "type": "string",
+                "enum": ["tangible", "intangible"],
+                "description": "Se o ganho é tangível (mensurável) ou intangível (sentimento/percepção)."
+              }
+            }
+          },
+          "description": "Ganhos que o ICP deseja alcançar."
+        }
+      }
+    },
+    "persona": {
+      "type": "object",
+      "required": ["name", "photo_description", "story", "quote"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nome fictício da persona."
+        },
+        "photo_description": {
+          "type": "string",
+          "description": "Descrição detalhada para gerar foto da persona (idade, expressão, contexto, vestuário)."
+        },
+        "story": {
+          "type": "string",
+          "description": "História de 1 parágrafo: situação atual, desafios, e por que precisa da solução."
+        },
+        "quote": {
+          "type": "string",
+          "description": "Frase que a persona diria sobre o problema. Deve soar como transcrição real."
+        }
+      }
+    },
+    "where_to_find": {
+      "type": "object",
+      "required": ["digital_channels", "keywords", "influencers", "communities"],
+      "properties": {
+        "digital_channels": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Canais digitais específicos onde o ICP está (não genéricos)."
+        },
+        "keywords": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Palavras-chave que o ICP busca no Google/YouTube."
+        },
+        "influencers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Perfis, podcasts, canais que o ICP acompanha."
+        },
+        "communities": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Grupos, fóruns, associações, eventos que o ICP frequenta."
+        }
+      }
+    },
+    "key_message": {
+      "type": "object",
+      "required": ["chosen_message", "approach", "alternatives"],
+      "properties": {
+        "chosen_message": {
+          "type": "string",
+          "description": "Mensagem-chave final aprovada pelo operador (máx 15 palavras)."
+        },
+        "approach": {
+          "type": "string",
+          "enum": ["functional", "emotional", "social", "combined"],
+          "description": "Abordagem da mensagem escolhida."
+        },
+        "usage_context": {
+          "type": "string",
+          "description": "Onde usar esta mensagem (anúncios, bio, headline, etc.)."
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "message": { "type": "string" },
+              "approach": { "type": "string" },
+              "rationale": { "type": "string" }
+            }
+          },
+          "description": "As 3 opções apresentadas ao operador (incluindo a escolhida)."
+        }
+      }
+    }
+  }
+}

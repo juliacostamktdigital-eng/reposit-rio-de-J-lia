@@ -1,0 +1,26 @@
+{
+  "cliente": "cliente-exemplo",
+  "data": "YYYY-MM-DD",
+  "componentes": [
+    {
+      "componente": "Handoff e discovery",
+      "nivel": "N1",
+      "evidencia": "Handoff parcial em documento interno",
+      "lacuna": "Sem aprovador do cliente e sem lista de riscos",
+      "risco": "Planning com escopo desalinhado",
+      "dono": "Account",
+      "proxima_acao": "Completar handoff e validar escopo",
+      "severidade": "alto"
+    },
+    {
+      "componente": "Tracking e dados",
+      "nivel": "bloqueado",
+      "evidencia": "",
+      "lacuna": "Nao ha lead teste preservando UTMs ate CRM e backup",
+      "risco": "Falso aprendizado de campanha",
+      "dono": "Operacoes",
+      "proxima_acao": "Executar teste ponta a ponta antes do go-live",
+      "severidade": "bloqueador"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+lead_id,created_at,lead_temperature,sales_owner,assigned_at,first_contact_at,contact_attempts,last_contact_at,lead_status,next_step
+lead-001,2026-05-03T11:50:00,quente,Marina,2026-05-03T11:51:00,2026-05-03T11:53:00,1,2026-05-03T11:53:00,contatado,aguardar retorno
+lead-002,2026-05-03T11:40:00,quente,, , ,0,,novo,
+lead-003,2026-05-03T08:30:00,morno,Pedro,2026-05-03T08:35:00,,0,,atribuido,
+lead-004,2026-04-28T09:00:00,morno,Ana,2026-04-28T09:05:00,2026-04-28T10:30:00,2,2026-04-29T14:00:00,sem-resposta,

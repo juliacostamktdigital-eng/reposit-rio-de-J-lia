@@ -1,0 +1,545 @@
+{
+  "meta": {
+    "cliente_projeto": "[Nome]",
+    "data_revisao": "YYYY-MM-DD",
+    "revisor": "",
+    "link_plano_midia": "",
+    "link_setup_estrutura": "",
+    "link_planilha_growth": "",
+    "decisao_humana": ""
+  },
+  "checklist": [
+    {
+      "grupo": "principio",
+      "id": "p-01",
+      "ref": "§1",
+      "label": "Conta e faturamento aptos a rodar verba",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-02",
+      "ref": "§1",
+      "label": "Tag/GA4/GTM e conversões alinhadas ao objetivo de otimização",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-03",
+      "ref": "§1",
+      "label": "Estrutura evita fragmentação excessiva vs orçamento",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-04",
+      "ref": "§1",
+      "label": "Termos, URLs finais e assets coerentes com a oferta",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-05",
+      "ref": "§1",
+      "label": "UTMs e v4_* previstos até backup/CRM",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-06",
+      "ref": "§1",
+      "label": "Hipótese e plano de leitura registrados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-01",
+      "ref": "§4",
+      "label": "Conta Google Ads correta",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-02",
+      "ref": "§4",
+      "label": "Faturamento ativo",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-03",
+      "ref": "§4",
+      "label": "Permissões do time conferidas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-04",
+      "ref": "§4",
+      "label": "Auto-tagging avaliado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-05",
+      "ref": "§4",
+      "label": "GA4 vinculado quando aplicável",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-06",
+      "ref": "§4",
+      "label": "GTM publicado e tag Google instalada",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-07",
+      "ref": "§4",
+      "label": "Listas remarketing elegíveis quando o plano exige",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-08",
+      "ref": "§4",
+      "label": "Customer Match preparado quando houver base",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-09",
+      "ref": "§4",
+      "label": "Enhanced conversions avaliadas/ativas quando possível",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conversoes",
+      "id": "cv-01",
+      "ref": "§5",
+      "label": "Otimização na conversão mais profunda com volume viável (documentado)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conversoes",
+      "id": "cv-02",
+      "ref": "§5",
+      "label": "Principais vs secundárias/observação diferenciadas quando aplicável",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conversoes",
+      "id": "cv-03",
+      "ref": "§5",
+      "label": "Importação offline MQL/SQL/venda planejada quando há CRM",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-01",
+      "ref": "§6",
+      "label": "gclid preservado no fluxo",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-02",
+      "ref": "§6",
+      "label": "gbraid / wbraid quando aplicável",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-03",
+      "ref": "§6",
+      "label": "UTMs preservadas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-04",
+      "ref": "§6",
+      "label": "v4_client_id, v4_campaign_id, v4_adgroup_id, v4_creative_id, v4_test_id mapeados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-05",
+      "ref": "§6",
+      "label": "Campos hidden no formulário conforme contrato",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-06",
+      "ref": "§6",
+      "label": "Planilha backup recebendo teste real",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-07",
+      "ref": "§6",
+      "label": "CRM recebe ou há plano de conciliação",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "gtm_dados",
+      "id": "g-08",
+      "ref": "§6",
+      "label": "Submissão real de lead testada antes do ar",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "nomenclatura",
+      "id": "n-01",
+      "ref": "§10",
+      "label": "Campanhas com campaign_id na convenção",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "nomenclatura",
+      "id": "n-02",
+      "ref": "§10",
+      "label": "Grupos/asset groups com adgroup_id",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "nomenclatura",
+      "id": "n-03",
+      "ref": "§10",
+      "label": "Criativos/anúncios com creative_id",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "negativas",
+      "id": "ng-01",
+      "ref": "§11",
+      "label": "Lista inicial de negativas aplicável ao escopo",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "negativas",
+      "id": "ng-02",
+      "ref": "§11",
+      "label": "Cadência de revisão de termos definida (1ª semana / semanal inicial)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "orcamento",
+      "id": "o-01",
+      "ref": "§12",
+      "label": "Orçamento compatível com aprendizado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "orcamento",
+      "id": "o-02",
+      "ref": "§12",
+      "label": "Sem mudanças grandes/diárias sem evidência",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "orcamento",
+      "id": "o-03",
+      "ref": "§12",
+      "label": "Estratégia de lance/objetivo documentada para a fase",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-01",
+      "ref": "§14",
+      "label": "Conversões testadas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-02",
+      "ref": "§14",
+      "label": "Enhanced conversions avaliadas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-03",
+      "ref": "§14",
+      "label": "UTMs e IDs aplicados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-04",
+      "ref": "§14",
+      "label": "Lead teste na planilha backup",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-05",
+      "ref": "§14",
+      "label": "CRM recebeu ou será conciliado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-06",
+      "ref": "§14",
+      "label": "Search com negativas iniciais",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-07",
+      "ref": "§14",
+      "label": "PMax com assets suficientes",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-08",
+      "ref": "§14",
+      "label": "Audience signals configurados (quando PMax no escopo)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-09",
+      "ref": "§14",
+      "label": "Search: clusters, negativas e RSAs conferidos (quando aplicável)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-10",
+      "ref": "§14",
+      "label": "PMax: asset groups, URL expansion, brand controls e metas conferidos (quando aplicável)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-11",
+      "ref": "§14",
+      "label": "Display: placements/apps, frequência, exclusões e brand safety (quando aplicável)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-12",
+      "ref": "§14",
+      "label": "URLs finais conferidas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-13",
+      "ref": "§14",
+      "label": "Orçamento, lances e datas conferidos",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-14",
+      "ref": "§14",
+      "label": "Hipótese na planilha de growth",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-15",
+      "ref": "§14",
+      "label": "Change log preparado para mudanças relevantes",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2",
+      "id": "n2-01",
+      "ref": "§15",
+      "label": "Conta e faturamento prontos",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2",
+      "id": "n2-02",
+      "ref": "§15",
+      "label": "GTM/tag/conversões funcionando",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2",
+      "id": "n2-03",
+      "ref": "§15",
+      "label": "UTMs e IDs aplicados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2",
+      "id": "n2-04",
+      "ref": "§15",
+      "label": "Estrutura Search/PMax/Display documentada conforme escopo",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2",
+      "id": "n2-05",
+      "ref": "§15",
+      "label": "Públicos/listas/sinais configurados conforme escopo",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2",
+      "id": "n2-06",
+      "ref": "§15",
+      "label": "Planilha backup captura lead teste",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2",
+      "id": "n2-07",
+      "ref": "§15",
+      "label": "Hipótese e critério de leitura registrados",
+      "status": "",
+      "nota": ""
+    }
+  ],
+  "anti_padroes": [
+    {
+      "id": "ap-01",
+      "label": "Campanha sem conversão testada",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-02",
+      "label": "PMax sem asset decente",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-03",
+      "label": "PMax sem audience signal",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-04",
+      "label": "Marca e não-marca misturadas sem leitura separada",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-05",
+      "label": "Otimizar para clique quando o objetivo é lead qualificado",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-06",
+      "label": "Não importar/evoluir qualidade offline quando o funil exige",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-07",
+      "label": "Search sem negativas",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-08",
+      "label": "Alterar budget/lance todo dia sem evidência",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-09",
+      "label": "Lead sem planilha backup",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-10",
+      "label": "Avaliar Google só por CPL sem MQL/SQL",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-11",
+      "label": "Display como sobra de verba sem função, exclusões, frequência ou brand safety",
+      "detectado": false,
+      "nota": ""
+    }
+  ],
+  "subtipos": {
+    "search": {
+      "aplicavel": false,
+      "checklist_subskill_ok": false
+    },
+    "pmax": {
+      "aplicavel": false,
+      "checklist_subskill_ok": false
+    },
+    "display": {
+      "aplicavel": false,
+      "checklist_subskill_ok": false
+    }
+  },
+  "gaps_bloqueadores_livre": "",
+  "acoes_corretivas": []
+}

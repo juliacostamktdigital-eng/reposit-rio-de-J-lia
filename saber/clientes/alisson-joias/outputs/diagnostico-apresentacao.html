@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alisson Joias — Diagnóstico Comercial V4</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --v4-red: #e50914;
+    --v4-red-dark: #b20710;
+    --v4-red-deeper: #80050b;
+    --v4-black: #000000;
+    --v4-dark: #1a1a1a;
+    --v4-dark-2: #262626;
+    --v4-dark-3: #333333;
+    --v4-white: #ffffff;
+    --v4-gray: #e5e5e5;
+    --v4-gray-2: #cccccc;
+    --v4-green: #52cc5a;
+    --v4-yellow: #ffc02a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--v4-black);
+    color: var(--v4-white);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .presentation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 100px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+
+  .slide.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* ── NAVIGATION ── */
+  .nav {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    z-index: 100;
+  }
+
+  .nav-btn {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: var(--v4-white);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .nav-btn:hover {
+    border-color: var(--v4-red);
+    background: var(--v4-red);
+  }
+
+  .nav-counter {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  /* ── SLIDE DOTS ── */
+  .slide-dots {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .dot.active {
+    background: var(--v4-red);
+    height: 20px;
+    border-radius: 3px;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--v4-red);
+    transition: width 0.4s ease;
+    z-index: 200;
+  }
+
+  /* ── KEYBOARD HINT ── */
+  .keyboard-hint {
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.12);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ══════════════════════════════════════
+     SLIDE TYPES
+  ══════════════════════════════════════ */
+
+  /* COVER */
+  .slide-cover { background: var(--v4-black); overflow: hidden; }
+  .slide-cover::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(229,9,20,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .slide-cover::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(229,9,20,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-logo {
+    position: absolute;
+    top: 40px; right: 60px;
+    font-size: 13px; font-weight: 800;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+
+  .cover-tag {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: var(--v4-red);
+    margin-bottom: 32px;
+  }
+
+  .cover-title {
+    font-size: 80px; font-weight: 900;
+    line-height: 1; text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+  .cover-title span { color: var(--v4-red); }
+
+  .cover-sub {
+    font-size: 16px; font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    max-width: 460px; line-height: 1.7;
+    margin-bottom: 60px;
+  }
+
+  .cover-line { width: 60px; height: 3px; background: var(--v4-red); }
+
+  .cover-pills {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .cover-pill {
+    border: 1px solid rgba(229,9,20,0.4);
+    padding: 6px 14px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .cover-pill.hot { border-color: var(--v4-red); color: var(--v4-red); }
+
+  .cover-slide-num {
+    position: absolute;
+    bottom: 44px; right: 100px;
+    font-size: 120px; font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none; user-select: none;
+  }
+
+  /* SECTION DIVIDER */
+  .slide-section {
+    background: var(--v4-red);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .section-num {
+    font-size: 140px; font-weight: 900;
+    color: rgba(0,0,0,0.15);
+    line-height: 1;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -54%);
+    user-select: none;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 6px; text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .section-title {
+    font-size: 56px; font-weight: 900;
+    text-transform: uppercase;
+    color: var(--v4-black);
+    line-height: 1.05;
+    position: relative;
+    max-width: 700px;
+  }
+
+  /* CONTENT */
+  .slide-content { background: var(--v4-dark); }
+  .slide-content-alt { background: var(--v4-black); }
+
+  .slide-tag {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--v4-red);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .slide-tag::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--v4-red);
+  }
+
+  .slide-title {
+    font-size: 48px; font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.05; letter-spacing: -1px;
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+  .slide-title em { color: var(--v4-red); font-style: normal; }
+
+  .slide-body {
+    font-size: 16px; font-weight: 400;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+    max-width: 620px;
+  }
+  .slide-body strong { color: var(--v4-white); font-weight: 700; }
+  .slide-body em { color: var(--v4-red); font-style: normal; font-weight: 700; }
+
+  /* QUOTE */
+  .slide-quote {
+    background: var(--v4-dark-2);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .quote-mark {
+    font-size: 120px; font-weight: 900;
+    color: var(--v4-red);
+    line-height: 0.6;
+    margin-bottom: 40px;
+    opacity: 0.6;
+  }
+  .quote-text {
+    font-size: 28px; font-weight: 700;
+    line-height: 1.5;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .quote-text em { color: var(--v4-red); font-style: normal; }
+  .quote-author {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* CLOSE */
+  .slide-close {
+    background: var(--v4-black);
+    align-items: center; text-align: center;
+    justify-content: center; overflow: hidden;
+  }
+  .close-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(229,9,20,0.2) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .close-title {
+    font-size: 72px; font-weight: 900;
+    text-transform: uppercase; line-height: 1;
+    letter-spacing: -2px;
+    position: relative; margin-bottom: 24px;
+  }
+  .close-title span { color: var(--v4-red); }
+  .close-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.4);
+    max-width: 440px; line-height: 1.7;
+    position: relative;
+  }
+
+  /* ══════════════════════════════════════
+     COMPONENTS
+  ══════════════════════════════════════ */
+
+  /* TWO COLUMN */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%; max-width: 900px;
+  }
+  .col-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 32px;
+  }
+  .col-card.red-border { border-color: var(--v4-red); }
+  .col-card-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 20px;
+  }
+  .col-card-label.red { color: var(--v4-red); }
+  .col-card-label.green { color: var(--v4-green); }
+  .col-card-item {
+    display: flex; align-items: flex-start;
+    gap: 12px; margin-bottom: 16px;
+    font-size: 14px; color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+  .col-card-item::before { content: '→'; color: var(--v4-red); flex-shrink: 0; margin-top: 1px; }
+  .col-card-item.ok::before { color: var(--v4-green); }
+  .col-card-item strong { color: var(--v4-white); font-weight: 700; }
+
+  /* LAYERS */
+  .layers {
+    display: flex; flex-direction: column;
+    gap: 16px; width: 100%; max-width: 800px;
+  }
+  .layer {
+    display: flex; align-items: stretch;
+    border-radius: 4px; overflow: hidden;
+  }
+  .layer-num {
+    width: 56px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 900; flex-shrink: 0;
+  }
+  .layer-1 .layer-num { background: rgba(229,9,20,0.12); color: var(--v4-red); }
+  .layer-2 .layer-num { background: rgba(229,9,20,0.25); color: var(--v4-red); }
+  .layer-3 .layer-num { background: rgba(229,9,20,0.5); color: var(--v4-white); }
+  .layer-4 .layer-num { background: var(--v4-red); color: var(--v4-white); }
+
+  .layer-body {
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-left: none; flex: 1;
+  }
+  .layer-1 .layer-body { border-color: rgba(229,9,20,0.15); }
+  .layer-2 .layer-body { border-color: rgba(229,9,20,0.28); }
+  .layer-3 .layer-body { border-color: rgba(229,9,20,0.5); background: rgba(229,9,20,0.06); }
+  .layer-4 .layer-body { border-color: var(--v4-red); background: rgba(229,9,20,0.12); }
+
+  .layer-name {
+    font-size: 13px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .layer-1 .layer-name, .layer-2 .layer-name { color: rgba(255,255,255,0.6); }
+  .layer-3 .layer-name { color: var(--v4-white); }
+  .layer-4 .layer-name { color: var(--v4-white); }
+
+  .layer-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .layer-3 .layer-desc, .layer-4 .layer-desc { color: rgba(255,255,255,0.75); }
+
+  /* CALLOUT */
+  .callout {
+    background: rgba(229,9,20,0.08);
+    border-left: 3px solid var(--v4-red);
+    padding: 24px 28px;
+    margin-top: 32px; max-width: 700px;
+    font-size: 15px; line-height: 1.7;
+    color: rgba(255,255,255,0.75);
+  }
+  .callout strong { color: var(--v4-white); font-weight: 700; }
+  .callout.green { border-left-color: var(--v4-green); background: rgba(82,204,90,0.06); }
+  .callout.yellow { border-left-color: var(--v4-yellow); background: rgba(255,192,42,0.06); }
+
+  /* GRID LIST */
+  .grid-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px; max-width: 820px; width: 100%;
+  }
+  .grid-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 20px 24px;
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .grid-item-icon {
+    width: 32px; height: 32px;
+    background: rgba(229,9,20,0.12);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+    color: var(--v4-red); font-weight: 900;
+  }
+  .grid-item-icon.green { background: rgba(82,204,90,0.12); color: var(--v4-green); }
+  .grid-item-text { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.65); }
+  .grid-item-text strong { display: block; font-size: 13px; font-weight: 700; color: var(--v4-white); margin-bottom: 4px; }
+
+  /* BIG NUMBER */
+  .big-number {
+    font-size: 120px; font-weight: 900;
+    color: var(--v4-red); line-height: 1;
+    margin-bottom: 8px;
+  }
+  .big-number.green { color: var(--v4-green); }
+
+  /* STAT ROW */
+  .stat-block { display: flex; gap: 60px; margin-bottom: 32px; }
+  .stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat-val { font-size: 56px; font-weight: 900; line-height: 1; color: var(--v4-red); }
+  .stat-val.green { color: var(--v4-green); }
+  .stat-val.white { color: var(--v4-white); }
+  .stat-val.yellow { color: var(--v4-yellow); }
+  .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+  /* SCORE TAG */
+  .score-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(229,9,20,0.4);
+    padding: 6px 14px; margin-top: 12px;
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--v4-red);
+  }
+  .score-tag.crit { background: rgba(229,9,20,0.1); }
+  .score-tag.mod { border-color: rgba(255,192,42,0.4); color: var(--v4-yellow); background: rgba(255,192,42,0.06); }
+
+  /* ANIMATIONS */
+  .slide.active .slide-tag,
+  .slide.active .cover-tag,
+  .slide.active .section-label { animation: fadeUp 0.5s ease both; }
+
+  .slide.active .slide-title,
+  .slide.active .cover-title,
+  .slide.active .section-title { animation: fadeUp 0.5s 0.1s ease both; }
+
+  .slide.active .slide-body,
+  .slide.active .cover-sub,
+  .slide.active .cover-pills,
+  .slide.active .two-col,
+  .slide.active .layers,
+  .slide.active .grid-list,
+  .slide.active .stat-block,
+  .slide.active .big-number,
+  .slide.active .callout,
+  .slide.active .quote-mark { animation: fadeUp 0.5s 0.2s ease both; }
+
+  .slide.active .callout { animation: fadeUp 0.5s 0.3s ease both; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="keyboard-hint">← → para navegar · espaço para avançar</div>
+
+<div class="presentation" id="presentation">
+
+
+<!-- ══ 01 · COVER ══ -->
+<div class="slide slide-cover active">
+  <div class="cover-logo">V4 Company</div>
+  <div class="cover-tag">Diagnóstico Comercial · 07 de Maio de 2026</div>
+  <div class="cover-title">Alisson<br><span>Joias</span></div>
+  <div class="cover-sub">Onde o crescimento trava, por que trava — e a arquitetura para destravar.</div>
+  <div class="cover-line"></div>
+  <div class="cover-pills">
+    <div class="cover-pill hot">Score 24/100</div>
+    <div class="cover-pill hot">4 travas identificadas</div>
+    <div class="cover-pill">&gt;R$220K/mês em oportunidade</div>
+    <div class="cover-pill">Meta R$16M — arquitetura definida</div>
+  </div>
+  <div class="cover-slide-num">01</div>
+</div>
+
+
+<!-- ══ 02 · QUOTE — 682 leads ══ -->
+<div class="slide slide-quote">
+  <div class="quote-mark">"</div>
+  <div class="quote-text">682 leads. 2 vendas.<br><em>14 meses.</em></div>
+  <div class="quote-author">O ponto de partida do diagnóstico</div>
+</div>
+
+
+<!-- ══ 03 · SECTION — Contexto ══ -->
+<div class="slide slide-section">
+  <div class="section-num">01</div>
+  <div class="section-label">Bloco 01</div>
+  <div class="section-title">Contexto:<br>A Empresa</div>
+</div>
+
+
+<!-- ══ 04 · A Empresa ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">A Empresa</div>
+  <div class="slide-title">Uma marca que se <em>reinventou.</em><br>Uma operação que ainda não acompanhou.</div>
+  <div class="stat-block">
+    <div class="stat"><div class="stat-val white">R$9,1M</div><div class="stat-label">Faturamento 2025</div></div>
+    <div class="stat"><div class="stat-val yellow">R$4.812</div><div class="stat-label">Ticket jan/26 — pico</div></div>
+    <div class="stat"><div class="stat-val green">+44%</div><div class="stat-label">Crescimento ticket</div></div>
+  </div>
+  <div class="callout">
+    <strong>16 anos de mercado, posicionamento Middle Premium.</strong> O produto evoluiu. O ticket cresce. Mas a arquitetura comercial permanece a mesma — construída para um volume e um tipo de lead que já não representam a realidade.
+  </div>
+</div>
+
+
+<!-- ══ 05 · O Que Analisamos ══ -->
+<div class="slide slide-content-alt">
+  <div class="slide-tag">Metodologia</div>
+  <div class="slide-title">O que <em>analisamos.</em><br>Evidências, não impressões.</div>
+  <div class="grid-list">
+    <div class="grid-item">
+      <div class="grid-item-icon">📊</div>
+      <div class="grid-item-text"><strong>CSV de Acompanhamento</strong>Jan/2025–Jan/2026 · 13 meses de funil, ticket e Win Rate por etapa.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">📱</div>
+      <div class="grid-item-text"><strong>Screenshots do CRM Kommo</strong>28/04/2026 · Higiene de dados, automações e comportamento real do time.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">🎙</div>
+      <div class="grid-item-text"><strong>Transcrição do Kick-Off</strong>05/02/2026 · O processo declarado — o que a gestão acredita que acontece.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">🕵</div>
+      <div class="grid-item-text"><strong>Simulação de Cliente Oculto</strong>WhatsApp · 07/05/2026 · Aliança R$4.812. O que o cliente de fato vive.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 06 · SECTION — Diagnóstico ══ -->
+<div class="slide slide-section">
+  <div class="section-num">02</div>
+  <div class="section-label">Bloco 02</div>
+  <div class="section-title">O Diagnóstico:<br>As 4 Travas</div>
+</div>
+
+
+<!-- ══ 07 · As 4 Travas — Overview ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Diagnóstico</div>
+  <div class="slide-title">Score global: <em>24/100.</em><br>3 travas críticas. 1 moderada.</div>
+  <div class="layers">
+    <div class="layer layer-1">
+      <div class="layer-num">7</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 4 — Time Sem Estrutura SDR &nbsp;<span style="font-size:10px;color:var(--v4-yellow);font-weight:600;letter-spacing:1px">MODERADA</span></div>
+        <div class="layer-desc">Consultoras acumulam SDR + Closer + Admin. Win Rate de 89% em negociação — perdido em triagem.</div>
+      </div>
+    </div>
+    <div class="layer layer-2">
+      <div class="layer-num">8</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 2 — Processo Sem Metodologia &nbsp;<span style="font-size:10px;color:var(--v4-red);font-weight:600;letter-spacing:1px">CRÍTICA</span></div>
+        <div class="layer-desc">Sem BANT, sem CTA estruturado após proposta. Lead assume o controle da conversa.</div>
+      </div>
+    </div>
+    <div class="layer layer-3">
+      <div class="layer-num">5</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 3 — CRM Sem Pipeline &nbsp;<span style="font-size:10px;color:var(--v4-red);font-weight:600;letter-spacing:1px">CRÍTICA</span></div>
+        <div class="layer-desc">Campos em branco, consultoras no WhatsApp pessoal, 43+ tarefas em atraso. Pipeline invisível.</div>
+      </div>
+    </div>
+    <div class="layer layer-4">
+      <div class="layer-num">4</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 1 — Canal de Mídia Paga Bloqueado &nbsp;<span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:600;letter-spacing:1px">RESTRIÇÃO MAIOR</span></div>
+        <div class="layer-desc">682 leads. 2 vendas. Formulário impede o contato. Taxa de abertura de 24h: ~0%. R$170K/mês não gerado.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 08 · O Funil ══ -->
+<div class="slide slide-content-alt">
+  <div class="slide-tag">Cenário Atual — Funil</div>
+  <div class="slide-title">O funil orgânico <em>funciona.</em><br>O pago está quebrado.</div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label green">Orgânico — Win Rate 30,9%</div>
+      <div class="col-card-item ok">Lead descobre no Instagram → inicia conversa</div>
+      <div class="col-card-item ok">Consultora responde → atendimento natural</div>
+      <div class="col-card-item ok">Negociação → Venda em 89% dos casos</div>
+      <div class="col-card-item ok" style="margin-top:8px"><strong>Lead → Venda: 19,2%</strong></div>
+    </div>
+    <div class="col-card red-border">
+      <div class="col-card-label red">Meta Ads — Win Rate 0,29%</div>
+      <div class="col-card-item">Formulário → NÃO inicia WhatsApp</div>
+      <div class="col-card-item">Message Template: aprovação + custo + 24h perdida</div>
+      <div class="col-card-item">Lead chegou à noite — janela fechada antes do trabalho começar</div>
+      <div class="col-card-item" style="margin-top:8px"><strong>Diferença entre canais: 105 vezes</strong></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 09 · Scorecard ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Cliente Oculto · WhatsApp · 07/05/2026</div>
+  <div class="slide-title">Nota 6,2/10.<br>Entrega produto. <em>Não fecha.</em></div>
+  <div class="layers">
+    <div class="layer layer-1">
+      <div class="layer-num">✓</div>
+      <div class="layer-body">
+        <div class="layer-name">C1 — Resposta em &lt;1 min &nbsp;·&nbsp; C4 — Domínio técnico do produto</div>
+        <div class="layer-desc">9/10 e 8/10. Pontos fortes da operação — velocidade e conhecimento do produto.</div>
+      </div>
+    </div>
+    <div class="layer layer-2">
+      <div class="layer-num">~</div>
+      <div class="layer-body">
+        <div class="layer-name">C2 — Abordagem &nbsp;·&nbsp; C3 — Identificação de necessidade &nbsp;·&nbsp; C5 — Objeção</div>
+        <div class="layer-desc">5/10, 6/10, 6/10. Catálogo sem apresentação pessoal. Não perguntou data, orçamento, urgência ou decisor.</div>
+      </div>
+    </div>
+    <div class="layer layer-4">
+      <div class="layer-num">✗</div>
+      <div class="layer-body">
+        <div class="layer-name">C6 — CTA após proposta &nbsp;·&nbsp; 4/10</div>
+        <div class="layer-desc">Proposta entregue sem próximo passo. Lead assumiu o controle da conversa. Em joalheria de R$4.812, cada hora sem CTA é conversão que esfria.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 10 · QUOTE — O problema é a arquitetura ══ -->
+<div class="slide slide-quote">
+  <div class="quote-mark">"</div>
+  <div class="quote-text">O problema<br>não é o time.<br><em>É a arquitetura.</em></div>
+  <div class="quote-author">O que o diagnóstico revelou</div>
+</div>
+
+
+<!-- ══ 11 · SECTION — As Travas ══ -->
+<div class="slide slide-section">
+  <div class="section-num">03</div>
+  <div class="section-label">Bloco 03</div>
+  <div class="section-title">As Travas<br>em Detalhe</div>
+</div>
+
+
+<!-- ══ 12 · Trava 1 ══ -->
+<div class="slide slide-content-alt">
+  <div class="slide-tag">Trava 1 · 4/25 · Restrição Maior</div>
+  <div class="slide-title">Canal de mídia paga<br>bloqueado pelo <em>formulário.</em></div>
+  <div class="slide-body">
+    R$2.976 investidos. 682 leads. 2 vendas em 14 meses.<br><br>
+    O lead preenche o formulário mas <strong>não inicia conversa no WhatsApp</strong>. Para contatar, a consultora precisa de Message Template — aprovação da Meta, custo por disparo, lead que chegou à noite, janela de 24h expirada antes do turno começar.
+  </div>
+  <div class="callout">
+    <strong>Solução: Click-to-WhatsApp.</strong> O lead inicia a conversa. Zero barreira. Custo: R$0. Prazo de implementação: 48h. Com a mesma verba de R$1.233/mês e 10% de Win Rate: <strong>R$178K/mês vs R$7.8K atuais.</strong>
+  </div>
+</div>
+
+
+<!-- ══ 13 · Trava 2 ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Trava 2 · 8/25 · Crítica</div>
+  <div class="slide-title">Processo sem <em>metodologia</em><br>e sem CTA.</div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label">Perguntas que nunca são feitas</div>
+      <div class="col-card-item"><strong>Budget:</strong> "Têm uma referência de valor em mente?"</div>
+      <div class="col-card-item"><strong>Need:</strong> "É para evento já marcado?"</div>
+      <div class="col-card-item"><strong>Timing:</strong> "Qual é a data do casamento?"</div>
+      <div class="col-card-item"><strong>Authority:</strong> "Decidem juntos ou você decide?"</div>
+    </div>
+    <div class="col-card red-border">
+      <div class="col-card-label red">Processo real observado</div>
+      <div class="col-card-item">Lead entra → Bot redireciona</div>
+      <div class="col-card-item">Consultora envia catálogo sem se apresentar</div>
+      <div class="col-card-item">Pergunta espessura e tamanho</div>
+      <div class="col-card-item">Envia proposta → <strong>Silêncio.</strong> Lead assume o próximo passo.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 14 · Trava 3 ══ -->
+<div class="slide slide-content-alt">
+  <div class="slide-tag">Trava 3 · 5/25 · Crítica</div>
+  <div class="slide-title">CRM sem <em>pipeline</em> gerenciado.</div>
+  <div class="grid-list">
+    <div class="grid-item">
+      <div class="grid-item-icon">✗</div>
+      <div class="grid-item-text"><strong>Campo "Valor" em branco</strong>&lt;20% dos deals com valor real. Aparece R$1 (placeholder).</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">✗</div>
+      <div class="grid-item-text"><strong>Atendimento descentralizado</strong>Consultoras migraram para WhatsApp pessoal — evidenciado nos screenshots.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">✗</div>
+      <div class="grid-item-text"><strong>43+ tarefas em atraso</strong>Registradas em fev/2026. Sem priorização, sem lead scoring.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">✗</div>
+      <div class="grid-item-text"><strong>~2.762 clientes/ano sem ativação</strong>Análise 80/20, LTV, Win Rate por consultora: indisponíveis.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>R$9,1M existe apesar do CRM — não por causa dele.</strong> A recompra ativa é R$0.
+  </div>
+</div>
+
+
+<!-- ══ 15 · Trava 4 ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Trava 4 · 7/25 · Moderada</div>
+  <div class="slide-title">Time Farmer fazendo<br>trabalho de <em>Hunter.</em></div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label">Hoje — O Paradoxo</div>
+      <div class="col-card-item"><strong>89%</strong> de conversão em negociação — excelente.</div>
+      <div class="col-card-item">Só <strong>19%</strong> dos leads chegam à negociação.</div>
+      <div class="col-card-item">Consultora gasta 80% do tempo nos 81% que não convertem.</div>
+      <div class="col-card-item">150 leads simultâneos sem filtro — triagem, fechamento e admin ao mesmo tempo.</div>
+    </div>
+    <div class="col-card red-border">
+      <div class="col-card-label red">Modelo Proposto</div>
+      <div class="col-card-item ok">SDR IA faz triagem BANT 24/7</div>
+      <div class="col-card-item ok">Consultora recebe apenas leads qualificados</div>
+      <div class="col-card-item ok">Score automático → roteamento por temperatura</div>
+      <div class="col-card-item ok"><strong>Win Rate projetado: 0,29% → 5–10%+ (pago)</strong></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 16 · SECTION — O Modelo ══ -->
+<div class="slide slide-section">
+  <div class="section-num">04</div>
+  <div class="section-label">Bloco 04</div>
+  <div class="section-title">O Modelo:<br>Como Resolver</div>
+</div>
+
+
+<!-- ══ 17 · Restrição Maior ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Teoria das Restrições</div>
+  <div class="slide-title">A ordem de resolução<br>importa tanto quanto <em>a resolução.</em></div>
+  <div class="layers">
+    <div class="layer layer-4">
+      <div class="layer-num">1º</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 1 — Migrar para Click-to-WhatsApp</div>
+        <div class="layer-desc">Custo: R$0. Prazo: 48h. Remove o bloqueio que impede todos os outros passos de funcionar.</div>
+      </div>
+    </div>
+    <div class="layer layer-3">
+      <div class="layer-num">2º</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 2 — BANT Conversacional + CTA Estruturado</div>
+        <div class="layer-desc">Com leads chegando via WhatsApp, a metodologia funciona sobre volume real e mensurável.</div>
+      </div>
+    </div>
+    <div class="layer layer-2">
+      <div class="layer-num">3º</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 3 — CRM com Dados Reais</div>
+        <div class="layer-desc">Com processo padronizado, o pipeline passa a registrar dados úteis: forecast, 80/20, Win Rate por consultora.</div>
+      </div>
+    </div>
+    <div class="layer layer-1">
+      <div class="layer-num">4º</div>
+      <div class="layer-body">
+        <div class="layer-name">Trava 4 — SDR IA com Critérios Reais</div>
+        <div class="layer-desc">Com dados e processo estabelecidos, o SDR IA é configurado com critérios reais — consultoras focam em fechar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 18 · As Is vs To Be ══ -->
+<div class="slide slide-content-alt">
+  <div class="slide-tag">Modelo Comercial</div>
+  <div class="slide-title">Do gargalo reativo<br>à <em>máquina de vendas ativa.</em></div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label">Hoje — As Is</div>
+      <div class="col-card-item">Formulário → barreira de Message Template</div>
+      <div class="col-card-item">Cada consultora decide como qualificar</div>
+      <div class="col-card-item">Consultora acumula SDR + Closer + Admin</div>
+      <div class="col-card-item">Campos do CRM em branco — pipeline invisível</div>
+      <div class="col-card-item">Recompra ativa: R$0 (2.762 clientes/ano)</div>
+    </div>
+    <div class="col-card red-border">
+      <div class="col-card-label red">Objetivo — To Be</div>
+      <div class="col-card-item ok">Click-to-WhatsApp → lead inicia a conversa</div>
+      <div class="col-card-item ok">BANT conversacional: 4 perguntas estruturantes</div>
+      <div class="col-card-item ok">Closers recebem apenas leads qualificados</div>
+      <div class="col-card-item ok">Pipeline com critério objetivo por etapa</div>
+      <div class="col-card-item ok">Funil de Recompra D+30/D+60/D+90 automático</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 19 · Estrutura do Time ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Organograma Proposto</div>
+  <div class="slide-title">Cada papel faz <em>uma coisa.</em><br>Especialização = eficiência.</div>
+  <div class="grid-list">
+    <div class="grid-item">
+      <div class="grid-item-icon">🤖</div>
+      <div class="grid-item-text"><strong>SDR IA — 24/7</strong>Triagem BANT automática. Score e roteamento por temperatura. Zero negociação — apenas qualificação.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">💎</div>
+      <div class="grid-item-text"><strong>Consultora / Closer</strong>Recebe apenas leads qualificados. Conexão emocional, curadoria e fechamento de alto valor. KPI: Win Rate ≥40%.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon">📋</div>
+      <div class="grid-item-text"><strong>Gestor — Pipeline Review Semanal</strong>30 min toda segunda. Identifica leads parados, Win Rate por consultora, oportunidades de recompra.</div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-item-icon" style="background:rgba(255,192,42,0.12);color:var(--v4-yellow)">🔄</div>
+      <div class="grid-item-text"><strong>Funil de Recompra</strong>D+30 / D+60 / D+90 automático. ~2.762 clientes/ano ativados. Canal de receita recorrente sem custo de aquisição.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 20 · BANT ══ -->
+<div class="slide slide-content-alt">
+  <div class="slide-tag">Qualificação — Por Que BANT</div>
+  <div class="slide-title">4 perguntas. Resposta <em>binária.</em><br>Qualquer consultora aplica.</div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label">Os 4 Critérios BANT</div>
+      <div class="col-card-item"><strong>Budget:</strong> "Têm referência de valor? (R$2K–R$8K+)"</div>
+      <div class="col-card-item"><strong>Need:</strong> "É para evento já definido?"</div>
+      <div class="col-card-item"><strong>Timing:</strong> "Qual é a data do casamento?"</div>
+      <div class="col-card-item"><strong>Authority:</strong> "Decidem juntos ou você decide?"</div>
+    </div>
+    <div class="col-card red-border">
+      <div class="col-card-label red">Temperatura de Roteamento</div>
+      <div class="col-card-item"><strong>HOT (4/4):</strong> Consultora sênior em &lt;5 min</div>
+      <div class="col-card-item"><strong>WARM (3/4):</strong> Fila + nurturing em &lt;1h</div>
+      <div class="col-card-item"><strong>COLD (≤2/4):</strong> SDR IA conduz — 24h</div>
+      <div class="col-card-item"><strong>DESQUALIFICAR (0–1/4):</strong> Arquivar com tag</div>
+    </div>
+  </div>
+  <div class="callout">
+    BANT é ideal para o perfil Alisson Joias: <strong>B2C de ciclo curto, WhatsApp, decisor único ou casal.</strong> MEDDIC e SPICED são para B2B enterprise com ciclos de 90+ dias — não se aplicam aqui.
+  </div>
+</div>
+
+
+<!-- ══ 21 · SECTION — Implementação ══ -->
+<div class="slide slide-section">
+  <div class="section-num">05</div>
+  <div class="section-label">Bloco 05</div>
+  <div class="section-title">Implementação:<br>O Custo<br>de Não Agir</div>
+</div>
+
+
+<!-- ══ 22 · Custo da Inação ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Custo da Inação</div>
+  <div class="slide-title">Com o mesmo tráfego.<br>O mesmo time. <em>A mesma verba.</em></div>
+  <div class="stat-block">
+    <div class="stat"><div class="stat-val">R$758K</div><div class="stat-label">Faturamento atual / mês</div></div>
+    <div class="stat"><div class="stat-val yellow">R$1,0–1,1M</div><div class="stat-label">Projeção com o modelo</div></div>
+    <div class="stat"><div class="stat-val green">+R$220K</div><div class="stat-label">Oportunidade mensal</div></div>
+  </div>
+  <div class="callout">
+    <strong>Canal pago bloqueado:</strong> R$170K/mês não gerado com a mesma verba. <strong>Processo sem CTA:</strong> 15–25 vendas/mês perdidas no orgânico. <strong>Recompra inativa:</strong> R$0 em receita recorrente de 2.762 clientes/ano. A meta de <strong>R$16M anual está acessível</strong> — a arquitetura é o único bloqueio.
+  </div>
+</div>
+
+
+<!-- ══ 23 · Produtos V4 ══ -->
+<div class="slide slide-content-alt">
+  <div class="slide-tag">Como a V4 Implementa</div>
+  <div class="slide-title">Cada trava tem<br>um produto que <em>resolve.</em></div>
+  <div class="layers">
+    <div class="layer layer-4">
+      <div class="layer-num">T1</div>
+      <div class="layer-body">
+        <div class="layer-name">Gestão de Tráfego — Reconfiguração Click-to-WhatsApp</div>
+        <div class="layer-desc">Sem custo adicional de mídia. Impacto em 48h. Remove o bloqueio que impede todo o funil pago de funcionar.</div>
+      </div>
+    </div>
+    <div class="layer layer-3">
+      <div class="layer-num">T2</div>
+      <div class="layer-body">
+        <div class="layer-name">Sales Ops — Playbook BANT + CTA + Revisão SalesBot</div>
+        <div class="layer-desc">Script conversacional, template de CTA pós-proposta e correção do bug de disparo duplicado.</div>
+      </div>
+    </div>
+    <div class="layer layer-2">
+      <div class="layer-num">T3</div>
+      <div class="layer-body">
+        <div class="layer-name">Sales Ops — CRM + Funil de Recompra D+30/D+60/D+90</div>
+        <div class="layer-desc">Campos obrigatórios por etapa, protocolo de centralização e régua automática para base de clientes.</div>
+      </div>
+    </div>
+    <div class="layer layer-1">
+      <div class="layer-num">T4</div>
+      <div class="layer-body">
+        <div class="layer-name">IA Comercial — SDR IA com BANT 24/7 e Handoff Automático</div>
+        <div class="layer-desc">Bot qualifica por temperatura e transfere para consultora apenas leads prontos para fechamento.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 24 · Plano 30 Dias ══ -->
+<div class="slide slide-content">
+  <div class="slide-tag">Plano de Ação</div>
+  <div class="slide-title">30 dias para destravar.<br><em>Na ordem certa.</em></div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label" style="color:var(--v4-yellow)">⚡ Quick Wins — Semana 1</div>
+      <div class="col-card-item">QW-01 · Migrar Meta Ads para Click-to-WhatsApp</div>
+      <div class="col-card-item">QW-02 · Corrigir bug de disparo duplo do SalesBot</div>
+      <div class="col-card-item">QW-03 · CTA padrão após cada proposta enviada</div>
+      <div class="col-card-item">QW-04 · Script BANT conversacional para o time</div>
+    </div>
+    <div class="col-card red-border">
+      <div class="col-card-label red">🏗 Estruturais — Semanas 2–4</div>
+      <div class="col-card-item">EST-01 · Lead scoring BANT + SLA por temperatura</div>
+      <div class="col-card-item">EST-02 · Funil Recompra D+30/D+60/D+90</div>
+      <div class="col-card-item">EST-03 · CRM: campos obrigatórios + centralização</div>
+      <div class="col-card-item">EST-04 · SDR IA com BANT 24/7 — piloto</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 25 · QUOTE FINAL ══ -->
+<div class="slide slide-quote">
+  <div class="quote-mark">"</div>
+  <div class="quote-text">R$220K ficaram na mesa<br>todo mês. Com o mesmo tráfego.<br><em>Só a arquitetura estava errada.</em></div>
+  <div class="quote-author">O diagnóstico em uma frase</div>
+</div>
+
+
+<!-- ══ 26 · CLOSE ══ -->
+<div class="slide slide-close">
+  <div class="close-bg"></div>
+  <div class="close-title">Três movimentos.<br><span>Trinta dias.</span></div>
+  <div class="close-sub">O diagnóstico está feito. O modelo está definido. O plano está sequenciado. O que vem agora é execução — na ordem certa.</div>
+</div>
+
+
+</div><!-- /presentation -->
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn">←</button>
+  <span class="nav-counter" id="navCounter">01 / 26</span>
+  <button class="nav-btn" id="nextBtn">→</button>
+</div>
+
+<!-- DOTS -->
+<div class="slide-dots" id="slideDots"></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total  = slides.length;
+  let current  = 0;
+
+  const progressBar = document.getElementById('progressBar');
+  const navCounter  = document.getElementById('navCounter');
+  const dotsWrap    = document.getElementById('slideDots');
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+    current = Math.max(0, Math.min(total - 1, index));
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+    navCounter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+  });
+
+  progressBar.style.width = (1 / total * 100) + '%';
+</script>
+</body>
+</html>

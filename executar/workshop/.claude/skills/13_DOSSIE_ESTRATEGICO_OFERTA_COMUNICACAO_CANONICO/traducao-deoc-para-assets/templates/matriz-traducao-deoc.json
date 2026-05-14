@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "cliente_ou_produto": "[Nome]",
+    "versao_matriz": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel": "",
+    "versao_link_deoc": ""
+  },
+  "matriz_resumo": {
+    "plano_midia": "",
+    "briefing_criativo": "",
+    "lp": "",
+    "copy_anuncios": "",
+    "vendas": "",
+    "tracking": ""
+  },
+  "matriz_deterministica": [
+    {
+      "elemento": "",
+      "tipo": "POV | Differentiator | Proof Point | Oferta",
+      "headline_ad": "",
+      "headline_lp": "",
+      "subheadline_lp": "",
+      "cta": "",
+      "sales_pitch_step": "",
+      "tracking_event": ""
+    }
+  ],
+  "variacoes_por_canal": [
+    {
+      "canal": "Email",
+      "angulo_copy": "",
+      "headline_adaptado": ""
+    },
+    {
+      "canal": "LP",
+      "angulo_copy": "",
+      "headline_adaptado": ""
+    },
+    {
+      "canal": "Call de Vendas",
+      "angulo_copy": "",
+      "headline_adaptado": ""
+    },
+    {
+      "canal": "LinkedIn",
+      "angulo_copy": "",
+      "headline_adaptado": ""
+    },
+    {
+      "canal": "WhatsApp",
+      "angulo_copy": "",
+      "headline_adaptado": ""
+    }
+  ],
+  "message_match_audit": {
+    "headline_match": false,
+    "promessa_match": false,
+    "cta_match": false,
+    "tracking_match": false,
+    "notas": ""
+  },
+  "plano_midia": {
+    "beachhead": "",
+    "canais_provaveis": "",
+    "angulos_mensagem": [],
+    "premissas": "",
+    "icp_anti_icp": "",
+    "oferta_comunicada_ciclo": "",
+    "criterios_lead_correto": "",
+    "notas_teste_cohort": ""
+  },
+  "briefing_criativo": {
+    "persona": "",
+    "hook": "",
+    "dor": "",
+    "mecanismo": "",
+    "prova": "",
+    "cta": "",
+    "tom": "",
+    "tabus": "",
+    "referencias_visuais_ou_inimigo": ""
+  },
+  "lp": {
+    "narrativa": "",
+    "secoes_planejadas": "",
+    "promessa": "",
+    "provas_por_secao": "",
+    "objecoes": "",
+    "formulario_campos": "",
+    "escopo_limites": "",
+    "cta_primario_secundario": ""
+  },
+  "copy_anuncios": {
+    "hooks": [],
+    "headlines": [],
+    "ctas": [],
+    "variacoes_por_segmento": "",
+    "claims_referencia_deoc": "",
+    "formatos_canais_alvo": ""
+  },
+  "vendas": {
+    "promessa_vista_pelo_lead": "",
+    "objecoes_respostas": "",
+    "anti_icp": "",
+    "perguntas_qualificacao": [],
+    "limites_oferta": "",
+    "handoff_materiais": ""
+  },
+  "tracking": {
+    "utm_persona": "",
+    "utm_hook": "",
+    "utm_dor": "",
+    "utm_angulo": "",
+    "utm_etapa": "",
+    "eventos_conversoes": "",
+    "north_star_ou_kpi": "",
+    "link_taxonomia_projeto": ""
+  },
+  "proximos_documentos": [
+    {
+      "documento": "",
+      "owner": "",
+      "dependencia": "",
+      "prazo_alvo": ""
+    }
+  ],
+  "changelog_matriz": [
+    {
+      "versao": "",
+      "data": "",
+      "mudanca": ""
+    }
+  ]
+}

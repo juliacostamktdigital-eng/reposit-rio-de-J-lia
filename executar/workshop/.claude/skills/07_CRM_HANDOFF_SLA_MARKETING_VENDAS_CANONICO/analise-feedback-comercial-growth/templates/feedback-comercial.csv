@@ -1,0 +1,5 @@
+lead_id,campaign_id,creative_id,test_id,is_mql,is_sql,is_opportunity,is_won,disqualification_reason,lead_quality,speed_to_lead_minutes,feedback_notes
+lead-001,cmp-hs-prevent-202605-001,crv-hs-prevent-202605-014,tst-hs-prevent-202605-hooks-cfo,true,true,true,false,,alta,4,"Dor real de fraude e margem, pediu diagnóstico com CFO e produto"
+lead-002,cmp-hs-prevent-202605-001,crv-hs-prevent-202605-014,tst-hs-prevent-202605-hooks-cfo,true,false,false,false,timing-ruim,media,12,"Tem dor mas projeto só no próximo semestre"
+lead-003,cmp-hs-prevent-202605-001,crv-hs-prevent-202605-015,tst-hs-prevent-202605-friccao-produto,false,false,false,false,sem-fit,baixa,180,"Empresa pequena sem onboarding digital estruturado"
+lead-004,cmp-hs-prevent-202605-001,crv-hs-prevent-202605-015,tst-hs-prevent-202605-friccao-produto,true,false,false,false,nao-responde,media,360,"Lead parecia aderente mas atendimento demorou e não respondeu"

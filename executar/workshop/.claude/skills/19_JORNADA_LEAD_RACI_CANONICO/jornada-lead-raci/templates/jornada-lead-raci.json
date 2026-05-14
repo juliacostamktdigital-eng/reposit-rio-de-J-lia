@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "versao_artefato": "v1",
+    "data": "YYYY-MM-DD",
+    "responsavel_artefato": "",
+    "link_funil_unificado_a2": "",
+    "link_protocolo_a4": ""
+  },
+  "publicacao": {
+    "onde_colado_funil": "",
+    "onde_colado_protocolo": ""
+  },
+  "etapas": [
+    {
+      "etapa_funil": "",
+      "touchpoints": [],
+      "responsible": "",
+      "accountable": "",
+      "consulted": [],
+      "informed": [],
+      "evidencia_minima": "",
+      "notas_sla_handoff": ""
+    },
+    {
+      "etapa_funil": "",
+      "touchpoints": [],
+      "responsible": "",
+      "accountable": "",
+      "consulted": [],
+      "informed": [],
+      "evidencia_minima": "",
+      "notas_sla_handoff": ""
+    },
+    {
+      "etapa_funil": "",
+      "touchpoints": [],
+      "responsible": "",
+      "accountable": "",
+      "consulted": [],
+      "informed": [],
+      "evidencia_minima": "",
+      "notas_sla_handoff": ""
+    }
+  ],
+  "validacao_capacidade_sla": {
+    "resumo": ""
+  },
+  "gerenciado_notas": {
+    "kpi_dono": "",
+    "kpi_sla": "",
+    "kpi_evidencia": "",
+    "cadencia_revisao": "mensal ou ao mudar estrutura do time"
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DiagnosticoComercial",
+  "version": "1.2.0",
+  "description": "Output do diagnostico comercial: funil vs benchmarks com referencias inline, diagnostico de processo e CRM, SLA por score e consolidado visual. Nao inclui mapa de objecoes, criterios de qualificacao nem plano de acao. Conclusoes diagnosticas exigem evidencia Tier 1 (CSV, screenshots CRM, exports, cliente oculto). Kick-off e Tier 2 (contexto) — nao gera conclusao independente.",
+  "type": "object",
+  "required": ["summary", "funnel_diagnosis", "crm_process_diagnosis", "sla"],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "description": "Resumo executivo de 2-3 frases do diagnostico. Inclui gargalo principal identificado com base em dados Tier 1. Se perfil do time ou processo nao tiver evidencia Tier 1, nao inclui esses elementos no resumo."
+    },
+    "funnel_diagnosis": {
+      "type": "object",
+      "required": ["channels", "seasonality_notes"],
+      "properties": {
+        "channels": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Um objeto por canal de entrada (ex: organico, midia paga). Canais misturados distorcem o diagnostico.",
+          "items": {
+            "type": "object",
+            "required": ["channel_name", "benchmark_segment", "benchmark_source", "stages"],
+            "properties": {
+              "channel_name": {
+                "type": "string",
+                "description": "Nome do canal (ex: 'Organico', 'Meta Ads - Leads', 'Total')."
+              },
+              "benchmark_segment": {
+                "type": "string",
+                "description": "Segmento do framework utilizado como referencia de benchmark."
+              },
+              "benchmark_source": {
+                "type": "string",
+                "description": "Referencia da fonte do benchmark (ex: 'framework-diagnostico-comercial.md §E-commerce / Varejo Online')."
+              },
+              "stages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["stage", "volume_in", "volume_out", "current_rate", "benchmark_min", "benchmark_max", "benchmark_source_inline", "gap", "status"],
+                  "properties": {
+                    "stage": {
+                      "type": "string",
+                      "description": "Nome da etapa (ex: 'Lead → Qualificado')."
+                    },
+                    "volume_in": {
+                      "type": ["integer", "null"],
+                      "description": "Volume de entrada da etapa. Null se nao disponivel."
+                    },
+                    "volume_out": {
+                      "type": ["integer", "null"],
+                      "description": "Volume de saida da etapa. Null se nao disponivel."
+                    },
+                    "current_rate": {
+                      "type": ["number", "null"],
+                      "description": "Taxa real em percentual. Null se nao disponivel."
+                    },
+                    "benchmark_min": {
+                      "type": "number",
+                      "description": "Limite inferior do benchmark do segmento (%)."
+                    },
+                    "benchmark_max": {
+                      "type": "number",
+                      "description": "Limite superior do benchmark do segmento (%)."
+                    },
+                    "benchmark_source_inline": {
+                      "type": "string",
+                      "description": "Referencia inline obrigatoria para o benchmark citado. Formato: 'framework-diagnostico-comercial.md §NomeSegmento'."
+                    },
+                    "gap": {
+                      "type": ["number", "null"],
+                      "description": "Diferenca entre taxa atual e ponto medio do benchmark (positivo = acima). Null se taxa atual nao disponivel."
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": ["above_benchmark", "at_benchmark", "below_benchmark", "critical", "unavailable"],
+                      "description": "Status do desempenho da etapa."
+                    },
+                    "bottleneck_observed": {
+                      "type": ["string", "null"],
+                      "description": "Gargalo observado nos inputs Tier 1 (CSV, CRM, cliente oculto). Null se nao ha evidencia Tier 1. Se causa foi apenas declarada em kick-off, use o campo root_cause_context_only."
+                    },
+                    "root_cause_observed": {
+                      "type": ["string", "null"],
+                      "description": "Causa raiz identificada em evidencia Tier 1. Null se nao ha evidencia Tier 1 — nao especular e nao usar declaracao de kick-off."
+                    },
+                    "root_cause_context_only": {
+                      "type": ["string", "null"],
+                      "description": "Causa declarada em kick-off ou briefing (Tier 2) que pode contextualizar o gargalo identificado em Tier 1, mas nao e evidencia diagnostica. Formato: 'Causa declarada no kick-off: ...'. Null se nao aplicavel."
+                    },
+                    "financial_impact_monthly": {
+                      "type": ["number", "null"],
+                      "description": "Impacto financeiro estimado em R$/mes. Null se nao ha dados suficientes para calcular."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "seasonality_notes": {
+          "type": ["string", "null"],
+          "description": "Padroes sazonais observados no historico de dados. Null se nao ha historico disponivel."
+        }
+      }
+    },
+    "crm_process_diagnosis": {
+      "type": "object",
+      "required": ["crm_tool", "field_hygiene", "zombie_leads", "lrt", "real_vs_declared", "sales_profile"],
+      "properties": {
+        "crm_tool": {
+          "type": "string",
+          "description": "Nome do CRM utilizado conforme identificado nos inputs."
+        },
+        "field_hygiene": {
+          "type": "array",
+          "description": "Um item por campo relevante observado nos screenshots do CRM.",
+          "items": {
+            "type": "object",
+            "required": ["field_name", "status"],
+            "properties": {
+              "field_name": {
+                "type": "string",
+                "description": "Nome do campo no CRM."
+              },
+              "status": {
+                "type": "string",
+                "enum": ["filled_systematically", "inconsistent", "blank", "not_visible_in_inputs"],
+                "description": "Status de preenchimento observado."
+              },
+              "observation": {
+                "type": ["string", "null"],
+                "description": "Observacao especifica se status for inconsistente ou em branco."
+              }
+            }
+          }
+        },
+        "zombie_leads": {
+          "type": "object",
+          "required": ["tier1_available", "description"],
+          "properties": {
+            "tier1_available": {
+              "type": "boolean",
+              "description": "Ha evidencia Tier 1 (screenshots/exports de CRM) disponivel para diagnosticar leads zumbi?"
+            },
+            "description": {
+              "type": "string",
+              "description": "Descricao do que foi observado nos inputs Tier 1. Se tier1_available=false, registre '[dados insuficientes — acesso ao CRM necessario]'. Nao usar contagem de tarefas declarada em kick-off como substituto."
+            }
+          }
+        },
+        "lrt": {
+          "type": "object",
+          "required": ["available", "value"],
+          "properties": {
+            "available": {
+              "type": "boolean",
+              "description": "Ha dado de LRT disponível nos inputs Tier 1 (timestamps em CRM ou mensagens)?"
+            },
+            "value": {
+              "type": ["string", "null"],
+              "description": "Valor observado do LRT se disponível em Tier 1. Null se nao disponivel — nao estimar e nao usar relato de kick-off como valor."
+            }
+          }
+        },
+        "real_vs_declared": {
+          "type": "array",
+          "description": "Comparacao entre processo declarado (Tier 2: calls/briefing) e processo real (Tier 1: CRM/cliente oculto). REGRA: uma linha so existe se houver evidencia Tier 1 para o campo 'real'. Dimensoes sem Tier 1 nao entram na tabela — listadas em 'dimensions_without_tier1_evidence'.",
+          "items": {
+            "type": "object",
+            "required": ["dimension", "declared", "real", "declared_source", "real_source"],
+            "properties": {
+              "dimension": {
+                "type": "string",
+                "description": "Dimensao do processo (ex: 'Uso do CRM', 'Tarefas', 'Playbook')."
+              },
+              "declared": {
+                "type": "string",
+                "description": "O que foi declarado em call ou briefing (Tier 2)."
+              },
+              "real": {
+                "type": "string",
+                "description": "O que foi observado nos inputs Tier 1 (CRM, cliente oculto). Deve ser observacao direta — nao declaracao."
+              },
+              "declared_source": {
+                "type": "string",
+                "description": "Fonte Tier 2 da informacao declarada (ex: 'Kick-Off 05/02/2026')."
+              },
+              "real_source": {
+                "type": "string",
+                "description": "Fonte Tier 1 da observacao real (ex: 'Screenshots CRM abril/2026', 'Cliente Oculto 07/05/2026'). Nunca Tier 2."
+              }
+            }
+          }
+        },
+        "dimensions_without_tier1_evidence": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "Lista de dimensoes que so tem lado declarado (Tier 2) — sem evidencia Tier 1 para o lado real. Registradas aqui para transparencia, nao na tabela real_vs_declared."
+        },
+        "attendance_analysis": {
+          "type": "object",
+          "required": ["tier1_available"],
+          "properties": {
+            "tier1_available": {
+              "type": "boolean",
+              "description": "Ha transcricao Tier 1 de atendimento disponivel? Tier 1 = cliente oculto ou gravacao/transcricao de atendimento real ao cliente final. Kick-off NAO qualifica — e reuniao estrategica entre equipes."
+            },
+            "what_worked": {
+              "type": ["array", "null"],
+              "items": { "type": "string" },
+              "description": "O que funcionou no atendimento real, com evidencia especifica do transcript. Null se tier1_available=false."
+            },
+            "what_failed": {
+              "type": ["array", "null"],
+              "items": { "type": "string" },
+              "description": "O que nao funcionou, com evidencia especifica do transcript. Null se tier1_available=false."
+            },
+            "observed_cycle": {
+              "type": ["string", "null"],
+              "description": "Ciclo observado na conversa real (etapas). Null se tier1_available=false."
+            }
+          }
+        },
+        "sales_profile": {
+          "type": "object",
+          "required": ["tier1_available", "predominant_profile", "required_profile", "farmer_evidence", "hunter_evidence"],
+          "properties": {
+            "tier1_available": {
+              "type": "boolean",
+              "description": "Ha dados Tier 1 de conversao por canal ou origem de lead para diagnosticar perfil? Se false, predominant_profile deve ser 'unavailable'."
+            },
+            "predominant_profile": {
+              "type": "string",
+              "enum": ["hunter", "farmer", "mixed", "unavailable"],
+              "description": "Perfil predominante com base exclusivamente em dados Tier 1 de conversao por canal. 'unavailable' se nao ha Tier 1 suficiente."
+            },
+            "required_profile": {
+              "type": ["string", "null"],
+              "enum": ["hunter", "farmer", "mixed", null],
+              "description": "Perfil exigido pelo mix de canais atual — inferido do dado de canal disponivel. Null se tier1_available=false."
+            },
+            "farmer_evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["evidence", "source_tier", "source_ref"],
+                "properties": {
+                  "evidence": { "type": "string", "description": "Descricao da evidencia." },
+                  "source_tier": { "type": "integer", "enum": [1], "description": "Deve ser 1. Tier 2 nao qualifica como evidencia de perfil." },
+                  "source_ref": { "type": "string", "description": "Referencia da fonte (ex: 'CSV jan/2026 — canal organico 19,2% L→V')." }
+                }
+              },
+              "description": "Evidencias quantitativas Tier 1 de perfil Farmer. Array vazio se nao ha evidencia Tier 1."
+            },
+            "hunter_evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["evidence", "source_tier", "source_ref"],
+                "properties": {
+                  "evidence": { "type": "string", "description": "Descricao da evidencia." },
+                  "source_tier": { "type": "integer", "enum": [1], "description": "Deve ser 1. Tier 2 nao qualifica como evidencia de perfil." },
+                  "source_ref": { "type": "string", "description": "Referencia da fonte." }
+                }
+              },
+              "description": "Evidencias quantitativas Tier 1 de capacidade Hunter. Array vazio se nao ha evidencia Tier 1."
+            }
+          }
+        }
+      }
+    },
+    "sla": {
+      "type": "object",
+      "required": ["cycle_type", "scores"],
+      "properties": {
+        "cycle_type": {
+          "type": "string",
+          "enum": ["short", "medium", "long"],
+          "description": "Tipo de ciclo de venda observado nos dados (short: <7 dias, medium: 7-30 dias, long: >30 dias)."
+        },
+        "scores": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["score", "sla_value", "sla_unit", "responsible", "channel", "escalation"],
+            "properties": {
+              "score": {
+                "type": "string",
+                "enum": ["5_star", "4_star", "3_star", "1_2_star"],
+                "description": "Score do lead."
+              },
+              "sla_value": {
+                "type": "number",
+                "description": "Valor numerico do SLA."
+              },
+              "sla_unit": {
+                "type": "string",
+                "enum": ["minutes", "hours", "days"],
+                "description": "Unidade do SLA."
+              },
+              "responsible": {
+                "type": "string",
+                "description": "Responsavel pelo atendimento."
+              },
+              "channel": {
+                "type": "string",
+                "description": "Canal de contato."
+              },
+              "escalation": {
+                "type": "string",
+                "description": "Acao de escalonamento se SLA nao for cumprido."
+              }
+            }
+          }
+        },
+        "sla_constraints": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "Restricoes tecnicas ou operacionais que impactam o cumprimento do SLA. Nulo se nenhuma identificada."
+        }
+      }
+    }
+  }
+}

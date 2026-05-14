@@ -1,0 +1,50 @@
+{
+  "cliente": "HS Prevent",
+  "campanha": "Onboarding digital seguro",
+  "url_teste": "https://example.com/lp?utm_source=meta&utm_medium=paid-social&utm_campaign=cmp-hs-prevent-202605-001&utm_content=crv-hs-prevent-202605-014",
+  "tipo_ponto_conversao": "landing_page",
+  "criterios": {
+    "headline_coerente": "ok",
+    "promessa_clara": "ok",
+    "cta_funciona": "ok",
+    "formulario_funciona": "ok",
+    "mobile_first": "ok",
+    "carregamento_aceitavel": "pendencia",
+    "lgpd_politica_ok": "ok",
+    "claims_permitidos": "ok",
+    "utms_campos_ocultos": "ok",
+    "v4_ids_capturados": "pendencia",
+    "first_touch_preservado": "ok",
+    "last_touch_atualizado": "ok",
+    "crm_recebe_origem": "ok",
+    "backup_recebe_lead": "bloqueio",
+    "evento_principal_dispara": "ok",
+    "thank_you_funciona": "ok",
+    "dedupe_validado": "pendencia"
+  },
+  "evidencias": [
+    "print da URL com UTMs",
+    "print do lead no CRM",
+    "evento form_submit no GTM preview"
+  ],
+  "gaps": [
+    {
+      "gap": "backup de leads não recebeu o lead teste",
+      "categoria": "backup",
+      "severidade": "critica",
+      "dono": "dados",
+      "decisao": "bloquear_tracking",
+      "prazo": "antes do go-live",
+      "impacto": "sem fonte alternativa se CRM falhar"
+    },
+    {
+      "gap": "v4_adgroup_id não preencheu campo oculto",
+      "categoria": "tracking",
+      "severidade": "alta",
+      "dono": "mídia",
+      "decisao": "no_go",
+      "prazo": "antes do go-live",
+      "impacto": "análise por adgroup fica incompleta"
+    }
+  ]
+}

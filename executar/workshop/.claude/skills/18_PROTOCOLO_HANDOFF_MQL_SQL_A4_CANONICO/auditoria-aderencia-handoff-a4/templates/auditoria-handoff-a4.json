@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "data_auditoria": "YYYY-MM-DD",
+    "auditor": "",
+    "parecer_humano": ""
+  },
+  "amostra": {
+    "periodo": "",
+    "descricao_metodo": "",
+    "n_ordem_grandeza": ""
+  },
+  "referencias": {
+    "link_protocolo_a4": "",
+    "link_funil_a2": "",
+    "link_crm_07": ""
+  },
+  "dimensoes": [
+    {
+      "id": "ad-01",
+      "nome": "MQL/SQL no CRM vs definições do protocolo",
+      "ref_playbook": "Passos 2 e 6; DoD",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-02",
+      "nome": "Motivos padronizados em rejeições/desqualificações",
+      "ref_playbook": "Passo 3",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-03",
+      "nome": "Campos mínimos do handoff (aderência)",
+      "ref_playbook": "Passo 3; DoD",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-04",
+      "nome": "SLA 1º contato (amostra ou métrica)",
+      "ref_playbook": "Passo 4",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-05",
+      "nome": "Enforcement: redistribuição quando SLA estoura",
+      "ref_playbook": "Passo 4",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-06",
+      "nome": "Rotina semanal operacional + ata/card",
+      "ref_playbook": "Passo 5; DoD",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-07",
+      "nome": "KPIs medidos vs thresholds do protocolo",
+      "ref_playbook": "Passo 5; Gerenciado",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-08",
+      "nome": "% leads sem status dentro do aceitável",
+      "ref_playbook": "Gerenciado",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-09",
+      "nome": "Rejeições por motivo utilizáveis (loop de ajuste)",
+      "ref_playbook": "Componentes críticos",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ad-10",
+      "nome": "Change log / atas de ajustes Mkt–Vendas",
+      "ref_playbook": "DoD; Gerenciado",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    }
+  ],
+  "indicadores": [
+    {
+      "nome": "Taxa MQL → SQL",
+      "valor_periodo": "",
+      "threshold_protocolo": "",
+      "nota": ""
+    },
+    {
+      "nome": "Taxa SQL → venda",
+      "valor_periodo": "",
+      "threshold_protocolo": "",
+      "nota": ""
+    },
+    {
+      "nome": "Tempo 1º contato",
+      "valor_periodo": "",
+      "threshold_protocolo": "",
+      "nota": ""
+    },
+    {
+      "nome": "% rejeições por motivo (top)",
+      "valor_periodo": "",
+      "threshold_protocolo": "",
+      "nota": ""
+    },
+    {
+      "nome": "% leads sem status válido",
+      "valor_periodo": "",
+      "threshold_protocolo": "",
+      "nota": ""
+    }
+  ],
+  "achados_criticos": "",
+  "backlog": [
+    {
+      "acao": "",
+      "prioridade": "",
+      "dono": "",
+      "prazo": ""
+    }
+  ],
+  "proxima_auditoria": ""
+}

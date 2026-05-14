@@ -1,0 +1,48 @@
+{
+  "cliente": "HS Prevent",
+  "meta": {
+    "leads": 450,
+    "mqls": 160,
+    "sqls": 70,
+    "vendas": 12,
+    "receita": 120000,
+    "roas_alvo": 2.0,
+    "cac_maximo": 6000,
+    "capacidade_atendimento": 500
+  },
+  "cenarios": [
+    {
+      "cenario": "pessimista",
+      "budget": 60000,
+      "cpl": 180,
+      "taxa_lead_mql": 0.25,
+      "taxa_mql_sql": 0.35,
+      "taxa_sql_opp": 0.7,
+      "taxa_opp_venda": 0.18,
+      "ticket_medio": 10000,
+      "fonte_premissas": "benchmark conservador"
+    },
+    {
+      "cenario": "provavel",
+      "budget": 60000,
+      "cpl": 130,
+      "taxa_lead_mql": 0.35,
+      "taxa_mql_sql": 0.45,
+      "taxa_sql_opp": 0.75,
+      "taxa_opp_venda": 0.22,
+      "ticket_medio": 10000,
+      "fonte_premissas": "historico + benchmark"
+    },
+    {
+      "cenario": "otimista",
+      "budget": 60000,
+      "cpl": 95,
+      "taxa_lead_mql": 0.45,
+      "taxa_mql_sql": 0.55,
+      "taxa_sql_opp": 0.8,
+      "taxa_opp_venda": 0.28,
+      "ticket_medio": 10000,
+      "fonte_premissas": "melhor caso justificado por oferta e SLA"
+    }
+  ]
+}

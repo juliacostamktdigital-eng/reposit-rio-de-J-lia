@@ -1,0 +1,14 @@
+# META - diagnostico-copy-lp
+**Status:** ativas
+**Atualizado:** 2026-04-25
+**Fonte local:** agents/canonicos/redacao-voz-cliente/skills/ativas/diagnostico-copy-lp/SKILL.md
+**Fonte canonica:** empresa/skills/saber/skills/skills_extract_entregas/skills/v4-diagnostico-planejamento/diagnostico-copy-lp/SKILL.md
+**Owner:** redacao-voz-cliente
+
+---
+
+## Regra
+
+- Este arquivo e uma copia local para governanca do agente.
+- A fonte canonica global e a informada no campo Fonte canonica acima.
+- Mudancas locais devem ser promovidas para o catalogo global quando validadas.

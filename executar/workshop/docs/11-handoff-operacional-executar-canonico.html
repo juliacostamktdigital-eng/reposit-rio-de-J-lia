@@ -1,0 +1,171 @@
+<article class="doc-content-inner" data-doc-slug="11-handoff-operacional-executar-canonico">
+<h1>Handoff Operacional Executar Canônico</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + canônico original sem skill merge dedicada.  </p>
+<p><strong>Decisão de merge:</strong> sem skill dedicada; mantido como entrada EXECUTAR e pré-requisito dos playbooks estratégicos.</p>
+<p>Status: v1 alinhado ao processo SABER TO BE  </p>
+<p>Escopo: entrada operacional do cliente no processo EXECUTAR  </p>
+<p>Objetivo: transformar os insumos vindos de vendas e Growth Class em um pacote de handoff validado, suficiente para o time EXECUTAR iniciar planning sem pedir o mesmo contexto de novo.</p>
+<h2>1. Princípio</h2>
+<p>O handoff operacional não é uma reunião de apresentação. Ele é a transferência auditável de contexto entre venda, boas-vindas e operação.</p>
+<p>No começo do EXECUTAR, os assets recebidos são:</p>
+<ul>
+<li>plano de ROI;</li>
+<li>transcrição da call de vendas;</li>
+<li>transcrição da Growth Class / call de boas-vindas.</li>
+</ul>
+<p>Esses três insumos precisam virar um pacote operacional validado. O time não deve depender de memória do closer, print solto no WhatsApp ou repetição do cliente no kickoff.</p>
+<h2>2. Entradas obrigatórias</h2>
+<h3>2.1 Plano de ROI</h3>
+<p>Deve conter ou permitir extrair:</p>
+<ul>
+<li>produto contratado;</li>
+<li>escopo vendido;</li>
+<li>investimento;</li>
+<li>expectativa de retorno;</li>
+<li>metas prometidas ou simuladas;</li>
+<li>premissas usadas no cálculo;</li>
+<li>horizonte de tempo;</li>
+<li>canais/produtos considerados;</li>
+<li>restrições e observações do closer;</li>
+<li>divergências entre cenário provável, otimista e conservador.</li>
+</ul>
+<p>Critério:</p>
+<pre><code>O plano de ROI precisa deixar claro o que foi prometido, em quais premissas essa promessa depende e quais riscos podem quebrar a expectativa.</code></pre>
+<h3>2.2 Transcrição da call de vendas</h3>
+<p>Deve ser usada para extrair:</p>
+<ul>
+<li>dores declaradas pelo cliente;</li>
+<li>objetivo que motivou a compra;</li>
+<li>objeções levantadas;</li>
+<li>promessas feitas em call;</li>
+<li>restrições de escopo;</li>
+<li>urgências e prazos mencionados;</li>
+<li>stakeholders e decisores;</li>
+<li>critérios de sucesso percebidos pelo cliente;</li>
+<li>riscos de desalinhamento;</li>
+<li>dúvidas que ficaram em aberto.</li>
+</ul>
+<h3>2.3 Transcrição da Growth Class / boas-vindas</h3>
+<p>Deve ser usada para extrair:</p>
+<ul>
+<li>entendimento do cliente sobre o que comprou;</li>
+<li>expectativas pós-venda;</li>
+<li>dúvidas sobre escopo e próximos passos;</li>
+<li>desvios entre o que foi vendido e o que foi entendido;</li>
+<li>maturidade percebida do cliente;</li>
+<li>tom da relação;</li>
+<li>riscos de churn M0;</li>
+<li>pendências de informação;</li>
+<li>próximos passos acordados.</li>
+</ul>
+<h2>3. Saída canônica</h2>
+<p>O pacote de handoff operacional deve gerar um documento único com:</p>
+<ul>
+<li>resumo executivo da conta;</li>
+<li>produto/escopo contratado;</li>
+<li>links para plano de ROI e transcrições;</li>
+<li>síntese da call de vendas;</li>
+<li>síntese da Growth Class;</li>
+<li>promessas e expectativas;</li>
+<li>premissas críticas;</li>
+<li>riscos e red flags;</li>
+<li>divergências venda vs. entendimento do cliente;</li>
+<li>perguntas abertas;</li>
+<li>stakeholders;</li>
+<li>próximos passos;</li>
+<li>dono interno;</li>
+<li>status de completude.</li>
+</ul>
+<h2>4. Análise de desvio</h2>
+<p>Comparar explicitamente:</p>
+<div class="doc-table-wrap"><table><tr><th>Eixo</th><th>Call de vendas</th><th>Growth Class</th><th>Risco</th></tr><tr><td>Escopo</td><td>O que foi vendido</td><td>O que o cliente entendeu</td><td>Baixo/Médio/Alto</td></tr><tr><td>Resultado esperado</td><td>Promessa/premissa</td><td>Expectativa verbalizada</td><td>Baixo/Médio/Alto</td></tr><tr><td>Prazo</td><td>O que foi sinalizado</td><td>O que o cliente espera</td><td>Baixo/Médio/Alto</td></tr><tr><td>Responsabilidades</td><td>O que depende da V4</td><td>O que depende do cliente</td><td>Baixo/Médio/Alto</td></tr><tr><td>Próximo passo</td><td>O que vendas indicou</td><td>O que boas-vindas confirmou</td><td>Baixo/Médio/Alto</td></tr></table></div>
+<p>Se houver desvio médio ou alto, o handoff não está completo até que o coordenador/account registre ação corretiva.</p>
+<h2>5. Fluxo operacional recomendado</h2>
+<pre><code>Contrato/fechamento -&gt; Plano de ROI + transcrição da venda
+Growth Class -&gt; transcrição + análise de desvios
+IA compila pacote de handoff
+Coordenador/Gerente revisa de forma supervisionada
+Squad/Account recebe pacote validado
+Planning inicia com escopo, risco e próximos passos claros</code></pre>
+<h2>6. Campos do documento de handoff</h2>
+<pre><code># Handoff Operacional EXECUTAR
+
+Cliente:
+Produto contratado:
+Data do fechamento:
+Data da Growth Class:
+Squad/Responsável:
+
+## Links dos insumos
+Plano de ROI:
+Transcrição da call de vendas:
+Transcrição da Growth Class:
+
+## Resumo executivo
+
+## Escopo contratado
+
+## Premissas do Plano de ROI
+
+## Promessas e expectativas
+
+## Dores e objetivos declarados
+
+## Stakeholders
+
+## Riscos e red flags
+
+## Divergências venda vs. boas-vindas
+
+## Pendências
+
+## Próximos passos
+
+## Decisão do responsável</code></pre>
+<h2>7. Automação AI-native</h2>
+<p>O processo ideal é:</p>
+<ul>
+<li>IA recebe plano de ROI e transcrições;</li>
+<li>IA extrai entidades, promessas, riscos e dúvidas;</li>
+<li>IA compara call de vendas vs. Growth Class;</li>
+<li>IA gera pacote de handoff;</li>
+<li>coordenador/gerente valida, corrige e aprova;</li>
+<li>sistema registra completude e notifica o squad;</li>
+<li>planning usa o pacote como fonte de verdade inicial.</li>
+</ul>
+<p>O humano não deve compilar do zero. O humano deve validar, corrigir e decidir.</p>
+<h2>8. Critério N2</h2>
+<p>Handoff operacional está N2 quando:</p>
+<ul>
+<li>plano de ROI está anexado;</li>
+<li>transcrição da call de vendas está anexada;</li>
+<li>transcrição da Growth Class está anexada;</li>
+<li>síntese operacional foi gerada;</li>
+<li>análise de desvio foi feita;</li>
+<li>riscos e pendências estão registrados;</li>
+<li>responsável interno revisou;</li>
+<li>próximo passo está claro para o time EXECUTAR.</li>
+</ul>
+<h2>9. Critério N3</h2>
+<p>Handoff operacional está N3 quando:</p>
+<ul>
+<li>desvios recorrentes viram feedback para vendas;</li>
+<li>promessas problemáticas são classificadas por tipo;</li>
+<li>risco de churn M0 é monitorado;</li>
+<li>tempo de handoff é medido;</li>
+<li>completude do pacote é medida;</li>
+<li>aprendizados melhoram o roteiro de vendas e Growth Class;</li>
+<li>o planejamento EXECUTAR usa o handoff sem precisar recoletar contexto.</li>
+</ul>
+<h2>10. Métricas</h2>
+<ul>
+<li>tempo contrato/fechamento -&gt; pacote de handoff completo;</li>
+<li>completude do pacote;</li>
+<li>número de pendências por handoff;</li>
+<li>número de desvios venda vs. Growth Class;</li>
+<li>severidade média dos desvios;</li>
+<li>retrabalho no planning por falta de contexto;</li>
+<li>churn ou risco M0 associado a desalinhamento inicial.</li>
+</ul>
+</article>

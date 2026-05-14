@@ -1,0 +1,5 @@
+lead_id,campaign_id,creative_id,formato,hook,persona,dor,angulo,spend,lead_status,is_mql,is_sql,is_won,deal_value,disqualification_reason,feedback_quality
+lead-001,cmp-001,crt-001,video,risco,decisor,perda_margem,financeiro,120.00,novo,true,true,false,0,,alta
+lead-002,cmp-001,crt-001,video,risco,decisor,perda_margem,financeiro,0.00,desqualificado,false,false,false,0,sem_fit,baixa
+lead-003,cmp-001,crt-002,carrossel,comparativo,gestor,operacao_manual,eficiencia,90.00,novo,true,false,false,0,,media
+lead-004,cmp-002,crt-010,video,demo,tecnico,falso_positivo,prova,180.00,ganho,true,true,true,12000,,alta

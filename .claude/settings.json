@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "cockpit": {
+      "url": "https://mcp-cockpit.dados.collieassociados.com/mcp",
+      "headers": {
+        "Authorization": "Bearer lkjawjklnawkldn351516a5w*kjawjdylknlkKJH98987"
+      }
+    },
+    "bigquery-calls": {
+      "url": "https://n8n4.services4.collieassociados.com/mcp/mcp-bigquery-global-calls-filtered",
+      "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NWQ3ZjEzOS05YTZmLTQwZDMtOTcyMC1jMTZhNDBhMmQwYzEiLCJpc3MiOiJuOG4iLCJhdWQiOiJtY3Atc2VydmVyLWFwaSIsImp0aSI6ImM0N2U1OWEwLTAzZWItNGRlNC05MGE1LWNmZWZjNjQ1MmI2NyIsImlhdCI6MTc3NzMwODIwM30._nnLcrx0HMcmFTj3HddcHMYbeS6cswlTRDiC4HcDCV4"
+      }
+    },
+    "bigquery-whatsapp": {
+      "url": "https://n8n4.services4.collieassociados.com/mcp/mcp-bigquery-global-whatsapp-groups",
+      "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NWQ3ZjEzOS05YTZmLTQwZDMtOTcyMC1jMTZhNDBhMmQwYzEiLCJpc3MiOiJuOG4iLCJhdWQiOiJtY3Atc2VydmVyLWFwaSIsImp0aSI6ImM0N2U1OWEwLTAzZWItNGRlNC05MGE1LWNmZWZjNjQ1MmI2NyIsImlhdCI6MTc3NzMwODIwM30._nnLcrx0HMcmFTj3HddcHMYbeS6cswlTRDiC4HcDCV4"
+      }
+    },
+    "ekyte": {
+      "url": "https://n8n4.services4.collieassociados.com/mcp/mcp-ekyte-direct-v2",
+      "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NWQ3ZjEzOS05YTZmLTQwZDMtOTcyMC1jMTZhNDBhMmQwYzEiLCJpc3MiOiJuOG4iLCJhdWQiOiJtY3Atc2VydmVyLWFwaSIsImp0aSI6ImM0N2U1OWEwLTAzZWItNGRlNC05MGE1LWNmZWZjNjQ1MmI2NyIsImlhdCI6MTc3NzMwODIwM30._nnLcrx0HMcmFTj3HddcHMYbeS6cswlTRDiC4HcDCV4"
+      }
+    },
+    "n8n-tools": {
+      "url": "https://n8n4.services4.collieassociados.com/mcp-test/1ad1f026-3510-4f2e-8576-2c2b1e89d207-n8n-tools"
+    }
+  }
+}

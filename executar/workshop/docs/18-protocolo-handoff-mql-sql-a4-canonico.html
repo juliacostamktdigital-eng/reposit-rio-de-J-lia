@@ -1,0 +1,97 @@
+<article class="doc-content-inner" data-doc-slug="18-protocolo-handoff-mql-sql-a4-canonico">
+<h1>Protocolo de Handoff MQL/SQL (A-4) — Canônico</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + <code>assets/legacy/merge/skills/05-protocolo-handoff-a4.md</code>.  </p>
+<p><strong>Decisão de merge:</strong> skill 05 já estava promovida; <code>assets/canonicos</code> mantém o protocolo A-4 como fonte principal e referencia CRM/SLA como complemento.</p>
+<p>Status: v1  </p>
+<p>Escopo: handoffs Marketing→Vendas, em especial MQL → SQL  </p>
+<p>Objetivo: critérios, evidência e cadência para fechar o loop inter-áreas sem “guerra de lead”.</p>
+<p><strong>Relação com:</strong> <code>07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO.md</code> — este documento é o recorte <strong>skill/A-4</strong> (definições e DoD); o 07 permanece o consolidado de CRM, SLA e operação.</p>
+<p>---</p>
+<h2>Nome e propósito</h2>
+<ul>
+<li><strong>Nome canônico:</strong> Protocolo de Handoff (A-4)</li>
+<li><strong>Propósito (1 frase):</strong> definir e operar os handoffs (principalmente <strong>MQL → SQL</strong>) com critérios, evidência e cadência, para fechar loop inter-áreas sem “guerra de lead”.</li>
+</ul>
+<p>---</p>
+<h2>Quando usar / quando não usar</h2>
+<ul>
+<li><strong>Quando usar:</strong></li>
+<li>sempre que houver handoff Marketing→Vendas (quase sempre)</li>
+<li>quando “lead ruim” e “vendas não atende” vira conflito recorrente</li>
+<li>quando o funil tem etapas ambíguas (MQL/SQL sem definição)</li>
+<li><strong>Quando não usar:</strong></li>
+<li>como cerimônia sem consequência (ritual que não muda nada não fecha Gerenciado)</li>
+</ul>
+<p>---</p>
+<h2>Entradas (Inputs)</h2>
+<ul>
+<li>Funil Unificado (etapas, fonte da verdade e campos mínimos).</li>
+<li>DEOC / DEOC (ICP/anti-ICP; mensageria e promessa).</li>
+<li>Plano de Mídia (o que está sendo prometido e para quem).</li>
+<li>Capacidade e SLA do time comercial (quem atende, quando, por qual canal).</li>
+<li>Benchmarking (referências de conversão e expectativas realistas por etapa).</li>
+</ul>
+<h2>Saídas (Outputs)</h2>
+<ul>
+<li>Protocolo de handoff v1 com:</li>
+<li>definição operacional de <strong>MQL</strong> e <strong>SQL</strong> (passa/não passa)</li>
+<li>critérios de aceitação/rejeição (com motivo padronizado)</li>
+<li>campos mínimos obrigatórios no CRM para registrar o handoff</li>
+<li>SLA de atendimento e regra de redistribuição (quando estoura)</li>
+<li>cadência do loop (revisão + ações) e evidências mínimas</li>
+</ul>
+<p>---</p>
+<h2>Passo a passo</h2>
+<p>1) Fixar o que é lead “correto” (ICP + anti-ICP operando).</p>
+<p>2) Definir MQL e SQL como eventos/estados no Funil Unificado:</p>
+<ul>
+<li>condição de entrada</li>
+<li>evidência mínima</li>
+</ul>
+<p>3) Definir critérios de aceitação/rejeição (e motivos) no CRM.</p>
+<p>4) Definir SLA e responsabilidades (quem atende; em quanto tempo; o que fazer se não atender).</p>
+<p>5) Definir a rotina de revisão:</p>
+<ul>
+<li>quais KPIs (taxas por etapa + tempo)</li>
+<li>thresholds (verde/amarelo/vermelho)</li>
+<li>o que muda quando piora (ação definida)</li>
+</ul>
+<p>6) Implementar o registro obrigatório (rastro) e auditar aderência.</p>
+<p>---</p>
+<h2>Componentes críticos (o que iterar)</h2>
+<ul>
+<li>Definição de MQL/SQL com critério e evidência vs “nome subjetivo”.</li>
+<li>Motivos padronizados de rejeição (para virar insumo de melhoria).</li>
+<li>SLA realista + enforcement (sem SLA, o handoff vira ruído).</li>
+<li>Rotina decisória (o que muda quando a taxa piora) vs leitura de número.</li>
+<li>Loop de ajuste (Marketing muda segmentação/mensagem/oferta com base no dado de handoff).</li>
+</ul>
+<p>---</p>
+<h2>Template(s)</h2>
+<ul>
+<li><code>./assets/canonicos/templates/asset-skill.md</code></li>
+<li><code>./assets/canonicos/templates/processo-loop.md</code></li>
+</ul>
+<p>---</p>
+<h2>Exemplo real</h2>
+<p>&gt; <strong>Lacuna:</strong> exemplo real de Protocolo de handoff (MQL→SQL) ainda não está versionado neste diretório.</p>
+<p>---</p>
+<h2>Definição de pronto (DoD)</h2>
+<ul>
+<li>MQL e SQL definidos com passa/não passa e evidência mínima.</li>
+<li>Campos e motivos padronizados no CRM (ou sistema equivalente).</li>
+<li>SLA definido e comunicado (com regra de exceção).</li>
+<li>KPIs e thresholds definidos + ação definida por faixa.</li>
+<li>Rotina de revisão com registro (ata/card) e change log de ajustes.</li>
+</ul>
+<p>---</p>
+<h2>Como gerenciar (Gerenciado)</h2>
+<ul>
+<li><strong>Métrica(s) / KPI(s):</strong> taxa MQL→SQL; taxa SQL→Venda; tempo de 1º contato; % rejeições por motivo; % leads sem status.</li>
+<li><strong>Thresholds (verde/amarelo/vermelho):</strong> definidos por contexto e benchmark (documentar fonte).</li>
+<li><strong>Cadência de revisão:</strong> semanal (operacional) + mensal (estrutural).</li>
+<li><strong>Dono:</strong> (lacuna)</li>
+<li><strong>Registro obrigatório:</strong> ata/card com decisões + change log de mudanças (segmentação, mensagem, processo).</li>
+</ul>
+</article>

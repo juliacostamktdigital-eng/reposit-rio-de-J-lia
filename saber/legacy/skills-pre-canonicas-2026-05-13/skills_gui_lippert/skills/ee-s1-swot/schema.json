@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SWOT",
+  "description": "Output estruturado da skill swot: análise SWOT completa com síntese estratégica e ações prioritárias.",
+  "type": "object",
+  "required": ["summary", "strengths", "weaknesses", "opportunities", "threats", "strategic_synthesis", "priority_actions"],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "description": "Resumo de 1-2 frases da análise SWOT. Usado como referência rápida por outras skills."
+    },
+    "strengths": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["title", "description", "implication"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Frase curta e específica descrevendo a força."
+          },
+          "description": {
+            "type": "string",
+            "description": "Evidência concreta que sustenta essa força (com dados quando possível)."
+          },
+          "implication": {
+            "type": "string",
+            "description": "Como essa força pode ser alavancada na estratégia."
+          },
+          "source": {
+            "type": "string",
+            "enum": ["diagnostico", "briefing", "operador", "v4mos"],
+            "description": "De onde veio a evidência."
+          }
+        }
+      },
+      "description": "Fatores internos positivos do negócio."
+    },
+    "weaknesses": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["title", "description", "implication"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Frase curta e específica descrevendo a fraqueza."
+          },
+          "description": {
+            "type": "string",
+            "description": "Evidência concreta da fraqueza."
+          },
+          "implication": {
+            "type": "string",
+            "description": "Risco se não tratada + sugestão de mitigação."
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "high", "medium"],
+            "description": "Severidade da fraqueza."
+          },
+          "source": {
+            "type": "string",
+            "enum": ["diagnostico", "briefing", "operador", "v4mos"],
+            "description": "De onde veio a evidência."
+          }
+        }
+      },
+      "description": "Fatores internos negativos do negócio."
+    },
+    "opportunities": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["title", "description", "implication"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Frase curta e específica descrevendo a oportunidade."
+          },
+          "description": {
+            "type": "string",
+            "description": "Por que essa oportunidade existe AGORA."
+          },
+          "implication": {
+            "type": "string",
+            "description": "Como capturar essa oportunidade."
+          },
+          "time_sensitivity": {
+            "type": "string",
+            "enum": ["urgent", "medium_term", "long_term"],
+            "description": "Janela de oportunidade."
+          },
+          "source": {
+            "type": "string",
+            "enum": ["diagnostico", "briefing", "operador", "v4mos", "market_trend"],
+            "description": "De onde veio a evidência."
+          }
+        }
+      },
+      "description": "Fatores externos positivos (oportunidades de mercado)."
+    },
+    "threats": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["title", "description", "implication"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Frase curta e específica descrevendo a ameaça."
+          },
+          "description": {
+            "type": "string",
+            "description": "Evidência de que essa ameaça é real."
+          },
+          "implication": {
+            "type": "string",
+            "description": "Como se proteger ou mitigar."
+          },
+          "probability": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Probabilidade de materialização."
+          },
+          "impact": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Impacto se materializar."
+          },
+          "source": {
+            "type": "string",
+            "enum": ["diagnostico", "briefing", "operador", "v4mos", "market_trend"],
+            "description": "De onde veio a evidência."
+          }
+        }
+      },
+      "description": "Fatores externos negativos (ameaças de mercado)."
+    },
+    "strategic_synthesis": {
+      "type": "object",
+      "required": ["leverage", "protection", "recommended_strategy"],
+      "properties": {
+        "leverage": {
+          "type": "string",
+          "description": "Parágrafo: como usar forças para capturar oportunidades (Forças x Oportunidades)."
+        },
+        "protection": {
+          "type": "string",
+          "description": "Parágrafo: quais fraquezas amplificam ameaças e como proteger (Fraquezas x Ameaças)."
+        },
+        "recommended_strategy": {
+          "type": "string",
+          "description": "Parágrafo: estratégia recomendada para os próximos 90 dias."
+        }
+      }
+    },
+    "priority_actions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["action", "swot_basis", "impact", "suggested_timeline"],
+        "properties": {
+          "action": {
+            "type": "string",
+            "description": "O que fazer (específico e acionável)."
+          },
+          "swot_basis": {
+            "type": "string",
+            "description": "Quais quadrantes/itens essa ação endereça (ex: 'Alavanca F2, captura O3')."
+          },
+          "impact": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Impacto esperado da ação."
+          },
+          "suggested_timeline": {
+            "type": "string",
+            "description": "Quando executar (semana 1/2/3 ou prazo específico)."
+          },
+          "dependencies": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Dependências desta ação."
+          }
+        }
+      },
+      "description": "Ações prioritárias derivadas do cruzamento SWOT."
+    }
+  }
+}

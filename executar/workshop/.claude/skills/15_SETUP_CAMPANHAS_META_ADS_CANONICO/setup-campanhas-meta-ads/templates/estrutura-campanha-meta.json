@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "cliente": "[Nome]",
+    "versao_doc": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel_media": "",
+    "link_planilha_growth_backup": "",
+    "link_contrato_dados": ""
+  },
+  "conta": {
+    "bm_id": "",
+    "ad_account_id": "",
+    "pixel_id": "",
+    "checklist_conta": {
+      "bm_correto": false,
+      "conta_anuncios_correta": false,
+      "pagamento_ativo": false,
+      "pagina_fb": false,
+      "instagram": false,
+      "dominio_verificado": false,
+      "permissoes_time": false,
+      "pixel_instalado": false,
+      "capi_configurada": false,
+      "eventos_testados": false,
+      "utms_lp": false,
+      "backup_lead": false,
+      "crm_conciliavel": false
+    }
+  },
+  "eventos": {
+    "otimizacao_principal": "",
+    "justificativa_profundidade_volume": "",
+    "pageview": true,
+    "viewcontent": true,
+    "lead": true,
+    "mql_custom": false,
+    "sql_ou_offline": false
+  },
+  "publicos_resumo": {
+    "frios": [],
+    "mornos": [],
+    "quentes": [],
+    "exclusoes": ""
+  },
+  "campanhas": [
+    {
+      "campaign_id": "",
+      "nome_taxonomia": "",
+      "objetivo_meta": "",
+      "tipo_movimento": "aquisicao",
+      "orcamento_modo": "CBO",
+      "valor_ou_logica_orcamento": "",
+      "hipotese": "",
+      "conjuntos": [
+        {
+          "adgroup_id": "",
+          "nome_taxonomia": "",
+          "temperatura": "frio",
+          "publico_resumo": "",
+          "exclusoes": "",
+          "anuncios": [
+            {
+              "creative_id": "",
+              "nome_taxonomia": "",
+              "formato": "",
+              "hipotese_leitura": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "matriz_testes": {
+    "o_que_varia": "",
+    "o_que_constante": ""
+  },
+  "pre_go_live": {
+    "campanha_id_ok": false,
+    "conjuntos_id_ok": false,
+    "anuncios_id_ok": false,
+    "publico_temperatura_ok": false,
+    "exclusoes_ok": false,
+    "pixel_eventos_ok": false,
+    "utms_ok": false,
+    "backup_testada": false,
+    "crm_handoff_testado": false,
+    "criativos_aprovados": false,
+    "matriz_testes_registrada": false,
+    "orcamento_datas_ok": false,
+    "hipotese_planilha_ok": false,
+    "changelog_preparado": false
+  },
+  "subtipos": {
+    "lead_formulario_nativo": false,
+    "conversao_site": false,
+    "engajamento_construcao_audiencia": false
+  },
+  "n2_gaps": ""
+}

@@ -1,0 +1,149 @@
+{
+  "roteiros": [
+    {
+      "creative_id": "crv-hs-prevent-202605-014",
+      "brief_id": "brf-hs-prevent-202605-001",
+      "cliente": "HS Prevent",
+      "campanha": "Onboarding digital seguro",
+      "formato": "video-roteirizado",
+      "duracao": "30s",
+      "proporcao": "9:16",
+      "canal": "Meta Ads",
+      "placement": "Reels/Stories",
+      "persona": "CFO",
+      "etapa": "tofu",
+      "hipotese": "CFOs respondem melhor a hooks de risco financeiro do que a hooks técnicos",
+      "variavel_testada": "hook",
+      "hook": "A fraude que não aparece no dashboard já pode estar corroendo sua margem",
+      "dor": "fraude passa no onboarding",
+      "mecanismo": "diagnóstico de risco no onboarding digital",
+      "prova": "case de redução de fraude e melhoria de aprovação",
+      "cta": "Solicitar diagnóstico",
+      "utm_content": "crv-hs-prevent-202605-014__fmt-video__icp-cfo__hook-dor__mot-seguranca__dor-fraude__ang-risco-financeiro__stage-tofu__ver-v01",
+      "cenas": [
+        {
+          "tempo": "0-3s",
+          "funcao": "hook",
+          "fala": "A fraude que não aparece no dashboard já pode estar corroendo sua margem.",
+          "texto_tela": "Fraude invisível = margem em risco",
+          "visual": "Dashboard com alertas e números subindo",
+          "edicao": "Corte rápido, trilha de tensão"
+        },
+        {
+          "tempo": "3-10s",
+          "funcao": "dor/tensão",
+          "fala": "Quando o onboarding trata todo usuário do mesmo jeito, bons clientes sofrem fricção e riscos reais passam.",
+          "texto_tela": "Fricção para bons usuários. Brecha para risco real.",
+          "visual": "Fluxo dividido entre aprovado, fricção e risco",
+          "edicao": "Motion com bifurcação"
+        },
+        {
+          "tempo": "10-20s",
+          "funcao": "mecanismo/prova",
+          "fala": "Um diagnóstico de risco mostra onde aplicar controle adaptativo sem travar a jornada inteira.",
+          "texto_tela": "Controle adaptativo por sinal de risco",
+          "visual": "Camadas de risco sendo aplicadas no fluxo",
+          "edicao": "Mostrar mecanismo em 3 etapas"
+        },
+        {
+          "tempo": "20-30s",
+          "funcao": "cta",
+          "fala": "Solicite o diagnóstico de risco no onboarding digital.",
+          "texto_tela": "Solicite o diagnóstico",
+          "visual": "Tela final com CTA e marca",
+          "edicao": "Encerrar com CTA claro"
+        }
+      ],
+      "legenda": "Seu onboarding pode estar perdendo margem onde o dashboard não mostra. Solicite um diagnóstico de risco e veja onde aplicar controle sem travar bons usuários.",
+      "direcao_visual": "Motion executivo com dashboard, fluxo de onboarding e alertas de risco."
+    },
+    {
+      "creative_id": "crv-hs-prevent-202605-015",
+      "brief_id": "brf-hs-prevent-202605-002",
+      "cliente": "HS Prevent",
+      "campanha": "Onboarding digital seguro",
+      "formato": "carousel",
+      "duracao": "7 slides",
+      "proporcao": "4:5",
+      "canal": "LinkedIn Ads",
+      "placement": "Feed",
+      "persona": "Head de Produto",
+      "etapa": "mofu",
+      "hipotese": "Ângulo de segurança sem fricção reduz objeção de produto",
+      "variavel_testada": "angulo",
+      "hook": "Segurança não deveria ser o motivo da sua conversão cair",
+      "dor": "segurança aumenta fricção de ativação",
+      "mecanismo": "camadas adaptativas de risco",
+      "prova": "fluxo adaptativo e métricas de aprovação",
+      "cta": "Ver como funciona",
+      "utm_content": "crv-hs-prevent-202605-015__fmt-carousel__icp-head-produto__hook-contraintuitivo__mot-conversao__dor-friccao__ang-seguranca-sem-friccao__stage-mofu__ver-v01",
+      "slides": [
+        {
+          "slide": 1,
+          "funcao": "interrupção",
+          "texto": "Segurança não deveria ser o motivo da sua conversão cair.",
+          "prova_exemplo": "Contraste entre proteção e ativação",
+          "visual": "Dois caminhos: fricção vs risco",
+          "cta_transicao": "Mas isso acontece quando...",
+          "atributo": "hook-contraintuitivo"
+        },
+        {
+          "slide": 2,
+          "funcao": "identificação da dor",
+          "texto": "Quando todo usuário passa pelo mesmo controle, bons clientes também pagam o preço.",
+          "prova_exemplo": "Exemplo de etapas redundantes",
+          "visual": "Fluxo com barreiras iguais",
+          "cta_transicao": "O problema não é controlar.",
+          "atributo": "dor-friccao"
+        },
+        {
+          "slide": 3,
+          "funcao": "quebra de crença",
+          "texto": "O problema é tratar riscos diferentes como se fossem iguais.",
+          "prova_exemplo": "Usuários com sinais distintos",
+          "visual": "Segmentação por risco",
+          "cta_transicao": "A alternativa é adaptar.",
+          "atributo": "ang-seguranca-sem-friccao"
+        },
+        {
+          "slide": 4,
+          "funcao": "mecanismo",
+          "texto": "Camadas adaptativas aplicam fricção onde há sinal de risco.",
+          "prova_exemplo": "Fluxo adaptativo",
+          "visual": "Matriz risco x fricção",
+          "cta_transicao": "Assim você protege sem travar tudo.",
+          "atributo": "mot-conversao"
+        },
+        {
+          "slide": 5,
+          "funcao": "prova",
+          "texto": "O diagnóstico mostra onde o onboarding perde eficiência e onde há risco real.",
+          "prova_exemplo": "Métricas de aprovação e risco",
+          "visual": "Dashboard simplificado",
+          "cta_transicao": "O próximo passo é enxergar o seu fluxo.",
+          "atributo": "prova-diagnostico"
+        },
+        {
+          "slide": 6,
+          "funcao": "convite",
+          "texto": "Veja como aplicar controle proporcional ao risco no seu onboarding.",
+          "prova_exemplo": "Mapa de oportunidades",
+          "visual": "Checklist do diagnóstico",
+          "cta_transicao": "Solicite uma análise.",
+          "atributo": "cta"
+        },
+        {
+          "slide": 7,
+          "funcao": "cta",
+          "texto": "Solicite o diagnóstico de risco no onboarding digital.",
+          "prova_exemplo": "Oferta",
+          "visual": "CTA final",
+          "cta_transicao": "Ver como funciona",
+          "atributo": "stage-mofu"
+        }
+      ],
+      "legenda": "Segurança e conversão não precisam brigar o tempo inteiro. O ponto é aplicar fricção onde existe sinal de risco.",
+      "direcao_visual": "Carrossel limpo, com fluxos, ícones de risco e contraste visual entre fricção e aprovação."
+    }
+  ]
+}

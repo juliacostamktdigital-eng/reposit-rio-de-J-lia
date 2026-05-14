@@ -1,0 +1,72 @@
+{
+  "cliente": "HS Prevent",
+  "produto_oferta": "Diagnóstico de risco no onboarding digital",
+  "fonte_estrategica": "DEOC + discovery + feedback comercial",
+  "angulos": [
+    {
+      "angulo": "risco financeiro",
+      "persona": "CFO",
+      "papel": "decisor economico",
+      "nivel_consciencia": "consciente do problema",
+      "dor": "fraude passa no onboarding",
+      "desejo": "aprovar clientes bons sem expor margem",
+      "objecao": "isso vai travar minha conversao",
+      "resposta_objecao": "segurança sem fricção com transbordo inteligente",
+      "promessa": "reduzir risco financeiro sem criar gargalo comercial",
+      "hook": "A fraude que nao aparece no dashboard ja esta corroendo sua margem",
+      "tipo_hook": "dor",
+      "prova": "case de redução de fraude e melhoria de aprovação",
+      "etapa": "tofu",
+      "formato": "video",
+      "risco": "claim financeiro sem base numerica",
+      "claim_status": "condicional",
+      "claim": "reduz risco financeiro no onboarding",
+      "tracking": {
+        "fmt": "video",
+        "icp": "cfo",
+        "hook": "dor",
+        "mot": "seguranca",
+        "dor": "fraude",
+        "ang": "risco-financeiro",
+        "stage": "tofu",
+        "ver": "v01"
+      }
+    },
+    {
+      "angulo": "seguranca sem friccao",
+      "persona": "Head de Produto",
+      "papel": "influenciador",
+      "nivel_consciencia": "consciente da solucao",
+      "dor": "seguranca aumenta friccao de ativacao",
+      "desejo": "manter conversao sem abrir mao de controle",
+      "objecao": "meu time nao pode piorar onboarding",
+      "resposta_objecao": "camadas de risco adaptativas preservam experiencia dos bons usuarios",
+      "promessa": "proteger a jornada sem travar usuarios bons",
+      "hook": "Segurança não deveria ser o motivo da sua conversão cair",
+      "tipo_hook": "contraintuitivo",
+      "prova": "fluxo adaptativo e métricas de aprovação",
+      "etapa": "mofu",
+      "formato": "carrossel",
+      "risco": "parecer promessa absoluta de conversao",
+      "claim_status": "permitido",
+      "claim": "segurança com menos fricção para bons usuários",
+      "tracking": {
+        "fmt": "carousel",
+        "icp": "head-produto",
+        "hook": "contraintuitivo",
+        "mot": "conversao",
+        "dor": "friccao",
+        "ang": "seguranca-sem-friccao",
+        "stage": "mofu",
+        "ver": "v01"
+      }
+    }
+  ],
+  "claims_proibidos": [
+    {
+      "claim": "elimina 100% das fraudes",
+      "motivo": "garantia absoluta sem base",
+      "alternativa": "reduz risco de fraude com camadas adaptativas"
+    }
+  ]
+}

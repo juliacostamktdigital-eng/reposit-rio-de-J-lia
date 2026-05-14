@@ -1,0 +1,455 @@
+<article class="doc-content-inner" data-doc-slug="02-planilha-de-testes-growth-canonica">
+<h1>Planilha Canônica de Testes de Growth</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + canônico original sem skill merge dedicada.  </p>
+<p><strong>Decisão de merge:</strong> sem skill dedicada; mantido como fonte de testes, hipóteses e aprendizado.</p>
+<p>Status: v1 para workshop  </p>
+<p>Escopo: rotina N3 de growth para campanhas de demanda qualificada  </p>
+<p>Objetivo: definir uma planilha/base que permita registrar hipóteses, criativos, campanhas, leads, avanço no funil e decisões.</p>
+<h2>1. Princípio</h2>
+<p>A planilha de testes não é um relatório de mídia. Ela é o lugar onde o time transforma execução em aprendizado.</p>
+<p>Ela precisa responder:</p>
+<ul>
+<li>o que testamos;</li>
+<li>por que testamos;</li>
+<li>qual variável mudou;</li>
+<li>quais variáveis ficaram constantes;</li>
+<li>qual criativo/campanha gerou lead;</li>
+<li>qual lead virou MQL/SQL/oportunidade/venda;</li>
+<li>qual padrão criativo ou canal parece funcionar;</li>
+<li>qual decisão será tomada no próximo ciclo.</li>
+</ul>
+<h2>2. Estrutura recomendada de abas</h2>
+<h3>Aba 00 - README</h3>
+<p>Função: explicar como usar a planilha.</p>
+<p>Campos/conteúdo:</p>
+<ul>
+<li>cliente;</li>
+<li>cohort;</li>
+<li>segmento;</li>
+<li>período analisado;</li>
+<li>fonte dos dados;</li>
+<li>dono da planilha;</li>
+<li>cadência de atualização;</li>
+<li>link para DCC;</li>
+<li>link para plano de mídia;</li>
+<li>link para taxonomia UTM;</li>
+<li>glossário de status e métricas.</li>
+</ul>
+<h3>Aba 01 - Testes</h3>
+<p>Função: registrar hipóteses e decisões.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>test_id</code></li>
+<li><code>client_id</code></li>
+<li><code>periodo</code></li>
+<li><code>status_teste</code></li>
+<li><code>tipo_teste</code></li>
+<li><code>alavanca</code></li>
+<li><code>hipotese</code></li>
+<li><code>variavel_testada</code></li>
+<li><code>variaveis_controladas</code></li>
+<li><code>cohort</code></li>
+<li><code>segmento</code></li>
+<li><code>persona</code></li>
+<li><code>etapa_funil</code></li>
+<li><code>canal</code></li>
+<li><code>campanha_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_ids</code></li>
+<li><code>tipo_campanha</code></li>
+<li><code>movimento</code></li>
+<li><code>publico</code></li>
+<li><code>temperatura</code></li>
+<li><code>posicionamento</code></li>
+<li><code>metrica_primaria</code></li>
+<li><code>metrica_secundaria</code></li>
+<li><code>meta_primaria</code></li>
+<li><code>meta_secundaria</code></li>
+<li><code>data_inicio</code></li>
+<li><code>data_fim_prevista</code></li>
+<li><code>data_fim_real</code></li>
+<li><code>resultado_resumo</code></li>
+<li><code>decisao</code></li>
+<li><code>aprendizado</code></li>
+<li><code>proximo_passo</code></li>
+<li><code>dono</code></li>
+</ul>
+<p>Valores sugeridos para <code>status_teste</code>:</p>
+<pre><code>planejado
+rodando
+pausado
+concluido
+inconclusivo
+cancelado</code></pre>
+<p>Valores sugeridos para <code>tipo_teste</code>:</p>
+<pre><code>criativo
+copy
+oferta
+publico
+canal
+lp
+formulario
+handoff
+tracking
+orcamento</code></pre>
+<p>Valores sugeridos para <code>alavanca</code>:</p>
+<pre><code>formato
+hook
+dor
+angulo
+persona
+prova
+cta
+lp
+segmentacao
+lance
+evento
+sla-vendas</code></pre>
+<p>Valores sugeridos para <code>decisao</code>:</p>
+<pre><code>escalar
+manter
+ajustar
+matar
+replicar
+criar-novo-teste
+corrigir-tracking
+revisar-oferta
+acionar-vendas
+inconclusivo</code></pre>
+<h3>Aba 02 - Criativos</h3>
+<p>Função: listar cada criativo com atributos analisáveis.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>creative_id</code></li>
+<li><code>test_id</code></li>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>nome_plataforma</code></li>
+<li><code>formato</code></li>
+<li><code>tipo_video</code></li>
+<li><code>persona</code></li>
+<li><code>hook</code></li>
+<li><code>creative_slug</code></li>
+<li><code>dor</code></li>
+<li><code>desejo</code></li>
+<li><code>angulo</code></li>
+<li><code>nivel_consciencia</code></li>
+<li><code>etapa_funil</code></li>
+<li><code>cta</code></li>
+<li><code>promessa</code></li>
+<li><code>prova_usada</code></li>
+<li><code>objecao_atacada</code></li>
+<li><code>duracao_video</code></li>
+<li><code>asset_url</code></li>
+<li><code>thumb_url</code></li>
+<li><code>copy_url</code></li>
+<li><code>status_aprovacao</code></li>
+<li><code>data_publicacao</code></li>
+<li><code>versao</code></li>
+</ul>
+<p>Valores para <code>formato</code>:</p>
+<pre><code>video
+static
+carousel
+ugc
+founder
+demo
+proof
+lp
+email
+whatsapp</code></pre>
+<p>Valores para <code>tipo_video</code>:</p>
+<pre><code>roteirizado
+depoimento
+demo
+ugc
+founder
+motion
+screen-record
+antes-depois</code></pre>
+<h3>Aba 03 - Campanhas</h3>
+<p>Função: registrar estrutura de mídia e metas.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>campaign_id</code></li>
+<li><code>nome_campanha</code></li>
+<li><code>canal</code></li>
+<li><code>tipo_campanha</code></li>
+<li><code>objetivo</code></li>
+<li><code>movimento</code></li>
+<li><code>campaign_slug</code></li>
+<li><code>cohort</code></li>
+<li><code>segmento</code></li>
+<li><code>periodo</code></li>
+<li><code>orcamento_planejado</code></li>
+<li><code>orcamento_realizado</code></li>
+<li><code>evento_otimizacao</code></li>
+<li><code>meta_cpl</code></li>
+<li><code>meta_cpmql</code></li>
+<li><code>meta_sql</code></li>
+<li><code>meta_venda</code></li>
+<li><code>data_inicio</code></li>
+<li><code>data_fim</code></li>
+<li><code>status</code></li>
+<li><code>link_plataforma</code></li>
+</ul>
+<h3>Aba 04 - Ad groups / conjuntos</h3>
+<p>Função: registrar audiência, público ou keyword.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>adgroup_id</code></li>
+<li><code>campaign_id</code></li>
+<li><code>nome_adgroup</code></li>
+<li><code>canal</code></li>
+<li><code>publico</code></li>
+<li><code>temperatura</code></li>
+<li><code>posicionamento</code></li>
+<li><code>adgroup_slug</code></li>
+<li><code>persona</code></li>
+<li><code>segmentacao</code></li>
+<li><code>geo</code></li>
+<li><code>placement</code></li>
+<li><code>keyword</code></li>
+<li><code>match_type</code></li>
+<li><code>etapa_funil</code></li>
+<li><code>orcamento</code></li>
+<li><code>status</code></li>
+</ul>
+<h3>Aba 05 - Leads e funil</h3>
+<p>Função: ser a base de match entre marketing e vendas.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>created_at</code></li>
+<li><code>client_id</code></li>
+<li><code>test_id</code></li>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>utm_source</code></li>
+<li><code>utm_medium</code></li>
+<li><code>utm_campaign</code></li>
+<li><code>utm_content</code></li>
+<li><code>utm_term</code></li>
+<li><code>nome</code></li>
+<li><code>email</code></li>
+<li><code>telefone</code></li>
+<li><code>empresa</code></li>
+<li><code>cargo</code></li>
+<li><code>lead_status</code></li>
+<li><code>is_mql</code></li>
+<li><code>mql_at</code></li>
+<li><code>is_sql</code></li>
+<li><code>sql_at</code></li>
+<li><code>is_opportunity</code></li>
+<li><code>opportunity_at</code></li>
+<li><code>is_won</code></li>
+<li><code>won_at</code></li>
+<li><code>deal_value</code></li>
+<li><code>disqualification_reason</code></li>
+<li><code>sales_owner</code></li>
+<li><code>first_contact_at</code></li>
+<li><code>speed_to_lead_minutes</code></li>
+<li><code>feedback_quality</code></li>
+<li><code>feedback_notes</code></li>
+</ul>
+<p>Valores para <code>lead_status</code>:</p>
+<pre><code>novo
+contatado
+conectado
+qualificado
+desqualificado
+oportunidade
+venda
+perdido
+sem-resposta
+duplicado</code></pre>
+<p>Valores para <code>feedback_quality</code>:</p>
+<pre><code>otimo
+bom
+medio
+ruim
+invalido
+sem-feedback</code></pre>
+<p>Valores para <code>disqualification_reason</code>:</p>
+<pre><code>sem-fit
+sem-budget
+timing
+nao-responde
+fora-regiao
+perfil-invalido
+concorrente
+duplicado
+erro-contato
+outro</code></pre>
+<h3>Aba 06 - Performance mídia</h3>
+<p>Função: consolidar dados de plataforma.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>date</code></li>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>canal</code></li>
+<li><code>spend</code></li>
+<li><code>impressions</code></li>
+<li><code>reach</code></li>
+<li><code>frequency</code></li>
+<li><code>clicks</code></li>
+<li><code>ctr</code></li>
+<li><code>cpc</code></li>
+<li><code>cpm</code></li>
+<li><code>lp_views</code></li>
+<li><code>connect_rate</code></li>
+<li><code>leads</code></li>
+<li><code>cpl</code></li>
+<li><code>platform_conversions</code></li>
+<li><code>cost_per_platform_conversion</code></li>
+</ul>
+<h3>Aba 07 - Performance funil</h3>
+<p>Função: consolidar qualidade real por etapa.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>test_id</code></li>
+<li><code>leads</code></li>
+<li><code>mqls</code></li>
+<li><code>sqls</code></li>
+<li><code>opportunities</code></li>
+<li><code>sales</code></li>
+<li><code>revenue</code></li>
+<li><code>lead_to_mql_rate</code></li>
+<li><code>mql_to_sql_rate</code></li>
+<li><code>sql_to_opp_rate</code></li>
+<li><code>opp_to_sale_rate</code></li>
+<li><code>cost_per_mql</code></li>
+<li><code>cost_per_sql</code></li>
+<li><code>cost_per_opp</code></li>
+<li><code>cac</code></li>
+<li><code>roas</code></li>
+<li><code>avg_speed_to_lead_minutes</code></li>
+<li><code>unknown_source_rate</code></li>
+</ul>
+<h3>Aba 08 - Aprendizados</h3>
+<p>Função: transformar resultado em conhecimento.</p>
+<p>Colunas:</p>
+<ul>
+<li><code>learning_id</code></li>
+<li><code>test_id</code></li>
+<li><code>client_id</code></li>
+<li><code>cohort</code></li>
+<li><code>segmento</code></li>
+<li><code>padrao_observado</code></li>
+<li><code>evidencia</code></li>
+<li><code>limite_da_conclusao</code></li>
+<li><code>recomendacao</code></li>
+<li><code>vira_playbook</code></li>
+<li><code>vira_antipadrao</code></li>
+<li><code>vira_novo_teste</code></li>
+<li><code>data</code></li>
+<li><code>dono</code></li>
+</ul>
+<h2>3. Exemplo de linha de teste</h2>
+<pre><code>test_id,client_id,tipo_teste,alavanca,hipotese,variavel_testada,variaveis_controladas,persona,canal,campaign_id,adgroup_id,creative_ids,metrica_primaria,meta_primaria,decisao
+tst-hs-prevent-202605-004,cli-hs-prevent,criativo,hook,&quot;Hooks de ROI para CFO geram MQL mais barato que hooks de medo&quot;,&quot;hook-roi vs hook-medo&quot;,&quot;mesmo canal, mesma LP, mesmo budget, mesmo publico frio&quot;,cfo,meta,cmp-hs-prevent-202605-001,adg-hs-prevent-202605-003,&quot;crv-hs-prevent-202605-014;crv-hs-prevent-202605-015&quot;,cost_per_mql,300,rodando</code></pre>
+<h2>4. Métricas que importam</h2>
+<p>Métricas de mídia:</p>
+<ul>
+<li>spend;</li>
+<li>impressões;</li>
+<li>CTR;</li>
+<li>CPC;</li>
+<li>CPM;</li>
+<li>LP views;</li>
+<li>connect rate;</li>
+<li>leads;</li>
+<li>CPL.</li>
+</ul>
+<p>Métricas de qualidade:</p>
+<ul>
+<li>MQL;</li>
+<li>custo por MQL;</li>
+<li>SQL;</li>
+<li>custo por SQL;</li>
+<li>oportunidade;</li>
+<li>custo por oportunidade;</li>
+<li>venda;</li>
+<li>CAC;</li>
+<li>ROAS;</li>
+<li>velocidade de atendimento;</li>
+<li>taxa de lead inválido;</li>
+<li>taxa de fonte desconhecida.</li>
+</ul>
+<p>Métricas por atributo criativo:</p>
+<ul>
+<li>MQL por formato;</li>
+<li>MQL por hook;</li>
+<li>MQL por dor;</li>
+<li>MQL por persona;</li>
+<li>MQL por ângulo;</li>
+<li>SQL por formato;</li>
+<li>venda por campanha/criativo;</li>
+<li>custo por MQL por padrão criativo.</li>
+</ul>
+<h2>5. Regra de leitura</h2>
+<p>Não matar criativo apenas por CPL.</p>
+<p>A leitura correta considera:</p>
+<ul>
+<li>volume suficiente;</li>
+<li>custo por lead;</li>
+<li>qualidade do lead;</li>
+<li>avanço no funil;</li>
+<li>feedback comercial;</li>
+<li>etapa do funil;</li>
+<li>objetivo da campanha;</li>
+<li>tempo de aprendizado;</li>
+<li>consistência do tracking.</li>
+</ul>
+<h2>6. Como a IA deve usar a planilha</h2>
+<p>A IA deve conseguir:</p>
+<ul>
+<li>resumir os testes ativos;</li>
+<li>identificar criativos vencedores;</li>
+<li>agrupar performance por atributos;</li>
+<li>detectar tracking quebrado;</li>
+<li>detectar campanhas com lead barato e baixa qualidade;</li>
+<li>detectar criativos caros com boa qualidade;</li>
+<li>sugerir novos testes;</li>
+<li>gerar o debrief N3;</li>
+<li>gerar briefing do próximo ciclo.</li>
+</ul>
+<h2>7. Critério N2</h2>
+<p>A planilha está N2 quando:</p>
+<ul>
+<li>todo teste tem hipótese;</li>
+<li>todo criativo tem ID;</li>
+<li>toda campanha tem ID;</li>
+<li>todo lead tem origem;</li>
+<li>há pelo menos uma ligação entre campanha/criativo e lead;</li>
+<li>existe decisão registrada ao final do ciclo.</li>
+</ul>
+<h2>8. Critério N3</h2>
+<p>A planilha está N3 quando:</p>
+<ul>
+<li>decisões são tomadas a partir dela;</li>
+<li>aprendizados viram briefing do próximo ciclo;</li>
+<li>padrões são canonizados;</li>
+<li>erros de tracking são corrigidos;</li>
+<li>qualidade comercial entra na leitura.</li>
+</ul>
+<h2>9. O que evitar</h2>
+<p>Evitar:</p>
+<ul>
+<li>planilha que só replica métrica de plataforma;</li>
+<li>teste sem hipótese;</li>
+<li>criativo sem atributo;</li>
+<li>campanha sem objetivo claro;</li>
+<li>lead sem UTM;</li>
+<li>decisão sem aprendizado;</li>
+<li>otimização por CPL isolado;</li>
+<li>mudar várias variáveis ao mesmo tempo sem registrar.</li>
+</ul>
+</article>

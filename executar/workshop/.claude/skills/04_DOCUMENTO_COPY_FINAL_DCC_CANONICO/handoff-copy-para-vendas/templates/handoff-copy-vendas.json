@@ -1,0 +1,61 @@
+{
+  "cliente": "HS Prevent",
+  "campanha": "Onboarding digital seguro",
+  "oferta": "Diagnóstico de risco no onboarding digital",
+  "cta": "Solicitar diagnóstico",
+  "lp": "lp-onboarding-digital",
+  "promessa": "Identificar pontos de risco no onboarding sem travar bons usuários",
+  "problema_nomeado": "fraude e fricção no onboarding digital",
+  "mecanismo": "camadas adaptativas de risco e transbordo inteligente",
+  "prova": "case de redução de fraude e melhoria de aprovação",
+  "nao_prometido": "eliminação total de fraude ou aumento garantido de conversão",
+  "personas": [
+    {
+      "persona": "CFO",
+      "dor": "fraude passa no onboarding e corrói margem",
+      "desejo": "aprovar clientes bons sem expor resultado financeiro",
+      "objecao": "isso vai travar minha conversão",
+      "resposta": "o diagnóstico mostra onde aplicar controle sem tratar todo usuário como risco igual",
+      "prova": "case e métricas de aprovação",
+      "pergunta_qualificacao": "Hoje vocês conseguem medir quanto risco financeiro entra pelo onboarding?",
+      "sinal_positivo": "reconhece perda, chargeback, fraude ou risco regulatório",
+      "sinal_negativo": "não tem processo digital ou não mede impacto"
+    },
+    {
+      "persona": "Head de Produto",
+      "dor": "controles de segurança criam fricção na ativação",
+      "desejo": "manter conversão com controle proporcional ao risco",
+      "objecao": "meu time não pode piorar onboarding",
+      "resposta": "o ponto é adaptar fricção por sinal de risco, não bloquear a jornada inteira",
+      "prova": "fluxo adaptativo e dados de aprovação",
+      "pergunta_qualificacao": "Onde vocês mais perdem usuários bons durante validação ou onboarding?",
+      "sinal_positivo": "tem etapa crítica, queda ou backlog conhecido",
+      "sinal_negativo": "não controla jornada ou não possui volume relevante"
+    }
+  ],
+  "criterios_mql": [
+    "persona aderente ao ICP",
+    "dor ligada a fraude, risco, fricção ou conversão",
+    "empresa com onboarding digital ativo",
+    "dados de contato válidos"
+  ],
+  "criterios_sql": [
+    "problema reconhecido",
+    "impacto financeiro ou operacional claro",
+    "influência na decisão",
+    "aceita próximo passo com especialista"
+  ],
+  "desqualificacao": [
+    "fora do ICP",
+    "sem onboarding digital",
+    "sem dor relevante",
+    "busca por garantia absoluta",
+    "dados inválidos"
+  ],
+  "feedback_marketing": [
+    "objeções novas",
+    "promessa desalinhada",
+    "perfil que converte mas não qualifica",
+    "termos usados pelos leads"
+  ]
+}

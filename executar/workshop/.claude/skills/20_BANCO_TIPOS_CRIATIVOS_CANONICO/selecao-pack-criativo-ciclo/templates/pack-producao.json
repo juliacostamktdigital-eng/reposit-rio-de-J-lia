@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "pack_id": "PACK-YYYY-MM-DD",
+    "data": "YYYY-MM-DD",
+    "ciclo": "primeira_leva",
+    "responsavel": "",
+    "link_banco_tipos": "",
+    "link_plano_midia": "",
+    "link_deoc": "",
+    "link_benchmark": "",
+    "canais": [],
+    "etapa_funil_primaria": "",
+    "orcamento_volume_notas": "",
+    "capacidade_producao_notas": "",
+    "justificativa_sem_banco": ""
+  },
+  "plano_contexto": {
+    "cliente_segmento": "",
+    "campanha_hipotese_macro": "",
+    "tipos_campanha_detalhe": "",
+    "oferta_brainer": "",
+    "icp_anti_icp": "",
+    "persona": ""
+  },
+  "contexto": {
+    "aprendizados_ciclo_anterior": "",
+    "restricoes_marca_claims": ""
+  },
+  "selecao": [
+    {
+      "prioridade": 1,
+      "tipo_id": "",
+      "nome_tipo_ref": "",
+      "formato": "",
+      "temperatura": "",
+      "funcao_funil": "",
+      "quantidade_pecas": 0,
+      "variacoes_planejadas": ["A", "B", "C"],
+      "mensagem_angulo": "",
+      "prova_usada": "",
+      "cta": "",
+      "destino": "",
+      "hipotese_teste": "",
+      "criterio_leitura": "",
+      "canais_prioritarios": [],
+      "notas_dependencias": ""
+    }
+  ],
+  "ambiente_conversao": {
+    "lp_notas": "",
+    "formulario_whatsapp_agenda": "",
+    "tracking_minimo": ""
+  },
+  "guardrails": {
+    "nucleo_nao_pode_mudar": "",
+    "pode_variar": ""
+  },
+  "checklist_conformidade": {
+    "oferta_alinhada": "",
+    "copy_sem_promessas_impossiveis": "",
+    "cta_destino_coerente": "",
+    "evidencia_decisao_registrada": ""
+  },
+  "totais": {
+    "total_pecas_planejadas": 0,
+    "ajuste_capacidade": ""
+  },
+  "riscos_gaps": ""
+}

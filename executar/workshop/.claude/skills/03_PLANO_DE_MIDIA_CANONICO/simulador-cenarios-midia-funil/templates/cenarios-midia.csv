@@ -1,0 +1,4 @@
+cenario,budget,cpl,taxa_lead_mql,taxa_mql_sql,taxa_sql_opp,taxa_opp_venda,taxa_sql_venda,ticket_medio,fonte_premissas
+pessimista,60000,180,0.25,0.35,0.7,0.18,,10000,benchmark conservador
+provavel,60000,130,0.35,0.45,0.75,0.22,,10000,historico + benchmark
+otimista,60000,95,0.45,0.55,0.8,0.28,,10000,melhor caso justificado por oferta e SLA

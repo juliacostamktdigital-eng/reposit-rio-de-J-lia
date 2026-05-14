@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "cliente": "[Nome]",
+    "versao_doc": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel": "",
+    "link_plano_midia_pmax": "",
+    "link_setup_google_base": "",
+    "conversao_primaria": ""
+  },
+  "gates": {
+    "conversao_bem_configurada": false,
+    "lp_preserva_dados": false,
+    "assets_razoaveis_planejados": false,
+    "sinal_audience_relevante": false,
+    "budget_aprendizado_adequado": false,
+    "objetivo_expandir_alem_search": false,
+    "excecao_risco_aceita": false,
+    "excecao_nota": ""
+  },
+  "campanha": {
+    "campaign_id": "",
+    "nome_taxonomia": "",
+    "url_final": "",
+    "conversao_otimizacao": "",
+    "orcamento_aprendizado_resumo": "",
+    "prospeccao_remarketing": "prospeccao",
+    "audience_signals": [
+      {
+        "tipo": "visitantes_site",
+        "descricao": "[ex.: GA4 ou lista remarketing 30D]",
+        "notas": ""
+      }
+    ],
+    "asset_groups": [
+      {
+        "adgroup_id": "",
+        "nome_taxonomia": "",
+        "angulo": "oferta_principal",
+        "headlines_curtas": [],
+        "headlines_longas": [],
+        "descricoes": [],
+        "tem_logo": false,
+        "tem_imagem_quadrada": false,
+        "tem_imagem_horizontal": false,
+        "tem_imagem_vertical": false,
+        "video_proprio": false,
+        "url_final_override": "",
+        "sitelinks_snippets_resumo": ""
+      },
+      {
+        "adgroup_id": "",
+        "nome_taxonomia": "",
+        "angulo": "persona_segmento",
+        "headlines_curtas": [],
+        "headlines_longas": [],
+        "descricoes": [],
+        "tem_logo": false,
+        "tem_imagem_quadrada": false,
+        "tem_imagem_horizontal": false,
+        "tem_imagem_vertical": false,
+        "video_proprio": false,
+        "url_final_override": "",
+        "sitelinks_snippets_resumo": ""
+      },
+      {
+        "adgroup_id": "",
+        "nome_taxonomia": "",
+        "angulo": "dor_caso_uso",
+        "headlines_curtas": [],
+        "headlines_longas": [],
+        "descricoes": [],
+        "tem_logo": false,
+        "tem_imagem_quadrada": false,
+        "tem_imagem_horizontal": false,
+        "tem_imagem_vertical": false,
+        "video_proprio": false,
+        "url_final_override": "",
+        "sitelinks_snippets_resumo": ""
+      }
+    ]
+  },
+  "guardrails": {
+    "url_expansion_politica": "",
+    "brand_controls": "",
+    "metas_conversao": "",
+    "lances_estrategia": ""
+  },
+  "matriz_testes": {
+    "o_que_varia": "",
+    "o_que_constante": ""
+  },
+  "pre_go_live_pmax": {
+    "assets_suficientes": false,
+    "audience_signals_ok": false,
+    "asset_groups_url_ok": false,
+    "url_expansion_brand_metas_ok": false,
+    "rastreio_base_ok": false,
+    "hipotese_planilha": false,
+    "changelog": false,
+    "sem_ajuste_diario_sem_evidencia": false
+  },
+  "n2_gaps": ""
+}

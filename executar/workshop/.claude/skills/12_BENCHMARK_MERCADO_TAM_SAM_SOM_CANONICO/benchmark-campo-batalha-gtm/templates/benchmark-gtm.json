@@ -1,0 +1,148 @@
+{
+  "versao": "1.0",
+  "data": "2026-04-30",
+  "proxima_revisao": "Pós-S1 da estruturação ou após onda de criativos v1",
+  "pergunta_negocio": "Definir promessa defensável e baseline criativo antes do ciclo Q2.",
+  "sumario_executivo": [
+    "Categoria 'X' está saturada — disputar é entrar na praia mais cara.",
+    "Gap defensável: ângulo Y, sub-explorado por todos os players auditados.",
+    "Conflito interno: claim atual da marca colide com autocrítica do dono — destravar antes da S2.",
+    "70% do budget em 2 ocasiões prioritárias; 30% para baseline + remarketing.",
+    "Próxima ação operacional: cliente-oculto top-3 nos 7 dias antes do DEOC."
+  ],
+  "contexto": {
+    "cliente": "Cliente exemplo",
+    "segmento": "Onboarding digital B2B",
+    "geografia": "Brasil",
+    "geografia_multi_unidade": [
+      {"unidade": "Sede SP", "papel": "expansão"},
+      {"unidade": "Filial RJ", "papel": "manter performance"}
+    ],
+    "produto_foco": "Antifraude em cadastro",
+    "ticket": "Enterprise mensal",
+    "icp": "Fintechs médias",
+    "canais": ["Meta", "LinkedIn", "Search"],
+    "objetivo_aquisicao": "MQL com demo"
+  },
+  "contexto_macro": {
+    "tamanho_mercado": "Mercado X = R$ Y bi (fonte: nome, ano).",
+    "crescimento": "CAGR Z% no período A–B (fonte).",
+    "tendencias": [
+      "Tendência 1 com lastro e fonte.",
+      "Tendência 2 com lastro e fonte."
+    ],
+    "sazonalidade": "Padrão de sazonalidade observado (se aplicável).",
+    "regulatorio_tecnologico": "Mudanças relevantes que afetam o jogo competitivo.",
+    "fonte_macro": "Citar links/relatórios ao final em `fontes`. TAM/SAM/SOM detalhado é escopo da skill irmã `sizing-mercado-tam-sam-som`."
+  },
+  "voz_do_cliente": {
+    "termos_publico_alvo": [
+      "Como o público se refere à categoria (extraído de reviews, fóruns, comentários).",
+      "Termos negativos / dores não nomeadas (ex.: 'vale a fila?', 'é caro mas...')"
+    ],
+    "termos_marca_ressoam": [
+      "Termos da marca-cliente que o público adota organicamente."
+    ],
+    "criticas_concorrentes": [
+      {"concorrente": "Concorrente A", "critica": "Padrão de queixa recorrente em reviews", "ângulo_estrategico": "Como virar isso em posicionamento próprio."}
+    ],
+    "dores_nao_resolvidas": [
+      "Categoria mental que ninguém ocupou — espaço de posicionamento livre."
+    ],
+    "criterios_compra_ponderados": [
+      {"criterio": "preço", "peso_percebido": "alto/médio/baixo"},
+      {"criterio": "conveniência", "peso_percebido": "alto/médio/baixo"},
+      {"criterio": "reputação", "peso_percebido": "alto/médio/baixo"}
+    ],
+    "fontes_voz": "Ex.: Google Reviews, Tripadvisor, comentários Instagram, fóruns, transcrições da call de vendas. Listar links agrupados em `fontes`."
+  },
+  "concorrentes": [
+    {
+      "player": "Concorrente A",
+      "tipo": "direto",
+      "anuncia": true,
+      "brand_awareness": "alto / médio / baixo (com pista: ex. 259K seguidores Instagram)",
+      "formato": "video + carrossel",
+      "mensagem": "Menos fricção no cadastro",
+      "oferta": "Trial 14 dias",
+      "prova": "Logo wall",
+      "forte": "Volume de criativos e cobertura orgânica.",
+      "fraco": "Prova numérica fraca; preço percebido como alto.",
+      "gap": "Ângulo de perda financeira pouco explorado.",
+      "ameaca": "Pode reagir copiando ângulo se Belô mover primeiro.",
+      "evidencia": "https://example.com/library-a"
+    }
+  ],
+  "matriz_atributos": {
+    "atributos": ["All-day sem gap", "Domingo aberto", "Rooftop reservável", "Mineiridade autoral"],
+    "linhas": [
+      {"player": "Cliente (Belô)", "valores": ["sim", "sim", "sim", "sim"]},
+      {"player": "Concorrente A", "valores": ["nao", "—", "nao", "nao"]}
+    ],
+    "nota": "Use checkmarks lógicos (sim/não/—) para enxergar conjunto. Eixo 2x2 com decisão estratégica é escopo da skill irmã `posicionamento-competitivo-beachhead`."
+  },
+  "padroes": [
+    "Criativos de dor em onboarding com CTA para demo",
+    "LP com prova social na primeira dobra"
+  ],
+  "ruidos": [
+    "Solução completa",
+    "Inovação de ponta"
+  ],
+  "conflitos_internos_marca": [
+    {
+      "conflito": "Bio do Instagram diz X, mas autocrítica do dono diz Y.",
+      "evidencia": "Print do bio + transcrição da call de vendas.",
+      "resolucao_proposta": "Trocar bio para Z na S2 e documentar no DEOC."
+    }
+  ],
+  "ativos_pr": [
+    {
+      "ativo": "Cobertura espontânea da chef em CNN V&G / Exame / etc.",
+      "evidencia": "https://example.com/cobertura",
+      "uso_recomendado": "Justifica budget orgânico/PR; reaproveitar em LP como prova social."
+    }
+  ],
+  "oportunidades": [
+    {
+      "nome": "Hook de margem corroída por fraude",
+      "prioridade": "P1",
+      "evidencia": "Poucos anúncios citam P&L explicitamente",
+      "implicacao": "Testar 3 hooks financeiros no ciclo 1"
+    },
+    {
+      "nome": "Cobertura geográfica B2B local",
+      "prioridade": "P2",
+      "evidencia": "Concorrentes não fazem geo-segmentação de bairro",
+      "implicacao": "Meta Ads geo-segmentado em raio de 3km da sede do cliente."
+    }
+  ],
+  "riscos": [
+    {
+      "nome": "Promessa de fricção zero sem prova",
+      "evidencia": "Benchmark mostra claims amplos",
+      "mitigacao": "Travar linguagem no DEOC e pedir números",
+      "quando": "S2"
+    },
+    {
+      "nome": "Concorrente A pode reagir copiando ângulo",
+      "evidencia": "Histórico de reação rápida em campanhas",
+      "mitigacao": "Velocidade de execução; registrar primeiro a copy no Meta",
+      "quando": "contínuo"
+    }
+  ],
+  "baseline": "Estrutura de prova social + demo como CTA principal",
+  "diferenciacao": "Especialização em perdas invisíveis e falsos positivos",
+  "implicacoes": {
+    "deoc": "Tese de inimigo = processo manual disfarçado de economia. (Consumer: skill `dossie-estrategico-oferta-comunicacao`).",
+    "midia": "Priorizar canais com intenção e remarketing após prova. (Consumer: skill `plano-de-midia` + `setup-campanhas-meta-ads` / `setup-campanhas-google-ads`).",
+    "lp": "Primeira dobra com prova quantitativa quando disponível. (Consumer: skill `lp-ponto-de-conversao`).",
+    "criativos": "UGC + demo curta com métrica de negócio. (Consumer: skill `briefing-criativo-video-first`).",
+    "proximos_testes": "3 hooks A/B no ciclo 1; medir CPL e taxa de demo. (Consumer: skill irmã `benchmark-para-backlog-growth`)."
+  },
+  "fontes": [
+    {"categoria": "macro", "titulo": "Relatório de mercado X", "url": "https://example.com/macro", "data": "2026-Q1"},
+    {"categoria": "concorrente", "titulo": "Meta Ads Library — Concorrente A", "url": "https://example.com/library-a", "data": "2026-04-30"},
+    {"categoria": "voz_cliente", "titulo": "Google Reviews — Concorrente A", "url": "https://example.com/reviews-a", "data": "2026-04-30"}
+  ]
+}

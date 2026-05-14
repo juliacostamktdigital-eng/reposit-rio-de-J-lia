@@ -1,0 +1,54 @@
+{
+  "cliente": "Marketing OS",
+  "responsavel": "Growth Ops",
+  "tarefas": [
+    {
+      "etapa": "tracking",
+      "tarefa": "gerar matriz UTM de campanha",
+      "input": "JSON de campanha e criativos",
+      "output": "CSV/Markdown com URLs e IDs",
+      "ferramenta": "script Python",
+      "nivel_atual": "semi-automatico",
+      "nivel_desejado": "semi-automatico",
+      "frequencia": "alta",
+      "esforco_manual": "medio",
+      "impacto": "alto",
+      "risco": "baixo",
+      "dono": "mídia",
+      "evidencia": "CSV gerado e revisado",
+      "proximo_passo": "criar validação de campos obrigatórios"
+    },
+    {
+      "etapa": "criativo",
+      "tarefa": "gerar roteiro a partir de brief",
+      "input": "brief criativo estruturado",
+      "output": "roteiro Markdown e matriz de cenas",
+      "ferramenta": "script + IA assistida",
+      "nivel_atual": "assistido",
+      "nivel_desejado": "semi-automatico",
+      "frequencia": "alta",
+      "esforco_manual": "alto",
+      "impacto": "alto",
+      "risco": "medio",
+      "dono": "criativo",
+      "evidencia": "roteiro aprovado no QA",
+      "proximo_passo": "padronizar schema de brief e QA flags"
+    },
+    {
+      "etapa": "decisão",
+      "tarefa": "decidir corte de campanha",
+      "input": "mídia, funil, qualidade comercial e tracking",
+      "output": "decisão de otimização",
+      "ferramenta": "guardrails + revisão humana",
+      "nivel_atual": "manual",
+      "nivel_desejado": "assistido",
+      "frequencia": "semanal",
+      "esforco_manual": "medio",
+      "impacto": "alto",
+      "risco": "alto",
+      "dono": "growth",
+      "evidencia": "registro de decisão",
+      "proximo_passo": "manter decisão humana com checklist automatizado"
+    }
+  ]
+}

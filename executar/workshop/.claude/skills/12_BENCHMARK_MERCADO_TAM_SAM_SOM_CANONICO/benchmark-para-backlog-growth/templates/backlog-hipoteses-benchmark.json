@@ -1,0 +1,75 @@
+{
+  "cliente": "Cliente exemplo",
+  "ciclo": "2026-05",
+  "data": "2026-05-01",
+  "responsavel": "Growth lead",
+  "pergunta_negocio": "Qual mensagem e prova sustentam CPL alvo no beachhead fintech média?",
+  "capacidade_teste": "media",
+  "baseline_mercado": "Demo como CTA e prova social na primeira dobra em LPs do setor.",
+  "diferenciacao": "Ganhar com hook de margem/P&L e prova quantitativa de falso positivo.",
+  "hipoteses": [
+    {
+      "id": "hyp-001",
+      "hipotese": "Headline com perda de margem por fraude reduz CPL mantendo MQL estável vs headline genérica de onboarding.",
+      "evidencia": "Benchmark: poucos anúncios citam P&L; gap explorável em Meta Library concorrente A/B.",
+      "tipo": "criativo",
+      "asset_impactado": "Anúncios vídeo + LP hero",
+      "metrica_primaria": "CPL",
+      "metrica_secundaria": "taxa MQL",
+      "criterio_sucesso": "CPL -15% vs baseline com MQL flat ou melhor",
+      "impacto": 5,
+      "confianca": 4,
+      "esforco": 2,
+      "risco": 2,
+      "dependencias": "Aprovação jurídica de números no criativo",
+      "dono": "Criativo + copy",
+      "status": "backlog",
+      "v4_test_id": ""
+    },
+    {
+      "id": "hyp-002",
+      "hipotese": "LP com prova quantitativa (antes/depois) aumenta conversão vs só logo wall.",
+      "evidencia": "Concorrentes usam sobretudo logo wall; nenhum com número auditável visível.",
+      "tipo": "lp",
+      "asset_impactado": "LP principal",
+      "metrica_primaria": "taxa de conversão",
+      "metrica_secundaria": "CPL",
+      "criterio_sucesso": "+20% submit rate com mesma mídia",
+      "impacto": 4,
+      "confianca": 3,
+      "esforco": 3,
+      "risco": 2,
+      "dependencias": "Case aprovado pelo cliente",
+      "dono": "LP + growth ops",
+      "status": "backlog",
+      "v4_test_id": ""
+    },
+    {
+      "id": "hyp-003",
+      "hipotese": "Remarketing com prova de integração reduz CAC em leads já demo-solicitantes.",
+      "evidencia": "Substituto B promete suite; oportunidade de contrapor com tempo de go-live.",
+      "tipo": "midia",
+      "asset_impactado": "Campanhas Meta remarketing",
+      "metrica_primaria": "CAC",
+      "metrica_secundaria": "CTR",
+      "criterio_sucesso": "CAC -10% no cohort remarketing",
+      "impacto": 4,
+      "confianca": 3,
+      "esforco": 2,
+      "risco": 3,
+      "dependencias": "Público mínimo e criativo aprovado",
+      "dono": "Mídia",
+      "status": "backlog",
+      "v4_test_id": ""
+    }
+  ],
+  "changelog": [
+    {
+      "data": "2026-05-01",
+      "benchmark_observado": "Mapa de campo + beachhead fintech média consolidados",
+      "decisao": "Priorizar hooks financeiros e prova numérica na LP",
+      "teste": "",
+      "resultado": ""
+    }
+  ]
+}

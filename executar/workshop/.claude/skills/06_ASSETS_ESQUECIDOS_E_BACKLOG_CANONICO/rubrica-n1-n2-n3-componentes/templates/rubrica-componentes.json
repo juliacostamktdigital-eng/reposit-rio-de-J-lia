@@ -1,0 +1,43 @@
+{
+  "cliente": "HS Prevent",
+  "avaliador": "Growth Ops",
+  "componentes": [
+    {
+      "componente": "tracking e dados",
+      "nivel_declarado": "n2",
+      "evidencias": [
+        "taxonomia UTM definida",
+        "IDs de campanha e criativo gerados"
+      ],
+      "falsos_positivos": [
+        "lead teste ainda não percorreu CRM e planilha"
+      ],
+      "dono": "mídia",
+      "frequencia_revisao": "semanal"
+    },
+    {
+      "componente": "criativo e LP",
+      "nivel_declarado": "n2",
+      "evidencias": [
+        "brief criativo criado",
+        "roteiro aprovado",
+        "QA criativo executado"
+      ],
+      "falsos_positivos": [],
+      "dono": "criativo",
+      "frequencia_revisao": "por leva"
+    },
+    {
+      "componente": "testes e aprendizado",
+      "nivel_declarado": "n1",
+      "evidencias": [
+        "planilha inicial criada"
+      ],
+      "falsos_positivos": [
+        "não há debrief nem decisão por hipótese"
+      ],
+      "dono": "growth",
+      "frequencia_revisao": "quinzenal"
+    }
+  ]
+}

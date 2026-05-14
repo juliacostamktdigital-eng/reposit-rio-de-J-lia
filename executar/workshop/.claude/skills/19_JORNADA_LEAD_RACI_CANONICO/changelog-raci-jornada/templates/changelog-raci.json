@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "versao_raci_atual": "v1.0",
+    "dono_changelog": "",
+    "link_artefato_jornada_raci": "",
+    "link_funil_unificado_a2": "",
+    "link_protocolo_a4": "",
+    "notas_cadencia": "Mensal ou ao mudar estrutura do time (playbook 19 § Gerenciado)."
+  },
+  "historico": [
+    {
+      "id": "",
+      "data": "",
+      "autor": "",
+      "dimensao": "",
+      "etapa_funil": "",
+      "papel_afetado": "",
+      "resumo": "",
+      "antes": "",
+      "depois": "",
+      "motivo": "",
+      "impacto_esperado": "",
+      "impacto_observado": "",
+      "data_revisao_impacto": "",
+      "versao_raci_apos": "",
+      "comunicacao_alvos": "",
+      "comunicacao_status": "pendente",
+      "aprovadores": "",
+      "links": "",
+      "estado": "rascunho"
+    }
+  ]
+}

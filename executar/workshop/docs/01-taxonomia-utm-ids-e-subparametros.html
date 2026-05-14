@@ -1,0 +1,444 @@
+<article class="doc-content-inner" data-doc-slug="01-taxonomia-utm-ids-e-subparametros">
+<h1>Taxonomia Canônica de UTM, IDs e Subparâmetros</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + canônico original sem skill merge dedicada.  </p>
+<p><strong>Decisão de merge:</strong> sem skill dedicada; mantido como padrão transversal obrigatório para mídia, tracking e CRM.</p>
+<p>Status: v1 para workshop  </p>
+<p>Escopo: campanhas de geração de demanda qualificada em Inside Sales / leadgen  </p>
+<p>Objetivo: permitir análise ponta a ponta entre investimento, campanha, criativo, lead, MQL, SQL, oportunidade e venda.</p>
+<h2>1. Princípio</h2>
+<p>A UTM não serve só para saber &quot;veio do Meta&quot;. Ela precisa ser a ponte entre:</p>
+<pre><code>investimento -&gt; campanha -&gt; conjunto/ad group -&gt; criativo -&gt; lead -&gt; MQL -&gt; SQL -&gt; oportunidade -&gt; venda</code></pre>
+<p>Se essa ponte quebra, o time passa a otimizar por métricas superficiais, como CPL, sem saber quais padrões realmente geram demanda qualificada.</p>
+<h2>2. Regra de ouro</h2>
+<p>UTM e nomenclatura são parte do processo de growth, não burocracia.</p>
+<p>O padrão deve permitir responder:</p>
+<ul>
+<li>qual canal trouxe o lead;</li>
+<li>qual campanha trouxe o lead;</li>
+<li>qual conjunto/ad group trouxe o lead;</li>
+<li>qual criativo trouxe o lead;</li>
+<li>qual formato de criativo performou;</li>
+<li>qual hook performou;</li>
+<li>qual dor/desejo performou;</li>
+<li>qual ICP/persona performou;</li>
+<li>qual ângulo performou;</li>
+<li>qual versão performou;</li>
+<li>qual etapa do funil performou;</li>
+<li>qual combinação gerou MQL/SQL/venda, não apenas lead.</li>
+</ul>
+<h2>3. Convenções gerais</h2>
+<h3>Princípio de simplicidade</h3>
+<p>O nome visível na plataforma deve ser curto o suficiente para o time operar sem medo de errar.</p>
+<p>A análise pós-campanha não deve depender de nomes enormes. Ela deve depender de:</p>
+<ul>
+<li>ID único no começo do nome;</li>
+<li>poucos atributos essenciais no nome visível;</li>
+<li>subparâmetros parseáveis nas UTMs e/ou na planilha;</li>
+<li>campos próprios (<code>v4_*</code>) sempre que possível.</li>
+</ul>
+<p>Regra prática:</p>
+<pre><code>nome visível = ID + 3 a 5 dimensões humanas + slug descritivo
+análise = IDs + subparâmetros parseados + planilha de growth</code></pre>
+<p>Se o nome virar uma frase, está complexo demais.</p>
+<h3>Normalização</h3>
+<p>Usar sempre:</p>
+<ul>
+<li>letras minúsculas;</li>
+<li>sem acentos;</li>
+<li>sem espaços;</li>
+<li><code>-</code> para separar palavras dentro de um valor;</li>
+<li><code>__</code> para separar blocos/dimensões;</li>
+<li>prefixos curtos para facilitar leitura;</li>
+<li>valores estáveis, não frases longas.</li>
+</ul>
+<p>Exemplo:</p>
+<pre><code>hook-roi
+dor-fraude
+per-cfo
+fmt-video
+ang-risco-financeiro</code></pre>
+<h3>Separadores</h3>
+<p>Separador entre dimensões:</p>
+<pre><code>__</code></pre>
+<p>Separador entre chave e valor:</p>
+<pre><code>-</code></pre>
+<p>Exemplo:</p>
+<pre><code>fmt-video__per-cfo__hook-roi__dor-fraude__ang-risco-financeiro</code></pre>
+<h2>4. IDs canônicos</h2>
+<h3>ID do cliente</h3>
+<p>Formato:</p>
+<pre><code>cli-{slug_cliente}</code></pre>
+<p>Exemplos:</p>
+<pre><code>cli-hs-prevent
+cli-prado-goncalves
+cli-g4-frontier</code></pre>
+<h3>ID da campanha</h3>
+<p>Formato:</p>
+<pre><code>cmp-{cliente}-{ano}{mes}-{sequencial}</code></pre>
+<p>Exemplo:</p>
+<pre><code>cmp-hs-prevent-202605-001</code></pre>
+<h3>ID do conjunto/ad group</h3>
+<p>Formato:</p>
+<pre><code>adg-{cliente}-{ano}{mes}-{sequencial}</code></pre>
+<p>Exemplo:</p>
+<pre><code>adg-hs-prevent-202605-003</code></pre>
+<h3>ID do criativo</h3>
+<p>Formato:</p>
+<pre><code>crv-{cliente}-{ano}{mes}-{sequencial}</code></pre>
+<p>Exemplo:</p>
+<pre><code>crv-hs-prevent-202605-014</code></pre>
+<h3>ID do teste</h3>
+<p>Formato:</p>
+<pre><code>tst-{cliente}-{ano}{mes}-{sequencial}</code></pre>
+<p>Exemplo:</p>
+<pre><code>tst-hs-prevent-202605-004</code></pre>
+<h2>5. UTM source</h2>
+<p>Define a origem/plataforma.</p>
+<p>Valores recomendados:</p>
+<pre><code>meta
+google
+linkedin
+tiktok
+youtube
+email
+whatsapp
+crm
+organic
+referral
+direct
+offline</code></pre>
+<p>Exemplo:</p>
+<pre><code>utm_source=meta</code></pre>
+<h2>6. UTM medium</h2>
+<p>Define o tipo de mídia/canal.</p>
+<p>Valores recomendados:</p>
+<pre><code>paid_social
+paid_search
+display
+video
+organic_social
+email
+crm
+referral
+partner
+offline</code></pre>
+<p>Exemplo:</p>
+<pre><code>utm_medium=paid_social</code></pre>
+<h2>7. UTM campaign</h2>
+<p>Define a campanha em nível estratégico.</p>
+<p>A campanha deve falar mais sobre o tipo de campanha, objetivo, movimento e um slug descritivo. Cohort, segmento e período podem aparecer como subparâmetros para análise, mas não devem poluir o nome visível.</p>
+<p>Formato:</p>
+<pre><code>{campaign_id}__typ-{tipo_campanha}__obj-{objetivo}__mov-{movimento}__slug-{slug}__coh-{cohort}__seg-{segmento}__per-{periodo}</code></pre>
+<p>Subparâmetros:</p>
+<ul>
+<li><code>campaign_id</code>: ID único da campanha.</li>
+<li><code>typ</code>: tipo da campanha.</li>
+<li><code>obj</code>: objetivo da campanha.</li>
+<li><code>mov</code>: movimento estratégico/tático.</li>
+<li><code>slug</code>: descrição curta da campanha.</li>
+<li><code>coh</code>: cohort/modelo de negócio.</li>
+<li><code>seg</code>: segmento.</li>
+<li><code>per</code>: período ou safra.</li>
+</ul>
+<p>Valores de tipo de campanha:</p>
+<pre><code>aquisicao
+remarketing
+reativacao
+validacao-oferta
+captura-demanda
+geracao-demanda
+conteudo
+prova
+evento</code></pre>
+<p>Valores de objetivo:</p>
+<pre><code>leadgen
+mql
+sql
+venda
+remarketing
+branding
+trafego
+engajamento
+conversao
+cadastro</code></pre>
+<p>Valores de movimento:</p>
+<pre><code>lancamento
+always-on
+teste-oferta
+teste-canal
+teste-criativo
+escala-vencedor
+retomada
+prova-social
+quebra-crenca
+demanda-fria
+demanda-quente</code></pre>
+<p>Exemplo:</p>
+<pre><code>utm_campaign=cmp-hs-prevent-202605-001__typ-aquisicao__obj-mql__mov-teste-oferta__slug-antifraude-cfo__coh-b2b-high-ticket__seg-antifraude__per-2026q2</code></pre>
+<h2>8. UTM content</h2>
+<p>Define o criativo e seus atributos analisáveis.</p>
+<p>Formato:</p>
+<pre><code>{creative_id}__fmt-{formato}__hook-{tipo_hook}__per-{persona}__slug-{slug}__dor-{dor}__ang-{angulo}__stage-{etapa}__ver-{versao}</code></pre>
+<p>Subparâmetros:</p>
+<ul>
+<li><code>creative_id</code>: ID único do criativo.</li>
+<li><code>fmt</code>: formato.</li>
+<li><code>hook</code>: tipo de hook.</li>
+<li><code>per</code>: persona.</li>
+<li><code>slug</code>: descrição curta do criativo.</li>
+<li><code>dor</code>: dor central.</li>
+<li><code>ang</code>: ângulo criativo.</li>
+<li><code>stage</code>: etapa do funil.</li>
+<li><code>ver</code>: versão.</li>
+</ul>
+<p>Valores de formato:</p>
+<pre><code>video
+static
+carousel
+ugc
+founder
+demo
+proof
+lp
+email
+whatsapp</code></pre>
+<p>Valores de persona/ICP:</p>
+<pre><code>cfo
+ceo
+cto
+head-growth
+head-produto
+gestor-comercial
+founder
+investidor
+comprador-final</code></pre>
+<p>Valores de hook:</p>
+<pre><code>dor
+npa
+noticia
+beneficio
+roi
+medo
+prova
+autoridade
+comparativo
+diagnostico
+urgencia
+status
+curiosidade
+erro-comum
+mito
+antes-depois
+pergunta
+oferta-direta</code></pre>
+<p>Valores de dor:</p>
+<pre><code>fraude
+lead-ruim
+custo-alto
+baixa-conversao
+atrito
+risco-juridico
+tempo-perdido
+operacao-manual
+falta-contexto
+baixa-previsibilidade</code></pre>
+<p>Valores de ângulo:</p>
+<pre><code>risco-financeiro
+perda-oportunidade
+comparativo-mercado
+antes-depois
+autoridade-tecnica
+prova-social
+demonstracao
+educacional
+quebra-crenca
+oferta-direta</code></pre>
+<p>Valores de etapa:</p>
+<pre><code>tofu
+mofu
+bofu
+rmkt
+reativacao
+upsell</code></pre>
+<p>Exemplo:</p>
+<pre><code>utm_content=crv-hs-prevent-202605-014__fmt-video__hook-roi__per-cfo__slug-fraude-invisivel__dor-fraude__ang-risco-financeiro__stage-tofu__ver-v01</code></pre>
+<h2>9. UTM term</h2>
+<p>Define público, temperatura, posicionamento, keyword ou recorte tático.</p>
+<p>Formato para social:</p>
+<pre><code>{adgroup_id}__pub-{publico}__temp-{temperatura}__pos-{posicionamento}__slug-{slug}__plc-{placement}__geo-{geo}</code></pre>
+<p>Exemplo social:</p>
+<pre><code>utm_term=adg-hs-prevent-202605-003__pub-cfo-fintech__temp-frio__pos-interesses__slug-cfo-antifraude__plc-reels__geo-br</code></pre>
+<p>Formato para search:</p>
+<pre><code>{adgroup_id}__kw-{keyword_slug}__match-{tipo_match}__temp-{temperatura}__slug-{slug}__geo-{geo}</code></pre>
+<p>Exemplo search:</p>
+<pre><code>utm_term=adg-hs-prevent-202605-004__kw-api-antifraude__match-phrase__temp-quente__slug-busca-api-antifraude__geo-br</code></pre>
+<p>Valores de temperatura:</p>
+<pre><code>frio
+morno
+quente
+remarketing
+lookalike
+base</code></pre>
+<p>Valores de posicionamento/segmentação:</p>
+<pre><code>interesses
+lookalike
+lista
+retargeting
+aberto
+keyword
+contextual
+cargo
+empresa
+geo</code></pre>
+<h2>10. Parâmetros customizados recomendados</h2>
+<p>Além das UTMs padrão, usar parâmetros próprios quando possível. Eles são mais fáceis de ler em planilha/CRM e evitam sobrecarregar UTMs.</p>
+<h3>v4_client_id</h3>
+<pre><code>v4_client_id=cli-hs-prevent</code></pre>
+<h3>v4_campaign_id</h3>
+<pre><code>v4_campaign_id=cmp-hs-prevent-202605-001</code></pre>
+<h3>v4_adgroup_id</h3>
+<pre><code>v4_adgroup_id=adg-hs-prevent-202605-003</code></pre>
+<h3>v4_creative_id</h3>
+<pre><code>v4_creative_id=crv-hs-prevent-202605-014</code></pre>
+<h3>v4_test_id</h3>
+<pre><code>v4_test_id=tst-hs-prevent-202605-004</code></pre>
+<h2>11. URL exemplo completa</h2>
+<pre><code>https://cliente.com/lp-onboarding-digital
+?utm_source=meta
+&amp;utm_medium=paid_social
+&amp;utm_campaign=cmp-hs-prevent-202605-001__typ-aquisicao__obj-mql__mov-teste-oferta__slug-antifraude-cfo__coh-b2b-high-ticket__seg-antifraude__per-2026q2
+&amp;utm_content=crv-hs-prevent-202605-014__fmt-video__hook-roi__per-cfo__slug-fraude-invisivel__dor-fraude__ang-risco-financeiro__stage-tofu__ver-v01
+&amp;utm_term=adg-hs-prevent-202605-003__pub-cfo-fintech__temp-frio__pos-interesses__slug-cfo-antifraude__plc-reels__geo-br
+&amp;v4_client_id=cli-hs-prevent
+&amp;v4_campaign_id=cmp-hs-prevent-202605-001
+&amp;v4_adgroup_id=adg-hs-prevent-202605-003
+&amp;v4_creative_id=crv-hs-prevent-202605-014
+&amp;v4_test_id=tst-hs-prevent-202605-004</code></pre>
+<h2>12. Nome de campanha na plataforma</h2>
+<p>Formato:</p>
+<pre><code>{campaign_id} | {tipo_campanha} | {objetivo} | {movimento} | {slug}</code></pre>
+<p>Exemplo:</p>
+<pre><code>cmp-hs-prevent-202605-001 | aquisicao | mql | teste-oferta | antifraude-cfo</code></pre>
+<h2>13. Nome de conjunto/ad group</h2>
+<p>Formato:</p>
+<pre><code>{adgroup_id} | {publico} | {temperatura} | {posicionamento} | {slug}</code></pre>
+<p>Exemplo:</p>
+<pre><code>adg-hs-prevent-202605-003 | cfo-fintech | frio | interesses | cfo-antifraude</code></pre>
+<h2>14. Nome de criativo</h2>
+<p>Formato:</p>
+<pre><code>{creative_id} | {formato} | {hook} | {persona} | {slug} | {versao}</code></pre>
+<p>Exemplo:</p>
+<pre><code>crv-hs-prevent-202605-014 | video | roi | cfo | fraude-invisivel | v01</code></pre>
+<h2>15. Campos mínimos no CRM ou planilha de leads</h2>
+<p>Campos de identificação:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>created_at</code></li>
+<li><code>client_id</code></li>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>test_id</code></li>
+</ul>
+<p>Campos UTM:</p>
+<ul>
+<li><code>utm_source</code></li>
+<li><code>utm_medium</code></li>
+<li><code>utm_campaign</code></li>
+<li><code>utm_content</code></li>
+<li><code>utm_term</code></li>
+</ul>
+<p>Campos parseados:</p>
+<ul>
+<li><code>objetivo</code></li>
+<li><code>tipo_campanha</code></li>
+<li><code>movimento</code></li>
+<li><code>campaign_slug</code></li>
+<li><code>cohort</code></li>
+<li><code>segmento</code></li>
+<li><code>periodo</code></li>
+<li><code>publico</code></li>
+<li><code>temperatura</code></li>
+<li><code>posicionamento</code></li>
+<li><code>adgroup_slug</code></li>
+<li><code>formato</code></li>
+<li><code>persona</code></li>
+<li><code>hook</code></li>
+<li><code>creative_slug</code></li>
+<li><code>dor</code></li>
+<li><code>angulo</code></li>
+<li><code>etapa_funil</code></li>
+<li><code>versao</code></li>
+<li><code>placement</code></li>
+<li><code>geo</code></li>
+</ul>
+<p>Campos comerciais:</p>
+<ul>
+<li><code>lead_status</code></li>
+<li><code>mql_status</code></li>
+<li><code>sql_status</code></li>
+<li><code>opportunity_status</code></li>
+<li><code>deal_status</code></li>
+<li><code>disqualification_reason</code></li>
+<li><code>sales_owner</code></li>
+<li><code>first_contact_at</code></li>
+<li><code>speed_to_lead_minutes</code></li>
+<li><code>feedback_quality</code></li>
+</ul>
+<h2>16. First-touch e last-touch</h2>
+<p>Para não perder histórico:</p>
+<ul>
+<li>First-touch deve ser write-once.</li>
+<li>Last-touch deve atualizar em nova conversão relevante.</li>
+</ul>
+<p>Campos first-touch:</p>
+<ul>
+<li><code>first_utm_source</code></li>
+<li><code>first_utm_medium</code></li>
+<li><code>first_utm_campaign</code></li>
+<li><code>first_utm_content</code></li>
+<li><code>first_utm_term</code></li>
+<li><code>first_conversion_at</code></li>
+</ul>
+<p>Campos last-touch:</p>
+<ul>
+<li><code>last_utm_source</code></li>
+<li><code>last_utm_medium</code></li>
+<li><code>last_utm_campaign</code></li>
+<li><code>last_utm_content</code></li>
+<li><code>last_utm_term</code></li>
+<li><code>last_conversion_at</code></li>
+</ul>
+<h2>17. Teste obrigatório antes do go-live</h2>
+<p>Checklist:</p>
+<ul>
+<li>Abrir URL com UTMs.</li>
+<li>Submeter formulário teste.</li>
+<li>Verificar se os campos chegaram na planilha/CRM.</li>
+<li>Verificar se IDs foram preservados.</li>
+<li>Verificar se first-touch não foi sobrescrito.</li>
+<li>Verificar se last-touch atualiza quando deve.</li>
+<li>Verificar se lead é deduplicado.</li>
+<li>Verificar se export consegue cruzar lead com campanha/criativo.</li>
+</ul>
+<h2>18. Critério N2</h2>
+<p>Tracking está N2 quando:</p>
+<ul>
+<li>toda campanha tem ID;</li>
+<li>todo criativo tem ID;</li>
+<li>toda URL tem UTM conforme;</li>
+<li>todo lead carrega origem;</li>
+<li>a fonte da verdade preserva os campos;</li>
+<li>existe teste ponta a ponta registrado.</li>
+</ul>
+<h2>19. Critério N3</h2>
+<p>Tracking está N3 quando:</p>
+<ul>
+<li>a operação usa os campos para decidir;</li>
+<li>performance é agrupada por atributos de criativo;</li>
+<li>a qualidade comercial retroalimenta o próximo ciclo;</li>
+<li>existem aprendizados por cohort/segmento;</li>
+<li>o padrão é revisado quando gera ruído ou falso aprendizado.</li>
+</ul>
+</article>

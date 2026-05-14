@@ -1,0 +1,12 @@
+temp/
+**/relatorio-deck-html/dist/
+# Preferencias locais Claude Code (nao commitar)
+CLAUDE.local.md
+
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store

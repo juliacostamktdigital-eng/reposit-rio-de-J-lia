@@ -1,0 +1,3168 @@
+{
+  "schema": "mastermind-v2",
+  "version": "knowledge-os-v2",
+  "title": "Marketing OS / OS do Executar - Knowledge Flow Visual v2",
+  "date": "2026-04-30",
+  "language": "pt-BR",
+  "source": [
+    "./assets/legacy/merge",
+    "../Aprendizado_Contexto",
+    "../Calls/firs_call 28-04.md",
+    "../Calls/second_call 28-04.md",
+    "../Calls/Plaude terceira call 28-04.md",
+    "../../lauar/reestruturacao-tese-maturidade-gtm/reestruturacao/v2-base/TESE_MATURIDADE_GTM_v2.html"
+  ],
+  "intent": {
+    "purpose": "Representar a jornada completa de implementacao, execucao e melhoria de marketing e vendas em um canvas visual estilo Miro, com cards, subcards, documentos canonicos e assets vinculados.",
+    "focus": "Processo AI-native ponta a ponta: handoff, embarque, planejamento, setup, go-live, tracking, CRM, ciclos de growth, auditoria, check-ins, retrospectiva e canonizacao de aprendizado.",
+    "readingMode": "Ler da esquerda para a direita na trilha principal; clicar em uma etapa abre o painel lateral com guia, assets estruturados, conteudo do card, inputs, outputs, evidencia e documentos canonicos vinculados.",
+    "northStar": "Aumentar o percentual de clientes com resultado sustentavel por cohort/segmento, conectando demanda qualificada, conversao comercial e aprendizado operacional."
+  },
+  "canvas": {
+    "width": 6400,
+    "height": 2300,
+    "initialView": {
+      "x": 36,
+      "y": 32,
+      "zoom": 0.3
+    }
+  },
+  "taxonomy": {
+    "levels": [
+      {
+        "id": "n1",
+        "label": "N1 - Intuitivo / incompleto",
+        "definition": "O processo depende de pessoas, variaveis mudam demais e nao ha evidencia suficiente para aprender com confianca."
+      },
+      {
+        "id": "n2",
+        "label": "N2 - Implementado",
+        "definition": "Existe processo definido, papeis, ferramentas, dados minimos e execucao comprovada."
+      },
+      {
+        "id": "n3",
+        "label": "N3 - Gerenciado",
+        "definition": "O N2 roda com consistencia e e melhorado por dados, metas, backlog e registro de mudancas."
+      }
+    ],
+    "assetDefinition": "Asset e qualquer componente necessario para o processo funcionar e ser auditavel: documento, pack, skill, template, padrao de UTM, tracking, checklist, integracao, relatorio ou evidencia.",
+    "primaryScope": "Inside Sales / leadgen. Ecommerce fica fora da v1.",
+    "coreEquation": "resultado = demanda qualificada x taxa de conversao comercial"
+  },
+  "versionPolicy": {
+    "correctVersion": "knowledge-os-v2",
+    "manifestLabel": "Knowledge OS v2 · merge assets + docs 17–20",
+    "note": "v2 aponta para assets/canonicos como fonte final consolidada; materiais anteriores ficam em assets/legacy. workflow.knowledge-os.v1.json permanece referencia imutavel."
+  },
+  "agencyProcessResearch": {
+    "synthesis": "Processos maduros de agencia separam preparacao interna de execucao com cliente, formalizam sales-to-ops handoff, coletam ativos/acessos antes de executar, fazem discovery e auditoria, aprovam roadmap, entregam um primeiro output, configuram reporting e depois entram em cadencia de otimizacao. Para leadgen, o processo precisa fechar o loop marketing-vendas com CRM, lead source, SLA, roteamento e feedback de qualidade.",
+    "externalPatternsUsed": [
+      "Onboarding em duas fases: preparacao interna antes do kickoff com cliente; execucao client-facing depois que o time esta alinhado.",
+      "Checklist de onboarding: contrato/pagamento, kickoff interno, questionario, setup de reporting, projeto no PM, kickoff com cliente e prevencao de escopo.",
+      "Agencia operacional: pre-kickoff, discovery, setup, kickoff, launch e reporting, cada etapa com dono, entregavel e definition of done.",
+      "Leadgen e CRM: UTMs precisam sobreviver do clique ao formulario, CRM, oportunidade e receita; first-touch deve ser preservado e last-touch atualizado.",
+      "Marketing-sales handoff: MQL/SQL, roteamento, speed-to-lead, SLA, motivo de desqualificacao e retorno para nurture."
+    ],
+    "howItChangesThisJson": [
+      "O fluxo deixa de ser so uma abstracao de maturidade e passa a incluir a linha operacional de uma agencia.",
+      "Cada etapa agora tem assets concretos, dono, inputs, definition of done, evidencia N2 e leitura N3.",
+      "A camada de vendas/comercial aparece como handoff e feedback, sem roubar o foco inicial de demanda qualificada."
+    ]
+  },
+  "currentCanonicalProcessLearning": {
+    "sources": [
+      "../../../../empresa/contexto/[BPMN] FWO.csv",
+      "../../../../empresa/contexto/[BPMN] FWO (1).csv",
+      "../../../../empresa/contexto/02-PRODUCTS.md"
+    ],
+    "synthesis": "O processo atual canonico tem uma fase de embarque com Handoff 1, Handoff 2 e Planning; depois passa por setup de implementacao, go-live, ciclos de implementacao, backlog quinzenal, producao/revisao de copy e criativo, configuracao de CRM/treinamento comercial, solicitacao de dashboard, check-ins, auditoria, correcoes e retrospectiva/replanejamento.",
+    "roles": [
+      "Aquisicao",
+      "CS/Farmer",
+      "Account M. (GP)",
+      "Gestor de trafego",
+      "Copywriter",
+      "Designer",
+      "Head",
+      "Controle de Qualidade",
+      "Cliente",
+      "Bot/automacao"
+    ],
+    "portfolioContext": "A jornada mistura produtos SABER, TER e EXECUTAR: diagnostico/planejamento, implementacoes de LP/CRM/tracking/setup/criativos e operacao recorrente de midia, copy, design, CRM, BI e vendas."
+  },
+  "canonicalDocuments": [
+    {
+      "id": "doc-assets-map",
+      "title": "Mapa de assets AI-native ponta a ponta",
+      "path": "./assets/canonicos/00_MAPA_ASSETS_AI_NATIVE_PONTA_A_PONTA.md",
+      "producedAt": [
+        "k04-diagnosis"
+      ],
+      "usedAt": [
+        "k06-assets",
+        "k10-n2-audit",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-utm",
+      "title": "Taxonomia UTM, IDs e subparametros",
+      "path": "./assets/canonicos/01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS.md",
+      "producedAt": [
+        "k07-tracking"
+      ],
+      "usedAt": [
+        "k08-campaign-setup",
+        "k08-execution",
+        "k09-evidence",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-tests",
+      "title": "Planilha de testes growth",
+      "path": "./assets/canonicos/02_PLANILHA_DE_TESTES_GROWTH_CANONICA.md",
+      "producedAt": [
+        "k09-evidence"
+      ],
+      "usedAt": [
+        "k11-n3-growth",
+        "k13-rebrief"
+      ]
+    },
+    {
+      "id": "doc-media-plan",
+      "title": "Plano de midia canonico",
+      "path": "./assets/canonicos/03_PLANO_DE_MIDIA_CANONICO.md",
+      "producedAt": [
+        "k06-assets"
+      ],
+      "usedAt": [
+        "k08-campaign-setup",
+        "k08-execution",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-dcc-legacy",
+      "title": "Documento de copy final / DCC legado",
+      "path": "./assets/canonicos/04_DOCUMENTO_COPY_FINAL_DCC_CANONICO.md",
+      "producedAt": [],
+      "usedAt": [
+        "doc-deoc"
+      ]
+    },
+    {
+      "id": "doc-creative-brief",
+      "title": "Briefing criativo video-first",
+      "path": "./assets/canonicos/05_BRIEFING_CRIATIVO_VIDEO_FIRST_CANONICO.md",
+      "producedAt": [
+        "k06-assets"
+      ],
+      "usedAt": [
+        "k08-execution",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-backlog-assets",
+      "title": "Assets esquecidos e backlog",
+      "path": "./assets/canonicos/06_ASSETS_ESQUECIDOS_E_BACKLOG_CANONICO.md",
+      "producedAt": [
+        "k06-assets"
+      ],
+      "usedAt": [
+        "k06-assets",
+        "k10-n2-audit"
+      ]
+    },
+    {
+      "id": "doc-crm-sla",
+      "title": "CRM, handoff e SLA marketing-vendas",
+      "path": "./assets/canonicos/07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO.md",
+      "producedAt": [
+        "k07-tracking"
+      ],
+      "usedAt": [
+        "k09-evidence",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-lp",
+      "title": "LP / ponto de conversao canonico",
+      "path": "./assets/canonicos/08_LP_PONTO_DE_CONVERSAO_CANONICO.md",
+      "producedAt": [
+        "k06-assets"
+      ],
+      "usedAt": [
+        "k07-tracking",
+        "k08-campaign-setup",
+        "k08-execution",
+        "k09-evidence"
+      ]
+    },
+    {
+      "id": "doc-data-contract",
+      "title": "Contrato de dados Mkt -> CRM e backup de UTMs",
+      "path": "./assets/canonicos/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+      "producedAt": [
+        "k07-tracking"
+      ],
+      "usedAt": [
+        "k08-campaign-setup",
+        "k09-evidence",
+        "k11-n3-growth",
+        "k13-rebrief"
+      ]
+    },
+    {
+      "id": "doc-strategic-ucm-legacy",
+      "title": "Planejamento estrategico / UCM legado",
+      "path": "./assets/canonicos/10_PLANEJAMENTO_ESTRATEGICO_UCM_CANONICO.md",
+      "producedAt": [],
+      "usedAt": [
+        "doc-deoc"
+      ]
+    },
+    {
+      "id": "doc-handoff-executar",
+      "title": "Handoff operacional Executar",
+      "path": "./assets/canonicos/11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO.md",
+      "producedAt": [
+        "k00-narrative"
+      ],
+      "usedAt": [
+        "k04-diagnosis",
+        "k06-assets"
+      ]
+    },
+    {
+      "id": "doc-market-benchmark",
+      "title": "Benchmark de mercado, concorrentes e TAM/SAM/SOM",
+      "path": "./assets/canonicos/12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO.md",
+      "producedAt": [
+        "k04-benchmark"
+      ],
+      "usedAt": [
+        "k06-assets",
+        "k08-campaign-setup",
+        "k08-execution",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-deoc",
+      "title": "Dossie Estrategico de Oferta e Comunicacao",
+      "path": "./assets/canonicos/13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO.md",
+      "producedAt": [
+        "k06-assets"
+      ],
+      "usedAt": [
+        "k08-campaign-setup",
+        "k08-execution",
+        "k11-n3-growth",
+        "k13-rebrief"
+      ]
+    },
+    {
+      "id": "doc-official-assets-catalog",
+      "title": "Catalogo oficial de assets da jornada",
+      "path": "./assets/canonicos/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO.md",
+      "producedAt": [
+        "s07-assets-catalog"
+      ],
+      "usedAt": [
+        "k06-assets",
+        "k10-n2-audit",
+        "k12-canonize"
+      ]
+    },
+    {
+      "id": "doc-meta-campaign-setup",
+      "title": "Setup de campanhas Meta Ads",
+      "path": "./assets/canonicos/15_SETUP_CAMPANHAS_META_ADS_CANONICO.md",
+      "producedAt": [
+        "k08-campaign-setup"
+      ],
+      "usedAt": [
+        "k08-execution",
+        "k09-evidence",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-google-campaign-setup",
+      "title": "Setup de campanhas Google Ads",
+      "path": "./assets/canonicos/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO.md",
+      "producedAt": [
+        "k08-campaign-setup"
+      ],
+      "usedAt": [
+        "k08-execution",
+        "k09-evidence",
+        "k11-n3-growth"
+      ]
+    },
+    {
+      "id": "doc-funil-unificado-a2",
+      "title": "Funil unificado (A-2)",
+      "path": "./assets/canonicos/17_FUNIL_UNIFICADO_CONVERSOES_A2_CANONICO.md",
+      "producedAt": [
+        "k07-tracking"
+      ],
+      "usedAt": [
+        "k06-assets",
+        "k08-campaign-setup",
+        "k08-execution"
+      ]
+    },
+    {
+      "id": "doc-protocolo-handoff-a4",
+      "title": "Protocolo de handoff MQL/SQL (A-4)",
+      "path": "./assets/canonicos/18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO.md",
+      "producedAt": [
+        "k07-tracking"
+      ],
+      "usedAt": [
+        "k08-execution",
+        "k09-evidence"
+      ]
+    },
+    {
+      "id": "doc-jornada-lead-raci",
+      "title": "Jornada do lead e RACI",
+      "path": "./assets/canonicos/19_JORNADA_LEAD_RACI_CANONICO.md",
+      "producedAt": [
+        "k07-tracking"
+      ],
+      "usedAt": [
+        "k08-execution"
+      ]
+    },
+    {
+      "id": "doc-banco-tipos-criativos",
+      "title": "Banco de tipos de criativo",
+      "path": "./assets/canonicos/20_BANCO_TIPOS_CRIATIVOS_CANONICO.md",
+      "producedAt": [
+        "k06-assets"
+      ],
+      "usedAt": [
+        "k08-campaign-setup",
+        "k08-execution"
+      ]
+    }
+  ],
+  "visualCardModel": {
+    "macroCard": {
+      "purpose": "Representa uma etapa ou suporte do fluxo visual.",
+      "mustHave": [
+        "title",
+        "summary",
+        "inputs",
+        "outputs",
+        "evidence",
+        "page"
+      ],
+      "pageUse": "Conteudo expandido do card: contexto, decisoes, criterios, riscos e explicacao operacional."
+    },
+    "microCard": {
+      "purpose": "Camada visual legada/opcional. A fonte canonica agora e macros[].assets; micros podem ser derivados se necessario."
+    },
+    "assetCard": {
+      "purpose": "Asset estruturado dentro de uma etapa. E a unidade principal para contexto operacional, render no inspector e transferencia para IAs futuras.",
+      "fields": [
+        "id",
+        "title",
+        "kind",
+        "order",
+        "required",
+        "statusInJourney",
+        "owner",
+        "whenCreated",
+        "inputs",
+        "contents",
+        "definitionOfDone",
+        "n2Evidence",
+        "n3Use",
+        "docPath",
+        "aiSummary"
+      ]
+    }
+  },
+  "groups": [
+    {
+      "id": "g-main",
+      "label": "Jornada principal - implementacao, execucao e melhoria",
+      "includeMacroIds": [
+        "k00-narrative",
+        "k04-diagnosis",
+        "k04-benchmark",
+        "k06-assets",
+        "k07-tracking",
+        "k08-campaign-setup",
+        "k08-execution",
+        "k09-evidence",
+        "k10-n2-audit",
+        "k11-n3-growth",
+        "k12-canonize",
+        "k13-rebrief"
+      ]
+    },
+    {
+      "id": "g-support",
+      "label": "Notas transversais - leitura de apoio",
+      "includeMacroIds": [
+        "k03-maturity",
+        "s07-assets-catalog",
+        "s01-cohort-map"
+      ]
+    }
+  ],
+  "macros": [
+    {
+      "id": "k00-narrative",
+      "role": "macro",
+      "type": "step",
+      "number": "00",
+      "phase": "Entrada",
+      "tone": "red",
+      "w": 260,
+      "h": 210,
+      "title": "Embarque e handoff operacional",
+      "summary": "Receber plano de ROI, call de vendas e Growth Class para iniciar planning sem recoletar contexto.",
+      "tags": [
+        "handoff",
+        "embarque",
+        "roi",
+        "growth-class",
+        "planning"
+      ],
+      "inputs": [
+        "Plano de ROI",
+        "Transcricao da call de vendas",
+        "Transcricao da Growth Class",
+        "Produto contratado",
+        "Riscos",
+        "Contexto inicial"
+      ],
+      "outputs": [
+        "Pacote de handoff Executar",
+        "Analise de desvio",
+        "Escopo validado",
+        "Pendencias",
+        "Agenda de planning"
+      ],
+      "evidence": "A operacao consegue iniciar planning sabendo o que foi vendido, o que o cliente entendeu e quais riscos precisam ser tratados.",
+      "page": {
+        "headline": "A jornada EXECUTAR comeca quando o plano de ROI e as transcricoes viram contexto operacional validado.",
+        "sections": [
+          {
+            "title": "Base do processo SABER TO BE",
+            "body": "No SABER, o handoff ja foi documentado como pacote compilado: plano de ROI, contrato/transcricoes e revisao supervisionada. No EXECUTAR, o inicio reaproveita essa logica, mas os insumos obrigatorios sao plano de ROI, transcricao da call de vendas e transcricao da Growth Class."
+          },
+          {
+            "title": "Saidas obrigatorias",
+            "body": "Pacote de handoff Executar, analise de desvio venda vs Growth Class, escopo contratado, premissas do ROI, promessas/expectativas, riscos, pendencias e proximos passos."
+          },
+          {
+            "title": "Criterio",
+            "body": "A etapa so termina quando squad/account/coordenacao conseguem responder: o que foi vendido, qual ROI foi prometido ou simulado, o que o cliente entendeu na Growth Class, quais riscos existem e qual e o proximo passo operacional."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Compilar plano de ROI, call de vendas e Growth Class em um pacote unico.",
+          "Comparar promessa vendida vs entendimento do cliente.",
+          "Registrar pendencias e riscos antes do planning."
+        ],
+        "openThese": [
+          "11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO.md",
+          "Plano de ROI",
+          "Transcricao da call de vendas",
+          "Transcricao da Growth Class"
+        ],
+        "createThese": [
+          "Pacote de handoff EXECUTAR",
+          "Analise de desvio venda vs Growth Class",
+          "Lista de pendencias e riscos"
+        ],
+        "decisions": [
+          "Existe desalinhamento que precisa ser corrigido antes do planning?",
+          "O escopo contratado esta claro o suficiente para diagnosticar?"
+        ],
+        "doneWhen": [
+          "Squad sabe o que foi vendido, o que o cliente entendeu, quais riscos existem e qual e o proximo passo."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k00_01",
+          "title": "Pacote de handoff operacional Executar",
+          "label": "Pacote de handoff operacional Executar",
+          "kind": "documento compilado",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "coordenador/gerente de operacao",
+          "whenCreated": "entrada do cliente no Executar",
+          "inputs": [
+            "plano de ROI",
+            "transcricao da call de vendas",
+            "transcricao da Growth Class"
+          ],
+          "contents": [
+            "resumo executivo",
+            "escopo contratado",
+            "premissas do ROI",
+            "promessas e expectativas",
+            "dores declaradas",
+            "riscos",
+            "pendencias",
+            "proximos passos"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Squad consegue iniciar planning com o que foi vendido, o que o cliente entendeu e quais riscos precisam ser tratados.",
+          "n2Evidence": "Plano de ROI e transcricoes linkados, pacote revisado e status de completude registrado.",
+          "n3Use": "Medir desvios recorrentes e retroalimentar vendas, Growth Class e roteiro de handoff.",
+          "docPath": "./assets/canonicos/11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO.md",
+          "aiSummary": "Squad consegue iniciar planning com o que foi vendido, o que o cliente entendeu e quais riscos precisam ser tratados."
+        },
+        {
+          "id": "asset_k00_02",
+          "title": "Analise de desvio venda vs Growth Class",
+          "label": "Analise de desvio venda vs Growth Class",
+          "kind": "comparativo",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "evidence",
+          "owner": "coordenador/account",
+          "whenCreated": "apos Growth Class",
+          "inputs": [
+            "transcricao da call de vendas",
+            "transcricao da Growth Class",
+            "plano de ROI"
+          ],
+          "contents": [
+            "escopo vendido vs entendido",
+            "resultado esperado",
+            "prazos",
+            "responsabilidades",
+            "riscos de churn M0",
+            "acao corretiva"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Todo desvio medio/alto tem decisao registrada antes do planning.",
+          "n2Evidence": "Comparativo anexado ao pacote de handoff.",
+          "n3Use": "Classificar promessas problematicas e melhorar roteiro de vendas/boas-vindas.",
+          "docPath": "./assets/canonicos/11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO.md",
+          "aiSummary": "Todo desvio medio/alto tem decisao registrada antes do planning."
+        }
+      ]
+    },
+    {
+      "id": "k03-maturity",
+      "role": "macro",
+      "type": "note",
+      "number": "NOTA",
+      "phase": "Notacao",
+      "tone": "blue",
+      "w": 330,
+      "h": 250,
+      "title": "Nota N1/N2/N3",
+      "summary": "N1 = intuitivo/parcial. N2 = implementado com evidencia. N3 = gerenciado por dados e melhoria.",
+      "tags": [
+        "notacao",
+        "maturidade",
+        "criterio"
+      ],
+      "inputs": [
+        "Tese de maturidade GTM"
+      ],
+      "outputs": [
+        "Regua comum de leitura"
+      ],
+      "evidence": "Usada como anotacao de apoio, nao como etapa.",
+      "page": {
+        "headline": "N1/N2/N3 nao e uma etapa: e a notacao que explica a tese de maturidade GTM ao longo de todo o OS.",
+        "sections": [
+          {
+            "title": "N1",
+            "body": "Nao tem tudo que precisa ou existe de forma intuitiva. Pode ate dar resultado, mas nao e previsivel nem comparavel."
+          },
+          {
+            "title": "N2",
+            "body": "Processo definido, papeis, ferramentas, dados minimos e execucao comprovada. O componente so conta como implementado quando ha evidencia verificavel."
+          },
+          {
+            "title": "N3",
+            "body": "Processo N2 rodando com consistencia, metas, KPI, debrief, backlog, registro de mudancas e aprendizado aplicado no ciclo seguinte."
+          },
+          {
+            "title": "Uso no canvas",
+            "body": "A notacao atravessa diagnostico, assets, tracking, auditoria e growth. Ela nao precisa ser executada como passo; precisa estar disponivel como criterio."
+          }
+        ]
+      },
+      "noteLines": [
+        "N1: existe de forma intuitiva, parcial ou dependente de pessoa.",
+        "N2: processo definido + responsavel + ferramenta/dado minimo + execucao comprovada.",
+        "N3: N2 rodando com cadencia, KPI, debrief, backlog e decisao registrada.",
+        "Nao e passo da jornada. E legenda para ler todos os componentes."
+      ],
+      "assets": [
+        {
+          "id": "asset_k03_01",
+          "title": "Notacao N1/N2/N3 por componente",
+          "label": "Notacao N1/N2/N3 por componente",
+          "kind": "rubrica",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "metodologia",
+          "whenCreated": "como conceito transversal do OS",
+          "inputs": [
+            "tese GTM",
+            "processo do OS",
+            "componentes de marketing"
+          ],
+          "contents": [
+            "definicao N1",
+            "criterio N2",
+            "criterio N3",
+            "evidencias",
+            "falsos positivos",
+            "exemplos"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Dois auditores diferentes chegariam a classificacao parecida.",
+          "n2Evidence": "Rubrica publicada e usada em auditoria real.",
+          "n3Use": "Refinar criterios com inconsistencias encontradas.",
+          "docPath": "",
+          "aiSummary": "Dois auditores diferentes chegariam a classificacao parecida."
+        },
+        {
+          "id": "asset_k03_02",
+          "title": "Glossario operacional",
+          "label": "Glossario operacional",
+          "kind": "glossario",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "PM",
+          "whenCreated": "antes do rollout",
+          "inputs": [
+            "calls",
+            "tese",
+            "termos V4"
+          ],
+          "contents": [
+            "cohort",
+            "segmento",
+            "asset",
+            "pack",
+            "skill",
+            "demanda qualificada",
+            "MQL",
+            "SQL",
+            "N2",
+            "N3"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Termos criticos deixam de ser interpretados de formas diferentes.",
+          "n2Evidence": "Glossario linkado no diretorio e nos packs.",
+          "n3Use": "Atualizar quando o uso real revelar ambiguidade.",
+          "docPath": "",
+          "aiSummary": "Termos criticos deixam de ser interpretados de formas diferentes."
+        }
+      ]
+    },
+    {
+      "id": "k04-diagnosis",
+      "role": "macro",
+      "type": "step",
+      "number": "01",
+      "phase": "Diagnostico",
+      "tone": "blue",
+      "w": 260,
+      "h": 210,
+      "title": "Diagnosticar maturidade GTM",
+      "summary": "Aplicar a tese GTM v2 ao cliente: 3 pilares, evidencias, nivel atual, gaps e packs candidatos.",
+      "tags": [
+        "diagnostico",
+        "GTM",
+        "maturidade",
+        "gap",
+        "packs"
+      ],
+      "inputs": [
+        "Pacote de handoff",
+        "v2-base da tese GTM",
+        "Discovery",
+        "Auditoria inicial",
+        "Dados CRM/midia",
+        "Assets atuais"
+      ],
+      "outputs": [
+        "Matriz GTM",
+        "Nivel por pilar",
+        "Evidencias",
+        "Gaps",
+        "Packs candidatos",
+        "Gargalo"
+      ],
+      "evidence": "Diagnostico classifica Oferta & Posicionamento, Marketing e Vendas por evidencia operacional, nao por opiniao.",
+      "page": {
+        "headline": "Este passo e a aplicacao pratica da Tese de Maturidade de GTM v2 ao cliente, usando evidencia real para decidir o que falta implementar.",
+        "sections": [
+          {
+            "title": "Base de leitura obrigatoria",
+            "body": "Todos devem usar o diretorio `brain_v4_colli/areas/iniciativas/lauar/reestruturacao-tese-maturidade-gtm/reestruturacao/v2-base`. Comecar pelo README, depois ler `fundamentos/03-definicoes-implementado-gerenciado.md`, `fundamentos/02-modelo-3-pilares-7-blocos-3-niveis.md`, `niveis/01-como-usar.md`, `niveis/04-marketing.md`, `niveis/06-matriz-referencia-rapida.md`, `niveis/07-erros-classificacao.md` e os packs em `packs/`."
+          },
+          {
+            "title": "O que diagnosticar",
+            "body": "A tese separa GTM em 3 pilares: Oferta & Posicionamento, Marketing e Vendas. Cada pilar e lido pelos blocos Estrategia, Processos, Clientes, Dados, Metas, Gestao e Time, mas o diagnostico de campo deve usar os criterios observaveis por pilar, nao virar uma planilha cega de 21 celulas."
+          },
+          {
+            "title": "Como classificar",
+            "body": "N2 exige processo definido, papeis, ferramentas/dados minimos e execucao comprovada. Setup sem ciclo completo e preparacao, nao implementacao. N3 exige N2 mais cadencia, KPIs com gatilhos, backlog, decisao registrada, controle de mudancas e loops inter-areas."
+          },
+          {
+            "title": "Saida",
+            "body": "A saida nao e um parecer solto. E uma matriz com nivel por pilar, evidencia usada, gaps, erro de classificacao evitado, gargalo principal e packs candidatos. Para Marketing, verificar plano de canais, processo de campanhas, segmentacao por ICP, rastreamento/fonte da verdade e gestao de performance."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Abrir a tese GTM v2 e aplicar os criterios ao cliente.",
+          "Classificar Oferta & Posicionamento, Marketing e Vendas com evidencias.",
+          "Separar setup, implementado e gerenciado sem achismo."
+        ],
+        "openThese": [
+          "Diretorio v2-base da tese GTM",
+          "Pacote de handoff",
+          "Auditoria inicial",
+          "Dados de CRM/midia",
+          "Assets atuais"
+        ],
+        "createThese": [
+          "Matriz de diagnostico GTM",
+          "Lista de evidencias",
+          "Lista de gaps e packs candidatos"
+        ],
+        "decisions": [
+          "Qual pilar limita mais o resultado agora?",
+          "Quais gaps impedem N2?",
+          "O que precisa virar asset antes da execucao?"
+        ],
+        "doneWhen": [
+          "Cada pilar tem nivel, evidencia, gap e proximo asset recomendado."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k04_01",
+          "title": "Leitura orientada da tese GTM v2",
+          "label": "Leitura orientada da tese GTM v2",
+          "kind": "roteiro de diagnostico",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "estrategista/account",
+          "whenCreated": "inicio do diagnostico",
+          "inputs": [
+            "v2-base da tese GTM",
+            "pacote de handoff Executar",
+            "plano de ROI",
+            "transcricoes"
+          ],
+          "contents": [
+            "arquivos a ler",
+            "pilares avaliados",
+            "criterios N2/N3",
+            "evidencias aceitas",
+            "erros de classificacao",
+            "packs candidatos"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Qualquer pessoa consegue abrir o diretorio da tese e saber quais criterios aplicar no diagnostico.",
+          "n2Evidence": "Roteiro referencia README, fundamentos, niveis por pilar e packs da tese.",
+          "n3Use": "Refinar o roteiro conforme padroes de diagnostico e erros recorrentes.",
+          "docPath": "",
+          "aiSummary": "Qualquer pessoa consegue abrir o diretorio da tese e saber quais criterios aplicar no diagnostico."
+        },
+        {
+          "id": "asset_k04_02",
+          "title": "Pacote de handoff como input de diagnostico",
+          "label": "Pacote de handoff como input de diagnostico",
+          "kind": "briefing interno validado",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "account/coordenador",
+          "whenCreated": "antes do diagnostico e da definicao do pacote v1",
+          "inputs": [
+            "pacote de handoff Executar",
+            "plano de ROI",
+            "transcricoes",
+            "analise de desvio"
+          ],
+          "contents": [
+            "objetivo vendido",
+            "premissas do ROI",
+            "escopo e exclusoes",
+            "stakeholders",
+            "criterio de sucesso",
+            "restricoes",
+            "prazos",
+            "riscos",
+            "promessas sensiveis",
+            "lacunas a investigar"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Diagnostico comeca pelo que ja foi vendido/entendido e nao por uma coleta do zero.",
+          "n2Evidence": "Pacote de handoff referenciado no diagnostico e lacunas convertidas em perguntas de discovery.",
+          "n3Use": "Comparar promessas, entendimento inicial e gaps diagnosticados para reduzir desalinhamentos futuros.",
+          "docPath": "",
+          "aiSummary": "Diagnostico comeca pelo que ja foi vendido/entendido e nao por uma coleta do zero."
+        },
+        {
+          "id": "asset_k04_03",
+          "title": "Matriz de diagnostico GTM",
+          "label": "Matriz de diagnostico GTM",
+          "kind": "matriz de classificacao",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "estrategista/growth",
+          "whenCreated": "durante diagnostico",
+          "inputs": [
+            "criterios N2/N3 da tese",
+            "evidencias do cliente",
+            "auditoria marketing",
+            "CRM/funil",
+            "ativos existentes"
+          ],
+          "contents": [
+            "Oferta & Posicionamento",
+            "Marketing",
+            "Vendas",
+            "N1/N2/N3 por pilar",
+            "evidencias",
+            "lacunas",
+            "packs sugeridos",
+            "prioridade",
+            "gargalo"
+          ],
+          "outputs": [],
+          "definitionOfDone": "O diagnostico deixa claro o que e setup, o que e implementado e o que e gerenciado, sem confundir documento solto com processo rodando.",
+          "n2Evidence": "Matriz preenchida com links de evidencia e criterio usado.",
+          "n3Use": "Comparar diagnosticos entre clientes/cohorts para melhorar a biblioteca de packs.",
+          "docPath": "",
+          "aiSummary": "O diagnostico deixa claro o que e setup, o que e implementado e o que e gerenciado, sem confundir documento solto com processo rodando."
+        },
+        {
+          "id": "asset_k04_04",
+          "title": "Auditoria inicial de marketing e vendas",
+          "label": "Auditoria inicial de marketing e vendas",
+          "kind": "relatorio",
+          "order": 4,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "estrategista/growth",
+          "whenCreated": "antes da definicao do pacote v1",
+          "inputs": [
+            "campanhas atuais",
+            "criativos",
+            "LP",
+            "CRM",
+            "analytics",
+            "funil",
+            "concorrentes"
+          ],
+          "contents": [
+            "baseline 90 dias",
+            "top/bottom campanhas",
+            "top/bottom criativos",
+            "LP/ponto de conversao",
+            "tracking",
+            "lead source unknown",
+            "SLA vendas",
+            "quick wins"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Relatorio mostra baseline, gaps e quick wins sem depender de achismo.",
+          "n2Evidence": "Auditoria anexada e usada para priorizar packs.",
+          "n3Use": "Comparar baseline com resultado do ciclo OS.",
+          "docPath": "",
+          "aiSummary": "Relatorio mostra baseline, gaps e quick wins sem depender de achismo."
+        }
+      ]
+    },
+    {
+      "id": "k04-benchmark",
+      "role": "macro",
+      "type": "step",
+      "number": "02",
+      "phase": "Inteligencia",
+      "tone": "blue",
+      "w": 260,
+      "h": 210,
+      "title": "Benchmark mercado e oportunidade",
+      "summary": "Dimensionar mercado, concorrencia, SOM real e beachhead antes de escolher o pacote de assets v1.",
+      "tags": [
+        "benchmark",
+        "TAM",
+        "SAM",
+        "SOM",
+        "concorrentes",
+        "beachhead"
+      ],
+      "inputs": [
+        "Pacote de handoff",
+        "Diagnostico GTM",
+        "Produto foco",
+        "Ticket",
+        "ICP/persona preliminar",
+        "Budget",
+        "Capacidade operacional"
+      ],
+      "outputs": [
+        "Benchmark de mercado",
+        "TAM/SAM/SOM",
+        "Concorrentes",
+        "Ruido de mercado",
+        "SWOT",
+        "Beachhead",
+        "Implicacoes para OS"
+      ],
+      "evidence": "A construcao dos assets parte de uma oportunidade capturavel e de concorrentes reais, nao de preferencia interna.",
+      "page": {
+        "headline": "Antes de construir assets, o time precisa saber qual mercado vale atacar e qual parte dele o cliente consegue capturar.",
+        "sections": [
+          {
+            "title": "Por que entra antes da definicao do pacote v1",
+            "body": "O diagnostico mostra a maturidade interna do cliente. O benchmark mostra a realidade externa: tamanho de mercado, concorrentes, alternativas, mensagens saturadas e beachhead. Sem isso, a escolha de canais e assets vira preferência interna."
+          },
+          {
+            "title": "Base SABER",
+            "body": "Este passo reaproveita as skills canonicas do agente analista-mercado-benchmark: sizing-mercado-tam-sam-som, estudo-concorrentes e swot-beachhead-market. A logica central e calcular SOM com capacidade operacional e budget, estudar concorrentes que disputam atencao real e escolher beachhead por scorecard."
+          },
+          {
+            "title": "Como fazer",
+            "body": "Comecar por contexto de mercado e TAM/SAM/SOM; depois analisar concorrentes diretos, indiretos e substitutos, preferindo sinais de midia ativa como Meta Ads Library; listar ruidos de mercado; montar mapa competitivo; gerar SWOT especifica; escolher beachhead por criterios de urgencia, capacidade de pagar, facilidade de acesso, tamanho, densidade competitiva e alinhamento com forcas."
+          },
+          {
+            "title": "Saida para os assets",
+            "body": "A saida precisa dizer qual segmento atacar primeiro, quais promessas evitar, quais provas serao exigidas, qual canal e plausivel e quais riscos de conversao os assets precisam resolver."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Dimensionar mercado de forma simples.",
+          "Mapear concorrentes reais e mensagens saturadas.",
+          "Escolher beachhead por criterio, nao por gosto."
+        ],
+        "openThese": [
+          "12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO.md",
+          "Pesquisa Leadster/Panorama",
+          "Lista de concorrentes",
+          "Meta Ads Library"
+        ],
+        "createThese": [
+          "TAM/SAM/SOM v1",
+          "Estudo de concorrentes",
+          "Mapa de ruido de mercado",
+          "Scorecard de beachhead"
+        ],
+        "decisions": [
+          "Qual segmento atacar primeiro?",
+          "Qual promessa evitar?",
+          "Qual canal parece plausivel com budget/capacidade?"
+        ],
+        "doneWhen": [
+          "O pacote de assets consegue explicar qual mercado sera atacado e por que ele e capturavel."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k04b_01",
+          "title": "Benchmark de mercado, concorrentes e TAM/SAM/SOM",
+          "label": "Benchmark de mercado, concorrentes e TAM/SAM/SOM",
+          "kind": "pesquisa estrategica",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "analista de mercado/estrategia",
+          "whenCreated": "apos diagnostico GTM e antes da definicao do pacote v1",
+          "inputs": [
+            "handoff",
+            "diagnostico GTM",
+            "produto foco",
+            "ticket",
+            "ICP/persona preliminar",
+            "budget",
+            "capacidade operacional",
+            "concorrentes"
+          ],
+          "contents": [
+            "contexto de mercado",
+            "TAM",
+            "SAM",
+            "SOM",
+            "concorrentes",
+            "ruidos de mercado",
+            "mapa competitivo",
+            "SWOT especifica",
+            "beachhead",
+            "implicacoes para pacote v1"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Da para defender qual segmento atacar primeiro, por que ele e capturavel e quais escolhas de canal/comunicacao decorrem disso.",
+          "n2Evidence": "Documento canonico linkado, com fontes/premissas e SOM calculado por capacidade + budget.",
+          "n3Use": "Atualizar concorrentes, beachhead e premissas conforme dados de campanha/CRM entram.",
+          "docPath": "./assets/canonicos/12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO.md",
+          "aiSummary": "Da para defender qual segmento atacar primeiro, por que ele e capturavel e quais escolhas de canal/comunicacao decorrem disso."
+        },
+        {
+          "id": "asset_k04b_02",
+          "title": "Scorecard de beachhead",
+          "label": "Scorecard de beachhead",
+          "kind": "matriz de decisao",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "estrategista",
+          "whenCreated": "ao final do benchmark",
+          "inputs": [
+            "TAM/SAM/SOM",
+            "ICP/persona",
+            "concorrentes",
+            "SWOT"
+          ],
+          "contents": [
+            "segmentos candidatos",
+            "urgencia da dor",
+            "capacidade de pagar",
+            "facilidade de acesso",
+            "tamanho",
+            "densidade competitiva",
+            "alinhamento com forcas"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Segmento vencedor esta justificado por criterio, nao por preferencia solta.",
+          "n2Evidence": "Scorecard preenchido e usado para orientar DEOC, plano de midia, LP e criativos.",
+          "n3Use": "Comparar score inicial com performance real por segmento.",
+          "docPath": "",
+          "aiSummary": "Segmento vencedor esta justificado por criterio, nao por preferencia solta."
+        }
+      ]
+    },
+    {
+      "id": "k06-assets",
+      "role": "macro",
+      "type": "step",
+      "number": "03",
+      "phase": "Assets",
+      "tone": "yellow",
+      "w": 260,
+      "h": 210,
+      "title": "Construir assets canonicos",
+      "summary": "Decidir o pacote v1 a partir de diagnostico + benchmark e construir apenas os assets necessarios para rodar o ciclo.",
+      "tags": [
+        "assets",
+        "packs",
+        "skills"
+      ],
+      "inputs": [
+        "Diagnostico GTM",
+        "Benchmark e beachhead",
+        "Catalogo oficial de assets",
+        "Plano de ROI",
+        "Conhecimento dos especialistas",
+        "Gaps priorizados"
+      ],
+      "outputs": [
+        "Pacote de assets v1",
+        "DEOC",
+        "Plano de midia",
+        "LP/ponto de conversao",
+        "Briefing criativo",
+        "Criterios de qualidade"
+      ],
+      "evidence": "O squad sabe quais assets realmente precisam existir neste ciclo e cada asset criado tem criterio de aceite, dono e uso na execucao.",
+      "page": {
+        "headline": "Esta etapa nao e para inventar uma camada abstrata; e para escolher e construir o pacote concreto de assets do ciclo v1.",
+        "sections": [
+          {
+            "title": "Primeira decisao",
+            "body": "Cruzar diagnostico, benchmark, beachhead, plano de ROI e catalogo oficial de assets para decidir o pacote v1. O resultado e uma lista curta do que precisa existir antes de tracking/setup, nao um roadmap generico."
+          },
+          {
+            "title": "Assets documentais",
+            "body": "DEOC, plano de midia, LP/ponto de conversao, briefing criativo, roteiro/copy e checklist QA. Benchmark ja vem da etapa anterior; diagnostico tambem. Aqui eles sao inputs, nao entregaveis duplicados."
+          },
+          {
+            "title": "Assets operacionais",
+            "body": "Quando necessario, preparar criterios para UTM/nomenclatura, CRM/SLA, backup de leads, QA e handoff; a implementacao detalhada de dados continua na etapa de contrato de dados."
+          },
+          {
+            "title": "Criterio",
+            "body": "A etapa termina quando DEOC, plano, LP, briefing/criativos e checklist QA estao prontos ou explicitamente marcados como pendencia bloqueante. O que nao entra no ciclo fica fora, sem virar card solto."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Escolher o pacote v1 de assets a partir de diagnostico + benchmark.",
+          "Construir apenas os assets que desbloqueiam tracking, setup e execucao.",
+          "Registrar pendencias bloqueantes sem criar roadmap abstrato."
+        ],
+        "openThese": [
+          "14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO.md",
+          "13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO.md",
+          "03_PLANO_DE_MIDIA_CANONICO.md",
+          "08_LP_PONTO_DE_CONVERSAO_CANONICO.md",
+          "05_BRIEFING_CRIATIVO_VIDEO_FIRST_CANONICO.md",
+          "20_BANCO_TIPOS_CRIATIVOS_CANONICO.md"
+        ],
+        "createThese": [
+          "Lista curta de assets v1",
+          "DEOC",
+          "Plano de midia",
+          "LP/ponto de conversao",
+          "Briefing criativo",
+          "Checklist QA"
+        ],
+        "decisions": [
+          "Qual asset bloqueia tracking/setup se nao existir?",
+          "Qual asset e suporte e nao precisa entrar no ciclo agora?",
+          "Existe prova suficiente para os claims?",
+          "A LP, criativo e campanha contam a mesma promessa?"
+        ],
+        "doneWhen": [
+          "Pacote v1 decidido e assets essenciais prontos ou marcados como pendencia bloqueante."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k06_01",
+          "title": "Dossie Estrategico de Oferta e Comunicacao",
+          "label": "Dossie Estrategico de Oferta e Comunicacao",
+          "kind": "entregavel estrategico",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "copy/estrategia",
+          "whenCreated": "antes de criativo e campanha",
+          "inputs": [
+            "handoff",
+            "diagnostico GTM",
+            "benchmark",
+            "TAM/SAM/SOM",
+            "beachhead",
+            "ICP/persona",
+            "oferta",
+            "voz do cliente",
+            "objeções"
+          ],
+          "contents": [
+            "oferta",
+            "mecanismo",
+            "ICP/persona",
+            "alternativas",
+            "problemas priorizados",
+            "proposta de valor",
+            "narrativa central",
+            "claims permitidos/proibidos",
+            "traducao para midia, LP, criativo e vendas"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Substitui UCM e DCC como fonte unica de estratégia, comunicacao e traducao para execucao.",
+          "n2Evidence": "DEOC aprovado e usado em brief, LP, midia e vendas.",
+          "n3Use": "Atualizar angulos conforme criativos e leads qualificados.",
+          "docPath": "./assets/canonicos/13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO.md",
+          "aiSummary": "Substitui UCM e DCC como fonte unica de estratégia, comunicacao e traducao para execucao."
+        },
+        {
+          "id": "asset_k06_02",
+          "title": "Biblioteca de referencias e exemplos",
+          "label": "Biblioteca de referencias e exemplos",
+          "kind": "biblioteca de suporte",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "estrategia",
+          "whenCreated": "durante a construcao dos assets, a partir do benchmark ja aprovado",
+          "inputs": [
+            "benchmark",
+            "DEOC",
+            "ads library",
+            "LPs",
+            "ofertas do setor",
+            "exemplos internos"
+          ],
+          "contents": [
+            "referencias criativas",
+            "padroes de oferta",
+            "modelos de funil",
+            "claims comuns",
+            "ganchos",
+            "objeções",
+            "benchmarks de midia",
+            "riscos regulatorios"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Traz referencias acionaveis para criativo, LP e midia sem recriar a pesquisa de mercado.",
+          "n2Evidence": "Referencias linkadas e usadas em briefing/plano.",
+          "n3Use": "Marcar quais referencias viraram resultado.",
+          "docPath": "./assets/canonicos/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO.md",
+          "aiSummary": "Catalogo transversal de assets da jornada; referencia para biblioteca de exemplos e classificacao obrigatorio/condicional."
+        },
+        {
+          "id": "asset_k06_03",
+          "title": "Plano de midia e metas",
+          "label": "Plano de midia e metas",
+          "kind": "plano operacional",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "gestor de trafego",
+          "whenCreated": "antes do setup",
+          "inputs": [
+            "budget",
+            "benchmark",
+            "meta de CPL/CPMQL",
+            "historico",
+            "cohort"
+          ],
+          "contents": [
+            "canais",
+            "campanhas",
+            "orcamento",
+            "metas por etapa",
+            "hipoteses",
+            "periodo de teste",
+            "criterios de leitura",
+            "riscos"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Mostra como o investimento sera usado e como sera avaliado.",
+          "n2Evidence": "Plano anexado antes da campanha ir ao ar.",
+          "n3Use": "Comparar previsto vs realizado e ajustar guardrails.",
+          "docPath": "./assets/canonicos/03_PLANO_DE_MIDIA_CANONICO.md",
+          "aiSummary": "Mostra como o investimento sera usado e como sera avaliado."
+        },
+        {
+          "id": "asset_k06_04",
+          "title": "Briefing video-first",
+          "label": "Briefing video-first",
+          "kind": "brief criativo",
+          "order": 4,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "account/copy/criativo",
+          "whenCreated": "antes da producao criativa",
+          "inputs": [
+            "DEOC",
+            "benchmark",
+            "padroes vencedores",
+            "plano de midia"
+          ],
+          "contents": [
+            "objetivo",
+            "ICP",
+            "hook",
+            "dor/desejo",
+            "angulo",
+            "roteiro",
+            "CTA",
+            "formato",
+            "duracao",
+            "referencias",
+            "nomenclatura prevista"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Designer/editor consegue produzir sem voltar para pedir contexto basico.",
+          "n2Evidence": "Brief linkado aos criativos produzidos.",
+          "n3Use": "Agrupar performance por hook/angulo/formato.",
+          "docPath": "./assets/canonicos/05_BRIEFING_CRIATIVO_VIDEO_FIRST_CANONICO.md",
+          "aiSummary": "Designer/editor consegue produzir sem voltar para pedir contexto basico."
+        },
+        {
+          "id": "asset_k06_05",
+          "title": "Checklist de qualidade de asset",
+          "label": "Checklist de qualidade de asset",
+          "kind": "checklist",
+          "order": 5,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "coordenacao/QA",
+          "whenCreated": "antes da aprovacao interna",
+          "inputs": [
+            "criterio do componente",
+            "pacote v1",
+            "rubrica N2"
+          ],
+          "contents": [
+            "itens obrigatorios",
+            "falsos positivos",
+            "risco juridico",
+            "padrao visual",
+            "tracking",
+            "aprovador"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Asset nao vai para cliente/plataforma sem passar pela regua minima.",
+          "n2Evidence": "Checklist preenchido ou aprovado no fluxo.",
+          "n3Use": "Identificar quais checks mais evitam retrabalho.",
+          "docPath": "",
+          "aiSummary": "Asset nao vai para cliente/plataforma sem passar pela regua minima."
+        },
+        {
+          "id": "asset_k06_06",
+          "title": "Banco de tipos de criativo",
+          "label": "Banco de tipos de criativo",
+          "kind": "catalogo criativo",
+          "order": 6,
+          "required": false,
+          "statusInJourney": "create-or-update",
+          "owner": "criativo/account",
+          "whenCreated": "antes da primeira leva de ads e em cada ciclo de expansao",
+          "inputs": [
+            "DEOC",
+            "benchmark",
+            "plano de midia",
+            "briefing"
+          ],
+          "contents": [
+            "taxonomia formato x temperatura x objetivo",
+            "receitas por tipo",
+            "variacoes",
+            "DoD",
+            "change log"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Catalogo versionado com tipos acionaveis e template por tipo.",
+          "n2Evidence": "Tipos linkados a campanhas/criativos produzidos.",
+          "n3Use": "Medir quais tipos mais contribuem para aprendizado.",
+          "docPath": "./assets/canonicos/20_BANCO_TIPOS_CRIATIVOS_CANONICO.md",
+          "aiSummary": "Banco versionavel de receitas de criativo por funcao no funil."
+        }
+      ]
+    },
+    {
+      "id": "k07-tracking",
+      "role": "macro",
+      "type": "step",
+      "number": "04",
+      "phase": "Dados",
+      "tone": "yellow",
+      "w": 260,
+      "h": 210,
+      "title": "Contrato de dados e tracking",
+      "summary": "Definir como campanha, conjunto, anuncio, lead, CRM e planilha de growth ficam conectados.",
+      "tags": [
+        "contrato de dados",
+        "tracking",
+        "UTM",
+        "CRM",
+        "growth"
+      ],
+      "inputs": [
+        "Taxonomia UTM",
+        "IDs campanha/conjunto/anuncio",
+        "LP/Form/WhatsApp",
+        "CRM",
+        "Planilha de backup",
+        "Planilha de growth"
+      ],
+      "outputs": [
+        "Contrato de dados",
+        "Campos obrigatorios",
+        "Backup de UTMs",
+        "Teste ponta a ponta",
+        "Fonte de verdade v1"
+      ],
+      "evidence": "Um lead teste preserva IDs, UTMs, first/last-touch e status comercial ate a base de analise.",
+      "page": {
+        "headline": "Contrato de dados e o acordo operacional que impede a campanha de virar dado solto.",
+        "sections": [
+          {
+            "title": "O que e",
+            "body": "E a definicao de onde nasce e onde fica cada dado: campaign_id, adgroup_id, creative_id, UTMs, lead_id, status comercial, motivo de perda e campos parseados para a planilha de growth."
+          },
+          {
+            "title": "Por que e etapa",
+            "body": "Antes de rodar campanha, a operacao precisa provar que o clique chega no lead, o lead chega no CRM/backup e depois pode ser cruzado com MQL, SQL, oportunidade e venda."
+          },
+          {
+            "title": "V1 pragmatica",
+            "body": "Pode ser planilha manual ou semi-manual. O criterio nao e automacao perfeita; e preservar match confiavel entre midia, criativo, lead e funil."
+          },
+          {
+            "title": "Criterio",
+            "body": "A etapa termina com URL testada, formulario enviado, campos conferidos, first-touch preservado, last-touch atualizado e export pronto para alimentar a planilha de growth."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Criar IDs de campanha, conjunto e criativo.",
+          "Montar UTMs e campos v4_*.",
+          "Configurar campos ocultos/CRM e planilha backup.",
+          "Rodar lead teste ponta a ponta."
+        ],
+        "openThese": [
+          "01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS.md",
+          "09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+          "17_FUNIL_UNIFICADO_CONVERSOES_A2_CANONICO.md",
+          "18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO.md",
+          "19_JORNADA_LEAD_RACI_CANONICO.md",
+          "LP/formulario",
+          "CRM",
+          "Planilha backup obrigatoria"
+        ],
+        "createThese": [
+          "Contrato de dados",
+          "Planilha backup de leads",
+          "Mapa de campos CRM",
+          "URL teste",
+          "Registro do lead teste"
+        ],
+        "decisions": [
+          "Quais campos vao para CRM nativo e quais ficam no backup?",
+          "Como deduplicar lead?",
+          "Como preservar first-touch e last-touch?"
+        ],
+        "doneWhen": [
+          "Um lead teste chega com campaign_id, adgroup_id, creative_id, UTMs, lead_id e status comercial na base de analise."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k07_00",
+          "title": "Contrato de dados MKT -> CRM",
+          "label": "Contrato de dados MKT -> CRM",
+          "kind": "contrato operacional de dados",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "growth ops + CRM",
+          "whenCreated": "antes de subir campanhas",
+          "inputs": [
+            "Taxonomia UTM",
+            "Nomenclatura campanha/conjunto/anuncio",
+            "Formulario/LP",
+            "CRM",
+            "Planilha de backup",
+            "Planilha de growth"
+          ],
+          "contents": [
+            "onde cada campo nasce",
+            "onde cada campo e armazenado",
+            "IDs obrigatorios",
+            "first-touch",
+            "last-touch",
+            "planilha backup obrigatoria",
+            "backup de UTMs",
+            "match com CRM",
+            "campos parseados para analise"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Qualquer lead teste mostra campaign_id, adgroup_id, creative_id, UTMs e status comercial preservados no CRM e na planilha backup.",
+          "n2Evidence": "Teste ponta a ponta registrado com lead teste e campos conferidos.",
+          "n3Use": "Permite quebrar resultado por campanha, publico, temperatura, hook, persona, dor, angulo e qualidade comercial.",
+          "docPath": "./assets/canonicos/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+          "aiSummary": "Qualquer lead teste mostra campaign_id, adgroup_id, creative_id, UTMs e status comercial preservados no CRM e na planilha backup."
+        },
+        {
+          "id": "asset_k07_01",
+          "title": "Taxonomia UTM",
+          "label": "Taxonomia UTM",
+          "kind": "padrao de dados",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "growth ops",
+          "whenCreated": "antes da campanha",
+          "inputs": [
+            "canais",
+            "campanhas",
+            "criativos",
+            "cohort"
+          ],
+          "contents": [
+            "utm_source",
+            "utm_medium",
+            "utm_campaign",
+            "utm_content",
+            "utm_term",
+            "regras de naming",
+            "exemplos validos",
+            "erros proibidos"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Qualquer URL de campanha segue o mesmo padrao e pode ser lida no CRM/relatorio.",
+          "n2Evidence": "URLs testadas com UTMs aparecendo na fonte da verdade.",
+          "n3Use": "Agrupar resultado por campanha, canal, criativo e termo.",
+          "docPath": "./assets/canonicos/01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS.md",
+          "aiSummary": "Qualquer URL de campanha segue o mesmo padrao e pode ser lida no CRM/relatorio."
+        },
+        {
+          "id": "asset_k07_02",
+          "title": "Padrao de nomenclatura de criativos",
+          "label": "Padrao de nomenclatura de criativos",
+          "kind": "padrao de dados",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "trafego/criativo",
+          "whenCreated": "antes da producao/publicacao",
+          "inputs": [
+            "briefing",
+            "atributos do teste",
+            "ID unico"
+          ],
+          "contents": [
+            "creative_id",
+            "formato",
+            "ICP",
+            "hook",
+            "dor_desejo",
+            "angulo",
+            "descricao",
+            "versao"
+          ],
+          "outputs": [],
+          "definitionOfDone": "O nome do criativo permite quebrar performance por atributos e nao so por peca individual.",
+          "n2Evidence": "Criativos publicados com nomenclatura conforme.",
+          "n3Use": "Descobrir combinacoes vencedoras de formato/hook/publico.",
+          "docPath": "./assets/canonicos/01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS.md",
+          "aiSummary": "O nome do criativo permite quebrar performance por atributos e nao so por peca individual."
+        },
+        {
+          "id": "asset_k07_03",
+          "title": "Mapa de campos CRM e first/last touch",
+          "label": "Mapa de campos CRM e first/last touch",
+          "kind": "schema CRM",
+          "order": 4,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "CRM/growth ops",
+          "whenCreated": "setup tecnico",
+          "inputs": [
+            "CRM",
+            "formularios",
+            "UTMs",
+            "lead source"
+          ],
+          "contents": [
+            "campos first-touch",
+            "campos last-touch",
+            "regra write-once",
+            "regra update-on-conversion",
+            "lead ID",
+            "deal/opportunity source",
+            "motivo de desqualificacao"
+          ],
+          "outputs": [],
+          "definitionOfDone": "CRM preserva origem inicial e origem de conversao sem sobrescrever indevidamente.",
+          "n2Evidence": "Lead teste mostra campos preenchidos corretamente.",
+          "n3Use": "Relatorios de lead, MQL, oportunidade e venda por origem.",
+          "docPath": "./assets/canonicos/07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO.md",
+          "aiSummary": "CRM preserva origem inicial e origem de conversao sem sobrescrever indevidamente."
+        },
+        {
+          "id": "asset_k07_04",
+          "title": "Teste de tracking ponta a ponta",
+          "label": "Teste de tracking ponta a ponta",
+          "kind": "protocolo QA",
+          "order": 5,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "growth ops",
+          "whenCreated": "antes do go-live",
+          "inputs": [
+            "URL com UTM",
+            "formulario",
+            "CRM",
+            "relatorio"
+          ],
+          "contents": [
+            "clicar URL teste",
+            "validar cookie/campos ocultos",
+            "submeter form",
+            "validar CRM",
+            "validar export",
+            "validar dedupe"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Um lead teste percorre todo o caminho com campos corretos.",
+          "n2Evidence": "Prints/links do teste anexados.",
+          "n3Use": "Auditar quebras mensais de fonte desconhecida.",
+          "docPath": "./assets/canonicos/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+          "aiSummary": "Um lead teste percorre todo o caminho com campos corretos."
+        },
+        {
+          "id": "asset_k07_05",
+          "title": "Planilha backup de leads",
+          "label": "Planilha backup de leads",
+          "kind": "backup operacional obrigatorio",
+          "order": 6,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "growth ops",
+          "whenCreated": "antes de coletar leads",
+          "inputs": [
+            "formulario/LP",
+            "campos ocultos",
+            "UTMs",
+            "IDs v4",
+            "lead_id"
+          ],
+          "contents": [
+            "raw lead",
+            "first-touch",
+            "last-touch",
+            "campaign_id",
+            "adgroup_id",
+            "creative_id",
+            "test_id",
+            "status CRM",
+            "match method"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Todo lead capturado entra na planilha backup mesmo quando o CRM recebe os campos corretamente.",
+          "n2Evidence": "Lead teste aparece na planilha backup com IDs e UTMs.",
+          "n3Use": "Fallback para analise, deduplicacao e auditoria quando CRM/export falhar.",
+          "docPath": "./assets/canonicos/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+          "aiSummary": "Todo lead capturado entra na planilha backup mesmo quando o CRM recebe os campos corretamente."
+        },
+        {
+          "id": "asset_k07_06",
+          "title": "Funil unificado (A-2)",
+          "label": "Funil unificado (A-2)",
+          "kind": "definicao de funil",
+          "order": 7,
+          "required": false,
+          "statusInJourney": "create-or-update",
+          "owner": "growth ops + CS + vendas",
+          "whenCreated": "antes do plano de midia final e do contrato de dados",
+          "inputs": [
+            "plano de midia preliminar",
+            "DEOC",
+            "AS IS comercial",
+            "benchmark"
+          ],
+          "contents": [
+            "etapas TO BE",
+            "eventos de conversao",
+            "fonte da verdade",
+            "campos minimos CRM",
+            "handoffs"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Funil com definicoes unicas Marketing+Vendas e backlog de gaps.",
+          "n2Evidence": "Artefato publicado e usado em tracking e CRM.",
+          "n3Use": "Auditar taxas por etapa e drift de definicao.",
+          "docPath": "./assets/canonicos/17_FUNIL_UNIFICADO_CONVERSOES_A2_CANONICO.md",
+          "aiSummary": "Fonte unica de etapas, conversoes e dados por etapa."
+        },
+        {
+          "id": "asset_k07_07",
+          "title": "Protocolo de handoff MQL/SQL (A-4)",
+          "label": "Protocolo de handoff MQL/SQL (A-4)",
+          "kind": "protocolo inter-areas",
+          "order": 8,
+          "required": false,
+          "statusInJourney": "create-or-update",
+          "owner": "marketing + vendas",
+          "whenCreated": "com CRM e funil definidos",
+          "inputs": [
+            "funil unificado",
+            "DEOC",
+            "SLA comercial"
+          ],
+          "contents": [
+            "definicao MQL/SQL",
+            "motivos de rejeicao",
+            "campos CRM",
+            "SLA",
+            "cadencia de revisao"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Handoff operacional com criterios e rastro.",
+          "n2Evidence": "Campos e motivos usados em leads reais.",
+          "n3Use": "Melhorar segmentacao e mensagem a partir de rejeicoes.",
+          "docPath": "./assets/canonicos/18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO.md",
+          "aiSummary": "MQL/SQL com evidencia e SLA compartilhado."
+        },
+        {
+          "id": "asset_k07_08",
+          "title": "Jornada do lead + RACI",
+          "label": "Jornada do lead + RACI",
+          "kind": "governanca RACI",
+          "order": 9,
+          "required": false,
+          "statusInJourney": "create-or-update",
+          "owner": "coordenacao",
+          "whenCreated": "apos funil e handoff definidos",
+          "inputs": [
+            "funil unificado",
+            "protocolo handoff",
+            "organograma operativo"
+          ],
+          "contents": [
+            "RACI por etapa",
+            "evidencia minima",
+            "touchpoints"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Donos e evidencia por etapa sem ambiguidade.",
+          "n2Evidence": "Matriz publicada e referenciada em treinamentos.",
+          "n3Use": "Reduzir lead perdido entre areas.",
+          "docPath": "./assets/canonicos/19_JORNADA_LEAD_RACI_CANONICO.md",
+          "aiSummary": "RACI alinhado ao funil e ao protocolo de handoff."
+        }
+      ]
+    },
+    {
+      "id": "k08-campaign-setup",
+      "role": "macro",
+      "type": "step",
+      "number": "05",
+      "phase": "Setup",
+      "tone": "yellow",
+      "w": 260,
+      "h": 210,
+      "title": "Setup de contas e campanhas",
+      "summary": "Preparar contas, pixels, GTM, publicos, conversoes e estrutura Meta/Google antes de ativar verba.",
+      "tags": [
+        "setup",
+        "Meta Ads",
+        "Google Ads",
+        "publicos",
+        "pixel",
+        "GTM"
+      ],
+      "inputs": [
+        "Plano de midia",
+        "DEOC",
+        "Contrato de dados",
+        "Taxonomia UTM",
+        "LP/Form/WhatsApp",
+        "Criativos aprovados"
+      ],
+      "outputs": [
+        "Setup Meta Ads",
+        "Setup Google Ads",
+        "Publicos criados",
+        "Conversoes validadas",
+        "Checklist de go-live"
+      ],
+      "evidence": "Conta e campanha estao prontas para go-live com tracking, publicos, estrutura e lead teste validados.",
+      "page": {
+        "headline": "Setup e a etapa que separa planejar campanha de ter uma maquina pronta para rodar.",
+        "sections": [
+          {
+            "title": "O que entra aqui",
+            "body": "Configuracao de conta, permissao, pagamento, pixel/tag, GTM, eventos/conversoes, publicos, listas, audience signals, estrutura de campanha/conjunto/anuncio e checklist de go-live."
+          },
+          {
+            "title": "Meta Ads",
+            "body": "Criar publicos frios, mornos e quentes; separar temperaturas quando fizer sentido; usar 3 a 6 conjuntos no inicio; garantir 3 a 5 criativos por conjunto; aplicar exclusoes e nomenclatura rastreavel."
+          },
+          {
+            "title": "Google Ads",
+            "body": "Validar conversoes, enhanced conversions/importacao offline quando possivel, Search por intencao, negativas iniciais, PMax somente quando houver assets, sinais e budget para aprendizado."
+          },
+          {
+            "title": "Criterio",
+            "body": "Nada vai para execucao se conta, tracking, publicos, IDs, UTMs, planilha backup e lead teste nao estiverem conferidos."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Configurar contas, permissoes e faturamento.",
+          "Validar pixel/tag, GTM, eventos e conversoes.",
+          "Criar publicos padrao Meta e listas/sinais Google.",
+          "Estruturar campanhas/conjuntos/anuncios em rascunho com IDs e UTMs.",
+          "Rodar lead teste antes de ativar verba."
+        ],
+        "openThese": [
+          "15_SETUP_CAMPANHAS_META_ADS_CANONICO.md",
+          "16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO.md",
+          "01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS.md",
+          "09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+          "Plano de midia",
+          "Planilha backup obrigatoria"
+        ],
+        "createThese": [
+          "Checklist Meta Ads",
+          "Checklist Google Ads",
+          "Publicos/listas/sinais",
+          "Campanhas em rascunho",
+          "Checklist de go-live preenchido"
+        ],
+        "decisions": [
+          "Meta, Google ou ambos entram no primeiro ciclo?",
+          "Qual evento/conversao tem volume suficiente para otimizar?",
+          "A conta tem dados para PMax ou precisa comecar por Search/Meta simples?",
+          "O budget permite separar remarketing ou precisa consolidar?"
+        ],
+        "doneWhen": [
+          "Conta, tracking, publicos, estrutura, UTMs, planilha backup e lead teste estao validados antes do go-live."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k08_01",
+          "title": "Setup Meta Ads",
+          "label": "Setup Meta Ads",
+          "kind": "playbook operacional",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "gestor de trafego",
+          "whenCreated": "antes do launch Meta",
+          "inputs": [
+            "Plano de midia",
+            "DEOC",
+            "Taxonomia UTM",
+            "Contrato de dados",
+            "LP/Form/WhatsApp",
+            "Criativos aprovados"
+          ],
+          "contents": [
+            "checklist de conta",
+            "pixel/CAPI/eventos",
+            "publicos frios/mornos/quentes",
+            "estrutura inicial",
+            "nomenclatura campanha/conjunto/anuncio",
+            "exclusoes",
+            "criterios de go-live"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Meta esta pronto para ir ao ar com campanha, conjuntos e anuncios rastreaveis, publicos criados e lead teste validado.",
+          "n2Evidence": "Checklist Meta preenchido, campanha rascunho revisada e teste de evento/lead anexado.",
+          "n3Use": "Comparar performance por publico, temperatura, hook, criativo e estrutura para consolidar padroes vencedores.",
+          "docPath": "./assets/canonicos/15_SETUP_CAMPANHAS_META_ADS_CANONICO.md",
+          "aiSummary": "Meta esta pronto para ir ao ar com campanha, conjuntos e anuncios rastreaveis, publicos criados e lead teste validado."
+        },
+        {
+          "id": "asset_k08_02",
+          "title": "Setup Google Ads",
+          "label": "Setup Google Ads",
+          "kind": "playbook operacional",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "gestor de trafego",
+          "whenCreated": "antes do launch Google",
+          "inputs": [
+            "Plano de midia",
+            "DEOC",
+            "Taxonomia UTM",
+            "Contrato de dados",
+            "LP/Form/WhatsApp",
+            "Lista de palavras-chave/assets"
+          ],
+          "contents": [
+            "checklist de conta",
+            "GTM/tag/conversoes",
+            "Search",
+            "Performance Max",
+            "audience signals",
+            "negativas",
+            "importacao offline"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Google esta pronto para ir ao ar com conversoes testadas, Search/PMax estruturado, UTMs aplicadas e lead teste validado.",
+          "n2Evidence": "Checklist Google preenchido, conversoes testadas e estrutura de campanha registrada.",
+          "n3Use": "Otimizar por qualidade comercial com termos de busca, assets, MQL/SQL e importacao offline.",
+          "docPath": "./assets/canonicos/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO.md",
+          "aiSummary": "Google esta pronto para ir ao ar com conversoes testadas, Search/PMax estruturado, UTMs aplicadas e lead teste validado."
+        },
+        {
+          "id": "asset_k08_03",
+          "title": "Checklist de go-live de campanhas",
+          "label": "Checklist de go-live de campanhas",
+          "kind": "checklist operacional",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "trafego + growth ops",
+          "whenCreated": "fim do setup, antes de ativar verba",
+          "inputs": [
+            "Setup Meta",
+            "Setup Google",
+            "Contrato de dados",
+            "Planilha backup",
+            "Planilha de growth"
+          ],
+          "contents": [
+            "conta",
+            "tracking",
+            "publicos",
+            "estrutura",
+            "UTMs",
+            "IDs",
+            "criativos",
+            "orcamento",
+            "hipotese",
+            "lead teste"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Campanha so vai para execucao quando setup tecnico e estrutural estiver conferido.",
+          "n2Evidence": "Checklist assinado/preenchido antes do go-live.",
+          "n3Use": "Relacionar falhas de setup com retrabalho, perda de dados e performance ruim.",
+          "docPath": "./assets/canonicos/15_SETUP_CAMPANHAS_META_ADS_CANONICO.md",
+          "aiSummary": "Campanha so vai para execucao quando setup tecnico e estrutural estiver conferido."
+        }
+      ]
+    },
+    {
+      "id": "k08-execution",
+      "role": "macro",
+      "type": "step",
+      "number": "06",
+      "phase": "Execucao",
+      "tone": "yellow",
+      "w": 260,
+      "h": 210,
+      "title": "Executar campanha e criativos",
+      "summary": "Ativar campanhas ja preparadas, publicar criativos aprovados e registrar a hipotese do ciclo.",
+      "tags": [
+        "campanha",
+        "criativo",
+        "video-first"
+      ],
+      "inputs": [
+        "Setup de campanhas aprovado",
+        "Checklist de go-live",
+        "Criativos com ID",
+        "Hipotese",
+        "Orcamento e datas"
+      ],
+      "outputs": [
+        "Campanhas no ar",
+        "Criativos rastreaveis",
+        "Hipoteses registradas",
+        "Registro de ativacao"
+      ],
+      "evidence": "Campanha esta no ar sem quebrar a estrutura validada no setup, com criativo aprovado e hipotese registrada.",
+      "page": {
+        "headline": "Execucao e go-live controlado: ativar, publicar, registrar e observar sem improvisar setup.",
+        "sections": [
+          {
+            "title": "O que nao entra mais aqui",
+            "body": "Criacao de publicos, instalacao de pixel, GTM, estrutura de campanha e configuracao de conversoes pertencem ao setup. Aqui a operacao ativa o que ja foi conferido."
+          },
+          {
+            "title": "Go-live",
+            "body": "Ativar campanha, conferir status de anuncios, registrar horario, budget inicial, links/prints e responsavel pela primeira leitura."
+          },
+          {
+            "title": "Criativo e hipotese",
+            "body": "O criativo publicado precisa carregar ID e hipotese de leitura. A execucao nao termina ao apertar publicar; termina quando o ciclo de leitura esta explicitado."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Ativar campanhas ja aprovadas no setup.",
+          "Publicar criativos finais com IDs.",
+          "Registrar horario de go-live, budget inicial e responsavel pela primeira leitura."
+        ],
+        "openThese": [
+          "Checklist de go-live",
+          "Setup Meta/Google",
+          "Briefing criativo",
+          "Planilha de testes"
+        ],
+        "createThese": [
+          "Campanhas no ar",
+          "Criativos publicados com IDs",
+          "Registro de hipotese",
+          "Checklist de go-live preenchido"
+        ],
+        "decisions": [
+          "A variavel testada esta clara?",
+          "O volume e budget permitem leitura?",
+          "Tudo esta rastreavel antes de ativar?"
+        ],
+        "doneWhen": [
+          "Campanha esta no ar com tracking conferido, criativos aprovados e hipotese registrada."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k08_exec_01",
+          "title": "Ativacao de campanha",
+          "label": "Ativacao de campanha",
+          "kind": "registro de go-live",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "trafego",
+          "whenCreated": "dia do launch",
+          "inputs": [
+            "setup de campanhas aprovado",
+            "criativos aprovados",
+            "checklist de go-live",
+            "orcamento",
+            "datas"
+          ],
+          "contents": [
+            "campanha ativada",
+            "link/print da campanha",
+            "status dos anuncios",
+            "orcamento inicial",
+            "data/hora de inicio",
+            "responsavel pela leitura"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Campanha sai de rascunho para ativa sem alterar a estrutura aprovada no setup.",
+          "n2Evidence": "Link/print da campanha ativa e registro do horario de go-live.",
+          "n3Use": "Comparar performance inicial com o setup planejado e identificar gargalos de aprovacao/politica.",
+          "docPath": "",
+          "aiSummary": "Campanha sai de rascunho para ativa sem alterar a estrutura aprovada no setup."
+        },
+        {
+          "id": "asset_k08_exec_02",
+          "title": "Registro de hipotese de teste",
+          "label": "Registro de hipotese de teste",
+          "kind": "registro experimental",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "growth/trafego",
+          "whenCreated": "antes do launch",
+          "inputs": [
+            "brief",
+            "plano de midia",
+            "padrao testado"
+          ],
+          "contents": [
+            "hipotese",
+            "variavel testada",
+            "metrica primaria",
+            "metrica secundaria",
+            "periodo minimo",
+            "criterio de leitura",
+            "decisoes possiveis"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Fica claro o que a campanha deveria ensinar.",
+          "n2Evidence": "Hipotese vinculada ao card/tarefa de campanha.",
+          "n3Use": "Debrief compara hipotese x resultado.",
+          "docPath": "./assets/canonicos/02_PLANILHA_DE_TESTES_GROWTH_CANONICA.md",
+          "aiSummary": "Fica claro o que a campanha deveria ensinar."
+        },
+        {
+          "id": "asset_k08_exec_03",
+          "title": "Fluxo de aprovacao criativa",
+          "label": "Fluxo de aprovacao criativa",
+          "kind": "workflow",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "account/criativo",
+          "whenCreated": "durante producao",
+          "inputs": [
+            "brief",
+            "criativos",
+            "stakeholders",
+            "prazos"
+          ],
+          "contents": [
+            "aprovador interno",
+            "aprovador cliente",
+            "SLA de feedback",
+            "limite de revisoes",
+            "historico de comentarios",
+            "versao final"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Aprovacao tem trilha, prazo e versao final clara.",
+          "n2Evidence": "Status de aprovacao registrado no PM/Flow.",
+          "n3Use": "Medir gargalos de aprovacao e impacto no ciclo.",
+          "docPath": "",
+          "aiSummary": "Aprovacao tem trilha, prazo e versao final clara."
+        }
+      ]
+    },
+    {
+      "id": "k09-evidence",
+      "role": "macro",
+      "type": "step",
+      "number": "07",
+      "phase": "Evidencia",
+      "tone": "green",
+      "w": 260,
+      "h": 210,
+      "title": "Coletar dados e evidencias",
+      "summary": "Juntar provas da implementacao e dados de performance para separar achismo de aprendizado.",
+      "tags": [
+        "evidencia",
+        "dados",
+        "relatorio"
+      ],
+      "inputs": [
+        "Prints/links",
+        "Exports",
+        "CRM",
+        "Planilha de leads",
+        "Feedback comercial",
+        "Status Flow/Cockpit"
+      ],
+      "outputs": [
+        "Pacote de evidencias",
+        "Relatorio padronizado",
+        "Dados de funil",
+        "Pendencias de qualidade"
+      ],
+      "evidence": "A conta possui evidencia suficiente para auditoria N2 e leitura N3.",
+      "page": {
+        "headline": "A evidencia e o que transforma uma declaracao em componente implementado.",
+        "sections": [
+          {
+            "title": "Evidencia N2",
+            "body": "Link da campanha, nomenclatura correta, UTM, print/configuracao do evento, LP/ponto de conversao, CRM ou base de leads, checklist preenchido."
+          },
+          {
+            "title": "Evidencia N3",
+            "body": "Dados por campanha/conjunto/criativo, avancos de funil, feedback de qualidade do lead, decisao tomada, hipotese e prazo de revisao."
+          },
+          {
+            "title": "Falso positivo",
+            "body": "Ter lead barato sem saber se ele avancou no funil nao prova demanda qualificada."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Coletar dados de midia, leads, CRM e feedback comercial.",
+          "Atualizar planilha backup e planilha de growth.",
+          "Anexar evidencias de implementacao."
+        ],
+        "openThese": [
+          "Planilha backup",
+          "Planilha de testes growth",
+          "CRM",
+          "Export de midia",
+          "Feedback vendas"
+        ],
+        "createThese": [
+          "Relatorio v1",
+          "Pacote de evidencias",
+          "Feedback de qualidade do lead"
+        ],
+        "decisions": [
+          "O dado e suficiente para leitura?",
+          "Existe fonte desconhecida ou tracking quebrado?",
+          "O lead gerado tem qualidade comercial?"
+        ],
+        "doneWhen": [
+          "Ha dados e evidencias suficientes para checar qualidade e preparar debrief."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k09_01",
+          "title": "Dashboard/relatorio v1",
+          "label": "Dashboard/relatorio v1",
+          "kind": "relatorio",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "evidence",
+          "owner": "growth ops",
+          "whenCreated": "apos go-live",
+          "inputs": [
+            "midia",
+            "CRM",
+            "planilha de leads",
+            "UTMs"
+          ],
+          "contents": [
+            "spend",
+            "leads",
+            "MQLs",
+            "CPMQL",
+            "conversoes por etapa",
+            "campanha/conjunto/criativo",
+            "atributos criativos",
+            "unknown source"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Responde o que aconteceu, por que aconteceu e o que vem depois.",
+          "n2Evidence": "Relatorio atualiza ou exporta com campos minimos.",
+          "n3Use": "Base do debrief e decisoes de otimizacao.",
+          "docPath": "./assets/canonicos/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+          "aiSummary": "Responde o que aconteceu, por que aconteceu e o que vem depois."
+        },
+        {
+          "id": "asset_k09_02",
+          "title": "Pacote de evidencias N2",
+          "label": "Pacote de evidencias N2",
+          "kind": "dossie",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "PM/coordenacao",
+          "whenCreated": "antes da auditoria",
+          "inputs": [
+            "links",
+            "prints",
+            "checklists",
+            "relatorios",
+            "tarefas"
+          ],
+          "contents": [
+            "DEOC",
+            "plano",
+            "criativos",
+            "UTM",
+            "teste tracking",
+            "campanha live",
+            "LP/form",
+            "CRM/handoff"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Auditor consegue validar N2 sem caçar informacao em varios lugares.",
+          "n2Evidence": "Dossie completo no diretorio.",
+          "n3Use": "Reduz tempo de auditoria e cria historico.",
+          "docPath": "./assets/canonicos/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md",
+          "aiSummary": "Auditor consegue validar N2 sem caçar informacao em varios lugares."
+        },
+        {
+          "id": "asset_k09_03",
+          "title": "Feedback de qualidade do lead",
+          "label": "Feedback de qualidade do lead",
+          "kind": "formulario/rotina",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "account + comercial do cliente",
+          "whenCreated": "semanal/quinzenal",
+          "inputs": [
+            "leads gerados",
+            "CRM",
+            "vendedores",
+            "cliente"
+          ],
+          "contents": [
+            "lead bom/ruim",
+            "motivo",
+            "tempo de resposta",
+            "tentativas",
+            "status",
+            "objeções",
+            "comentario qualitativo"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Marketing recebe sinal de qualidade e nao otimiza so para lead barato.",
+          "n2Evidence": "Rotina ativa e campos preenchidos.",
+          "n3Use": "Ajustar criativos, oferta, segmentacao ou handoff.",
+          "docPath": "",
+          "aiSummary": "Marketing recebe sinal de qualidade e nao otimiza so para lead barato."
+        }
+      ]
+    },
+    {
+      "id": "k10-n2-audit",
+      "role": "macro",
+      "type": "step",
+      "number": "08",
+      "phase": "Auditoria N2",
+      "tone": "green",
+      "w": 260,
+      "h": 210,
+      "title": "Checar resultados e qualidade",
+      "summary": "Depois de rodar campanha, verificar resultado, qualidade do lead, tracking e gaps antes de otimizar.",
+      "tags": [
+        "resultados",
+        "qualidade",
+        "pos-campanha",
+        "tracking"
+      ],
+      "inputs": [
+        "Campanhas no ar",
+        "Dados de midia",
+        "Leads",
+        "CRM",
+        "Feedback comercial",
+        "Planilha de growth"
+      ],
+      "outputs": [
+        "Leitura de qualidade",
+        "Gaps de tracking",
+        "Gaps comerciais",
+        "Acoes corretivas",
+        "Base para debrief"
+      ],
+      "evidence": "A operacao sabe se o problema foi midia, criativo, lead, vendas, tracking ou volume insuficiente.",
+      "page": {
+        "headline": "Esse passo e o check pos-campanha para saber se o que rodou gerou aprendizado confiavel.",
+        "sections": [
+          {
+            "title": "O que checar",
+            "body": "Spend, leads, CPL, MQL, SQL, feedback comercial, IDs preservados, UTMs preenchidas, origem desconhecida, velocidade de atendimento e motivos de desqualificacao."
+          },
+          {
+            "title": "Separar problemas",
+            "body": "Lead barato e ruim nao e sucesso. Criativo caro com SQL pode ser oportunidade. Tracking quebrado invalida conclusao. Vendas sem SLA pode destruir campanha boa."
+          },
+          {
+            "title": "Saida",
+            "body": "Lista de correcoes e leitura para o debrief: escalar, ajustar, matar, corrigir tracking, revisar oferta, acionar vendas ou rodar novo teste."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Ler resultado pos-campanha e separar causa do problema.",
+          "Checar qualidade do lead, tracking, vendas e volume.",
+          "Transformar gaps em acoes corretivas."
+        ],
+        "openThese": [
+          "Relatorio v1",
+          "Planilha de growth",
+          "CRM",
+          "Feedback comercial",
+          "Pacote de evidencias"
+        ],
+        "createThese": [
+          "Checklist de resultados e qualidade",
+          "Plano de correcao",
+          "Lista de gaps"
+        ],
+        "decisions": [
+          "Lead barato e ruim?",
+          "Lead caro e bom?",
+          "Tracking quebrou?",
+          "Vendas falhou SLA?",
+          "Volume foi inconclusivo?"
+        ],
+        "doneWhen": [
+          "A equipe sabe se deve escalar, ajustar, matar, corrigir tracking, revisar oferta ou acionar vendas."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k10_01",
+          "title": "Checklist de resultados e qualidade",
+          "label": "Checklist de resultados e qualidade",
+          "kind": "check pos-campanha",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "coordenacao",
+          "whenCreated": "semanal ou marco de implementacao",
+          "inputs": [
+            "rubrica",
+            "evidencias",
+            "Flow/Cockpit"
+          ],
+          "contents": [
+            "campanhas no ar",
+            "spend",
+            "leads",
+            "MQLs",
+            "SQLs",
+            "qualidade comercial",
+            "tracking preenchido",
+            "IDs preservados",
+            "gaps de execucao",
+            "decisao de correcao"
+          ],
+          "outputs": [],
+          "definitionOfDone": "A leitura separa problema de campanha, problema de lead, problema comercial e problema de tracking.",
+          "n2Evidence": "Checklist preenchido com links.",
+          "n3Use": "Identificar padroes de falha por squad/cohort.",
+          "docPath": "./assets/canonicos/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO.md",
+          "aiSummary": "A leitura separa problema de campanha, problema de lead, problema comercial e problema de tracking."
+        },
+        {
+          "id": "asset_k10_02",
+          "title": "Plano de correcao N2",
+          "label": "Plano de correcao N2",
+          "kind": "backlog",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "evidence",
+          "owner": "PM/coordenacao",
+          "whenCreated": "apos auditoria",
+          "inputs": [
+            "itens reprovados",
+            "risco",
+            "prioridade"
+          ],
+          "contents": [
+            "gap",
+            "impacto",
+            "acao",
+            "dono",
+            "prazo",
+            "dependencia",
+            "criterio de aceite"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Todo gap tem caminho para virar N2 ou decisao consciente de excecao.",
+          "n2Evidence": "Backlog visivel e acompanhado.",
+          "n3Use": "Medir tempo para corrigir e recorrencia de gaps.",
+          "docPath": "",
+          "aiSummary": "Todo gap tem caminho para virar N2 ou decisao consciente de excecao."
+        }
+      ]
+    },
+    {
+      "id": "k11-n3-growth",
+      "role": "macro",
+      "type": "step",
+      "number": "09",
+      "phase": "Growth N3",
+      "tone": "green",
+      "w": 260,
+      "h": 210,
+      "title": "Rodar rotina N3 de growth",
+      "summary": "Gerenciar o processo por dados, hipoteses, backlog e decisao especialista.",
+      "tags": [
+        "N3",
+        "growth",
+        "otimizacao"
+      ],
+      "inputs": [
+        "Dados de campanha",
+        "Dados de funil",
+        "Feedback dos leads",
+        "Metas",
+        "Benchmarks",
+        "Backlog"
+      ],
+      "outputs": [
+        "Debrief",
+        "Decisao de escalar/ajustar/matar",
+        "Novas hipoteses",
+        "Registro de aprendizado"
+      ],
+      "evidence": "Toda decisao tem dado, hipotese, dono, prazo e aprendizado registrado.",
+      "page": {
+        "headline": "N3 nao e regra cega. E julgamento especialista apoiado por dados comparaveis.",
+        "sections": [
+          {
+            "title": "Leituras essenciais",
+            "body": "CPL, custo por lead qualificado, conversao por etapa, performance por campanha/conjunto/criativo e performance por atributos do criativo."
+          },
+          {
+            "title": "Contra regra deterministica",
+            "body": "A call rejeita 'se CPL > X, mata'. Um criativo caro pode trazer lead qualificado. Guardrails ajudam, mas a decisao precisa considerar funil, volume e contexto."
+          },
+          {
+            "title": "Loop",
+            "body": "Gerar -> coletar -> analisar -> otimizar -> canonizar -> rebriefar."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Fazer debrief com dados de funil e qualidade comercial.",
+          "Identificar padroes por campanha/conjunto/criativo.",
+          "Priorizar proximo teste."
+        ],
+        "openThese": [
+          "Planilha de testes growth",
+          "Relatorio v1",
+          "Feedback comercial",
+          "Benchmark",
+          "Backlog de hipoteses"
+        ],
+        "createThese": [
+          "Debrief N3",
+          "Decisao de escala/ajuste/morte",
+          "Backlog priorizado",
+          "Nova hipotese"
+        ],
+        "decisions": [
+          "Qual padrao parece escalavel?",
+          "Qual conclusao tem limite de amostra?",
+          "Qual variavel muda no proximo ciclo?"
+        ],
+        "doneWhen": [
+          "Existe decisao registrada, aprendizado claro e proxima hipotese definida."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k11_01",
+          "title": "Template de debrief N3",
+          "label": "Template de debrief N3",
+          "kind": "relatorio de aprendizado",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "growth lead",
+          "whenCreated": "quinzenal/mensal",
+          "inputs": [
+            "dashboard",
+            "feedback lead",
+            "metas",
+            "hipoteses"
+          ],
+          "contents": [
+            "resultado vs meta",
+            "o que funcionou",
+            "o que nao funcionou",
+            "padroes por criativo",
+            "gargalos de funil",
+            "decisao",
+            "proxima hipotese"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Termina com decisao clara, nao com apenas dados.",
+          "n2Evidence": "Debrief registrado.",
+          "n3Use": "Principal mecanismo de melhoria continua.",
+          "docPath": "./assets/canonicos/02_PLANILHA_DE_TESTES_GROWTH_CANONICA.md",
+          "aiSummary": "Termina com decisao clara, nao com apenas dados."
+        },
+        {
+          "id": "asset_k11_02",
+          "title": "Backlog de hipoteses",
+          "label": "Backlog de hipoteses",
+          "kind": "backlog growth",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "growth lead",
+          "whenCreated": "continuo",
+          "inputs": [
+            "debrief",
+            "feedback comercial",
+            "biblioteca",
+            "benchmark"
+          ],
+          "contents": [
+            "hipotese",
+            "alavanca",
+            "impacto esperado",
+            "esforco",
+            "risco",
+            "prioridade",
+            "status",
+            "aprendizado"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Proximos testes nascem de aprendizado e prioridade, nao de improviso.",
+          "n2Evidence": "Backlog existe e e usado na rotina.",
+          "n3Use": "Motor do sprint growth.",
+          "docPath": "./assets/canonicos/02_PLANILHA_DE_TESTES_GROWTH_CANONICA.md",
+          "aiSummary": "Proximos testes nascem de aprendizado e prioridade, nao de improviso."
+        },
+        {
+          "id": "asset_k11_03",
+          "title": "Guardrails de otimizacao",
+          "label": "Guardrails de otimizacao",
+          "kind": "guia de decisao",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "create-or-update",
+          "owner": "especialistas de midia",
+          "whenCreated": "antes da rotina N3",
+          "inputs": [
+            "benchmarks",
+            "historico",
+            "metas",
+            "volume minimo"
+          ],
+          "contents": [
+            "quando escalar",
+            "quando segurar",
+            "quando matar",
+            "quando ajustar",
+            "quando corrigir tracking",
+            "quando acionar vendas"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Ajuda julgamento especialista sem virar regra deterministica cega.",
+          "n2Evidence": "Guia publicado e referenciado no debrief.",
+          "n3Use": "Aumentar consistencia das decisoes entre gestores.",
+          "docPath": "",
+          "aiSummary": "Ajuda julgamento especialista sem virar regra deterministica cega."
+        }
+      ]
+    },
+    {
+      "id": "k12-canonize",
+      "role": "macro",
+      "type": "step",
+      "number": "10",
+      "phase": "Canonizacao",
+      "tone": "purple",
+      "w": 260,
+      "h": 210,
+      "title": "Canonizar aprendizado",
+      "summary": "Transformar padroes vencedores e falhas em biblioteca, packs e skills reutilizaveis.",
+      "tags": [
+        "biblioteca",
+        "skills",
+        "playbook"
+      ],
+      "inputs": [
+        "Debriefs",
+        "Padroes vencedores",
+        "Anti-padroes",
+        "Exemplos de especialistas",
+        "Resultados por cohort/segmento"
+      ],
+      "outputs": [
+        "Biblioteca atualizada",
+        "Pack revisado",
+        "Skill candidata",
+        "Anti-padrao documentado",
+        "Decisao registrada"
+      ],
+      "evidence": "O aprendizado saiu da conta individual e ficou disponivel para reuso por cohort/segmento.",
+      "page": {
+        "headline": "Nenhum conhecimento deve ficar so na cabeca de alguem.",
+        "sections": [
+          {
+            "title": "Regra de ouro",
+            "body": "Se gerou resultado replicavel, vira ativo canonico; se falhou de forma relevante, vira anti-padrao; se ainda e incerto, vira experimento."
+          },
+          {
+            "title": "Diretorio esperado",
+            "body": "Contexto, cohorts, segmentos, playbooks, experimentos, processos, biblioteca de assets, decisoes, metricas, riscos e inbox."
+          },
+          {
+            "title": "De exemplo para skill",
+            "body": "Exemplo vencedor -> padrao recorrente -> playbook -> pack -> skill."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Transformar aprendizados relevantes em biblioteca, anti-padroes, pack ou skill.",
+          "Registrar contexto e limite da conclusao.",
+          "Evitar copiar cegamente um caso isolado."
+        ],
+        "openThese": [
+          "Debrief N3",
+          "Planilha de growth",
+          "Assets usados",
+          "Exemplos vencedores/falhos"
+        ],
+        "createThese": [
+          "Registro de aprendizado canonico",
+          "Pack versionado",
+          "Anti-padrao",
+          "Skill candidata quando estabilizar"
+        ],
+        "decisions": [
+          "Isso e padrao replicavel, excecao ou experimento?",
+          "Aplica a qual cohort/segmento?",
+          "Vira playbook agora ou backlog?"
+        ],
+        "doneWhen": [
+          "Outra squad consegue reutilizar o aprendizado sem perder contexto."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k12_01",
+          "title": "Registro de aprendizado canonico",
+          "label": "Registro de aprendizado canonico",
+          "kind": "knowledge card",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "evidence",
+          "owner": "lideranca de pratica",
+          "whenCreated": "apos debrief relevante",
+          "inputs": [
+            "resultado",
+            "contexto",
+            "asset usado",
+            "dados",
+            "decisao"
+          ],
+          "contents": [
+            "cohort",
+            "segmento",
+            "situacao",
+            "padrao observado",
+            "evidencia",
+            "limite da conclusao",
+            "recomendacao"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Outra squad consegue reutilizar sem copiar cegamente.",
+          "n2Evidence": "Card publicado na biblioteca.",
+          "n3Use": "Alimenta rebriefs, packs e treinamento.",
+          "docPath": "",
+          "aiSummary": "Outra squad consegue reutilizar sem copiar cegamente."
+        },
+        {
+          "id": "asset_k12_02",
+          "title": "Pack canonico versionado",
+          "label": "Pack canonico versionado",
+          "kind": "pack",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "especialista",
+          "whenCreated": "quando padrao se repete",
+          "inputs": [
+            "aprendizados",
+            "templates",
+            "exemplos",
+            "criterios"
+          ],
+          "contents": [
+            "quando usar",
+            "inputs obrigatorios",
+            "passo a passo",
+            "template",
+            "exemplos bons",
+            "anti-padroes",
+            "criterio de aceite"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Pack consegue ser executado por alguem fora do grupo original.",
+          "n2Evidence": "Pack aplicado em pelo menos uma conta com evidencia.",
+          "n3Use": "Versionar com resultados dos proximos ciclos.",
+          "docPath": "",
+          "aiSummary": "Pack consegue ser executado por alguem fora do grupo original."
+        },
+        {
+          "id": "asset_k12_03",
+          "title": "Skill operacional",
+          "label": "Skill operacional",
+          "kind": "skill",
+          "order": 3,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "enablement/IA",
+          "whenCreated": "quando pack estabiliza",
+          "inputs": [
+            "pack",
+            "exemplos",
+            "criterios",
+            "dados"
+          ],
+          "contents": [
+            "objetivo",
+            "contexto",
+            "passos",
+            "inputs esperados",
+            "outputs",
+            "criterios",
+            "exemplos",
+            "falhas comuns"
+          ],
+          "outputs": [],
+          "definitionOfDone": "A skill reduz variacao de entrega e acelera execucao.",
+          "n2Evidence": "Skill instalada/descrita e usada em fluxo real.",
+          "n3Use": "Medir qualidade e tempo antes/depois.",
+          "docPath": "",
+          "aiSummary": "A skill reduz variacao de entrega e acelera execucao."
+        }
+      ]
+    },
+    {
+      "id": "k13-rebrief",
+      "role": "macro",
+      "type": "step",
+      "number": "11",
+      "phase": "Proximo ciclo",
+      "tone": "purple",
+      "w": 260,
+      "h": 210,
+      "title": "Rebriefar proximo ciclo",
+      "summary": "Fechar o loop: o proximo ciclo nasce do aprendizado anterior, nao de uma nova intuicao solta.",
+      "tags": [
+        "rebrief",
+        "loop",
+        "versionamento"
+      ],
+      "inputs": [
+        "Aprendizados",
+        "Padroes vencedores",
+        "Gaps",
+        "Backlog",
+        "Metas revisadas"
+      ],
+      "outputs": [
+        "Novo briefing",
+        "Novos criativos/campanhas",
+        "Mudancas registradas",
+        "Comparabilidade preservada"
+      ],
+      "evidence": "O ciclo seguinte consegue ser comparado ao anterior porque processo, IDs e hipoteses foram preservados.",
+      "page": {
+        "headline": "O OS fica vivo quando cada ciclo melhora o anterior.",
+        "sections": [
+          {
+            "title": "O que rebriefar",
+            "body": "Formato, publico, hook, dor/desejo, angulo, oferta, LP, canal, campanha, orcamento, tracking ou handoff."
+          },
+          {
+            "title": "Versionamento",
+            "body": "Mudancas precisam ser registradas para saber se o resultado mudou por causa da hipotese testada ou por ruído operacional."
+          },
+          {
+            "title": "Saida esperada",
+            "body": "A operacao vira uma maquina de aprendizado: cada conta alimenta seu proprio proximo ciclo e a biblioteca geral."
+          }
+        ]
+      },
+      "operatorGuide": {
+        "doNow": [
+          "Criar o brief do proximo ciclo a partir do aprendizado anterior.",
+          "Preservar comparabilidade do teste.",
+          "Registrar o que muda e o que permanece constante."
+        ],
+        "openThese": [
+          "Debrief N3",
+          "Backlog de hipoteses",
+          "DEOC",
+          "Plano de midia",
+          "Planilha de growth"
+        ],
+        "createThese": [
+          "Brief do ciclo seguinte",
+          "Mudancas versionadas",
+          "Nova fila de criativos/campanhas"
+        ],
+        "decisions": [
+          "Qual variavel vamos testar agora?",
+          "Qual padrao sera replicado?",
+          "O que nao deve mudar para manter comparabilidade?"
+        ],
+        "doneWhen": [
+          "Proximo ciclo tem hipotese, assets, tracking e criterio de leitura definidos."
+        ]
+      },
+      "assets": [
+        {
+          "id": "asset_k13_01",
+          "title": "Brief do ciclo seguinte",
+          "label": "Brief do ciclo seguinte",
+          "kind": "brief versionado",
+          "order": 1,
+          "required": true,
+          "statusInJourney": "evidence",
+          "owner": "account/growth",
+          "whenCreated": "apos debrief",
+          "inputs": [
+            "aprendizado",
+            "padroes vencedores",
+            "gaps",
+            "backlog"
+          ],
+          "contents": [
+            "mudanca proposta",
+            "hipotese",
+            "variavel mantida",
+            "variavel alterada",
+            "assets necessarios",
+            "tracking",
+            "meta"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Da para comparar ciclo anterior e novo ciclo sem perder o fio.",
+          "n2Evidence": "Brief linkado a campanha/criativos seguintes.",
+          "n3Use": "Fecha o loop de melhoria.",
+          "docPath": "./assets/canonicos/02_PLANILHA_DE_TESTES_GROWTH_CANONICA.md",
+          "aiSummary": "Da para comparar ciclo anterior e novo ciclo sem perder o fio."
+        },
+        {
+          "id": "asset_k13_02",
+          "title": "Log de versionamento do OS",
+          "label": "Log de versionamento do OS",
+          "kind": "changelog",
+          "order": 2,
+          "required": true,
+          "statusInJourney": "reference",
+          "owner": "PM/metodologia",
+          "whenCreated": "a cada mudanca relevante",
+          "inputs": [
+            "debrief",
+            "decisao",
+            "pack alterado",
+            "impacto esperado"
+          ],
+          "contents": [
+            "o que mudou",
+            "por que mudou",
+            "onde aplica",
+            "data",
+            "dono",
+            "como validar"
+          ],
+          "outputs": [],
+          "definitionOfDone": "Mudanca de processo nao fica invisivel.",
+          "n2Evidence": "Changelog publicado.",
+          "n3Use": "Auditar se versoes novas melhoram resultado.",
+          "docPath": "",
+          "aiSummary": "Mudanca de processo nao fica invisivel."
+        }
+      ]
+    },
+    {
+      "id": "s01-cohort-map",
+      "role": "macro",
+      "type": "note",
+      "number": "NOTA",
+      "phase": "Cohort x Segmento",
+      "tone": "blue",
+      "w": 520,
+      "h": 330,
+      "title": "Cohort x segmentos Leadster",
+      "summary": "Cruzamento entre modelo de negocio/venda e os 17 segmentos do Panorama Leadster 2025.",
+      "tags": [
+        "cohort",
+        "segmentos",
+        "leadster",
+        "benchmark"
+      ],
+      "inputs": [
+        "Panorama Leadster 2025",
+        "Modelo comercial",
+        "Segmento"
+      ],
+      "outputs": [
+        "Cruzamento cohort x segmento"
+      ],
+      "evidence": "Segmentos do Panorama estao visiveis no canvas para orientar benchmark, DEOC, midia e criativos.",
+      "page": {
+        "headline": "Cohort define a arquitetura; segmento define linguagem, benchmark e peculiaridades.",
+        "sections": [
+          {
+            "title": "Cohorts iniciais",
+            "body": "B2B high ticket inside sales, B2B low/mid ticket, B2C high ticket consultivo, B2C low ticket WhatsApp/formulario."
+          },
+          {
+            "title": "Segmentos",
+            "body": "Advocacia, educacao, saude, imoveis, servicos locais, franquias, entre outros a validar com base e Panorama."
+          }
+        ]
+      },
+      "noteLines": [
+        "Cohorts: B2B high ticket inside sales | B2B low/mid ticket | B2C high ticket consultivo | B2C low ticket WhatsApp/form.",
+        "Segmentos Leadster: Agencia, Consultoria, Educacional, Energia, Financeiro, Imoveis, Juridico, Industria e Fabricacao, Logistica e Transporte, Marketing e Publicidade, Seguros, Servicos Medicos e Saude, Software, Tecnologia e TI, Telefonia e Internet, Venda de Produtos, Venda de Servicos.",
+        "Mais fortes em conversao no estudo: Telefonia e Internet, Marketing e Publicidade, Juridico, Seguros, Saude.",
+        "Mais fracos/complexos: Imoveis, Consultoria, Energia, Software, Tecnologia e TI.",
+        "Uso: escolher cohort pela arquitetura de venda e segmento pela linguagem, benchmark e risco de conversao."
+      ]
+    },
+    {
+      "id": "s07-assets-catalog",
+      "role": "macro",
+      "type": "note",
+      "number": "NOTA",
+      "phase": "Assets",
+      "tone": "yellow",
+      "w": 430,
+      "h": 330,
+      "title": "Catalogo final de assets",
+      "summary": "Lista oficial dos assets da jornada, em formato de anotacao transversal.",
+      "tags": [
+        "assets",
+        "catalogo",
+        "notacao"
+      ],
+      "inputs": [
+        "Jornada principal",
+        "Docs canonicos"
+      ],
+      "outputs": [
+        "Lista final de assets"
+      ],
+      "evidence": "Serve como cola visual; detalhe fica no markdown canonico.",
+      "page": {
+        "headline": "A lista oficial de assets nao deve morar dentro de um passo da jornada; ela atravessa todo o OS.",
+        "sections": [
+          {
+            "title": "Por que e transversal",
+            "body": "O catalogo serve para diagnostico, construcao, auditoria e canonizacao. Se ficasse como etapa, confundiria inventario metodologico com trabalho sequencial do cliente."
+          },
+          {
+            "title": "Classificacao",
+            "body": "Cada asset e marcado como obrigatorio, condicional, suporte, evidencia ou legado. Assim o time nao trata todo documento como entrega e nao empilha artefatos sem funcao."
+          },
+          {
+            "title": "Criterio anti-bullshit",
+            "body": "Um asset so fica no catalogo se ajuda o processo a rodar, ser auditado, aprender, evitar recoleta de contexto ou orientar uma decisao real de midia, criativo, LP ou vendas."
+          }
+        ]
+      },
+      "docPath": "./assets/canonicos/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO.md",
+      "noteLines": [
+        "Entrada: handoff, plano ROI, call vendas, Growth Class, analise de desvio.",
+        "Diagnostico: roteiro tese GTM, matriz 3 pilares, evidencias, gaps.",
+        "Mercado: benchmark, TAM/SAM/SOM, concorrentes, ruido, beachhead.",
+        "Assets: DEOC, plano de midia, LP, briefing criativo, criativos, checklist QA.",
+        "Dados: UTM/IDs, contrato dados, CRM/SLA, backup leads, teste tracking.",
+        "Setup: Meta/Google, pixel/tag, publicos/listas, conversoes, campanhas em rascunho.",
+        "Aprendizado: planilha growth, relatorio, feedback lead, debrief, rebrief, biblioteca/skill."
+      ]
+    }
+  ],
+  "micros": [],
+  "edges": [
+    {
+      "id": "e00-04",
+      "kind": "main",
+      "from": "k00-narrative",
+      "to": "k04-diagnosis",
+      "label": "abre diagnostico",
+      "order": "1"
+    },
+    {
+      "id": "e04-04b",
+      "kind": "main",
+      "from": "k04-diagnosis",
+      "to": "k04-benchmark",
+      "label": "abre mercado",
+      "order": "2"
+    },
+    {
+      "id": "e04b-06",
+      "kind": "main",
+      "from": "k04-benchmark",
+      "to": "k06-assets",
+      "label": "define pacote v1",
+      "order": "3"
+    },
+    {
+      "id": "e06-07",
+      "kind": "main",
+      "from": "k06-assets",
+      "to": "k07-tracking",
+      "label": "contrato de dados",
+      "order": "4"
+    },
+    {
+      "id": "e07-08",
+      "kind": "main",
+      "from": "k07-tracking",
+      "to": "k08-campaign-setup",
+      "label": "prepara contas",
+      "order": "5"
+    },
+    {
+      "id": "e08s-08",
+      "kind": "main",
+      "from": "k08-campaign-setup",
+      "to": "k08-execution",
+      "label": "go-live",
+      "order": "6"
+    },
+    {
+      "id": "e08-09",
+      "kind": "main",
+      "from": "k08-execution",
+      "to": "k09-evidence",
+      "label": "gera dados",
+      "order": "7"
+    },
+    {
+      "id": "e09-10",
+      "kind": "main",
+      "from": "k09-evidence",
+      "to": "k10-n2-audit",
+      "label": "prova N2",
+      "order": "8"
+    },
+    {
+      "id": "e10-11",
+      "kind": "main",
+      "from": "k10-n2-audit",
+      "to": "k11-n3-growth",
+      "label": "abre N3",
+      "order": "9"
+    },
+    {
+      "id": "e11-12",
+      "kind": "main",
+      "from": "k11-n3-growth",
+      "to": "k12-canonize",
+      "label": "aprendizado",
+      "order": "10"
+    },
+    {
+      "id": "e12-13",
+      "kind": "main",
+      "from": "k12-canonize",
+      "to": "k13-rebrief",
+      "label": "reuso",
+      "order": "11"
+    },
+    {
+      "id": "e13-08-loop",
+      "kind": "loop",
+      "from": "k13-rebrief",
+      "to": "k08-campaign-setup",
+      "label": "proximo ciclo",
+      "order": "loop"
+    }
+  ],
+  "bonds": [],
+  "microEdges": [],
+  "iterationNotes": [
+    {
+      "version": "draft-1",
+      "change": "Concatenou a narrativa das calls em fluxo visual principal, com foco em demanda qualificada, N2/N3, assets, tracking e growth."
+    },
+    {
+      "version": "draft-2",
+      "change": "Limpou suportes abstratos; manteve apenas notas visuais para N1/N2/N3, catalogo de assets e cohort x segmentos."
+    },
+    {
+      "version": "draft-3",
+      "change": "Incluiu paginas internas nos macro cards e microEdges para mostrar dependencias entre assets, dados e loop de aprendizado."
+    },
+    {
+      "version": "draft-4",
+      "change": "Moveu assets para dentro de cada macro como fonte canonica; inspector passa a ser a navegacao principal de assets e mini cards ficam opcionais."
+    },
+    {
+      "version": "draft-5",
+      "change": "Asset list no inspector passou a abrir modal dedicado com detalhes operacionais e documento canonico, sem misturar asset com conteudo da etapa."
+    },
+    {
+      "version": "knowledge-os-v2",
+      "change": "Consolidacao final assets/legacy/merge/skills + assets/canonicos: V01-V16 incorporados, casos N:1 consolidados por dominio, casos 1:N divididos por responsabilidade, templates oficiais em assets/canonicos/templates e workflow v2 apontando para a fonte final assets/canonicos."
+    }
+  ],
+  "openQuestions": [
+    "Qual cohort exato sera o primeiro piloto?",
+    "Quais campos minimos entram obrigatoriamente no Flow/Cockpit ja na v1?",
+    "Quem aprova a versao canonica de cada pack?",
+    "Qual e a fonte da verdade temporaria para dados: Flow, Cockpit, planilha, CRM ou diretorio do projeto?",
+    "Qual criterio numerico define cliente com resultado por cohort?"
+  ],
+  "uiModel": {
+    "assetNavigation": "inspector-list-to-modal",
+    "canvasAssetCards": "disabled-by-default",
+    "inspectorOrder": [
+      "operatorGuide",
+      "assetList",
+      "pageContent",
+      "inputs",
+      "outputs",
+      "evidence"
+    ],
+    "aiContextSource": "macros[].assets + canonicalDocuments + page + operatorGuide",
+    "assetDetails": "modal-with-operational-details-and-doc-preview",
+    "assetModalOrder": [
+      "assetHeader",
+      "operationalDetails",
+      "canonicalDocument"
+    ]
+  }
+}

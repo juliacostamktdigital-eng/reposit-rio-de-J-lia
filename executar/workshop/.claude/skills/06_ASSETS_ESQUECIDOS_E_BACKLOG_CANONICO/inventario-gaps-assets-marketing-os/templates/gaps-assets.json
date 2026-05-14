@@ -1,0 +1,40 @@
+{
+  "cliente": "HS Prevent",
+  "data": "2026-05-01",
+  "responsavel": "Growth Ops",
+  "assets": [
+    {
+      "asset": "Brief sales-to-ops",
+      "componente": "handoff",
+      "status": "incompleto",
+      "evidencia": "call de venda gravada, sem resumo operacional",
+      "gap": "promessa comercial e exclusões não documentadas",
+      "severidade": "alta",
+      "impacto": "execução pode assumir escopo errado",
+      "dono": "account",
+      "proxima_acao": "gerar handoff operacional com promessa, riscos e restrições"
+    },
+    {
+      "asset": "Protocolo de tracking",
+      "componente": "tracking",
+      "status": "inexistente",
+      "evidencia": "",
+      "gap": "não há lead teste validando URL, formulário, CRM e planilha",
+      "severidade": "critica",
+      "impacto": "go-live sem leitura confiável",
+      "dono": "mídia",
+      "proxima_acao": "executar QA tracking antes de investir"
+    },
+    {
+      "asset": "Planilha de testes de growth",
+      "componente": "aprendizado",
+      "status": "rascunho",
+      "evidencia": "planilha sem abas de funil e aprendizados",
+      "gap": "testes não conectam mídia, funil e decisão",
+      "severidade": "media",
+      "impacto": "campanha gera execução sem aprendizado",
+      "dono": "growth",
+      "proxima_acao": "montar estrutura canônica da planilha"
+    }
+  ]
+}

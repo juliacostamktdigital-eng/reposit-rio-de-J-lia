@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "cliente_projeto": "[Nome]",
+    "versao_pacote": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel_decisor": "",
+    "aprovacao_cliente": "",
+    "sem_dependencias_criticas_declarado": false,
+    "sem_dependencias_nota": ""
+  },
+  "contexto": {
+    "objetivo_ciclo_v1": "",
+    "canais_previstos": [],
+    "prazo_macro": "",
+    "orcamento_ordem_grandeza": "",
+    "maturidade_e_diagnostico_ref": "",
+    "riscos_restricoes": "",
+    "link_filtro_catalogo": ""
+  },
+  "pacote_v1": [
+    {
+      "asset": "",
+      "prioridade": "P1",
+      "owner": "",
+      "depende_de_ids": [],
+      "criterio_n2_resumido": "",
+      "notas": ""
+    }
+  ],
+  "fora_do_ciclo": [
+    {
+      "asset_ou_pedido": "",
+      "motivo_exclusao": "",
+      "reavaliar_quando": ""
+    }
+  ],
+  "dependencias_cliente": [
+    {
+      "id": "D1",
+      "descricao": "",
+      "tipo": "",
+      "bloqueia": "",
+      "owner_cliente": "",
+      "sla_ou_data": ""
+    }
+  ],
+  "criterios_n2_por_componente": [
+    {
+      "componente": "",
+      "n2_minimo": "",
+      "evidencia_esperada": ""
+    }
+  ],
+  "changelog": [
+    {
+      "versao": "",
+      "data": "",
+      "mudanca": ""
+    }
+  ]
+}

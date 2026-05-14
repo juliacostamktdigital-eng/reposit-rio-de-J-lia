@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Copy de Anúncios",
+  "description": "Output estruturado de copy de anúncios: variações por fase de funil e plataforma, com limites de caracteres.",
+  "type": "object",
+  "required": ["funnel_stages", "copy_rules_applied", "total_variations"],
+  "properties": {
+    "funnel_stages": {
+      "type": "array",
+      "description": "Fases do funil com variações de copy por plataforma.",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["name", "objective", "tone", "platforms"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": ["topo_de_funil", "meio_de_funil", "fundo_de_funil", "remarketing"],
+            "description": "Fase do funil"
+          },
+          "objective": {
+            "type": "string",
+            "description": "Objetivo da fase"
+          },
+          "tone": {
+            "type": "string",
+            "description": "Tom recomendado para esta fase"
+          },
+          "platforms": {
+            "type": "array",
+            "description": "Plataformas de mídia com variações.",
+            "items": {
+              "type": "object",
+              "required": ["name", "variations"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "enum": ["meta_ads", "google_ads"],
+                  "description": "Plataforma de mídia"
+                },
+                "variations": {
+                  "type": "array",
+                  "description": "Variações de copy para esta plataforma.",
+                  "items": {
+                    "type": "object",
+                    "required": ["type"],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "Tipo de variação (text_primary, responsive_search, etc.)"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "Texto principal do anúncio"
+                      },
+                      "headline": {
+                        "type": "string",
+                        "description": "Título do anúncio"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "Descrição do anúncio"
+                      },
+                      "cta": {
+                        "type": "string",
+                        "description": "Call-to-action do botão"
+                      },
+                      "headlines": {
+                        "type": "array",
+                        "items": { "type": "string" },
+                        "description": "Títulos para Google Ads responsivo"
+                      },
+                      "descriptions": {
+                        "type": "array",
+                        "items": { "type": "string" },
+                        "description": "Descrições para Google Ads responsivo"
+                      },
+                      "char_count": {
+                        "type": "object",
+                        "description": "Contagem de caracteres por campo",
+                        "properties": {
+                          "text": { "type": "integer" },
+                          "headline": { "type": "integer" },
+                          "description": { "type": "integer" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "copy_rules_applied": {
+      "type": "array",
+      "description": "5 regras de copy aplicadas neste conjunto.",
+      "items": { "type": "string" },
+      "minItems": 5
+    },
+    "total_variations": {
+      "type": "integer",
+      "description": "Total de variações geradas.",
+      "minimum": 30
+    },
+    "sheets_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL da planilha Google Sheets exportada"
+    }
+  }
+}

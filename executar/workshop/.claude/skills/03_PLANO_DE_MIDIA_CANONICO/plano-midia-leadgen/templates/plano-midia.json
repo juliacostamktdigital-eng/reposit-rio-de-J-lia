@@ -1,0 +1,48 @@
+{
+  "cliente": "HS Prevent",
+  "periodo": "2026-05 a 2026-07",
+  "budget_total": 60000,
+  "ticket_medio": 10000,
+  "taxa_lead_mql": 0.35,
+  "taxa_mql_sql": 0.45,
+  "taxa_sql_venda": 0.2,
+  "canais": [
+    {
+      "canal": "Meta Ads",
+      "objetivo": "mql",
+      "etapa_funil": "tofu",
+      "investimento": 24000,
+      "cpl_previsto": 95,
+      "papel": "Aquisição e validação de criativos por persona/hook",
+      "risco": "Lead barato sem qualidade comercial",
+      "criterio_revisao": "CPMQL acima de R$ 300 por 14 dias ou 30 MQLs"
+    },
+    {
+      "canal": "Google Search",
+      "objetivo": "mql",
+      "etapa_funil": "bofu",
+      "investimento": 18000,
+      "cpl_previsto": 180,
+      "papel": "Captura de demanda ativa",
+      "risco": "Volume limitado e CPC alto",
+      "criterio_revisao": "Baixo MQL ou termos irrelevantes na primeira semana"
+    }
+  ],
+  "campanhas": [
+    {
+      "campaign_id": "cmp-hs-prevent-202605-001",
+      "canal": "Meta Ads",
+      "objetivo": "leadgen",
+      "etapa": "tofu",
+      "orcamento": 18000,
+      "evento": "lead",
+      "publico": "CFO/CEO fintech",
+      "oferta": "Diagnóstico de risco no onboarding digital",
+      "lp": "lp-onboarding-digital",
+      "criativos": "6 vídeos + 3 estáticos",
+      "hipotese": "Hooks de ROI e risco financeiro geram MQLs mais qualificados para CFO",
+      "metrica": "CPMQL <= 300",
+      "janela": "14 dias ou 30 MQLs"
+    }
+  ]
+}

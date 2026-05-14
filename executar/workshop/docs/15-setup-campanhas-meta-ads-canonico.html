@@ -1,0 +1,331 @@
+<article class="doc-content-inner" data-doc-slug="15-setup-campanhas-meta-ads-canonico">
+<h1>Setup de Campanhas Meta Ads Canônico</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + <code>assets/legacy/merge/skills/10-estrutura-campanhas-meta-ads.md</code>, <code>assets/legacy/merge/skills/10-1-meta-lead-nativo.md</code>, <code>assets/legacy/merge/skills/10-2-meta-conversao.md</code>, <code>assets/legacy/merge/skills/10-3-meta-engajamento.md</code>.  </p>
+<p><strong>Decisão de merge:</strong> skills 10, 10-1, 10-2 e 10-3 incorporadas em uma única fonte Meta Ads, preservando subtipos por seção.</p>
+<p>Status: v1 para Marketing OS / EXECUTAR  </p>
+<p>Escopo: preparação de conta, pixel, públicos, estrutura de campanhas, conjuntos e anúncios antes do go-live em Meta Ads  </p>
+<p>Objetivo: impedir que a operação pule de plano/asset direto para campanha no ar sem preparar conta, públicos, tracking, nomenclatura, estrutura de teste e critérios de leitura.</p>
+<h2>1. Princípio</h2>
+<p>Setup de campanha não é execução. É a preparação para que a execução gere aprendizado confiável.</p>
+<p>Antes de subir campanha, a conta precisa responder:</p>
+<ul>
+<li>a conta de anúncio está configurada?</li>
+<li>pixel/CAPI/eventos estão funcionando?</li>
+<li>públicos básicos existem?</li>
+<li>campanha, conjunto e anúncio têm IDs?</li>
+<li>a estrutura de campanha permite teste sem fragmentar demais?</li>
+<li>existe hipótese clara?</li>
+<li>existe plano de leitura?</li>
+<li>existe planilha backup e contrato de dados?</li>
+</ul>
+<h2>2. Referências usadas</h2>
+<p>Este documento consolida:</p>
+<ul>
+<li>princípios de públicos e campanhas do Pedro Sobral/Subido;</li>
+<li>boas práticas de Meta Ads sobre estrutura campanha/conjunto/anúncio;</li>
+<li>boas práticas recentes de simplificação de estrutura, separação por intenção/temperatura, públicos personalizados, semelhantes, exclusões e 3-5 variações criativas por conjunto.</li>
+</ul>
+<p>Links úteis:</p>
+<ul>
+<li>https://pedrosobral.com.br/blog/c/introducao-ao-trafego-pago/como-escolher-publicos-no-meta-ads</li>
+<li>https://pedrosobral.com.br/blog/c/introducao-ao-trafego-pago/como-anunciar-para-o-publico-certo-no-meta-ads-em-2025</li>
+<li>https://pedrosobral.com.br/blog/c/introducao-ao-trafego-pago/os-3-tipos-de-campanha-que-todo-gestor-de-trafego-precisa-dominar-no-meta-ads</li>
+<li>https://pedrosobral.com.br/blog/c/estrategias-de-trafego-pago/como-criar-campanhas-no-meta-ads-em-2026-o-guia-completo-para-anunciar-no-instagram-facebook-e-whatsapp</li>
+</ul>
+<h2>3. Inputs obrigatórios</h2>
+<ul>
+<li>DEOC;</li>
+<li>plano de mídia;</li>
+<li>LP/ponto de conversão;</li>
+<li>contrato de dados;</li>
+<li>taxonomia UTM/IDs;</li>
+<li>criativos aprovados ou em fila final;</li>
+<li>planilha backup obrigatória;</li>
+<li>planilha de testes growth;</li>
+<li>CRM/SLA marketing-vendas;</li>
+<li>matriz de testes do ciclo: o que varia e o que fica constante;</li>
+<li>definição de lead correto e follow-up por tipo de campanha;</li>
+<li>acesso ao Business Manager, conta de anúncios, pixel, página, Instagram e domínio.</li>
+</ul>
+<h2>4. Checklist de conta</h2>
+<p>Antes de estruturar campanha:</p>
+<ul>
+<li>Business Manager correto;</li>
+<li>conta de anúncio correta;</li>
+<li>método de pagamento ativo;</li>
+<li>página Facebook vinculada;</li>
+<li>Instagram vinculado;</li>
+<li>domínio verificado quando aplicável;</li>
+<li>permissões do time conferidas;</li>
+<li>pixel instalado;</li>
+<li>CAPI configurada quando possível;</li>
+<li>eventos principais testados;</li>
+<li>eventos priorizados quando aplicável;</li>
+<li>UTMs preservadas na LP/formulário;</li>
+<li>planilha backup recebendo lead;</li>
+<li>CRM recebendo ou sendo conciliado depois via backup.</li>
+</ul>
+<h2>5. Eventos e pixel</h2>
+<h3>Eventos mínimos para leadgen</h3>
+<ul>
+<li><code>PageView</code>;</li>
+<li><code>ViewContent</code> ou equivalente de visita qualificada;</li>
+<li><code>Lead</code> no envio do formulário;</li>
+<li>evento customizado para <code>MQL</code> quando houver integração;</li>
+<li>evento customizado/offline para <code>SQL</code>, oportunidade ou venda quando houver volume e CRM.</li>
+</ul>
+<h3>Regra</h3>
+<p>O evento de otimização deve ser o mais profundo possível sem matar volume.</p>
+<p>Se ainda não há volume:</p>
+<ul>
+<li>começar com <code>Lead</code> ou evento de formulário;</li>
+<li>usar qualidade comercial na planilha de growth;</li>
+<li>evoluir para MQL/SQL/offline conversion quando houver dados suficientes.</li>
+</ul>
+<h2>6. Públicos padrão</h2>
+<h3>Públicos frios</h3>
+<p>Usar para aquisição/prospecção:</p>
+<ul>
+<li>amplo/aberto quando o criativo segmenta bem;</li>
+<li>interesses por segmento;</li>
+<li>interesses empilhados quando fizer sentido;</li>
+<li>lookalike 1%;</li>
+<li>lookalike 2-3%;</li>
+<li>localização pura para negócios locais;</li>
+<li>cargo/interesse quando o nicho exigir recorte.</li>
+</ul>
+<h3>Públicos mornos</h3>
+<p>Usar para pessoas com algum contato:</p>
+<ul>
+<li>engajamento Instagram/Facebook 30D;</li>
+<li>visitantes do site 30D;</li>
+<li>visualizadores de vídeo 50% ou 75%;</li>
+<li>aberturas de formulário sem envio;</li>
+<li>visitas em páginas-chave.</li>
+</ul>
+<h3>Públicos quentes</h3>
+<p>Usar para maior intenção:</p>
+<ul>
+<li>leads capturados;</li>
+<li>lista CRM;</li>
+<li>visitantes de LP/formulário 7D/14D;</li>
+<li>pessoas que clicaram ou iniciaram conversa;</li>
+<li>oportunidades abertas;</li>
+<li>carrinho/checkout quando ecommerce existir;</li>
+<li>listas de clientes para exclusão ou upsell.</li>
+</ul>
+<h2>7. Princípios de públicos</h2>
+<h3>7.1 Segmentação não é só público</h3>
+<p>No Meta, segmentação vem de quatro lugares:</p>
+<ul>
+<li>público configurado;</li>
+<li>objetivo da campanha;</li>
+<li>criativo;</li>
+<li>pixel/eventos.</li>
+</ul>
+<p>Se o criativo fala com a pessoa errada, a campanha tende a aprender errado mesmo com público aparentemente certo.</p>
+<h3>7.2 Públicos do passo anterior</h3>
+<p>Priorizar públicos que estão um passo antes do objetivo final.</p>
+<p>Exemplos:</p>
+<ul>
+<li>quer venda? testar leads, visitantes de página de preço, conversas iniciadas;</li>
+<li>quer MQL? testar visitantes qualificados e pessoas que abriram formulário;</li>
+<li>quer audiência? testar vídeo/engajamento/conteúdo.</li>
+</ul>
+<h3>7.3 Temperatura separada</h3>
+<p>Evitar misturar público quente e frio sem intenção.</p>
+<p>Preferir:</p>
+<ul>
+<li>campanha de aquisição/frio;</li>
+<li>campanha de remarketing/morno-quente;</li>
+<li>campanha de reativação/base quando houver volume.</li>
+</ul>
+<h3>7.4 Quantidade de conjuntos</h3>
+<p>Como referência operacional:</p>
+<ul>
+<li>campanha inicial: 3 a 6 conjuntos;</li>
+<li>limite comum: 4 a 8 conjuntos;</li>
+<li>evitar 12+ conjuntos sem motivo, porque fragmenta orçamento e aprendizado.</li>
+</ul>
+<h3>7.5 Exclusões</h3>
+<p>Evitar sobreposição desnecessária.</p>
+<p>Exemplos:</p>
+<ul>
+<li>aquisição exclui leads/clientes;</li>
+<li>remarketing exclui convertidos;</li>
+<li>conjunto 01 pode excluir conjunto 00 quando houver hierarquia de públicos;</li>
+<li>listas quentes não devem competir com público frio amplo.</li>
+</ul>
+<h2>8. Estrutura inicial recomendada</h2>
+<h3>Estrutura simples para leadgen B2B/B2C consultivo</h3>
+<p>Campanha 1: aquisição / público frio</p>
+<ul>
+<li>Conjunto 00: amplo ou Advantage/broad;</li>
+<li>Conjunto 01: interesses principais do segmento;</li>
+<li>Conjunto 02: lookalike 1-3% da melhor base disponível;</li>
+<li>Conjunto 03: público segmentado por cargo/interesse/local quando fizer sentido.</li>
+</ul>
+<p>Campanha 2: remarketing / público morno-quente</p>
+<ul>
+<li>Conjunto 00: engajamento IG/FB 30D;</li>
+<li>Conjunto 01: visitantes LP/site 30D;</li>
+<li>Conjunto 02: vídeo viewers 50/75% ou formulário aberto sem envio;</li>
+<li>excluir leads já capturados quando o objetivo for novo lead.</li>
+</ul>
+<p>Campanha 3: reativação/base</p>
+<ul>
+<li>Conjunto 00: leads antigos sem oportunidade;</li>
+<li>Conjunto 01: clientes ou oportunidades perdidas;</li>
+<li>usar apenas quando houver base e oferta adequada.</li>
+</ul>
+<h3>Estrutura mínima quando budget é baixo</h3>
+<p>Se budget é baixo, consolidar:</p>
+<ul>
+<li>1 campanha aquisição;</li>
+<li>2 a 3 conjuntos;</li>
+<li>3 a 5 anúncios por conjunto;</li>
+<li>remarketing só se houver público suficiente.</li>
+</ul>
+<h2>9. Tipos de campanha</h2>
+<h3>Construção de público</h3>
+<p>Objetivo: criar audiência qualificada para usar depois.</p>
+<p>Usar quando:</p>
+<ul>
+<li>marca ainda não tem público;</li>
+<li>pixel sem dados;</li>
+<li>produto precisa de contexto;</li>
+<li>venda direta para frio é improvável.</li>
+</ul>
+<p>Exemplos:</p>
+<ul>
+<li>vídeo views;</li>
+<li>engajamento;</li>
+<li>tráfego qualificado para conteúdo/LP.</li>
+</ul>
+<h3>Captação de leads</h3>
+<p>Objetivo: coletar contato qualificado. Separar explicitamente formulário nativo, LP/formulário externo e WhatsApp/mensagem, porque cada destino muda qualidade, fricção, tracking e SLA.</p>
+<p>Usar quando:</p>
+<ul>
+<li>há oferta clara;</li>
+<li>LP/formulário está pronto;</li>
+<li>CRM/SLA existe;</li>
+<li>planilha backup está ativa;</li>
+<li>formulário nativo tem perguntas suficientes para intenção/qualificação sem matar volume;</li>
+<li>SLA de follow-up está aceito antes de ativar lead nativo.</li>
+</ul>
+<p>Exemplos:</p>
+<ul>
+<li>formulário nativo;</li>
+<li>LP com formulário;</li>
+<li>WhatsApp/mensagem.</li>
+</ul>
+<h3>Venda/conversão</h3>
+<p>Objetivo: compra, agendamento, oportunidade ou venda. Usar quando o evento do site é confiável, a LP está pronta e pixel/CAPI conseguem preservar sinal suficiente para otimização.</p>
+<p>Usar quando:</p>
+<ul>
+<li>evento de conversão está validado;</li>
+<li>há volume suficiente;</li>
+<li>ciclo e valor justificam otimização mais profunda.</li>
+</ul>
+<h3>Engajamento e aquecimento</h3>
+<p>Objetivo: criar público qualificado para remarketing ou dar contexto quando venda direta para frio é improvável. Não deve virar substituto eterno de campanha de performance: precisa de regra de passagem para remarketing, janela de público, criativos por hipótese e leitura de contribuição.</p>
+<h2>10. Nomenclatura</h2>
+<p>Usar o padrão da taxonomia:</p>
+<h3>Campanha</h3>
+<pre><code>{campaign_id} | {tipo_campanha} | {objetivo} | {movimento} | {slug}</code></pre>
+<p>Exemplo:</p>
+<pre><code>cmp-hs-prevent-202605-001 | aquisicao | mql | teste-oferta | antifraude-cfo</code></pre>
+<h3>Conjunto</h3>
+<pre><code>{adgroup_id} | {publico} | {temperatura} | {posicionamento} | {slug}</code></pre>
+<p>Exemplo:</p>
+<pre><code>adg-hs-prevent-202605-003 | cfo-fintech | frio | interesses | cfo-antifraude</code></pre>
+<h3>Anúncio</h3>
+<pre><code>{creative_id} | {formato} | {hook} | {persona} | {slug} | {versao}</code></pre>
+<p>Exemplo:</p>
+<pre><code>crv-hs-prevent-202605-014 | video | roi | cfo | fraude-invisivel | v01</code></pre>
+<h2>11. Padrão de criativos por conjunto</h2>
+<p>Começar com:</p>
+<ul>
+<li>3 a 5 anúncios por conjunto;</li>
+<li>variações reais de hook/formato/persona;</li>
+<li>não subir cinco peças quase iguais;</li>
+<li>cada criativo precisa de <code>creative_id</code>;</li>
+<li>cada criativo precisa ter hipótese de leitura.</li>
+</ul>
+<p>Exemplo:</p>
+<ul>
+<li>vídeo dor;</li>
+<li>vídeo ROI;</li>
+<li>estático prova;</li>
+<li>carrossel educacional;</li>
+<li>depoimento/autoridade.</li>
+</ul>
+<h2>12. Orçamento e aprendizado</h2>
+<p>Regras práticas:</p>
+<ul>
+<li>evitar fragmentar verba em conjuntos demais;</li>
+<li>garantir orçamento mínimo para cada conjunto aprender;</li>
+<li>usar CBO quando a intenção é deixar o algoritmo distribuir;</li>
+<li>usar ABO apenas quando a operação precisa controlar verba por público/teste;</li>
+<li>não matar conjunto cedo demais sem volume;</li>
+<li>não forçar orçamento em conjunto que a plataforma não quer gastar sem hipótese clara.</li>
+</ul>
+<h2>13. Checklist antes do go-live</h2>
+<ul>
+<li>campanha criada com ID;</li>
+<li>conjuntos criados com ID;</li>
+<li>anúncios criados com ID;</li>
+<li>público e temperatura corretos;</li>
+<li>exclusões aplicadas;</li>
+<li>pixel/eventos testados;</li>
+<li>UTMs aplicadas;</li>
+<li>planilha backup testada;</li>
+<li>CRM/handoff testado;</li>
+<li>criativos aprovados;</li>
+<li>matriz de testes registrada;</li>
+<li>campos e perguntas do lead nativo conferidos quando aplicável;</li>
+<li>regra de criação/uso de públicos de engajamento e vídeo definida quando aplicável;</li>
+<li>orçamento e datas conferidos;</li>
+<li>hipótese registrada na planilha de growth;</li>
+<li>change log preparado para mudanças de estrutura, público, criativo, evento ou orçamento.</li>
+</ul>
+<h2>14. Critério N2</h2>
+<p>Setup Meta está N2 quando:</p>
+<ul>
+<li>conta, pixel e eventos estão configurados;</li>
+<li>públicos padrão foram criados;</li>
+<li>estrutura de campanha respeita objetivo e temperatura;</li>
+<li>campanha/conjunto/anúncio têm IDs e nomes corretos;</li>
+<li>UTMs e campos <code>v4_*</code> estão aplicados;</li>
+<li>planilha backup recebe lead teste;</li>
+<li>hipótese e critério de leitura estão registrados;</li>
+<li>subtipos lead nativo, conversão e engajamento têm checklist específico quando usados;</li>
+<li>checklist de go-live está preenchido.</li>
+</ul>
+<h2>15. Critério N3</h2>
+<p>Setup Meta está N3 quando:</p>
+<ul>
+<li>públicos vencedores são versionados;</li>
+<li>exclusões são revisadas em cadência;</li>
+<li>aprendizados por público/hook/formato entram na planilha de growth;</li>
+<li>campanhas são consolidadas ou separadas com base em dados;</li>
+<li>novos testes nascem do debrief, não de improviso.</li>
+</ul>
+<h2>16. O que evitar</h2>
+<ul>
+<li>campanha sem ID;</li>
+<li>criativo sem ID;</li>
+<li>público quente e frio misturados sem intenção;</li>
+<li>12+ conjuntos com pouca verba;</li>
+<li>muitos interesses pequenos sem volume;</li>
+<li>remarketing sem exclusão de convertidos;</li>
+<li>criativos genéricos que não segmentam pelo próprio conteúdo;</li>
+<li>pixel/evento não testado;</li>
+<li>lead sem planilha backup;</li>
+<li>otimizar só por CPL sem qualidade comercial;</li>
+<li>lead nativo sem SLA ou sem perguntas mínimas;</li>
+<li>conversão no site sem evento validado;</li>
+<li>engajamento usado indefinidamente sem ponte para remarketing/performance.</li>
+</ul>
+</article>

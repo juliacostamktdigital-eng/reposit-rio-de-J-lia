@@ -1,0 +1,340 @@
+{
+  "version": 1,
+  "description": "Skills por documento canônico (playbook). skillPath relativo à pasta workflow_marketing_os_v1.",
+  "byDocPath": {
+    "./assets/canonicos/00_MAPA_ASSETS_AI_NATIVE_PONTA_A_PONTA.md": [
+      {
+        "id": "mapa-assets-cliente-ai-native",
+        "skillPath": "./.claude/skills/00_MAPA_ASSETS_AI_NATIVE_PONTA_A_PONTA/mapa-assets-cliente-ai-native/SKILL.md"
+      },
+      {
+        "id": "auditoria-maturidade-marketing-os",
+        "skillPath": "./.claude/skills/00_MAPA_ASSETS_AI_NATIVE_PONTA_A_PONTA/auditoria-maturidade-marketing-os/SKILL.md"
+      },
+      {
+        "id": "orquestracao-proximo-ciclo-growth",
+        "skillPath": "./.claude/skills/00_MAPA_ASSETS_AI_NATIVE_PONTA_A_PONTA/orquestracao-proximo-ciclo-growth/SKILL.md"
+      },
+      {
+        "id": "iterador-skills-marketing-os",
+        "skillPath": "./.claude/skills/00_MAPA_ASSETS_AI_NATIVE_PONTA_A_PONTA/iterador-skills-marketing-os/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS.md": [
+      {
+        "id": "gerador-taxonomia-utm-ids",
+        "skillPath": "./.claude/skills/01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS/gerador-taxonomia-utm-ids/SKILL.md"
+      },
+      {
+        "id": "qa-tracking-utm-crm",
+        "skillPath": "./.claude/skills/01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS/qa-tracking-utm-crm/SKILL.md"
+      },
+      {
+        "id": "parser-performance-subparametros",
+        "skillPath": "./.claude/skills/01_TAXONOMIA_UTM_IDS_E_SUBPARAMETROS/parser-performance-subparametros/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/02_PLANILHA_DE_TESTES_GROWTH_CANONICA.md": [
+      {
+        "id": "montar-planilha-testes-growth",
+        "skillPath": "./.claude/skills/02_PLANILHA_DE_TESTES_GROWTH_CANONICA/montar-planilha-testes-growth/SKILL.md"
+      },
+      {
+        "id": "leitura-performance-growth-n3",
+        "skillPath": "./.claude/skills/02_PLANILHA_DE_TESTES_GROWTH_CANONICA/leitura-performance-growth-n3/SKILL.md"
+      },
+      {
+        "id": "debrief-aprendizados-growth",
+        "skillPath": "./.claude/skills/02_PLANILHA_DE_TESTES_GROWTH_CANONICA/debrief-aprendizados-growth/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/03_PLANO_DE_MIDIA_CANONICO.md": [
+      {
+        "id": "plano-midia-leadgen",
+        "skillPath": "./.claude/skills/03_PLANO_DE_MIDIA_CANONICO/plano-midia-leadgen/SKILL.md"
+      },
+      {
+        "id": "simulador-cenarios-midia-funil",
+        "skillPath": "./.claude/skills/03_PLANO_DE_MIDIA_CANONICO/simulador-cenarios-midia-funil/SKILL.md"
+      },
+      {
+        "id": "guardrails-otimizacao-midia",
+        "skillPath": "./.claude/skills/03_PLANO_DE_MIDIA_CANONICO/guardrails-otimizacao-midia/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/04_DOCUMENTO_COPY_FINAL_DCC_CANONICO.md": [
+      {
+        "id": "biblioteca-angulos-hooks-copy",
+        "skillPath": "./.claude/skills/04_DOCUMENTO_COPY_FINAL_DCC_CANONICO/biblioteca-angulos-hooks-copy/SKILL.md"
+      },
+      {
+        "id": "gerador-copy-campanhas-leadgen",
+        "skillPath": "./.claude/skills/04_DOCUMENTO_COPY_FINAL_DCC_CANONICO/gerador-copy-campanhas-leadgen/SKILL.md"
+      },
+      {
+        "id": "handoff-copy-para-vendas",
+        "skillPath": "./.claude/skills/04_DOCUMENTO_COPY_FINAL_DCC_CANONICO/handoff-copy-para-vendas/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/05_BRIEFING_CRIATIVO_VIDEO_FIRST_CANONICO.md": [
+      {
+        "id": "briefing-criativo-video-first",
+        "skillPath": "./.claude/skills/05_BRIEFING_CRIATIVO_VIDEO_FIRST_CANONICO/briefing-criativo-video-first/SKILL.md"
+      },
+      {
+        "id": "roteiro-criativo-performance",
+        "skillPath": "./.claude/skills/05_BRIEFING_CRIATIVO_VIDEO_FIRST_CANONICO/roteiro-criativo-performance/SKILL.md"
+      },
+      {
+        "id": "qa-criativo-hipotese-tracking",
+        "skillPath": "./.claude/skills/05_BRIEFING_CRIATIVO_VIDEO_FIRST_CANONICO/qa-criativo-hipotese-tracking/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/06_ASSETS_ESQUECIDOS_E_BACKLOG_CANONICO.md": [
+      {
+        "id": "inventario-gaps-assets-marketing-os",
+        "skillPath": "./.claude/skills/06_ASSETS_ESQUECIDOS_E_BACKLOG_CANONICO/inventario-gaps-assets-marketing-os/SKILL.md"
+      },
+      {
+        "id": "backlog-operacional-growth",
+        "skillPath": "./.claude/skills/06_ASSETS_ESQUECIDOS_E_BACKLOG_CANONICO/backlog-operacional-growth/SKILL.md"
+      },
+      {
+        "id": "rubrica-n1-n2-n3-componentes",
+        "skillPath": "./.claude/skills/06_ASSETS_ESQUECIDOS_E_BACKLOG_CANONICO/rubrica-n1-n2-n3-componentes/SKILL.md"
+      },
+      {
+        "id": "plano-automacao-ai-native",
+        "skillPath": "./.claude/skills/06_ASSETS_ESQUECIDOS_E_BACKLOG_CANONICO/plano-automacao-ai-native/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO.md": [
+      {
+        "id": "setup-crm-handoff-marketing-vendas",
+        "skillPath": "./.claude/skills/07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO/setup-crm-handoff-marketing-vendas/SKILL.md"
+      },
+      {
+        "id": "resumo-lead-para-vendas",
+        "skillPath": "./.claude/skills/07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO/resumo-lead-para-vendas/SKILL.md"
+      },
+      {
+        "id": "analise-feedback-comercial-growth",
+        "skillPath": "./.claude/skills/07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO/analise-feedback-comercial-growth/SKILL.md"
+      },
+      {
+        "id": "monitor-sla-leads",
+        "skillPath": "./.claude/skills/07_CRM_HANDOFF_SLA_MARKETING_VENDAS_CANONICO/monitor-sla-leads/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/08_LP_PONTO_DE_CONVERSAO_CANONICO.md": [
+      {
+        "id": "arquitetura-lp-conversao-leadgen",
+        "skillPath": "./.claude/skills/08_LP_PONTO_DE_CONVERSAO_CANONICO/arquitetura-lp-conversao-leadgen/SKILL.md"
+      },
+      {
+        "id": "qa-lp-ponto-conversao",
+        "skillPath": "./.claude/skills/08_LP_PONTO_DE_CONVERSAO_CANONICO/qa-lp-ponto-conversao/SKILL.md"
+      },
+      {
+        "id": "otimizacao-lp-por-aprendizado",
+        "skillPath": "./.claude/skills/08_LP_PONTO_DE_CONVERSAO_CANONICO/otimizacao-lp-por-aprendizado/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO.md": [
+      {
+        "id": "contrato-dados-marketing-crm",
+        "skillPath": "./.claude/skills/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO/contrato-dados-marketing-crm/SKILL.md"
+      },
+      {
+        "id": "setup-backup-leads-utms",
+        "skillPath": "./.claude/skills/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO/setup-backup-leads-utms/SKILL.md"
+      },
+      {
+        "id": "auditoria-qualidade-dados-growth",
+        "skillPath": "./.claude/skills/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO/auditoria-qualidade-dados-growth/SKILL.md"
+      },
+      {
+        "id": "retro-otimizacao-campanhas-por-dados",
+        "skillPath": "./.claude/skills/09_CONTRATO_DADOS_MKT_CRM_BACKUP_UTMS_CANONICO/retro-otimizacao-campanhas-por-dados/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/10_PLANEJAMENTO_ESTRATEGICO_UCM_CANONICO.md": [
+      {
+        "id": "tese-estrategica-ucm",
+        "skillPath": "./.claude/skills/10_PLANEJAMENTO_ESTRATEGICO_UCM_CANONICO/tese-estrategica-ucm/SKILL.md"
+      },
+      {
+        "id": "mapa-personas-papeis-decisao",
+        "skillPath": "./.claude/skills/10_PLANEJAMENTO_ESTRATEGICO_UCM_CANONICO/mapa-personas-papeis-decisao/SKILL.md"
+      },
+      {
+        "id": "matriz-problema-proposta-prova",
+        "skillPath": "./.claude/skills/10_PLANEJAMENTO_ESTRATEGICO_UCM_CANONICO/matriz-problema-proposta-prova/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO.md": [
+      {
+        "id": "handoff-operacional-executar",
+        "skillPath": "./.claude/skills/11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO/handoff-operacional-executar/SKILL.md"
+      },
+      {
+        "id": "analise-desvios-venda-boas-vindas",
+        "skillPath": "./.claude/skills/11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO/analise-desvios-venda-boas-vindas/SKILL.md"
+      },
+      {
+        "id": "monitor-maturidade-handoff-executar",
+        "skillPath": "./.claude/skills/11_HANDOFF_OPERACIONAL_EXECUTAR_CANONICO/monitor-maturidade-handoff-executar/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO.md": [
+      {
+        "id": "benchmark-campo-batalha-gtm",
+        "skillPath": "./.claude/skills/12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO/benchmark-campo-batalha-gtm/SKILL.md"
+      },
+      {
+        "id": "sizing-mercado-tam-sam-som",
+        "skillPath": "./.claude/skills/12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO/sizing-mercado-tam-sam-som/SKILL.md"
+      },
+      {
+        "id": "posicionamento-competitivo-beachhead",
+        "skillPath": "./.claude/skills/12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO/posicionamento-competitivo-beachhead/SKILL.md"
+      },
+      {
+        "id": "benchmark-para-backlog-growth",
+        "skillPath": "./.claude/skills/12_BENCHMARK_MERCADO_TAM_SAM_SOM_CANONICO/benchmark-para-backlog-growth/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO.md": [
+      {
+        "id": "dossie-estrategico-oferta-comunicacao",
+        "skillPath": "./.claude/skills/13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO/dossie-estrategico-oferta-comunicacao/SKILL.md"
+      },
+      {
+        "id": "empacotamento-oferta-executavel",
+        "skillPath": "./.claude/skills/13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO/empacotamento-oferta-executavel/SKILL.md"
+      },
+      {
+        "id": "traducao-deoc-para-assets",
+        "skillPath": "./.claude/skills/13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO/traducao-deoc-para-assets/SKILL.md"
+      },
+      {
+        "id": "qa-deoc-pronto-para-execucao",
+        "skillPath": "./.claude/skills/13_DOSSIE_ESTRATEGICO_OFERTA_COMUNICACAO_CANONICO/qa-deoc-pronto-para-execucao/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO.md": [
+      {
+        "id": "catalogo-assets-jornada-marketing-os",
+        "skillPath": "./.claude/skills/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO/catalogo-assets-jornada-marketing-os/SKILL.md"
+      },
+      {
+        "id": "decisor-pacote-assets-v1",
+        "skillPath": "./.claude/skills/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO/decisor-pacote-assets-v1/SKILL.md"
+      },
+      {
+        "id": "controle-duplicacao-assets",
+        "skillPath": "./.claude/skills/14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO/controle-duplicacao-assets/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/15_SETUP_CAMPANHAS_META_ADS_CANONICO.md": [
+      {
+        "id": "setup-campanhas-meta-ads",
+        "skillPath": "./.claude/skills/15_SETUP_CAMPANHAS_META_ADS_CANONICO/setup-campanhas-meta-ads/SKILL.md"
+      },
+      {
+        "id": "setup-meta-lead-nativo",
+        "skillPath": "./.claude/skills/15_SETUP_CAMPANHAS_META_ADS_CANONICO/setup-meta-lead-nativo/SKILL.md"
+      },
+      {
+        "id": "setup-meta-conversao-site",
+        "skillPath": "./.claude/skills/15_SETUP_CAMPANHAS_META_ADS_CANONICO/setup-meta-conversao-site/SKILL.md"
+      },
+      {
+        "id": "qa-go-live-meta-ads",
+        "skillPath": "./.claude/skills/15_SETUP_CAMPANHAS_META_ADS_CANONICO/qa-go-live-meta-ads/SKILL.md"
+      },
+      {
+        "id": "setup-meta-engajamento-remarketing",
+        "skillPath": "./.claude/skills/15_SETUP_CAMPANHAS_META_ADS_CANONICO/setup-meta-engajamento-remarketing/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO.md": [
+      {
+        "id": "setup-campanhas-google-ads",
+        "skillPath": "./.claude/skills/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO/setup-campanhas-google-ads/SKILL.md"
+      },
+      {
+        "id": "setup-google-search-leadgen",
+        "skillPath": "./.claude/skills/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO/setup-google-search-leadgen/SKILL.md"
+      },
+      {
+        "id": "setup-google-pmax-leadgen",
+        "skillPath": "./.claude/skills/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO/setup-google-pmax-leadgen/SKILL.md"
+      },
+      {
+        "id": "setup-google-display-remarketing",
+        "skillPath": "./.claude/skills/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO/setup-google-display-remarketing/SKILL.md"
+      },
+      {
+        "id": "qa-go-live-google-ads",
+        "skillPath": "./.claude/skills/16_SETUP_CAMPANHAS_GOOGLE_ADS_CANONICO/qa-go-live-google-ads/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/17_FUNIL_UNIFICADO_CONVERSOES_A2_CANONICO.md": [
+      {
+        "id": "funil-unificado-conversoes-a2",
+        "skillPath": "./.claude/skills/17_FUNIL_UNIFICADO_CONVERSOES_A2_CANONICO/funil-unificado-conversoes-a2/SKILL.md"
+      },
+      {
+        "id": "auditoria-funil-fontes-verdade",
+        "skillPath": "./.claude/skills/17_FUNIL_UNIFICADO_CONVERSOES_A2_CANONICO/auditoria-funil-fontes-verdade/SKILL.md"
+      },
+      {
+        "id": "changelog-funil-conversoes",
+        "skillPath": "./.claude/skills/17_FUNIL_UNIFICADO_CONVERSOES_A2_CANONICO/changelog-funil-conversoes/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO.md": [
+      {
+        "id": "protocolo-handoff-mql-sql-a4",
+        "skillPath": "./.claude/skills/18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO/protocolo-handoff-mql-sql-a4/SKILL.md"
+      },
+      {
+        "id": "auditoria-aderencia-handoff-a4",
+        "skillPath": "./.claude/skills/18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO/auditoria-aderencia-handoff-a4/SKILL.md"
+      },
+      {
+        "id": "loop-ajuste-marketing-vendas",
+        "skillPath": "./.claude/skills/18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO/loop-ajuste-marketing-vendas/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/19_JORNADA_LEAD_RACI_CANONICO.md": [
+      {
+        "id": "jornada-lead-raci",
+        "skillPath": "./.claude/skills/19_JORNADA_LEAD_RACI_CANONICO/jornada-lead-raci/SKILL.md"
+      },
+      {
+        "id": "auditoria-raci-sla-evidencias",
+        "skillPath": "./.claude/skills/19_JORNADA_LEAD_RACI_CANONICO/auditoria-raci-sla-evidencias/SKILL.md"
+      },
+      {
+        "id": "changelog-raci-jornada",
+        "skillPath": "./.claude/skills/19_JORNADA_LEAD_RACI_CANONICO/changelog-raci-jornada/SKILL.md"
+      }
+    ],
+    "./assets/canonicos/20_BANCO_TIPOS_CRIATIVOS_CANONICO.md": [
+      {
+        "id": "banco-tipos-criativos",
+        "skillPath": "./.claude/skills/20_BANCO_TIPOS_CRIATIVOS_CANONICO/banco-tipos-criativos/SKILL.md"
+      },
+      {
+        "id": "selecao-pack-criativo-ciclo",
+        "skillPath": "./.claude/skills/20_BANCO_TIPOS_CRIATIVOS_CANONICO/selecao-pack-criativo-ciclo/SKILL.md"
+      },
+      {
+        "id": "iteracao-tipo-criativo-por-performance",
+        "skillPath": "./.claude/skills/20_BANCO_TIPOS_CRIATIVOS_CANONICO/iteracao-tipo-criativo-por-performance/SKILL.md"
+      }
+    ]
+  }
+}

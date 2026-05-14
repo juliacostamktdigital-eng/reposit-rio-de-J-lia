@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "cliente_projeto": "[Nome]",
+    "data": "YYYY-MM-DD",
+    "revisor": "",
+    "objetivo_auditoria": "",
+    "link_pacote_v1": ""
+  },
+  "documentos": [
+    {
+      "id": "D1",
+      "nome_titulo": "",
+      "local_link_path": "",
+      "pareamento_catalogo_14": "",
+      "p14_processo_nao_roda": false,
+      "p14_auditar_n2": false,
+      "p14_aprender_n3": false,
+      "p14_recoleta_contexto": false,
+      "p14_midia_lp_vendas_escuro": false,
+      "decisao": "",
+      "mesclar_em_ou_arquivar_em": "",
+      "motivo": "",
+      "owner_acao": "",
+      "prazo": ""
+    }
+  ],
+  "gaps_criar": [
+    {
+      "descricao": "",
+      "asset_alvo_catalogo_14": "",
+      "owner": "",
+      "prazo": "",
+      "dependencias": ""
+    }
+  ],
+  "resumo_executivo": {
+    "manter": "",
+    "mesclar": "",
+    "arquivar": "",
+    "criar_gaps": ""
+  },
+  "riscos_se_nao_executar": []
+}

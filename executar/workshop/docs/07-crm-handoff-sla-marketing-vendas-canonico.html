@@ -1,0 +1,312 @@
+<article class="doc-content-inner" data-doc-slug="07-crm-handoff-sla-marketing-vendas-canonico">
+<h1>CRM, Handoff e SLA Marketing-Vendas Canônico</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + <code>assets/legacy/merge/skills/05-protocolo-handoff-a4.md</code>.  </p>
+<p><strong>Decisão de merge:</strong> skill 05 distribuída: <code>18_PROTOCOLO...</code> é âncora do handoff MQL-&gt;SQL e este arquivo mantém CRM/SLA como complemento operacional.</p>
+<p>Status: v1 para workshop  </p>
+<p>Escopo: clientes de Inside Sales / leadgen  </p>
+<p>Objetivo: garantir que a demanda gerada por marketing seja recebida, qualificada, trabalhada e devolvida com feedback para o processo de growth.</p>
+<h2>1. Princípio</h2>
+<p>Marketing não termina no lead. Para o OS funcionar, o lead precisa carregar contexto até vendas e voltar com feedback.</p>
+<p>Sem isso, a operação não sabe se:</p>
+<ul>
+<li>gerou lead ruim;</li>
+<li>gerou lead bom que não foi atendido;</li>
+<li>gerou lead bom para uma oferta errada;</li>
+<li>gerou lead certo para um comercial sem processo;</li>
+<li>gerou demanda qualificada que o CRM não registrou.</li>
+</ul>
+<h2>2. Objetivo do handoff</h2>
+<p>Este arquivo é o complemento operacional do Protocolo A-4 (<code>18_PROTOCOLO_HANDOFF_MQL_SQL_A4_CANONICO.md</code>): aqui vivem campos, status, SLA, roteamento, feedback e rotina dentro do CRM.</p>
+<p>O handoff deve ligar:</p>
+<pre><code>campanha -&gt; criativo -&gt; lead -&gt; contexto do lead -&gt; atendimento -&gt; qualificação -&gt; oportunidade -&gt; venda/perda -&gt; aprendizado</code></pre>
+<h2>3. Definições obrigatórias</h2>
+<h3>Lead</h3>
+<p>Contato capturado por uma campanha, formulário, WhatsApp, evento, indicação ou canal orgânico.</p>
+<h3>MQL</h3>
+<p>Lead que atende critérios mínimos de fit e intenção definidos entre marketing e vendas.</p>
+<p>Exemplos de critérios:</p>
+<ul>
+<li>cargo adequado;</li>
+<li>empresa no ICP;</li>
+<li>segmento atendido;</li>
+<li>dor compatível;</li>
+<li>orçamento provável;</li>
+<li>respondeu ou agendou;</li>
+<li>demonstrou interesse real;</li>
+<li>não é duplicado ou inválido.</li>
+</ul>
+<h3>SQL</h3>
+<p>MQL aceito por vendas como oportunidade real de abordagem comercial.</p>
+<h3>Oportunidade</h3>
+<p>SQL com diagnóstico/necessidade validada e próximo passo comercial claro.</p>
+<h3>Venda</h3>
+<p>Negócio fechado ou contrato assinado.</p>
+<h2>4. Campos mínimos no CRM</h2>
+<p>Identificação:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>created_at</code></li>
+<li><code>nome</code></li>
+<li><code>email</code></li>
+<li><code>telefone</code></li>
+<li><code>empresa</code></li>
+<li><code>cargo</code></li>
+<li><code>segmento</code></li>
+<li><code>cidade_estado</code></li>
+</ul>
+<p>Origem:</p>
+<ul>
+<li><code>first_utm_source</code></li>
+<li><code>first_utm_medium</code></li>
+<li><code>first_utm_campaign</code></li>
+<li><code>first_utm_content</code></li>
+<li><code>first_utm_term</code></li>
+<li><code>last_utm_source</code></li>
+<li><code>last_utm_medium</code></li>
+<li><code>last_utm_campaign</code></li>
+<li><code>last_utm_content</code></li>
+<li><code>last_utm_term</code></li>
+<li><code>campaign_id</code></li>
+<li><code>adgroup_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>test_id</code></li>
+</ul>
+<p>Funil:</p>
+<ul>
+<li><code>lead_status</code></li>
+<li><code>mql_status</code></li>
+<li><code>sql_status</code></li>
+<li><code>opportunity_status</code></li>
+<li><code>deal_status</code></li>
+<li><code>lifecycle_stage</code></li>
+</ul>
+<p>Atendimento:</p>
+<ul>
+<li><code>sales_owner</code></li>
+<li><code>assigned_at</code></li>
+<li><code>first_contact_at</code></li>
+<li><code>speed_to_lead_minutes</code></li>
+<li><code>contact_attempts</code></li>
+<li><code>last_contact_at</code></li>
+<li><code>next_step</code></li>
+<li><code>next_step_date</code></li>
+</ul>
+<p>Qualidade:</p>
+<ul>
+<li><code>fit_score</code></li>
+<li><code>intent_score</code></li>
+<li><code>lead_quality</code></li>
+<li><code>disqualification_reason</code></li>
+<li><code>feedback_notes</code></li>
+</ul>
+<p>Comercial:</p>
+<ul>
+<li><code>deal_value</code></li>
+<li><code>expected_close_date</code></li>
+<li><code>lost_reason</code></li>
+<li><code>won_at</code></li>
+<li><code>lost_at</code></li>
+</ul>
+<h2>5. Status padronizados</h2>
+<h3>Lead status</h3>
+<pre><code>novo
+atribuido
+contatado
+conectado
+sem-resposta
+qualificado
+desqualificado
+duplicado
+invalido</code></pre>
+<h3>MQL status</h3>
+<pre><code>pendente-validacao
+aceito-marketing
+rejeitado-marketing
+enviado-vendas</code></pre>
+<h3>SQL status</h3>
+<pre><code>pendente-vendas
+aceito-vendas
+rejeitado-vendas
+em-diagnostico</code></pre>
+<h3>Opportunity status</h3>
+<pre><code>aberta
+proposta-enviada
+negociacao
+ganha
+perdida
+sem-fit</code></pre>
+<h2>6. Motivos de desqualificação</h2>
+<p>Usar lista fechada para permitir análise.</p>
+<p>Valores recomendados:</p>
+<pre><code>sem-fit
+sem-budget
+timing-ruim
+nao-responde
+fora-regiao
+cargo-inadequado
+empresa-inadequada
+concorrente
+estudante
+fornecedor
+duplicado
+dados-invalidos
+curioso
+ja-cliente
+outro</code></pre>
+<h2>7. SLA de atendimento</h2>
+<p>Definir por tipo de lead.</p>
+<h3>Lead quente</h3>
+<p>Exemplo:</p>
+<ul>
+<li>primeiro contato em até 5 minutos;</li>
+<li>mínimo de 3 tentativas no primeiro dia;</li>
+<li>mínimo de 6 tentativas em 7 dias;</li>
+<li>canais: telefone, WhatsApp, email;</li>
+<li>se não responder, entra em cadência de nurture.</li>
+</ul>
+<h3>Lead morno</h3>
+<p>Exemplo:</p>
+<ul>
+<li>primeiro contato em até 2 horas úteis;</li>
+<li>mínimo de 3 tentativas em 7 dias;</li>
+<li>se não responder, nurture.</li>
+</ul>
+<h3>Lead frio</h3>
+<p>Exemplo:</p>
+<ul>
+<li>qualificação assíncrona;</li>
+<li>fluxo de conteúdo;</li>
+<li>retentativa após novo sinal de intenção.</li>
+</ul>
+<h2>8. Roteamento</h2>
+<p>Definir:</p>
+<ul>
+<li>quem recebe cada tipo de lead;</li>
+<li>regra por segmento;</li>
+<li>regra por região;</li>
+<li>regra por ticket;</li>
+<li>regra por disponibilidade do vendedor;</li>
+<li>regra para redistribuição;</li>
+<li>alerta para gestor se SLA estourar.</li>
+</ul>
+<h2>9. Contexto que marketing deve enviar para vendas</h2>
+<p>Cada lead deveria chegar com:</p>
+<ul>
+<li>campanha de origem;</li>
+<li>criativo de origem;</li>
+<li>promessa vista;</li>
+<li>CTA clicado;</li>
+<li>persona presumida;</li>
+<li>dor/ângulo do criativo;</li>
+<li>etapa do funil;</li>
+<li>formulário preenchido;</li>
+<li>página de conversão;</li>
+<li>observação da campanha;</li>
+<li>sugestão de abordagem.</li>
+</ul>
+<p>Exemplo de resumo:</p>
+<pre><code>Lead veio de campanha Meta TOFU para CFOs.
+Criativo: vídeo com hook de ROI e risco financeiro.
+Promessa vista: reduzir fraude sem travar onboarding.
+Abordagem sugerida: abrir conversa sobre perdas financeiras e custo de falso positivo.</code></pre>
+<h2>10. Script de primeiro contato</h2>
+<p>Deve conter:</p>
+<ul>
+<li>abertura contextual;</li>
+<li>referência ao interesse demonstrado;</li>
+<li>pergunta de qualificação;</li>
+<li>exploração da dor;</li>
+<li>conexão com promessa;</li>
+<li>próximo passo.</li>
+</ul>
+<p>Exemplo:</p>
+<pre><code>Oi, [nome]. Vi que você pediu mais informações sobre [tema/oferta].
+Normalmente quem chega por esse material está tentando resolver [dor].
+Hoje esse é um problema para vocês?</code></pre>
+<h2>11. Feedback que vendas deve devolver para marketing</h2>
+<p>Campos obrigatórios:</p>
+<ul>
+<li>lead era válido?</li>
+<li>era ICP?</li>
+<li>tinha dor real?</li>
+<li>tinha timing?</li>
+<li>tinha orçamento?</li>
+<li>entendeu a oferta?</li>
+<li>objeção principal;</li>
+<li>motivo de perda/desqualificação;</li>
+<li>qualidade percebida;</li>
+<li>comentário livre.</li>
+</ul>
+<h2>12. Rotina de feedback</h2>
+<p>Cadência sugerida:</p>
+<ul>
+<li>diária: SLA e leads sem atendimento;</li>
+<li>semanal: qualidade de leads e motivos de desqualificação;</li>
+<li>quinzenal: MQL/SQL por campanha/criativo;</li>
+<li>mensal: aprendizado para DCC, plano de mídia e criativos.</li>
+</ul>
+<h2>13. Como conectar com a planilha de testes</h2>
+<p>Campos que devem voltar para a planilha:</p>
+<ul>
+<li><code>lead_id</code></li>
+<li><code>campaign_id</code></li>
+<li><code>creative_id</code></li>
+<li><code>test_id</code></li>
+<li><code>is_mql</code></li>
+<li><code>is_sql</code></li>
+<li><code>is_opportunity</code></li>
+<li><code>is_won</code></li>
+<li><code>disqualification_reason</code></li>
+<li><code>lead_quality</code></li>
+<li><code>speed_to_lead_minutes</code></li>
+<li><code>feedback_notes</code></li>
+</ul>
+<h2>14. Como a IA deve usar esse asset</h2>
+<p>A IA pode:</p>
+<ul>
+<li>resumir contexto do lead para vendas;</li>
+<li>detectar lead sem atendimento;</li>
+<li>classificar motivos de desqualificação;</li>
+<li>resumir feedback comercial;</li>
+<li>apontar campanhas com lead barato e baixa qualidade;</li>
+<li>apontar criativos com lead caro e alta qualidade;</li>
+<li>sugerir ajustes de copy com base em objeções reais;</li>
+<li>gerar rebrief para próximo ciclo.</li>
+</ul>
+<h2>15. Critério N2</h2>
+<p>CRM/handoff está N2 quando:</p>
+<ul>
+<li>campos mínimos existem;</li>
+<li>lead carrega origem;</li>
+<li>MQL/SQL estão definidos;</li>
+<li>SLA está definido;</li>
+<li>responsável comercial está definido;</li>
+<li>motivo de desqualificação é obrigatório;</li>
+<li>feedback volta para marketing;</li>
+<li>existe evidência de teste ponta a ponta.</li>
+</ul>
+<h2>16. Critério N3</h2>
+<p>CRM/handoff está N3 quando:</p>
+<ul>
+<li>qualidade comercial entra no debrief;</li>
+<li>campanhas são avaliadas por MQL/SQL/venda;</li>
+<li>SLA é monitorado;</li>
+<li>motivos de perda alimentam copy e oferta;</li>
+<li>aprendizados comerciais viram novos testes;</li>
+<li>marketing e vendas revisam juntos o funil.</li>
+</ul>
+<h2>17. O que evitar</h2>
+<p>Evitar:</p>
+<ul>
+<li>CRM sem UTM;</li>
+<li>lead sem dono;</li>
+<li>SLA verbal;</li>
+<li>motivo de perda aberto demais;</li>
+<li>vendas rejeitar lead sem motivo;</li>
+<li>marketing otimizar sem ouvir vendas;</li>
+<li>considerar lead como resultado final;</li>
+<li>atualizar last-touch sobrescrevendo first-touch;</li>
+<li>não deduplicar leads.</li>
+</ul>
+</article>

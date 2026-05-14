@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "cliente_projeto": "[Nome]",
+    "data_revisao": "YYYY-MM-DD",
+    "revisor": "",
+    "versao_link_deoc": "",
+    "benchmark_diagnostico_ref": ""
+  },
+  "n2": [
+    {
+      "id": "N2-01",
+      "criterio": "Integra oferta, público, problema, concorrência e narrativa.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-02",
+      "criterio": "Usa benchmark e diagnóstico como base.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-03",
+      "criterio": "Define proposta de valor clara.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-04",
+      "criterio": "Lista claims permitidos e proibidos.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-05",
+      "criterio": "Orienta mídia, criativo, LP e vendas (matriz 5.9 ou equivalente).",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-06",
+      "criterio": "ICP e anti-ICP com critérios e exemplos operacionais.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-07",
+      "criterio": "Oferta dizível, escopo explícito, provas mínimas e limites da promessa.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-08",
+      "criterio": "Há provas ou claims claramente marcados como pendentes.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    },
+    {
+      "id": "N2-09",
+      "criterio": "Autossuficiência: IA e humanos executam sem re-coletar contexto essencial.",
+      "status": "",
+      "onde_no_deoc": "",
+      "gap_ou_acao": ""
+    }
+  ],
+  "n3": [
+    {
+      "id": "N3-01",
+      "criterio": "Ângulos vencedores marcados.",
+      "status": "",
+      "nota_plano_se_na": ""
+    },
+    {
+      "id": "N3-02",
+      "criterio": "Objeções comerciais reais no documento.",
+      "status": "",
+      "nota_plano_se_na": ""
+    },
+    {
+      "id": "N3-03",
+      "criterio": "Performance de mídia retroalimenta narrativa.",
+      "status": "",
+      "nota_plano_se_na": ""
+    },
+    {
+      "id": "N3-04",
+      "criterio": "Aprendizados por cohort/segmento versionados.",
+      "status": "",
+      "nota_plano_se_na": ""
+    },
+    {
+      "id": "N3-05",
+      "criterio": "Anti-padrões de comunicação registrados.",
+      "status": "",
+      "nota_plano_se_na": ""
+    },
+    {
+      "id": "N3-06",
+      "criterio": "Perdas/objeções retroalimentam promessa, provas, oferta e anti-ICP.",
+      "status": "",
+      "nota_plano_se_na": ""
+    },
+    {
+      "id": "N3-07",
+      "criterio": "Change log de mensagem/oferta por ciclo.",
+      "status": "",
+      "nota_plano_se_na": ""
+    }
+  ],
+  "estrutura": [
+    {
+      "id": "S5-01",
+      "secao": "5.1",
+      "esperado": "Resumo: cliente, oferta, mercado, beachhead, objetivo, problema, hipótese, risco.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-02",
+      "secao": "5.2",
+      "esperado": "Oferta, mecanismo, brainer, escopo, limites, anti-ICP.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-03",
+      "secao": "5.3",
+      "esperado": "ICP operacional; papéis B2B se relevante.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-04",
+      "secao": "5.4",
+      "esperado": "Problemas com voz do cliente e impacto em conversão.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-05",
+      "secao": "5.5",
+      "esperado": "Alternativas com base em benchmark.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-06",
+      "secao": "5.6",
+      "esperado": "Proposta de valor canônica ou equivalente explícito.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-07",
+      "secao": "5.7",
+      "esperado": "Narrativa com tensão, mecanismo, prova, CTA.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-08",
+      "secao": "5.8",
+      "esperado": "Claims permitidos/proibidos e pendentes.",
+      "status": "",
+      "observacao": ""
+    },
+    {
+      "id": "S5-09",
+      "secao": "5.9",
+      "esperado": "Matriz: mídia, briefing, LP, copy, vendas, tracking.",
+      "status": "",
+      "observacao": ""
+    }
+  ],
+  "implementacao": [
+    {
+      "id": "IM-01",
+      "pergunta": "Mídia consegue planejar sem inventar ICP, ângulo ou oferta?",
+      "status": "",
+      "quem_validou": ""
+    },
+    {
+      "id": "IM-02",
+      "pergunta": "Criativo recebe persona, hook, dor, mecanismo, prova e CTA suficientes?",
+      "status": "",
+      "quem_validou": ""
+    },
+    {
+      "id": "IM-03",
+      "pergunta": "LP pode seguir narrativa e promessa sem drift?",
+      "status": "",
+      "quem_validou": ""
+    },
+    {
+      "id": "IM-04",
+      "pergunta": "Vendas conhece promessa vista pelo lead e limites da oferta?",
+      "status": "",
+      "quem_validou": ""
+    },
+    {
+      "id": "IM-05",
+      "pergunta": "CRM/ops qualifica com anti-ICP e critérios do DEOC?",
+      "status": "",
+      "quem_validou": ""
+    },
+    {
+      "id": "IM-06",
+      "pergunta": "Tracking tem dimensões 5.9 (persona, hook, dor, ângulo, etapa)?",
+      "status": "",
+      "quem_validou": ""
+    }
+  ],
+  "anti_padroes_sec8": [
+    {
+      "id": "A8-01",
+      "descricao": "UCM/DCC ou fontes divergentes e conflitantes.",
+      "detectado": false,
+      "detalhe": ""
+    },
+    {
+      "id": "A8-02",
+      "descricao": "Diagnóstico sem decisão de comunicação acionável.",
+      "detectado": false,
+      "detalhe": ""
+    },
+    {
+      "id": "A8-03",
+      "descricao": "Personas genéricas ou inúteis para mídia/CRM.",
+      "detectado": false,
+      "detalhe": ""
+    },
+    {
+      "id": "A8-04",
+      "descricao": "Narrativa sem ancoragem em benchmark.",
+      "detectado": false,
+      "detalhe": ""
+    },
+    {
+      "id": "A8-05",
+      "descricao": "Promessa ou claim forte sem prova ou pendência explícita.",
+      "detectado": false,
+      "detalhe": ""
+    },
+    {
+      "id": "A8-06",
+      "descricao": "Alternativas percebidas ignoradas ou genéricas.",
+      "detectado": false,
+      "detalhe": ""
+    },
+    {
+      "id": "A8-07",
+      "descricao": "Ausência de tradução para mídia, LP, criativo e vendas.",
+      "detectado": false,
+      "detalhe": ""
+    }
+  ],
+  "claims_revisao": [
+    {
+      "claim_ou_tema": "",
+      "pendente_prova": false,
+      "owner": "",
+      "risco_se_publicar": ""
+    }
+  ],
+  "riscos": [
+    {
+      "risco": "",
+      "severidade": "",
+      "mitigacao": ""
+    }
+  ],
+  "decisao": {
+    "resultado": "",
+    "justificativa": "",
+    "condicionais": "",
+    "proximos_passos": []
+  },
+  "historico": [
+    {
+      "versao_deoc": "",
+      "data": "",
+      "resultado": "",
+      "revisor": ""
+    }
+  ]
+}

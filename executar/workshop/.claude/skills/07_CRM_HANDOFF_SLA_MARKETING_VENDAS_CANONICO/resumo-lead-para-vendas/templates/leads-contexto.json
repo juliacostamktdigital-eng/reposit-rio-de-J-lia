@@ -1,0 +1,32 @@
+{
+  "leads": [
+    {
+      "lead_id": "lead-001",
+      "nome": "Ana Souza",
+      "email": "ana@fintech.com",
+      "telefone": "+55 11 99999-0000",
+      "empresa": "FinPay",
+      "cargo": "CFO",
+      "segmento": "fintech",
+      "created_at": "2026-05-03T10:15:00",
+      "sales_owner": "Marina",
+      "utm_source": "meta",
+      "utm_medium": "paid-social",
+      "campaign_id": "cmp-hs-prevent-202605-001",
+      "campaign_name": "Onboarding digital seguro",
+      "creative_id": "crv-hs-prevent-202605-014",
+      "creative_context": "vídeo com hook de risco financeiro",
+      "test_id": "tst-hs-prevent-202605-hooks-cfo",
+      "lp": "lp-onboarding-digital",
+      "cta": "Solicitar diagnóstico",
+      "form_fields": "nome, email, empresa, cargo, principal desafio",
+      "promessa": "reduzir risco financeiro no onboarding sem travar bons usuários",
+      "persona": "CFO",
+      "dor_angulo": "fraude invisível e risco financeiro",
+      "etapa_funil": "tofu",
+      "hook": "A fraude que não aparece no dashboard já pode estar corroendo sua margem",
+      "oferta": "Diagnóstico de risco no onboarding digital",
+      "observacao_campanha": "abrir conversa sobre perdas financeiras e custo de falso positivo"
+    }
+  ]
+}

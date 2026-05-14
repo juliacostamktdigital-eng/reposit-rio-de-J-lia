@@ -1,0 +1,65 @@
+{
+  "workbook": "planilha-testes-growth",
+  "sheets": [
+    {
+      "name": "00_README",
+      "description": "Explica como usar a planilha e guarda links de referência.",
+      "columns": ["campo", "valor", "observacao"],
+      "sample_rows": [
+        {"campo": "cliente", "valor": "hs-prevent", "observacao": ""},
+        {"campo": "cohort", "valor": "b2b-high-ticket", "observacao": ""},
+        {"campo": "segmento", "valor": "antifraude", "observacao": ""}
+      ]
+    },
+    {
+      "name": "01_TESTES",
+      "description": "Registra hipóteses, variáveis e decisões.",
+      "columns": ["test_id", "client_id", "periodo", "status_teste", "tipo_teste", "alavanca", "hipotese", "variavel_testada", "variaveis_controladas", "cohort", "segmento", "persona", "etapa_funil", "canal", "campanha_id", "adgroup_id", "creative_ids", "tipo_campanha", "movimento", "publico", "temperatura", "posicionamento", "metrica_primaria", "metrica_secundaria", "meta_primaria", "meta_secundaria", "data_inicio", "data_fim_prevista", "data_fim_real", "resultado_resumo", "decisao", "aprendizado", "proximo_passo", "dono"],
+      "sample_rows": [
+        {"test_id": "tst-hs-prevent-202605-004", "client_id": "cli-hs-prevent", "periodo": "2026-05", "status_teste": "planejado", "tipo_teste": "criativo", "alavanca": "hook", "hipotese": "Hooks de ROI para CFO geram MQL mais barato que hooks de medo", "variavel_testada": "hook-roi vs hook-medo", "variaveis_controladas": "mesmo canal, mesma LP, mesmo budget, mesmo publico frio", "cohort": "b2b-high-ticket", "segmento": "antifraude", "persona": "cfo", "etapa_funil": "tofu", "canal": "meta", "campanha_id": "cmp-hs-prevent-202605-001", "adgroup_id": "adg-hs-prevent-202605-003", "creative_ids": "crv-hs-prevent-202605-014;crv-hs-prevent-202605-015", "tipo_campanha": "aquisicao", "movimento": "teste-oferta", "publico": "cfo-fintech", "temperatura": "frio", "posicionamento": "interesses", "metrica_primaria": "cost_per_mql", "metrica_secundaria": "feedback_quality", "meta_primaria": "300", "meta_secundaria": "bom", "data_inicio": "", "data_fim_prevista": "", "data_fim_real": "", "resultado_resumo": "", "decisao": "", "aprendizado": "", "proximo_passo": "", "dono": "growth"}
+      ]
+    },
+    {
+      "name": "02_CRIATIVOS",
+      "description": "Lista cada criativo com atributos analisáveis.",
+      "columns": ["creative_id", "test_id", "campaign_id", "adgroup_id", "nome_plataforma", "formato", "tipo_video", "persona", "hook", "creative_slug", "dor", "desejo", "angulo", "nivel_consciencia", "etapa_funil", "cta", "promessa", "prova_usada", "objecao_atacada", "duracao_video", "asset_url", "thumb_url", "copy_url", "status_aprovacao", "data_publicacao", "versao"],
+      "sample_rows": []
+    },
+    {
+      "name": "03_CAMPANHAS",
+      "description": "Registra estrutura de mídia e metas.",
+      "columns": ["campaign_id", "nome_campanha", "canal", "tipo_campanha", "objetivo", "movimento", "campaign_slug", "cohort", "segmento", "periodo", "orcamento_planejado", "orcamento_realizado", "evento_otimizacao", "meta_cpl", "meta_cpmql", "meta_sql", "meta_venda", "data_inicio", "data_fim", "status", "link_plataforma"],
+      "sample_rows": []
+    },
+    {
+      "name": "04_ADGROUPS",
+      "description": "Registra audiência, público ou keyword.",
+      "columns": ["adgroup_id", "campaign_id", "nome_adgroup", "canal", "publico", "temperatura", "posicionamento", "adgroup_slug", "persona", "segmentacao", "geo", "placement", "keyword", "match_type", "etapa_funil", "orcamento", "status"],
+      "sample_rows": []
+    },
+    {
+      "name": "05_LEADS_FUNIL",
+      "description": "Base de match entre marketing e vendas.",
+      "columns": ["lead_id", "created_at", "client_id", "test_id", "campaign_id", "adgroup_id", "creative_id", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "nome", "email", "telefone", "empresa", "cargo", "lead_status", "is_mql", "mql_at", "is_sql", "sql_at", "is_opportunity", "opportunity_at", "is_won", "won_at", "deal_value", "disqualification_reason", "sales_owner", "first_contact_at", "speed_to_lead_minutes", "feedback_quality", "feedback_notes"],
+      "sample_rows": []
+    },
+    {
+      "name": "06_PERFORMANCE_MIDIA",
+      "description": "Consolida dados de plataforma.",
+      "columns": ["date", "campaign_id", "adgroup_id", "creative_id", "canal", "spend", "impressions", "reach", "frequency", "clicks", "ctr", "cpc", "cpm", "lp_views", "connect_rate", "leads", "cpl", "platform_conversions", "cost_per_platform_conversion"],
+      "sample_rows": []
+    },
+    {
+      "name": "07_PERFORMANCE_FUNIL",
+      "description": "Consolida qualidade real por etapa.",
+      "columns": ["campaign_id", "adgroup_id", "creative_id", "test_id", "leads", "mqls", "sqls", "opportunities", "sales", "revenue", "lead_to_mql_rate", "mql_to_sql_rate", "sql_to_opp_rate", "opp_to_sale_rate", "cost_per_mql", "cost_per_sql", "cost_per_opp", "cac", "roas", "avg_speed_to_lead_minutes", "unknown_source_rate"],
+      "sample_rows": []
+    },
+    {
+      "name": "08_APRENDIZADOS",
+      "description": "Transforma resultado em conhecimento.",
+      "columns": ["learning_id", "test_id", "client_id", "cohort", "segmento", "padrao_observado", "evidencia", "limite_da_conclusao", "recomendacao", "vira_playbook", "vira_antipadrao", "vira_novo_teste", "data", "dono"],
+      "sample_rows": []
+    }
+  ]
+}

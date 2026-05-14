@@ -1,0 +1,61 @@
+{
+  "cliente": "Cliente exemplo",
+  "data": "2026-05-01",
+  "responsavel": "Strategy lead",
+  "mapa_2x2": {
+    "eixo_x": "Generalista vs especialista",
+    "eixo_y": "Conveniência vs profundidade",
+    "pontos": [
+      {"nome": "Cliente (atual)", "x": "especialista", "y": "profundidade"},
+      {"nome": "Cliente (recomendado)", "x": "especialista", "y": "profundidade"},
+      {"nome": "Concorrente A", "x": "generalista", "y": "conveniencia"},
+      {"nome": "Substituto B", "x": "generalista", "y": "profundidade"}
+    ]
+  },
+  "swot": {
+    "forcas": [
+      {"titulo": "Profundidade em onboarding antifraude", "evidencia": "Cases em 2 verticais", "impacto": "Diferenciação clara", "implicacao": "Ângulo specialist no DEOC"}
+    ],
+    "fraquezas": [
+      {"titulo": "Marca menor que suite global", "evidencia": "Share of voice em mídia", "impacto": "CPL pode ser maior no topo", "implicacao": "Proof-led e nicho primeiro"}
+    ],
+    "oportunidades": [
+      {"titulo": "Brecha em discurso de margem", "evidencia": "Benchmark de anúncios", "impacto": "Hook pouco usado", "implicacao": "Testar 3 variações financeiras"}
+    ],
+    "ameacas": [
+      {"titulo": "Player comercial agressivo em preço", "evidencia": "LP com bundle", "impacto": "Comparação implícita", "implicacao": "Evitar guerra de preço; provar ROI"}
+    ]
+  },
+  "segmentos": [
+    {
+      "nome": "Fintechs médias pagamentos",
+      "scores": {
+        "urgencia_dor": 5,
+        "capacidade_pagar": 4,
+        "facilidade_acesso": 3,
+        "tamanho_segmento": 4,
+        "espaco_mercado": 4,
+        "alinhamento_forcas": 5
+      }
+    },
+    {
+      "nome": "E-commerce nacional",
+      "scores": {
+        "urgencia_dor": 3,
+        "capacidade_pagar": 3,
+        "facilidade_acesso": 4,
+        "tamanho_segmento": 5,
+        "espaco_mercado": 2,
+        "alinhamento_forcas": 3
+      }
+    }
+  ],
+  "pesos": {
+    "urgencia_dor": 2,
+    "capacidade_pagar": 2,
+    "facilidade_acesso": 1,
+    "tamanho_segmento": 1,
+    "espaco_mercado": 2,
+    "alinhamento_forcas": 2
+  }
+}

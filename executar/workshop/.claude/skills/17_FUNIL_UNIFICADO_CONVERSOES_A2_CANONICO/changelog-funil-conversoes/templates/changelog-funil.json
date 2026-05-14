@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "versao_funil_atual": "v1.0",
+    "dono_changelog": "",
+    "link_artefato_funil": "",
+    "notas_cadencia": "Quinzenal até estabilizar; mensal após (playbook 17)."
+  },
+  "historico": [
+    {
+      "id": "",
+      "data": "",
+      "autor": "",
+      "dimensao": "",
+      "resumo": "",
+      "antes": "",
+      "depois": "",
+      "motivo": "",
+      "impacto_esperado": "",
+      "impacto_observado": "",
+      "data_revisao_impacto": "",
+      "versao_funil_apos": "",
+      "aprovadores": "",
+      "links": "",
+      "estado": "rascunho"
+    }
+  ]
+}

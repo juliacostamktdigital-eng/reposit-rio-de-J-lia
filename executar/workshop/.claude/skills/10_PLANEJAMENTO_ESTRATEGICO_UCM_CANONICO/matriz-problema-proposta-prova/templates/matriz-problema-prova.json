@@ -1,0 +1,109 @@
+{
+  "cliente": "HS Prevent",
+  "oferta": "Onboarding antifraude",
+  "fonte": "Discovery + vendas + benchmark",
+  "message_house": {
+    "roof_claim": "Onboarding sem fricção, sem fraude.",
+    "pillars": [
+      "Aprovação rápida do cliente legítimo",
+      "Fraude contida sem revisão manual",
+      "Conformidade regulatória pronta"
+    ],
+    "proof_points": [
+      {
+        "pillar": "Aprovação rápida do cliente legítimo",
+        "proof": "Tempo médio de aprovação de 28s em produção (benchmark interno auditável)"
+      },
+      {
+        "pillar": "Aprovação rápida do cliente legítimo",
+        "proof": "97% dos legítimos aprovados sem revisão manual no caso piloto"
+      },
+      {
+        "pillar": "Fraude contida sem revisão manual",
+        "proof": "Redução de 38% em chargebacks no caso Cliente X (12 meses)"
+      },
+      {
+        "pillar": "Conformidade regulatória pronta",
+        "proof": "Certificação SOC 2 Type II vigente"
+      }
+    ]
+  },
+  "anti_claims": [
+    {
+      "claim_proibido": "Eliminamos 100% da fraude",
+      "categoria": "factual",
+      "motivo": "Sem reasonable basis — nenhum sistema atinge 100% e não há substantiation possível"
+    },
+    {
+      "claim_proibido": "Mais rápido que [Concorrente Y]",
+      "categoria": "comparativo",
+      "motivo": "Sem benchmark publicado nem teste padronizado auditável — vedação CONAR art. 32"
+    },
+    {
+      "claim_proibido": "Garantimos aprovação regulatória do BACEN",
+      "categoria": "regulatorio",
+      "motivo": "Vedação BACEN — nenhum fornecedor pode garantir decisão de órgão regulador"
+    }
+  ],
+  "problemas": [
+    {
+      "problema": "Fraude invisível no cadastro",
+      "impacto": "Perda financeira e retrabalho operacional",
+      "voz_cliente": "A fraude aparece quando o cliente bom já desistiu",
+      "persona": "Diretor de risco",
+      "stage": "MOFU",
+      "proposta": "Aprovação mais segura sem travar cliente legítimo",
+      "mecanismo": "Score antifraude e validação inteligente",
+      "promessa": "Reduzir perdas invisíveis no onboarding",
+      "objecao": "Não posso piorar conversão",
+      "prova": "Case de redução de falso positivo",
+      "status_prova": "parcial",
+      "risco": "médio",
+      "impacto_score": 5,
+      "frequencia_score": 4,
+      "evidencia_score": 3,
+      "risco_score": 2,
+      "provas_por_papel": [
+        {
+          "papel": "economic_buyer",
+          "tipo_prova": "ROI quantificado",
+          "evidencia": "Caso Cliente X: redução de 38% em chargebacks com payback em 4,2 meses"
+        },
+        {
+          "papel": "user",
+          "tipo_prova": "Demo de uso",
+          "evidencia": "Vídeo de 3min do score em produção alertando em <300ms"
+        },
+        {
+          "papel": "technical_buyer",
+          "tipo_prova": "Arquitetura e segurança",
+          "evidencia": "SOC 2 Type II + arquitetura zero-trust + DPA padrão LGPD"
+        },
+        {
+          "papel": "champion",
+          "tipo_prova": "Narrativa interna",
+          "evidencia": "Deck de 1 página: redução de fricção sem abrir brecha — pronto pra apresentar pro CFO"
+        }
+      ]
+    },
+    {
+      "problema": "Fricção derruba conversão de cliente legítimo",
+      "impacto": "Abandono e CAC desperdiçado",
+      "voz_cliente": "O usuário bom some no cadastro",
+      "persona": "Líder de produto",
+      "stage": "BOFU",
+      "proposta": "Onboarding com menos fricção e mais controle",
+      "mecanismo": "Verificação adaptativa por risco",
+      "promessa": "Aumentar aprovação sem abrir brecha para fraude",
+      "objecao": "Pode virar projeto técnico longo",
+      "prova": "",
+      "status_prova": "ausente",
+      "risco": "alto",
+      "impacto_score": 4,
+      "frequencia_score": 4,
+      "evidencia_score": 1,
+      "risco_score": 4,
+      "provas_por_papel": []
+    }
+  ]
+}

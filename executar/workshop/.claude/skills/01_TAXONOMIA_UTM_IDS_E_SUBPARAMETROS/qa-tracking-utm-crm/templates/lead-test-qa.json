@@ -1,0 +1,212 @@
+{
+  "teste": "lead-teste-001",
+  "schema_version": "2.0",
+  "lead_teste": {
+    "email_pattern": "qa+{timestamp}@dominio",
+    "email_exemplo": "qa+20260504T1530-001@cliente.com",
+    "is_test": true,
+    "exclusao_audiences_meta": true,
+    "exclusao_customer_match_google": true,
+    "exclusao_dashboards_bi": true,
+    "test_event_code_meta": "TEST12345"
+  },
+  "url": "https://cliente.com/lp?utm_source=meta&utm_medium=paid_social&utm_campaign=cmp-hs-prevent-202605-001__typ-aquisicao__obj-mql__mov-teste-oferta__slug-antifraude-cfo__coh-b2b-high-ticket__seg-antifraude__per-2026q2&utm_content=crv-hs-prevent-202605-014__fmt-video__hook-roi__per-cfo__slug-fraude-invisivel__dor-fraude__ang-risco-financeiro__stage-tofu__ver-v01&utm_term=adg-hs-prevent-202605-003__pub-cfo-fintech__temp-frio__pos-interesses__slug-cfo-antifraude__plc-reels__geo-br&v4_client_id=cli-hs-prevent&v4_campaign_id=cmp-hs-prevent-202605-001&v4_adgroup_id=adg-hs-prevent-202605-003&v4_creative_id=crv-hs-prevent-202605-014&v4_test_id=tst-hs-prevent-202605-004&fbclid=IwAR-exemplo-fbclid-aqui",
+  "saltos": [
+    {
+      "nome": "1_url_para_lp",
+      "descricao": "URL com UTMs/IDs/click IDs -> LP (browser/cookie/dataLayer)",
+      "campos_esperados": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "v4_campaign_id": "cmp-hs-prevent-202605-001",
+        "fbclid": "IwAR-exemplo-fbclid-aqui"
+      },
+      "campos_capturados": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "v4_campaign_id": "cmp-hs-prevent-202605-001",
+        "fbclid": "IwAR-exemplo-fbclid-aqui"
+      },
+      "gap": []
+    },
+    {
+      "nome": "2_lp_para_form",
+      "descricao": "LP -> Form / WhatsApp (campos ocultos)",
+      "campos_esperados": {
+        "utm_source": "meta",
+        "v4_creative_id": "crv-hs-prevent-202605-014",
+        "fbclid": "IwAR-exemplo-fbclid-aqui",
+        "is_test": true
+      },
+      "campos_capturados": {
+        "utm_source": "meta",
+        "v4_creative_id": "crv-hs-prevent-202605-014",
+        "fbclid": "IwAR-exemplo-fbclid-aqui",
+        "is_test": true
+      },
+      "gap": []
+    },
+    {
+      "nome": "3_form_para_backup",
+      "descricao": "Form -> Planilha backup (Sheets/N8N/webhook)",
+      "campos_esperados": {
+        "v4_client_id": "cli-hs-prevent",
+        "v4_campaign_id": "cmp-hs-prevent-202605-001",
+        "v4_adgroup_id": "adg-hs-prevent-202605-003",
+        "v4_creative_id": "crv-hs-prevent-202605-014",
+        "v4_test_id": "tst-hs-prevent-202605-004",
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "fbclid": "IwAR-exemplo-fbclid-aqui",
+        "is_test": true
+      },
+      "campos_capturados": {
+        "v4_client_id": "cli-hs-prevent",
+        "v4_campaign_id": "cmp-hs-prevent-202605-001",
+        "v4_adgroup_id": "adg-hs-prevent-202605-003",
+        "v4_creative_id": "crv-hs-prevent-202605-014",
+        "v4_test_id": "tst-hs-prevent-202605-004",
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "fbclid": "IwAR-exemplo-fbclid-aqui",
+        "is_test": true
+      },
+      "gap": []
+    },
+    {
+      "nome": "4_backup_para_crm",
+      "descricao": "Planilha backup -> CRM (HubSpot/RD/Pipedrive/Salesforce)",
+      "campos_esperados": {
+        "v4_client_id": "cli-hs-prevent",
+        "v4_campaign_id": "cmp-hs-prevent-202605-001",
+        "v4_adgroup_id": "adg-hs-prevent-202605-003",
+        "v4_creative_id": "crv-hs-prevent-202605-014",
+        "v4_test_id": "tst-hs-prevent-202605-004",
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "fbclid": "IwAR-exemplo-fbclid-aqui",
+        "is_test": true,
+        "first_touch_preserved": true
+      },
+      "campos_capturados": {
+        "v4_client_id": "cli-hs-prevent",
+        "v4_campaign_id": "cmp-hs-prevent-202605-001",
+        "v4_adgroup_id": "adg-hs-prevent-202605-003",
+        "v4_creative_id": "crv-hs-prevent-202605-014",
+        "v4_test_id": "tst-hs-prevent-202605-004",
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "fbclid": "IwAR-exemplo-fbclid-aqui",
+        "is_test": true,
+        "first_touch_preserved": true
+      },
+      "gap": []
+    },
+    {
+      "nome": "5_crm_para_analise",
+      "descricao": "CRM -> BI / dashboard / planilha de testes",
+      "campos_esperados": {
+        "export_contem_utm_completo": true,
+        "export_contem_v4_ids": true,
+        "export_contem_click_ids": true,
+        "filtro_is_test_aplicado": true,
+        "cruzamento_utm_x_clickids": true
+      },
+      "campos_capturados": {
+        "export_contem_utm_completo": true,
+        "export_contem_v4_ids": true,
+        "export_contem_click_ids": true,
+        "filtro_is_test_aplicado": true,
+        "cruzamento_utm_x_clickids": true
+      },
+      "gap": []
+    }
+  ],
+  "click_ids_validados": [
+    {"id": "gclid", "plataforma": "google", "aplicavel": false, "presente_url": false, "presente_crm": false},
+    {"id": "gbraid", "plataforma": "google_ios_app", "aplicavel": false, "presente_url": false, "presente_crm": false},
+    {"id": "wbraid", "plataforma": "google_ios_web", "aplicavel": false, "presente_url": false, "presente_crm": false},
+    {"id": "fbclid", "plataforma": "meta", "aplicavel": true, "presente_url": true, "presente_crm": true},
+    {"id": "_fbp", "plataforma": "meta_cookie", "aplicavel": true, "presente_url": false, "presente_crm": true},
+    {"id": "_fbc", "plataforma": "meta_cookie_derivado", "aplicavel": true, "presente_url": false, "presente_crm": true},
+    {"id": "ttclid", "plataforma": "tiktok", "aplicavel": false, "presente_url": false, "presente_crm": false},
+    {"id": "li_fat_id", "plataforma": "linkedin", "aplicavel": false, "presente_url": false, "presente_crm": false}
+  ],
+  "dedup_capi": {
+    "event_id_browser": "550e8400-e29b-41d4-a716-446655440000",
+    "event_id_server": "550e8400-e29b-41d4-a716-446655440000",
+    "event_name_browser": "Lead",
+    "event_name_server": "Lead",
+    "event_time_delta_seconds": 3,
+    "deduplicated_status": "Yes",
+    "emq_score": 7.4,
+    "test_event_code": "TEST12345"
+  },
+  "backup": {
+    "v4_client_id": "cli-hs-prevent",
+    "v4_campaign_id": "cmp-hs-prevent-202605-001",
+    "v4_adgroup_id": "adg-hs-prevent-202605-003",
+    "v4_creative_id": "crv-hs-prevent-202605-014",
+    "v4_test_id": "tst-hs-prevent-202605-004",
+    "utm_source": "meta",
+    "utm_medium": "paid_social",
+    "utm_campaign": "cmp-hs-prevent-202605-001__typ-aquisicao__obj-mql__mov-teste-oferta__slug-antifraude-cfo__coh-b2b-high-ticket__seg-antifraude__per-2026q2",
+    "utm_content": "crv-hs-prevent-202605-014__fmt-video__hook-roi__per-cfo__slug-fraude-invisivel__dor-fraude__ang-risco-financeiro__stage-tofu__ver-v01",
+    "utm_term": "adg-hs-prevent-202605-003__pub-cfo-fintech__temp-frio__pos-interesses__slug-cfo-antifraude__plc-reels__geo-br",
+    "fbclid": "IwAR-exemplo-fbclid-aqui",
+    "is_test": true
+  },
+  "crm": {
+    "v4_client_id": "cli-hs-prevent",
+    "v4_campaign_id": "cmp-hs-prevent-202605-001",
+    "v4_adgroup_id": "adg-hs-prevent-202605-003",
+    "v4_creative_id": "crv-hs-prevent-202605-014",
+    "v4_test_id": "tst-hs-prevent-202605-004",
+    "utm_source": "meta",
+    "utm_medium": "paid_social",
+    "utm_campaign": "cmp-hs-prevent-202605-001__typ-aquisicao__obj-mql__mov-teste-oferta__slug-antifraude-cfo__coh-b2b-high-ticket__seg-antifraude__per-2026q2",
+    "utm_content": "crv-hs-prevent-202605-014__fmt-video__hook-roi__per-cfo__slug-fraude-invisivel__dor-fraude__ang-risco-financeiro__stage-tofu__ver-v01",
+    "utm_term": "adg-hs-prevent-202605-003__pub-cfo-fintech__temp-frio__pos-interesses__slug-cfo-antifraude__plc-reels__geo-br",
+    "fbclid": "IwAR-exemplo-fbclid-aqui",
+    "is_test": true
+  },
+  "rules": {
+    "first_touch_preserved": true,
+    "last_touch_updates": true,
+    "dedupe_ok": true,
+    "conversion_event_ok": true,
+    "export_match_ok": true
+  },
+  "achados": [
+    {
+      "codigo": "baixo-N1",
+      "descricao": "Exemplo: padronizar nomenclatura do hidden field is_test entre LP e CRM property",
+      "salto": "3_form_para_backup",
+      "dono": "operador-marketing",
+      "esforco": "1h",
+      "bloqueia_golive": false,
+      "mitigacao": "Mapeamento manual no integrador até correção definitiva",
+      "prazo": "2026-05-15"
+    }
+  ],
+  "dark_traffic_gap": {
+    "periodo": "2026-04-01 a 2026-04-30",
+    "leads_crm": 320,
+    "leads_plataforma_meta": 180,
+    "leads_plataforma_google": 95,
+    "leads_outras_plataformas": 0,
+    "gap_absoluto": 45,
+    "gap_percentual": 0.140625,
+    "cohort_whatsapp_direto": 22,
+    "cohort_telefone": 8,
+    "cohort_referral": 10,
+    "cohort_organic_direct": 5,
+    "avaliacao": "saudavel"
+  },
+  "decisao": {
+    "valor": "go",
+    "justificativa": "Zero bloqueadores; gap dark traffic 14% saudavel; dedup CAPI verificado.",
+    "aceite_escrito_operador": null,
+    "condicoes_golive": []
+  }
+}

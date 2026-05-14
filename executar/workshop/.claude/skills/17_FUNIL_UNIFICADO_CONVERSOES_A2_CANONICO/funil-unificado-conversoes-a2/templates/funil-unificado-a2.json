@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "cliente_projeto": "[Nome]",
+    "versao_funil": "v1",
+    "data": "YYYY-MM-DD",
+    "responsavel": "",
+    "link_plano_midia": "",
+    "link_deoc": "",
+    "link_protocolo_handoff": "",
+    "link_benchmark": ""
+  },
+  "modo": "simples",
+  "criterios_modo": {
+    "ticket_medio_brl": null,
+    "ciclo_dias": null,
+    "comite_size": null,
+    "segmento": "",
+    "justificativa": ""
+  },
+  "concordancia": {
+    "marketing_concorda": false,
+    "vendas_concorda": false,
+    "data_alinhamento": ""
+  },
+  "objetivo": {
+    "conversao_final_que_importa": "",
+    "lead_correto_definicao": ""
+  },
+  "as_is": {
+    "marketing": "",
+    "vendas": "",
+    "ferramentas_resumo": "",
+    "lacunas": ""
+  },
+  "to_be": {
+    "notas_alinhamento": ""
+  },
+  "etapas": [
+    {
+      "ordem": 1,
+      "nome": "",
+      "definicao_passa": "",
+      "evidencia_minima": "",
+      "conversao_evento": "",
+      "fonte_da_verdade": "",
+      "dono_etapa": "",
+      "handoff_protocolo_ref": "",
+      "taxa_aceitavel": {
+        "verde": "",
+        "amarelo": "",
+        "vermelho": "",
+        "fonte_benchmark": ""
+      },
+      "campos_minimos": [
+        {
+          "campo": "",
+          "definicao_preenchimento": ""
+        }
+      ]
+    },
+    {
+      "ordem": 2,
+      "nome": "",
+      "definicao_passa": "",
+      "evidencia_minima": "",
+      "conversao_evento": "",
+      "fonte_da_verdade": "",
+      "dono_etapa": "",
+      "handoff_protocolo_ref": "",
+      "taxa_aceitavel": {
+        "verde": "",
+        "amarelo": "",
+        "vermelho": "",
+        "fonte_benchmark": ""
+      },
+      "campos_minimos": [
+        {
+          "campo": "",
+          "definicao_preenchimento": ""
+        }
+      ]
+    }
+  ],
+  "benchmarks_referencia": [
+    {
+      "transicao": "Lead → MQL",
+      "verde": "≥ 35%",
+      "amarelo": "25–34%",
+      "vermelho": "< 12%",
+      "fonte": "SmartBug 2024 / Forrester"
+    },
+    {
+      "transicao": "MQL → SQL",
+      "verde": "≥ 25%",
+      "amarelo": "13–24%",
+      "vermelho": "< 6%",
+      "fonte": "SmartBug, Pedowitz Group 2024"
+    },
+    {
+      "transicao": "SQL → Opportunity",
+      "verde": "≥ 60%",
+      "amarelo": "50–59%",
+      "vermelho": "< 25%",
+      "fonte": "Forrester B2B Revenue Waterfall 2021"
+    },
+    {
+      "transicao": "Opportunity → Closed Won",
+      "verde": "≥ 30%",
+      "amarelo": "20–29%",
+      "vermelho": "< 10%",
+      "fonte": "B2B SaaS médio 2024"
+    },
+    {
+      "transicao": "Lead Acceptance Rate",
+      "verde": "≥ 50%",
+      "amarelo": "30–49%",
+      "vermelho": "< 20%",
+      "fonte": "SmartBug 2024 (média 42%)"
+    },
+    {
+      "transicao": "Customer → Retained 90d",
+      "verde": "≥ 90%",
+      "amarelo": "75–89%",
+      "vermelho": "< 60%",
+      "fonte": "Winning by Design Bowtie"
+    }
+  ],
+  "sla_mkt_vendas": {
+    "definicao_mql": "",
+    "definicao_sql": "",
+    "tempo_aceite_horas": null,
+    "procedimento_devolucao": "",
+    "motivos_devolucao_padronizados": [],
+    "owner_marketing": "",
+    "owner_vendas": "",
+    "owner_funil": "",
+    "cadencia_revisao": "Quinzenal nos 90 primeiros dias; mensal depois",
+    "data_assinatura": "",
+    "versao": "v1"
+  },
+  "automacao_crm": {
+    "plataforma": "",
+    "state_machine": [
+      {
+        "from_stage": "",
+        "to_stage": "",
+        "trigger": "",
+        "regra_observavel": ""
+      }
+    ],
+    "scoring_rule": {
+      "definicao": "",
+      "threshold_mql": "",
+      "exemplos_pontos": []
+    },
+    "webhook_out_stages": [],
+    "endpoint_webhook": ""
+  },
+  "eventos_tracking": [
+    {
+      "evento": "",
+      "etapa_relacionada": "",
+      "nota": ""
+    }
+  ],
+  "eventos_canonicos": [
+    {"nome": "PageView", "origem": "front", "responsavel_disparo": "GTM Web", "etapa": "Visitante"},
+    {"nome": "Lead", "origem": "front", "responsavel_disparo": "GTM Web (form submit)", "etapa": "Lead"},
+    {"nome": "MQL", "origem": "server", "responsavel_disparo": "Webhook CRM via N8N", "etapa": "MQL"},
+    {"nome": "NOICP", "origem": "front", "responsavel_disparo": "GTM Web (form submit anti-ICP)", "etapa": "Excluído"},
+    {"nome": "LeadAccepted", "origem": "server", "responsavel_disparo": "Webhook CRM via N8N", "etapa": "SAL"},
+    {"nome": "LeadQualified", "origem": "server", "responsavel_disparo": "Webhook CRM via N8N", "etapa": "SQL"},
+    {"nome": "Opportunity", "origem": "server", "responsavel_disparo": "Webhook CRM via N8N", "etapa": "Opportunity"},
+    {"nome": "DealWon", "origem": "server", "responsavel_disparo": "Webhook CRM via N8N", "etapa": "Closed Won"},
+    {"nome": "CustomerRetained90d", "origem": "server", "responsavel_disparo": "Cron CRM via N8N", "etapa": "Retenção (Bowtie pós)"}
+  ],
+  "buying_group": {
+    "champion": "",
+    "economic_buyer": "",
+    "decision_maker": "",
+    "influencers_internos": [],
+    "users": [],
+    "ratifier": "",
+    "gatekeeper": "",
+    "influenciadores_externos": []
+  },
+  "bowtie_etapas_posvenda": [
+    {
+      "ordem": 1,
+      "nome": "Onboarding",
+      "definicao_passa": "",
+      "fonte_da_verdade": "",
+      "kpi_principal": ""
+    },
+    {
+      "ordem": 2,
+      "nome": "Impact / Value Delivery",
+      "definicao_passa": "",
+      "fonte_da_verdade": "",
+      "kpi_principal": ""
+    },
+    {
+      "ordem": 3,
+      "nome": "Expansion",
+      "definicao_passa": "",
+      "fonte_da_verdade": "",
+      "kpi_principal": ""
+    },
+    {
+      "ordem": 4,
+      "nome": "Advocacy",
+      "definicao_passa": "",
+      "fonte_da_verdade": "",
+      "kpi_principal": ""
+    }
+  ],
+  "rpm_volumes": {
+    "V1_awareness": null,
+    "V5_mql": null,
+    "V8_opportunity": null,
+    "V11_won": null,
+    "V13_expansion": null
+  },
+  "rpm_conversion_rates": {
+    "CR0_inquiry_to_mql": "",
+    "CR1_mql_to_sql": "",
+    "CR2_sql_to_opp": "",
+    "CR3_opp_to_won": "",
+    "CR4_won_to_expand": ""
+  },
+  "coerencia_operacao": {
+    "capacidade_time": "",
+    "ciclo_venda": "",
+    "riscos_funil_impossivel": ""
+  },
+  "backlog": [
+    {
+      "item": "",
+      "prioridade": "",
+      "dono": ""
+    }
+  ],
+  "gerenciado": {
+    "kpis": [
+      "% leads com status válido",
+      "% campos mínimos preenchidos",
+      "Tempo de ciclo por etapa",
+      "Lead acceptance rate (SLA-bound)"
+    ],
+    "cadencia_revisao": "Quinzenal até estabilizar; mensal após",
+    "dono_funil": "",
+    "thresholds_resumo": "Vermelho: discrepância entre fontes ou etapa sem dono. Amarelo: muitas etapas e baixa adesão. Verde: rastreio mínimo e aderência."
+  }
+}

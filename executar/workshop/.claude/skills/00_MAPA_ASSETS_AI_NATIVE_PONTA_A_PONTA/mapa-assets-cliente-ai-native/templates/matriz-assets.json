@@ -1,0 +1,26 @@
+{
+  "cliente": "cliente-exemplo",
+  "data": "YYYY-MM-DD",
+  "assets": [
+    {
+      "etapa": "0. Handoff",
+      "asset": "Brief sales-to-ops",
+      "status": "faltante",
+      "evidencia": "",
+      "dono": "",
+      "prioridade": "bloqueador",
+      "dependencia": "",
+      "dod": "Ops entende promessa, exclusoes, dono interno e aprovador do cliente."
+    },
+    {
+      "etapa": "6. Tracking",
+      "asset": "Taxonomia UTM, IDs e fonte da verdade",
+      "status": "faltante",
+      "evidencia": "",
+      "dono": "",
+      "prioridade": "bloqueador",
+      "dependencia": "Plano de midia e ponto de conversao",
+      "dod": "Lead teste percorre midia, LP, backup e CRM com dados preservados."
+    }
+  ]
+}

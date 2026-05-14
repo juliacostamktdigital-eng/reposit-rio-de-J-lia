@@ -1,0 +1,61 @@
+{
+  "base_url": "https://cliente.com/lp-onboarding-digital",
+  "canonical_url": "https://cliente.com/lp-onboarding-digital",
+  "canonical_tag_present": false,
+  "cliente": "hs-prevent",
+  "ano_mes": "202605",
+  "utm_source": "meta",
+  "utm_medium": "paid_social",
+  "max_utm_campaign_chars": 150,
+  "campanhas": [
+    {
+      "sequencial": "001",
+      "tipo_campanha": "aquisicao",
+      "objetivo": "mql",
+      "movimento": "teste-oferta",
+      "slug": "antifraude-cfo",
+      "cohort": "b2b-high-ticket",
+      "segmento": "antifraude",
+      "periodo": "2026q2",
+      "adgroups": [
+        {
+          "sequencial": "003",
+          "publico": "cfo-fintech",
+          "temperatura": "frio",
+          "posicionamento": "interesses",
+          "slug": "cfo-antifraude",
+          "placement": "reels",
+          "geo": "br",
+          "criativos": [
+            {
+              "sequencial": "014",
+              "test_sequencial": "004",
+              "formato": "video",
+              "hook": "roi",
+              "persona": "cfo",
+              "slug": "fraude-invisivel",
+              "dor": "fraude",
+              "angulo": "risco-financeiro",
+              "etapa": "tofu",
+              "versao": "v01"
+            },
+            {
+              "sequencial": "014-v2",
+              "test_sequencial": "004",
+              "formato": "video",
+              "hook": "roi",
+              "persona": "cfo",
+              "slug": "fraude-invisivel",
+              "dor": "fraude",
+              "angulo": "risco-financeiro",
+              "etapa": "tofu",
+              "versao": "v02",
+              "iteracao_de": "014",
+              "motivo_iteracao": "headline-nova"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

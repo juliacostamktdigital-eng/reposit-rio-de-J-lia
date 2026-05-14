@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "cliente": "[Nome]",
+    "versao_doc": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel_media": "",
+    "link_planilha_growth_backup": "",
+    "link_contrato_dados": "",
+    "ref_setup_estrutura": ""
+  },
+  "pre_requisitos": {
+    "oferta_deoc_alinhada": false,
+    "crm_sla_definido": false,
+    "planilha_backup_ativa": false,
+    "sla_followup_aceito_antes_ativar": false,
+    "hipotese_leitura_planilha": false
+  },
+  "lead_form": {
+    "nome_interno_meta": "",
+    "idioma": "pt-BR",
+    "estrategia_volume_intencao": "equilibrado",
+    "headline": "",
+    "beneficio_imediato": "",
+    "coerencia_anuncio": "",
+    "campos_padrao": [],
+    "campos_custom": [],
+    "perguntas_qualificacao": [],
+    "privacidade_resumo": "",
+    "thank_you_texto": "",
+    "cta_pos_submit": ""
+  },
+  "origem_rastreio": {
+    "campaign_ids": [],
+    "como_ids_chegam_crm": "",
+    "utms_resumo": "",
+    "campos_crm_obrigatorios": []
+  },
+  "integracao": {
+    "modo": "",
+    "detalhe": "",
+    "owner_tecnico": ""
+  },
+  "sla": {
+    "tempo_max_primeiro_contato": "",
+    "canal_primeiro_contato": "",
+    "script_comercial_link": "",
+    "owner_comercial": ""
+  },
+  "publicos_form": {
+    "remarketing_abriu_nao_enviou": "",
+    "exclusoes": ""
+  },
+  "teste_p2p": {
+    "data": "",
+    "lead_teste_enviado": false,
+    "crm_ok": false,
+    "backup_ok": false,
+    "origem_ids_ok": false
+  },
+  "matriz_testes": {
+    "o_que_varia": "",
+    "o_que_constante": ""
+  },
+  "pre_go_live_lead_nativo": {
+    "campos_perguntas_conferidos_mql": false,
+    "integracao_testada_lead_real": false,
+    "sla_comunicado_time": false,
+    "remarketing_form_aberto_definido": false,
+    "qualidade_comercial_planilha_ok": false
+  },
+  "n2_gaps": ""
+}

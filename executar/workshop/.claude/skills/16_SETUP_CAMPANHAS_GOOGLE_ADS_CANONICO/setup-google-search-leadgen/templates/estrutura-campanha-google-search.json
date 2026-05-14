@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "cliente": "[Nome]",
+    "versao_doc": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel": "",
+    "link_plano_midia_search": "",
+    "link_setup_google_base": "",
+    "url_final_lp": "",
+    "conversao_primaria": ""
+  },
+  "demanda_ativa": {
+    "problema": false,
+    "solucao_categoria": false,
+    "concorrente_permitido": false,
+    "marca_defesa_captura": false,
+    "hipotese_search": ""
+  },
+  "politica_match": {
+    "fase_inicial": "frase_e_exata",
+    "criterio_ampliar_match": ""
+  },
+  "campanhas": [
+    {
+      "campaign_id": "",
+      "nome_taxonomia": "",
+      "tipo": "nao_marca",
+      "url_final": "",
+      "objetivo_lances_resumo": "",
+      "utms_contrato_ok": false,
+      "hipotese": "",
+      "grupos": [
+        {
+          "adgroup_id": "",
+          "nome_taxonomia": "",
+          "cluster": "problema",
+          "keywords": [
+            {
+              "termo": "",
+              "match": "phrase",
+              "nota": ""
+            }
+          ],
+          "rsa": {
+            "headlines": [],
+            "descricoes": [],
+            "path1": "",
+            "path2": ""
+          }
+        }
+      ]
+    }
+  ],
+  "campanha_marca": {
+    "ativa": false,
+    "campaign_id": "",
+    "nome_taxonomia": "",
+    "url_final": "",
+    "notas": "",
+    "grupos": []
+  },
+  "campanha_concorrentes": {
+    "ativa": false,
+    "compliance_ok": false,
+    "campaign_id": "",
+    "nome_taxonomia": "",
+    "guardrails_copy": "",
+    "grupos": []
+  },
+  "negativas_baseline": [
+    {
+      "termo": "[ex.: emprego / vagas]",
+      "motivo": "Fora de ICP / intenção de emprego",
+      "escopo": "conta ou lista compartilhada"
+    }
+  ],
+  "marca_negativa_nao_marca": {
+    "aplica": false,
+    "notas": ""
+  },
+  "rotina_search_terms": "Primeira semana: revisão diária ou 2x. Semanas 2–4: revisão semanal dos termos de busca. Dono: [nome].",
+  "extensoes_resumo": "",
+  "matriz_testes": {
+    "o_que_varia": "",
+    "o_que_constante": ""
+  },
+  "pre_go_live_search": {
+    "clusters_ok": false,
+    "negativas_iniciais": false,
+    "rsas_conferidas": false,
+    "urls_rastreio_ok": false,
+    "leitura_marca_separada": false,
+    "concorrentes_compliance": false,
+    "hipotese_planilha": false,
+    "changelog": false
+  },
+  "n2_gaps": ""
+}

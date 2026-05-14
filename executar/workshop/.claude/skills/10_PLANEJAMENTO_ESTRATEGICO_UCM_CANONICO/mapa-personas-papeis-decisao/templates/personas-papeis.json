@@ -1,0 +1,65 @@
+{
+  "cliente": "HS Prevent",
+  "oferta": "Onboarding antifraude",
+  "segmento": "Fintechs e serviços digitais",
+  "tipo_compra": "B2B com comitê técnico e econômico",
+  "personas": [
+    {
+      "persona": "Diretor de risco",
+      "papel": "decisor econômico",
+      "rotina": "Responde por perda, fraude, falso positivo e margem",
+      "dores": ["Fraude invisível", "Falso positivo", "Pressão por margem"],
+      "desejos": ["Reduzir perda", "Aumentar aprovação segura"],
+      "medos": ["Bloquear cliente bom", "Projeto complexo"],
+      "objecoes": ["Integração pode demorar", "Não posso piorar conversão"],
+      "linguagem": ["perda", "risco", "margem", "aprovação"],
+      "provas": ["case", "redução de falso positivo", "tempo de implantação"],
+      "cta": "Diagnosticar perdas invisíveis",
+      "canal": "LinkedIn e search"
+    },
+    {
+      "persona": "Líder de produto",
+      "papel": "champion",
+      "rotina": "Equilibra experiência, conversão e segurança no onboarding",
+      "dores": ["Fricção no cadastro", "Abandono", "Repriorização técnica"],
+      "desejos": ["Melhorar UX sem abrir risco"],
+      "medos": ["Criar gargalo no roadmap"],
+      "objecoes": ["Precisa ser simples para o time técnico"],
+      "linguagem": ["experiência", "conversão", "fluxo", "roadmap"],
+      "provas": ["demo", "API docs", "benchmark de conversão"],
+      "cta": "Ver fluxo de integração",
+      "canal": "LinkedIn e remarketing",
+      "mobilizer_type": "Teacher",
+      "champion_test_meddpicc": {
+        "passou": true,
+        "acao_concreta_aceita": "Topou marcar reunião com diretor de risco e preparar slides com a comparação de fluxos.",
+        "sinais_comportamentais": [
+          "skepticism saudável (questionou case de fintech concorrente)",
+          "perguntas provocativas sobre falso positivo",
+          "vontade de mobilizar pares (se ofereceu pra envolver UX)",
+          "acesso interno real (já marcou agenda do diretor)",
+          "crédito a ganhar (projeto vira case de OKR pessoal)"
+        ]
+      }
+    }
+  ],
+  "detractors": [
+    {
+      "persona": "Coordenador de operação manual",
+      "porque_perde": "Equipe atual de revisão manual (8 analistas) seria reduzida para 3 — perde headcount, orçamento e visibilidade.",
+      "estrategia_neutralizacao": "Posicionar como dono do projeto de migração (role novo de 'gestor de regras inteligentes'); apresentar antes do diretor pra ele validar; oferecer treinamento certificado pelo fornecedor."
+    }
+  ],
+  "reality_test_comite": {
+    "comite_e_real_ou_assumido": "real",
+    "fonte_dos_sinais": "CRM + LinkedIn + 2 reuniões de discovery + ata do comitê de risco compartilhada pelo Champion",
+    "papeis_com_2_ou_mais_sinais": ["champion", "decisor econômico", "detractor"],
+    "papeis_com_1_sinal_revisar": ["jurídico/compliance"],
+    "single_threading_risk": "baixo — temos 3 contatos confirmados; jurídico ainda é hipótese a validar"
+  },
+  "mensagem_relevancia_grupo": {
+    "mensagem_coletiva_para_comite": "Onboarding manual está custando margem em fraude E em falso positivo simultaneamente — comitê precisa decidir entre absorver perda ou ressignificar processo.",
+    "como_o_champion_apresenta_internamente": "Slide único com gráfico de Q3 + projeção Q4 se nada mudar, seguido do roadmap de 90 dias do projeto.",
+    "evitar_personalizacao_agressiva_1a1": "Não enviar 13 versões diferentes do pitch — gera dispersão. Mensagem coletiva consistente +20% consenso (Forrester 2025)."
+  }
+}

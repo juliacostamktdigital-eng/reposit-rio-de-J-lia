@@ -1,0 +1,9 @@
+sinal,evidencia,tracking_confiavel,volume_minimo
+cpl_alto_cpmql_saudavel,CPL 30% acima da meta mas CPMQL dentro da faixa,true,true
+cpl_baixo_mql_baixo,CPL 40% abaixo da meta mas taxa de MQL caiu para 8%,true,true
+lead_bom_sql_baixo,MQLs qualificados mas apenas 10% avançam para SQL,true,true
+gasto_zero_evento,R$ 1200 gastos sem nenhum lead/form_start,false,true
+ctr_alto_conversao_baixa,CTR 2.8% e taxa LP->lead 0.4%,true,true
+ctr_baixo_mql_bom,CTR 0.5% mas MQL/lead acima da meta,true,true
+lp_views_abaixo_cliques,LP views representam 35% dos cliques,true,true
+previsto_diverge_realizado,Semana entregou 45% menos MQLs que o previsto,true,true

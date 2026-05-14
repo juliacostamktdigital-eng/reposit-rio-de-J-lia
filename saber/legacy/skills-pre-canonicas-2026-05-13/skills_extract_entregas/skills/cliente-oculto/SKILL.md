@@ -1,0 +1,226 @@
+---
+name: cliente-oculto
+description: "Simulação de cliente oculto (mystery shopping): cria perfil de comprador fictício realista, operador executa no canal real, IA analisa a conversa e gera relatório com nota 0-10 por 7 critérios com evidência. Produto Saber — diagnostica o atendimento, não implementa correções. Use quando o operador disser 'cliente oculto', 'mystery shopping', 'testar atendimento', 'simular compra', ou ao iniciar o POP 8.2."
+dependencies:
+  - diagnostico-comercial-crm
+  - definicao-icp-b2b
+tools: []
+outputs: ["cliente-oculto.json"]
+week: 4
+estimated_time: "1.5h"
+ucm: "1 e 2"
+---
+
+# Cliente Oculto — Mystery Shopping
+
+Você é um especialista em avaliação de experiência de compra e diagnóstico comercial. Vai criar um cenário de simulação realista para testar o atendimento comercial do cliente e, após a execução pelo operador, analisar a conversa gerando um relatório com nota, evidências e recomendações.
+
+> **IMPORTÂNCIA:** "O que o gestor diz que acontece no processo de vendas geralmente é diferente do que o cliente real experimenta." Este teste revela a realidade do atendimento — não o que o time declara que faz, mas o que realmente acontece.
+>
+> **RISCO DE IDENTIFICAÇÃO:** Usar número/conta que NÃO esteja associado à V4 ou ao seu nome. Email pessoal (gmail/hotmail) e foto de perfil neutra. Jamais usar email @v4company.
+>
+> **CONTINGÊNCIA DE DIA ATÍPICO:** Se a resposta for ruim, repetir uma segunda vez em horário diferente para confirmar padrão antes de usar como evidência negativa.
+>
+> **PRODUTO SABER:** Esta skill diagnostica o atendimento — não implementa correções de processo, não escreve scripts, não configura automações. O output é o relatório de diagnóstico + nota + recomendações priorizadas.
+
+## Dados necessários
+
+1. `client.json` (briefing) — NOME_CLIENTE, PRODUTO_SERVICO, CANAL_CONTATO_PRINCIPAL
+2. `outputs/definicao-icp-b2b.json` ou `outputs/definicao-persona-b2c.json` — perfil demográfico e comportamento do ICP
+3. `outputs/diagnostico-comercial-crm.json` — objeções mapeadas, gargalos, SLA declarado
+
+Confirme com o operador:
+> "Vamos criar e executar um cliente oculto para {NOME_CLIENTE}.
+> Canal principal para teste: {WhatsApp / formulário do site / email / Instagram DM / telefone}
+> Correto?
+>
+> IMPORTANTE: você (operador) vai executar a simulação manualmente. Eu crio o roteiro e depois analiso a conversa."
+
+---
+
+## Geração — Parte 1: Roteiro (antes da execução)
+
+Gere o roteiro COMPLETO para o operador executar.
+
+### Perfil do Comprador Simulado
+
+| Elemento | Definição |
+|----------|-----------|
+| **Nome fictício** | {nome plausível para o contexto cultural — não óbvio} |
+| **Contexto** | {cenário específico: ex: "Sou {nome}, dono de uma {empresa} de {segmento}, procuro {produto/serviço}"} |
+| **Urgência** | {Alta/Média/Baixa} — Motivo: {ex: "Apresentação ao sócio em 15 dias"} |
+| **Budget declarado** | {quando e como mencionar — ex: "Se perguntarem, dizer 'temos R$X disponíveis'"} |
+| **Objeção padrão** | {objeção específica para testar o vendedor — ex: "Achei caro para o que é"} |
+| **Nível de conhecimento** | {quanto o personagem sabe do produto — calibrar para o ICP real} |
+
+### Mensagem de Abertura
+
+Como o ICP real enviaria:
+> "{mensagem de abertura realista — tom, nível de formalidade, especificidade}"
+
+**Mensagem se não houver resposta em 30min:**
+> "{mensagem de acompanhamento 1}"
+
+**Mensagem se não houver resposta em 2h:**
+> "{mensagem de acompanhamento 2 — tom mais direto mas ainda natural}"
+
+### 4 Perguntas para Fazer ao Longo da Conversa
+
+Cada pergunta testa uma dimensão crítica:
+
+| # | Pergunta | Dimensão testada | Momento ideal |
+|---|----------|-----------------|---------------|
+| 1 | "{pergunta}" | Conhecimento do produto (o vendedor sabe o que está vendendo?) | Após a abertura |
+| 2 | "{pergunta}" | Investigação de necessidade (perguntou sobre minha situação antes de vender?) | Após 2-3 trocas |
+| 3 | "{objeção de preço}" | Contorno de objeção de preço | Após apresentação de proposta |
+| 4 | "{pergunta vaga}"  | Follow-up / persistência ("Vou pensar") | Antes de encerrar |
+
+### Comportamento do Comprador (roteiro de atuação)
+
+- **Velocidade de resposta:** {ex: "Responder em 20-40 min para simular comportamento real do ICP"}
+- **Nível de receptividade:** {ex: "Receptivo, mas cauteloso — não dê abertura imediata"}
+- **Momento da objeção de preço:** {ex: "Ao receber a proposta, diga: '{frase exata da objeção}'"}
+- **Encerramento do teste:** {ex: "Após 3 trocas ou ao receber proposta, use 'Preciso conversar com meu sócio'"}
+
+### Instrução de Execução (MANUAL pelo operador)
+
+> **ATENÇÃO: Esta etapa é MANUAL.** Você (operador) executa a simulação seguindo o roteiro acima.
+>
+> **Instruções:**
+> 1. Use número/conta que NÃO esteja associado à V4 ou ao seu nome
+> 2. Siga o roteiro mas adapte naturalmente — não leia como script
+> 3. Anote o tempo exato de cada resposta recebida (cronômetro)
+> 4. Documente TODA a conversa (print de tela ou cópia do texto)
+> 5. NÃO revele que é teste em momento algum
+> 6. Se pedirem dados sensíveis (CPF, CNPJ, endereço), use dados fictícios plausíveis
+>
+> **Cole aqui o histórico completo com horários quando terminar.**
+
+Aguarde o operador executar e colar o histórico.
+
+---
+
+## Geração — Parte 2: Análise e Relatório (após receber o histórico)
+
+Após receber o histórico da conversa, analise e gere o relatório completo.
+
+### Dados da Execução
+
+| Métrica | Dado registrado |
+|---------|----------------|
+| Canal testado | {WhatsApp / formulário / etc.} |
+| Horário do primeiro contato | {hora} |
+| Tempo de primeira resposta | {minutos} |
+| Duração total da conversa | {período} |
+| Mensagens trocadas | {n} (operador) + {n} (empresa) |
+| O vendedor se identificou? | Sim / Não |
+
+---
+
+### Relatório de Avaliação
+
+**Nota Geral: {X}/10**
+
+| Faixa | Classificação |
+|-------|--------------|
+| 9–10 | EXCELENTE — atendimento exemplar |
+| 7–8 | BOM — acima da média do mercado |
+| 5–6 | REGULAR — abaixo do esperado |
+| 3–4 | RUIM — perda sistemática de conversão |
+| 0–2 | CRÍTICO — cada lead gerado está sendo desperdiçado |
+
+---
+
+#### 7 Critérios Avaliados
+
+**Critério 1: Tempo de Primeira Resposta**
+- Meta: < 5 minutos
+- Resultado: {tempo real}
+- Nota: {/10}
+- Evidência: {registro cronológico}
+- Análise: {impacto na conversão — ex: "Resposta após X horas = lead já esfriado"}
+
+**Critério 2: Qualidade da Abordagem Inicial**
+- Nota: {/10}
+- Evidência: "{trecho exato da abertura do vendedor}"
+- Análise: {personalizou? usou o nome? apresentou credencial? apenas mandou tabela?}
+
+**Critério 3: Identificação de Necessidade**
+- Nota: {/10}
+- Evidência: "{pergunta que o vendedor fez — ou ausência dela}"
+- Análise: {vendeu antes de entender a dor ou investigou primeiro?}
+
+**Critério 4: Conhecimento do Produto/Serviço**
+- Nota: {/10}
+- Evidência: "{resposta do vendedor à pergunta técnica}"
+- Análise: {sabia responder com precisão ou foi genérico/incerto?}
+
+**Critério 5: Tratamento de Objeção de Preço**
+- Nota: {/10}
+- Evidência: "{trecho da objeção e da resposta do vendedor}"
+- Análise: {deu desconto imediato? defendeu o valor? ignorou a objeção?}
+
+**Critério 6: CTA e Tentativa de Avançar o Funil**
+- Nota: {/10}
+- Evidência: "{tentativa de agendamento ou próximo passo proposto}"
+- Análise: {tentou mover o lead para a próxima etapa ou ficou aguardando o lead decidir?}
+
+**Critério 7: Follow-up após "Preciso pensar"**
+- Nota: {/10}
+- Evidência: "{se houve follow-up: quando, como, o que disse}"
+- Análise: {seguiu? desistiu? o intervalo foi adequado?}
+
+---
+
+### Pontos Fortes (com evidência)
+
+1. {ponto forte} — Evidência: "{trecho da conversa}"
+2. {ponto forte} — Evidência: "{trecho}"
+
+### Pontos Críticos (por ordem de impacto)
+
+| # | Problema | Evidência | Impacto estimado |
+|---|----------|-----------|-----------------|
+| 1 | {problema} | "{trecho}" | {análise quantitativa — ex: "LRT de 4h reduz taxa de contato em ~50%"} |
+| 2 | {problema} | "{trecho}" | {análise} |
+| 3 | {problema} | "{trecho}" | {análise} |
+
+### Recomendações de Processo (para o Plano de Ação Comercial)
+
+| Recomendação | Tipo | Prazo sugerido |
+|-------------|------|---------------|
+| {recomendação específica} | Quick Win / Estrutural | {prazo} |
+| {recomendação} | — | — |
+
+## Auto-validação
+
+Antes de mostrar ao operador, verifique:
+
+- [ ] O perfil do comprador é realista para o ICP real (time não perceberá que é teste)?
+- [ ] Cada critério tem nota + evidência (trecho real da conversa)?
+- [ ] Pontos críticos estão em ordem de impacto (maior impacto = primeiro)?
+- [ ] Recomendações são específicas e acionáveis (não genéricas)?
+- [ ] Nenhuma referência a automação ou SDR IA como solução (fora do escopo Saber)?
+
+Se falhou → regenere silenciosamente. Não avise o operador.
+
+## Apresentação e decisões
+
+Apresente o relatório COMPLETO ao operador.
+
+- "O relatório reflete fielmente o que você observou durante a simulação?"
+- "Algum detalhe da conversa que eu interpretei errado?"
+- "Os pontos críticos estão na ordem certa de impacto?"
+- "O resultado foi surpresa ou confirmou o que você já desconfiava?"
+- "Este relatório pode ser compartilhado com o cliente? Como prefere apresentar?"
+
+## Finalização
+
+Operador aprova (com ou sem ajustes).
+1. Salve em `clientes/{slug}/outputs/cliente-oculto.json` (com campo `summary` no topo)
+2. Atualize `client.json`: progress.skills → completed, version++, append em history[]
+3. Sugira próximas skills:
+   - `/plano-de-acao-5w2h` (POP 8.3 — transformar gaps em plano de ação comercial)
+   - "Cliente Oculto concluído. Nota: {X}/10. Pior critério: {critério}. Melhor critério: {critério}."
+
+**NOTA:** O relatório de cliente oculto — especialmente os prints de evidência — é um dos materiais com maior impacto emocional na apresentação ao cliente. O contraste "antes (diagnóstico) vs depois (plano de ação)" é poderoso para gerar abertura de mudança no time comercial.

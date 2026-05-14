@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "versao_catalogo": "v1.0",
+    "dono_catalogo": "",
+    "link_deoc": "",
+    "link_plano_midia": "",
+    "link_benchmark": "",
+    "link_empacotamento_oferta": "",
+    "cadencia_revisao": "Mensal por canal/segmento e após ciclos relevantes (playbook 20 § Gerenciado).",
+    "notas_kpi": "Tipos usados/campanha; impacto por tipo; taxa iteração — medir fora ou registrar em campanhas_onde_usado."
+  },
+  "taxonomia": {
+    "formatos_padrao": ["estatico", "video", "carrossel", "outro"],
+    "temperaturas_padrao": ["frio", "morno", "quente"],
+    "objetivos_funil_catalogados": []
+  },
+  "tipos": [],
+  "change_log_catalogo": []
+}

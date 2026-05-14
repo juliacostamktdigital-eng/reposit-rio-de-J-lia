@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Landing Page",
+  "description": "Output estruturado da landing page: copy por seção, FAQ, prova social, meta tags e URL de deploy.",
+  "type": "object",
+  "required": ["sections", "faq", "social_proof", "meta"],
+  "properties": {
+    "sections": {
+      "type": "array",
+      "description": "Seções da LP em ordem de exibição.",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": ["hero", "problem", "solution", "how_it_works", "deliverables", "final_cta"],
+            "description": "Identificador da seção"
+          },
+          "headline": {
+            "type": "string",
+            "description": "Título principal da seção"
+          },
+          "subheadline": {
+            "type": "string",
+            "description": "Subtítulo (quando aplicável)"
+          },
+          "body": {
+            "type": "string",
+            "description": "Texto do corpo (quando aplicável)"
+          },
+          "cta_primary": {
+            "type": "string",
+            "description": "Texto do CTA primário (hero e final_cta)"
+          },
+          "cta_secondary": {
+            "type": "string",
+            "description": "Texto do CTA secundário (hero)"
+          },
+          "cards": {
+            "type": "array",
+            "description": "Cards de dor (seção problem)",
+            "items": {
+              "type": "object",
+              "required": ["title", "body"],
+              "properties": {
+                "title": { "type": "string" },
+                "body": { "type": "string" }
+              }
+            }
+          },
+          "benefits": {
+            "type": "array",
+            "description": "Benefícios com ícone (seção solution)",
+            "items": {
+              "type": "object",
+              "required": ["icon", "title", "body"],
+              "properties": {
+                "icon": { "type": "string", "description": "Nome do ícone sugerido (Lucide/Heroicons)" },
+                "title": { "type": "string" },
+                "body": { "type": "string" }
+              }
+            }
+          },
+          "steps": {
+            "type": "array",
+            "description": "Passos do como funciona",
+            "items": {
+              "type": "object",
+              "required": ["number", "title", "body"],
+              "properties": {
+                "number": { "type": "integer" },
+                "title": { "type": "string" },
+                "body": { "type": "string" }
+              }
+            }
+          },
+          "items": {
+            "type": "array",
+            "description": "Itens de entregáveis",
+            "items": {
+              "type": "object",
+              "required": ["title", "benefit"],
+              "properties": {
+                "title": { "type": "string" },
+                "benefit": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "faq": {
+      "type": "array",
+      "description": "5 perguntas frequentes que respondem às objeções do ICP.",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["question", "answer"],
+        "properties": {
+          "question": { "type": "string" },
+          "answer": { "type": "string" }
+        }
+      }
+    },
+    "social_proof": {
+      "type": "object",
+      "required": ["testimonials", "stats"],
+      "properties": {
+        "testimonials": {
+          "type": "array",
+          "description": "Depoimentos de clientes (reais ou placeholders).",
+          "items": {
+            "type": "object",
+            "required": ["name", "role", "text"],
+            "properties": {
+              "name": { "type": "string" },
+              "role": { "type": "string", "description": "Cargo ou contexto da pessoa" },
+              "text": { "type": "string", "description": "Texto do depoimento" }
+            }
+          }
+        },
+        "stats": {
+          "type": "array",
+          "description": "Números de impacto (clientes, anos, resultados).",
+          "items": {
+            "type": "object",
+            "required": ["number", "label"],
+            "properties": {
+              "number": { "type": "string", "description": "Número formatado (ex: '500+')" },
+              "label": { "type": "string", "description": "Descrição do número" }
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["title", "description", "og_title", "og_description", "og_type"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "Title tag para SEO"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 155,
+          "description": "Meta description para SEO"
+        },
+        "og_title": { "type": "string" },
+        "og_description": { "type": "string" },
+        "og_type": {
+          "type": "string",
+          "enum": ["website"],
+          "default": "website"
+        }
+      }
+    },
+    "deploy_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL da LP deployada na Vercel"
+    },
+    "whatsapp_link": {
+      "type": "string",
+      "description": "Link completo do WhatsApp com mensagem pré-formatada"
+    }
+  }
+}

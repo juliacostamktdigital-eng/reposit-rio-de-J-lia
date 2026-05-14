@@ -1,0 +1,565 @@
+{
+  "meta": {
+    "cliente_projeto": "[Nome]",
+    "data_revisao": "YYYY-MM-DD",
+    "revisor": "",
+    "link_plano_midia": "",
+    "link_setup_estrutura": "",
+    "link_planilha_growth": "",
+    "decisao_humana": ""
+  },
+  "checklist": [
+    {
+      "grupo": "principio",
+      "id": "p-01",
+      "ref": "§1",
+      "label": "Conta de anúncio configurada corretamente (BM, ad account)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-02",
+      "ref": "§1",
+      "label": "Pixel/CAPI/eventos funcionando",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-03",
+      "ref": "§1",
+      "label": "Públicos básicos existem para o movimento",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-04",
+      "ref": "§1",
+      "label": "Campanha, conjunto e anúncio têm IDs",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-05",
+      "ref": "§1",
+      "label": "Estrutura permite teste sem fragmentar demais o orçamento",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-06",
+      "ref": "§1",
+      "label": "Hipótese clara",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-07",
+      "ref": "§1",
+      "label": "Plano de leitura definido",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "principio",
+      "id": "p-08",
+      "ref": "§1",
+      "label": "Planilha backup e contrato de dados ativos e alinhados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-01",
+      "ref": "§4",
+      "label": "Business Manager correto",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-02",
+      "ref": "§4",
+      "label": "Conta de anúncios correta",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-03",
+      "ref": "§4",
+      "label": "Método de pagamento ativo",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-04",
+      "ref": "§4",
+      "label": "Página Facebook vinculada",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-05",
+      "ref": "§4",
+      "label": "Instagram vinculado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-06",
+      "ref": "§4",
+      "label": "Domínio verificado quando aplicável",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-07",
+      "ref": "§4",
+      "label": "Permissões do time conferidas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-08",
+      "ref": "§4",
+      "label": "Pixel instalado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-09",
+      "ref": "§4",
+      "label": "CAPI configurada quando possível",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-10",
+      "ref": "§4",
+      "label": "Eventos principais testados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-11",
+      "ref": "§4",
+      "label": "UTMs preservadas na LP/formulário",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "conta",
+      "id": "c-12",
+      "ref": "§4",
+      "label": "Backup recebendo lead; CRM recebendo ou conciliável",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "eventos",
+      "id": "e-01",
+      "ref": "§5",
+      "label": "Evento de otimização: mais profundo possível sem matar volume (documentado)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "eventos",
+      "id": "e-02",
+      "ref": "§5",
+      "label": "Eventos do funil disparando de forma verificável",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "eventos",
+      "id": "e-03",
+      "ref": "§5",
+      "label": "Eventos priorizados na conta quando aplicável",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "publicos_estrutura",
+      "id": "pv-01",
+      "ref": "§6-8",
+      "label": "Temperatura separada (sem misturar quente/frio sem intenção)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "publicos_estrutura",
+      "id": "pv-02",
+      "ref": "§6-8",
+      "label": "Exclusões aplicadas (aquisição, remarketing, convertidos)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "publicos_estrutura",
+      "id": "pv-03",
+      "ref": "§6-8",
+      "label": "Quantidade de conjuntos compatível com orçamento (evitar 12+ sem motivo)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "publicos_estrutura",
+      "id": "pv-04",
+      "ref": "§6-8",
+      "label": "Públicos coerentes com objetivo e criativo",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "publicos_estrutura",
+      "id": "pv-05",
+      "ref": "§6-8",
+      "label": "Estrutura mínima se budget baixo (consolidação)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "nomenclatura_ids",
+      "id": "n-01",
+      "ref": "§10",
+      "label": "Nomes de campanha seguem taxonomia (campaign_id)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "nomenclatura_ids",
+      "id": "n-02",
+      "ref": "§10",
+      "label": "Conjuntos com adgroup_id nos nomes",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "nomenclatura_ids",
+      "id": "n-03",
+      "ref": "§10",
+      "label": "Anúncios com creative_id nos nomes",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "criativos",
+      "id": "cr-01",
+      "ref": "§11",
+      "label": "3–5 anúncios por conjunto (faixa inicial)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "criativos",
+      "id": "cr-02",
+      "ref": "§11",
+      "label": "Variações reais (não peças quase idênticas)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "criativos",
+      "id": "cr-03",
+      "ref": "§11",
+      "label": "Cada criativo com creative_id",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "criativos",
+      "id": "cr-04",
+      "ref": "§11",
+      "label": "Cada criativo com hipótese de leitura",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "orcamento",
+      "id": "o-01",
+      "ref": "§12",
+      "label": "Orçamento mínimo por conjunto viável para aprendizado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "orcamento",
+      "id": "o-02",
+      "ref": "§12",
+      "label": "CBO vs ABO coerente com o experimento",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "orcamento",
+      "id": "o-03",
+      "ref": "§12",
+      "label": "Sem fragmentação excessiva vs verba",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-01",
+      "ref": "§13",
+      "label": "Campanha criada com ID",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-02",
+      "ref": "§13",
+      "label": "Conjuntos criados com ID",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-03",
+      "ref": "§13",
+      "label": "Anúncios criados com ID",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-04",
+      "ref": "§13",
+      "label": "Público e temperatura corretos",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-05",
+      "ref": "§13",
+      "label": "Exclusões aplicadas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-06",
+      "ref": "§13",
+      "label": "Pixel/eventos testados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-07",
+      "ref": "§13",
+      "label": "UTMs aplicadas",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-08",
+      "ref": "§13",
+      "label": "Planilha backup testada",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-09",
+      "ref": "§13",
+      "label": "CRM/handoff testado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-10",
+      "ref": "§13",
+      "label": "Criativos aprovados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-11",
+      "ref": "§13",
+      "label": "Matriz de testes registrada",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-12",
+      "ref": "§13",
+      "label": "Campos/perguntas lead nativo conferidos (se aplicável)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-13",
+      "ref": "§13",
+      "label": "Regra engajamento/vídeo definida (se aplicável)",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-14",
+      "ref": "§13",
+      "label": "Orçamento e datas conferidos",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-15",
+      "ref": "§13",
+      "label": "Hipótese na planilha de growth",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "go_live",
+      "id": "gl-16",
+      "ref": "§13",
+      "label": "Change log preparado",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2_complemento",
+      "id": "n2-01",
+      "ref": "§14",
+      "label": "UTMs e campos v4_* aplicados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2_complemento",
+      "id": "n2-02",
+      "ref": "§14",
+      "label": "Públicos padrão da estratégia criados",
+      "status": "",
+      "nota": ""
+    },
+    {
+      "grupo": "n2_complemento",
+      "id": "n2-03",
+      "ref": "§14",
+      "label": "Checklist pré go-live consolidado preenchido",
+      "status": "",
+      "nota": ""
+    }
+  ],
+  "anti_padroes": [
+    {
+      "id": "ap-01",
+      "label": "Campanha sem ID",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-02",
+      "label": "Criativo sem ID",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-03",
+      "label": "Público quente e frio misturados sem intenção",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-04",
+      "label": "12+ conjuntos com pouca verba",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-05",
+      "label": "Muitos interesses pequenos sem volume",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-06",
+      "label": "Remarketing sem exclusão de convertidos",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-07",
+      "label": "Criativos genéricos que não segmentam pelo conteúdo",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-08",
+      "label": "Pixel/evento não testado",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-09",
+      "label": "Lead sem planilha backup",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-10",
+      "label": "Otimizar só por CPL sem qualidade comercial",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-11",
+      "label": "Lead nativo sem SLA ou sem perguntas mínimas",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-12",
+      "label": "Conversão no site sem evento validado",
+      "detectado": false,
+      "nota": ""
+    },
+    {
+      "id": "ap-13",
+      "label": "Engajamento indefinido sem ponte remarketing/performance",
+      "detectado": false,
+      "nota": ""
+    }
+  ],
+  "subtipos": {
+    "lead_nativo": {
+      "aplicavel": false,
+      "checklist_subskill_ok": false
+    },
+    "conversao_site": {
+      "aplicavel": false,
+      "checklist_subskill_ok": false
+    },
+    "engajamento": {
+      "aplicavel": false,
+      "checklist_subskill_ok": false
+    }
+  },
+  "gaps_bloqueadores_livre": "",
+  "acoes_corretivas": []
+}

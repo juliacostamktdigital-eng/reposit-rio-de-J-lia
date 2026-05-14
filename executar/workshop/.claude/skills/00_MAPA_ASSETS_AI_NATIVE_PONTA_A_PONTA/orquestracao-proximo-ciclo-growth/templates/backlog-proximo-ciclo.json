@@ -1,0 +1,30 @@
+{
+  "cliente": "cliente-exemplo",
+  "ciclo": "YYYY-MM",
+  "itens": [
+    {
+      "acao": "Retestar hook de ROI para CFO com prova mais forte",
+      "tipo": "ajustar",
+      "componente": "criativo",
+      "evidencia": "CPMQL melhor que media, mas feedback comercial apontou falta de prova",
+      "impacto": 4,
+      "confianca": 3,
+      "esforco": 2,
+      "severidade": "alto",
+      "dono": "Criativo",
+      "metrica": "CPMQL e feedback_quality"
+    },
+    {
+      "acao": "Corrigir preservacao de creative_id no CRM",
+      "tipo": "corrigir-tracking",
+      "componente": "tracking",
+      "evidencia": "28% dos leads sem creative_id no CRM",
+      "impacto": 5,
+      "confianca": 5,
+      "esforco": 2,
+      "severidade": "bloqueador",
+      "dono": "Operacoes",
+      "metrica": "creative_id_fill_rate"
+    }
+  ]
+}

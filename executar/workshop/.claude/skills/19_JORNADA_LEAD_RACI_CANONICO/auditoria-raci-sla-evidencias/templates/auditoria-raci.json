@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "data_auditoria": "YYYY-MM-DD",
+    "auditor": "",
+    "periodo": "",
+    "parecer_humano": ""
+  },
+  "referencias": {
+    "link_jornada_lead_raci": "",
+    "link_funil_a2": "",
+    "link_protocolo_a4": "",
+    "link_crm_ou_relatorios": ""
+  },
+  "kpis_medidos": [
+    {
+      "id": "kpi-dono",
+      "nome": "% etapas com dono (A claro)",
+      "valor": "",
+      "meta_ou_threshold": "",
+      "nota": ""
+    },
+    {
+      "id": "kpi-sla",
+      "nome": "% violações de SLA",
+      "valor": "",
+      "meta_ou_threshold": "",
+      "nota": ""
+    },
+    {
+      "id": "kpi-evid",
+      "nome": "% etapas sem evidência mínima",
+      "valor": "",
+      "meta_ou_threshold": "",
+      "nota": ""
+    }
+  ],
+  "dimensoes": [
+    {
+      "id": "ar-01",
+      "nome": "Etapas com Accountable claro na operação",
+      "ref_playbook": "KPI % etapas com dono",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ar-02",
+      "nome": "Handoffs com responsável assumido",
+      "ref_playbook": "Vermelho: handoff sem responsável",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ar-03",
+      "nome": "Rotas sem dono / lead sumindo",
+      "ref_playbook": "Vermelho",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ar-04",
+      "nome": "Evidência mínima gerada na prática",
+      "ref_playbook": "Amarelo: dono sem evidência",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ar-05",
+      "nome": "SLA: violações e ação quando estoura",
+      "ref_playbook": "Amarelo/verde",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ar-06",
+      "nome": "Change log RACI quando papel muda",
+      "ref_playbook": "Registro obrigatório",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    }
+  ],
+  "achados_criticos": "",
+  "backlog": [
+    { "acao": "", "prioridade": "", "dono": "", "prazo": "" }
+  ],
+  "proxima_revisao": ""
+}

@@ -1,0 +1,28 @@
+{
+  "cliente": "Cliente exemplo",
+  "segmento": "Software B2B onboarding",
+  "geografia": "Brasil",
+  "moeda": "BRL",
+  "tam": {
+    "valor": 1200000000,
+    "escopo_geografico": "Brasil",
+    "fonte": "Estimativa top-down + relatório setorial",
+    "ano_fonte": 2025,
+    "metodo": "TAM categoria = empresas-alvo × spend médio anual estimado",
+    "incerteza": "±25%"
+  },
+  "sam": {
+    "filtros": "Fintechs e pagamentos, 50-500 funcionários, produto foco onboarding/KYC",
+    "justificativa": "ICP atual e capacidade comercial",
+    "fonte_ou_premissa": "Liste de contas + premissa de penetrável",
+    "valor_final": 180000000,
+    "exclusoes": "Micro sem orçamento; enterprise fora do ICP"
+  },
+  "som_inputs": {
+    "capacidade_operacional_mes": 12,
+    "budget_mensal_aquisicao": 80000,
+    "cpl_estimado": 80,
+    "taxa_conversao_lead_cliente": 0.12,
+    "ticket_medio": 48000
+  }
+}

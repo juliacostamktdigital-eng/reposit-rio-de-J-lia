@@ -1,0 +1,301 @@
+<article class="doc-content-inner" data-doc-slug="16-setup-campanhas-google-ads-canonico">
+<h1>Setup de Campanhas Google Ads Canônico</h1>
+<p><strong>Atualizado:</strong> 2026-04-30  </p>
+<p><strong>Fonte final:</strong> consolidação em <code>assets/canonicos</code>; base canônica original + <code>assets/legacy/merge/skills/11-estrutura-campanhas-google-ads-search.md</code>, <code>assets/legacy/merge/skills/12-estrutura-campanhas-google-ads-pmax.md</code>, <code>assets/legacy/merge/skills/13-estrutura-campanhas-google-ads-display.md</code>.  </p>
+<p><strong>Decisão de merge:</strong> skills 11, 12 e 13 incorporadas em uma única fonte Google Ads, preservando Search, PMax e Display por seção.</p>
+<p>Status: v1 para Marketing OS / EXECUTAR  </p>
+<p>Escopo: preparação de conta, conversões, públicos, Search, Performance Max, asset groups, UTMs e critérios de go-live em Google Ads  </p>
+<p>Objetivo: padronizar o setup Google Ads antes da execução, evitando campanha sem conversão confiável, sem estrutura de aprendizado e sem integração com CRM/planilha backup.</p>
+<h2>1. Princípio</h2>
+<p>Google Ads depende de intenção, conversão e qualidade de sinal.</p>
+<p>Antes de rodar mídia, a operação precisa garantir:</p>
+<ul>
+<li>conta e faturamento funcionando;</li>
+<li>tag/GA4/GTM instalados;</li>
+<li>conversões configuradas corretamente;</li>
+<li>públicos e listas disponíveis;</li>
+<li>campanha estruturada sem fragmentar dados;</li>
+<li>termos, URLs e assets alinhados à oferta;</li>
+<li>UTMs e IDs aplicados;</li>
+<li>planilha backup e CRM prontos para reconciliar lead e qualidade.</li>
+</ul>
+<h2>2. Referências usadas</h2>
+<p>Este documento consolida:</p>
+<ul>
+<li>recomendações oficiais do Google sobre Performance Max, conversões, listas de remarketing, asset quality e learning;</li>
+<li>boas práticas de Search/Performance Max para leadgen;</li>
+<li>boas práticas recentes de consolidação, audience signals, Customer Match, enhanced conversions e importação de conversões offline.</li>
+</ul>
+<p>Links úteis:</p>
+<ul>
+<li>https://support.google.com/google-ads/answer/10724896</li>
+<li>https://support.google.com/sa360/answer/12368425</li>
+</ul>
+<h2>3. Inputs obrigatórios</h2>
+<ul>
+<li>DEOC;</li>
+<li>plano de mídia;</li>
+<li>LP/ponto de conversão;</li>
+<li>contrato de dados;</li>
+<li>taxonomia UTM/IDs;</li>
+<li>planilha backup obrigatória;</li>
+<li>CRM/SLA marketing-vendas;</li>
+<li>lista de palavras-chave ou temas de busca;</li>
+<li>lista de negativas iniciais;</li>
+<li>assets de texto, imagem e vídeo quando PMax/YouTube/Display;</li>
+<li>acesso Google Ads, GA4, GTM, Search Console quando aplicável.</li>
+</ul>
+<h2>4. Checklist de conta</h2>
+<p>Antes de criar campanha:</p>
+<ul>
+<li>conta Google Ads correta;</li>
+<li>faturamento ativo;</li>
+<li>permissões do time conferidas;</li>
+<li>auto-tagging avaliado;</li>
+<li>GA4 vinculado quando aplicável;</li>
+<li>Google Tag Manager publicado;</li>
+<li>tag Google instalada;</li>
+<li>conversões principais configuradas;</li>
+<li>enhanced conversions ativadas quando possível;</li>
+<li>importação offline planejada para MQL/SQL/venda quando houver CRM;</li>
+<li>listas de remarketing elegíveis;</li>
+<li>Customer Match preparado quando houver base;</li>
+<li>UTMs preservadas até CRM e planilha backup.</li>
+</ul>
+<h2>5. Conversões</h2>
+<h3>Conversões mínimas</h3>
+<ul>
+<li>envio de formulário;</li>
+<li>clique ou envio WhatsApp quando for ponto de conversão real;</li>
+<li>ligação qualificada quando aplicável;</li>
+<li>MQL importado do CRM;</li>
+<li>SQL/oportunidade importado do CRM;</li>
+<li>venda/receita quando houver ciclo e dado.</li>
+</ul>
+<h3>Regra de otimização</h3>
+<p>Otimizar para a conversão mais profunda que ainda tenha volume suficiente.</p>
+<p>Se não há volume:</p>
+<ul>
+<li>começar com lead/formulário;</li>
+<li>medir qualidade via planilha de growth;</li>
+<li>importar MQL/SQL assim que houver consistência;</li>
+<li>diferenciar conversões principais de secundárias/observação.</li>
+</ul>
+<h2>6. GTM e parâmetros</h2>
+<p>Obrigatório validar:</p>
+<ul>
+<li><code>gclid</code>;</li>
+<li><code>gbraid</code> / <code>wbraid</code> quando aplicável;</li>
+<li>UTMs;</li>
+<li><code>v4_client_id</code>;</li>
+<li><code>v4_campaign_id</code>;</li>
+<li><code>v4_adgroup_id</code>;</li>
+<li><code>v4_creative_id</code>;</li>
+<li><code>v4_test_id</code>;</li>
+<li>campos hidden no formulário;</li>
+<li>envio para planilha backup;</li>
+<li>envio para CRM.</li>
+</ul>
+<p>Não publicar campanha Google sem testar submissão real de lead.</p>
+<h2>7. Estrutura Search</h2>
+<h3>Quando usar</h3>
+<p>Search é indicado quando há demanda ativa:</p>
+<ul>
+<li>busca por problema;</li>
+<li>busca por solução;</li>
+<li>busca por categoria;</li>
+<li>busca por concorrente quando permitido;</li>
+<li>busca de marca quando houver estratégia de defesa/captura.</li>
+</ul>
+<h3>Estrutura inicial</h3>
+<p>Campanha Search 1: não-marca / intenção principal</p>
+<ul>
+<li>Grupo 00: problema direto;</li>
+<li>Grupo 01: solução/categoria;</li>
+<li>Grupo 02: comparativos/alternativas;</li>
+<li>Grupo 03: segmento/persona quando houver volume.</li>
+</ul>
+<p>Campanha Search 2: marca</p>
+<ul>
+<li>separada para medir captura de demanda existente;</li>
+<li>pode ser desligada se não fizer sentido estratégico;</li>
+<li>não misturar com não-marca na leitura de aquisição.</li>
+</ul>
+<p>Campanha Search 3: concorrentes</p>
+<ul>
+<li>usar apenas quando for permitido e estratégico;</li>
+<li>copy precisa respeitar regras legais e políticas de marca.</li>
+</ul>
+<h3>Palavras-chave</h3>
+<p>Começar com:</p>
+<ul>
+<li>termos de alta intenção;</li>
+<li>correspondência de frase/exata para controle inicial;</li>
+<li>ampla apenas quando conversão e negativas estiverem maduras;</li>
+<li>negativas desde o dia 1.</li>
+</ul>
+<h2>8. Estrutura Performance Max</h2>
+<h3>Quando usar</h3>
+<p>PMax é indicado quando:</p>
+<ul>
+<li>conversão está bem configurada;</li>
+<li>há assets suficientes;</li>
+<li>há lista/audience signal relevante;</li>
+<li>há budget para aprendizado;</li>
+<li>o objetivo é expandir além de Search.</li>
+</ul>
+<h3>Quando evitar no início</h3>
+<p>Evitar PMax se:</p>
+<ul>
+<li>conversão não está validada;</li>
+<li>LP/formulário não preserva dados;</li>
+<li>não há nenhum asset minimamente decente;</li>
+<li>budget é baixo demais;</li>
+<li>o cliente precisa de controle granular imediato;</li>
+<li>a conta ainda não tem sinais mínimos.</li>
+</ul>
+<h3>Estrutura inicial</h3>
+<p>Campanha PMax 1: aquisição principal</p>
+<ul>
+<li>Asset group 00: oferta principal;</li>
+<li>Asset group 01: segmento/persona prioritária;</li>
+<li>Asset group 02: dor ou caso de uso prioritário.</li>
+</ul>
+<p>Evitar asset groups demais no início. Para a maioria dos casos, 2 a 5 grupos são suficientes.</p>
+<h3>Audience signals</h3>
+<p>Usar sinais, não como segmentação rígida:</p>
+<ul>
+<li>Customer Match;</li>
+<li>visitantes do site;</li>
+<li>leads/MQLs;</li>
+<li>termos de busca de alta intenção;</li>
+<li>URLs de concorrentes/referências;</li>
+<li>segmentos in-market relevantes;</li>
+<li>públicos do GA4.</li>
+</ul>
+<p>Não sobrecarregar sinais. Começar com os sinais mais fortes e claros.</p>
+<h2>9. Assets para PMax</h2>
+<p>Por asset group, preparar:</p>
+<ul>
+<li>headlines curtas;</li>
+<li>headlines longas;</li>
+<li>descrições;</li>
+<li>imagens quadradas;</li>
+<li>imagens horizontais;</li>
+<li>imagens verticais quando possível;</li>
+<li>logo;</li>
+<li>vídeos próprios sempre que possível;</li>
+<li>URLs finais coerentes;</li>
+<li>extensões/assets de chamada, sitelink e snippet quando fizer sentido.</li>
+</ul>
+<p>Regra: se não há vídeo próprio, a plataforma pode gerar vídeo automaticamente. Isso raramente representa o melhor padrão criativo. Preferir vídeos aprovados pelo DEOC/briefing criativo.</p>
+<h3>Estrutura Display</h3>
+<p>Usar Display quando o Plano de Mídia definir função clara: alcance qualificado, remarketing, contextual, sustentação de awareness ou recuperação de intenção. A estrutura deve declarar targeting, exclusões anti-ICP, placements/apps bloqueados, brand safety, frequência, janela de remarketing, criativos por formato e métrica de leitura.</p>
+<p>Display não deve entrar como sobra de verba nem como “barato para aparecer”. Sem exclusões, frequência e brand safety, ele gera falso aprendizado e tráfego de baixa qualidade.</p>
+<h2>10. Nomenclatura</h2>
+<h3>Campanha</h3>
+<pre><code>{campaign_id} | {tipo_campanha} | {objetivo} | {movimento} | {slug}</code></pre>
+<p>Exemplo Search:</p>
+<pre><code>cmp-hs-prevent-202605-010 | search | mql | demanda-ativa | onboarding-digital</code></pre>
+<p>Exemplo PMax:</p>
+<pre><code>cmp-hs-prevent-202605-011 | pmax | mql | expansao | antifraude-cfo</code></pre>
+<h3>Grupo / asset group</h3>
+<pre><code>{adgroup_id} | {intencao} | {temperatura} | {tipo} | {slug}</code></pre>
+<p>Exemplo:</p>
+<pre><code>adg-hs-prevent-202605-020 | problema | quente | search | fraude-onboarding</code></pre>
+<h3>Asset/anúncio</h3>
+<pre><code>{creative_id} | {formato} | {hook} | {persona} | {slug} | {versao}</code></pre>
+<p>Exemplo:</p>
+<pre><code>crv-hs-prevent-202605-030 | texto | risco | cfo | onboarding-fraude | v01</code></pre>
+<h2>11. Negativas e exclusões</h2>
+<p>Criar lista inicial:</p>
+<ul>
+<li>vagas/emprego;</li>
+<li>grátis/free quando não for estratégia;</li>
+<li>curso/aula quando não for oferta;</li>
+<li>PDF/modelo/template quando não for desejado;</li>
+<li>termos irrelevantes do segmento;</li>
+<li>regiões fora do escopo;</li>
+<li>marca do cliente em campanha não-marca quando a leitura exigir aquisição pura.</li>
+</ul>
+<p>Revisar termos de busca na primeira semana e em cadência semanal no início.</p>
+<h2>12. Orçamento e aprendizado</h2>
+<p>Princípios:</p>
+<ul>
+<li>não fragmentar campanha demais;</li>
+<li>permitir período mínimo de aprendizado;</li>
+<li>evitar mudanças grandes antes da janela de leitura;</li>
+<li>ajustar orçamento gradualmente;</li>
+<li>usar tCPA/tROAS apenas quando houver histórico suficiente;</li>
+<li>começar com maximizar conversões quando o objetivo é gerar volume inicial;</li>
+<li>importar conversões offline para ensinar qualidade.</li>
+</ul>
+<p>PMax pode oscilar no aprendizado. Não alterar diariamente sem evidência.</p>
+<h2>13. Estrutura inicial recomendada</h2>
+<h3>Setup Google mínimo para leadgen</h3>
+<ul>
+<li>1 campanha Search não-marca;</li>
+<li>1 campanha Search marca quando necessário;</li>
+<li>1 campanha remarketing/Display/YouTube apenas se houver público e objetivo;</li>
+<li>PMax somente se conversões/assets/sinais estiverem adequados.</li>
+</ul>
+<h3>Setup Google com mais maturidade</h3>
+<ul>
+<li>Search não-marca por intenção;</li>
+<li>Search marca separada;</li>
+<li>PMax aquisição com asset groups por oferta/segmento;</li>
+<li>remarketing com audiência e mensagem própria;</li>
+<li>importação offline de MQL/SQL/venda.</li>
+</ul>
+<h2>14. Checklist antes do go-live</h2>
+<ul>
+<li>conversões testadas;</li>
+<li>enhanced conversions avaliadas;</li>
+<li>UTMs e IDs aplicados;</li>
+<li>lead teste chegou na planilha backup;</li>
+<li>CRM recebeu ou será conciliado;</li>
+<li>Search com negativas iniciais;</li>
+<li>PMax com assets suficientes;</li>
+<li>audience signals configurados;</li>
+<li>Search com clusters, negativas e RSAs conferidos quando aplicável;</li>
+<li>PMax com asset groups, URL expansion, brand controls e metas de conversão conferidos quando aplicável;</li>
+<li>Display com placements/apps, frequência, exclusões e brand safety conferidos quando aplicável;</li>
+<li>URLs finais conferidas;</li>
+<li>orçamento, lances e datas conferidos;</li>
+<li>hipótese registrada na planilha de growth;</li>
+<li>change log preparado para mudanças de estrutura, termos, assets, audience signals, placements ou orçamento.</li>
+</ul>
+<h2>15. Critério N2</h2>
+<p>Setup Google está N2 quando:</p>
+<ul>
+<li>conta e faturamento estão prontos;</li>
+<li>GTM/tag/conversões estão funcionando;</li>
+<li>UTMs e IDs estão aplicados;</li>
+<li>estrutura Search/PMax está documentada;</li>
+<li>públicos/listas/sinais foram configurados;</li>
+<li>planilha backup captura lead teste;</li>
+<li>hipótese e critério de leitura estão registrados.</li>
+</ul>
+<h2>16. Critério N3</h2>
+<p>Setup Google está N3 quando:</p>
+<ul>
+<li>MQL/SQL/venda voltam para Google via importação offline;</li>
+<li>termos de busca e negativas são revisados em cadência;</li>
+<li>asset performance alimenta novos criativos;</li>
+<li>PMax/Search são separados ou consolidados por dados;</li>
+<li>decisões de orçamento usam qualidade comercial, não só CPL.</li>
+</ul>
+<h2>17. O que evitar</h2>
+<ul>
+<li>campanha sem conversão testada;</li>
+<li>PMax sem asset decente;</li>
+<li>PMax sem audience signal;</li>
+<li>misturar marca e não-marca sem leitura separada;</li>
+<li>otimizar para clique quando o objetivo é lead qualificado;</li>
+<li>não importar qualidade offline;</li>
+<li>rodar Search sem negativas;</li>
+<li>alterar budget/lance todo dia;</li>
+<li>lead sem planilha backup;</li>
+<li>avaliar Google só por CPL sem MQL/SQL.</li>
+</ul>
+</article>

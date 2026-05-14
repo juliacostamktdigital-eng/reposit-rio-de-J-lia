@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Forecast de Mídia",
+  "description": "Output estruturado do forecast de mídia: modelagem financeira de 3 meses, distribuição, cronograma, alertas e disclaimer.",
+  "type": "object",
+  "required": ["financial_model", "assumptions", "platform_distribution", "funnel_distribution", "timeline", "alerts", "disclaimer"],
+  "properties": {
+    "financial_model": {
+      "type": "array",
+      "description": "Modelagem financeira mensal para 3 meses.",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["month", "label", "budget", "cpl", "leads", "conversion_rate", "sales", "revenue", "roas"],
+        "properties": {
+          "month": { "type": "integer", "minimum": 1, "maximum": 3 },
+          "label": { "type": "string", "description": "Label do mês (ex: 'Ramp-up')" },
+          "budget": { "type": "number", "description": "Budget investido em R$" },
+          "cpl": { "type": "number", "description": "Custo por lead estimado em R$" },
+          "leads": { "type": "integer", "description": "Número de leads estimados" },
+          "conversion_rate": { "type": "number", "description": "Taxa de conversão lead→venda em %" },
+          "sales": { "type": "integer", "description": "Vendas estimadas" },
+          "revenue": { "type": "number", "description": "Faturamento gerado em R$" },
+          "roas": { "type": "number", "description": "Return on Ad Spend" }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Premissas explícitas da modelagem, cada uma com fonte.",
+      "minItems": 3,
+      "items": { "type": "string" }
+    },
+    "scenarios": {
+      "type": "object",
+      "description": "Cenários otimista, realista e pessimista.",
+      "properties": {
+        "optimistic": {
+          "type": "object",
+          "description": "Cenário otimista (CPL -20%, conversão +20%)"
+        },
+        "realistic": {
+          "type": "object",
+          "description": "Cenário realista (benchmark)"
+        },
+        "pessimistic": {
+          "type": "object",
+          "description": "Cenário pessimista (CPL +30%, conversão -20%)"
+        }
+      }
+    },
+    "platform_distribution": {
+      "type": "array",
+      "description": "Distribuição de budget por plataforma de mídia.",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["platform", "percentage", "monthly_value", "objective"],
+        "properties": {
+          "platform": { "type": "string", "description": "Nome da plataforma" },
+          "percentage": { "type": "number", "minimum": 0, "maximum": 100 },
+          "monthly_value": { "type": "number", "description": "Valor mensal em R$" },
+          "objective": { "type": "string", "description": "Objetivo principal na plataforma" }
+        }
+      }
+    },
+    "funnel_distribution": {
+      "type": "array",
+      "description": "Distribuição de budget por fase do funil.",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["phase", "percentage", "objective"],
+        "properties": {
+          "phase": {
+            "type": "string",
+            "enum": ["Topo", "Meio", "Fundo", "Remarketing"]
+          },
+          "percentage": { "type": "number", "minimum": 0, "maximum": 100 },
+          "objective": { "type": "string" }
+        }
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "description": "Cronograma de 90 dias com ações semanais.",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["month", "focus", "weekly_actions", "goal"],
+        "properties": {
+          "month": { "type": "integer" },
+          "focus": { "type": "string", "description": "Foco do mês" },
+          "weekly_actions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Ações semana a semana"
+          },
+          "goal": { "type": "string", "description": "Meta do mês" }
+        }
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "description": "Alertas e critérios de pausa.",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["metric", "threshold", "action"],
+        "properties": {
+          "metric": { "type": "string", "description": "Métrica monitorada" },
+          "threshold": { "type": "string", "description": "Limite que aciona o alerta" },
+          "action": { "type": "string", "description": "Ação imediata a tomar" }
+        }
+      }
+    },
+    "scale_criteria": {
+      "type": "array",
+      "description": "Critérios para escalar budget.",
+      "items": {
+        "type": "object",
+        "required": ["metric", "threshold", "action"],
+        "properties": {
+          "metric": { "type": "string" },
+          "threshold": { "type": "string" },
+          "action": { "type": "string" }
+        }
+      }
+    },
+    "disclaimer": {
+      "type": "array",
+      "description": "Variáveis que podem impactar o forecast.",
+      "minItems": 3,
+      "items": { "type": "string" }
+    },
+    "sheets_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL da planilha Google Sheets"
+    }
+  }
+}

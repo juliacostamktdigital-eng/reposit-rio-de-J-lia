@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "data_auditoria": "YYYY-MM-DD",
+    "auditor": "",
+    "cadencia_rodada": "quinzenal",
+    "parecer_humano": ""
+  },
+  "referencia_funil": {
+    "link_artefato": "",
+    "versao": "v1"
+  },
+  "amostra": {
+    "periodo": "",
+    "metodo": "",
+    "n_registros_ordem_grandeza": ""
+  },
+  "dimensoes": [
+    {
+      "id": "fvt-01",
+      "nome": "Conciliação CRM × backup × plataforma",
+      "ref_playbook": "§ Gerenciado — vermelho: discrepância entre fontes",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "fvt-02",
+      "nome": "Uma fonte preferencial por etapa respeitada",
+      "ref_playbook": "Componentes críticos; DoD",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "trk-01",
+      "nome": "Eventos de tracking declarados existem e disparam",
+      "ref_playbook": "Passo 5; saídas",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "crm-01",
+      "nome": "Campos mínimos com adesão aceitável",
+      "ref_playbook": "KPI % campos; amarelo: pouco dado confiável",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "gov-01",
+      "nome": "Governança de dado (donos, treino, change log)",
+      "ref_playbook": "§ Gerenciado; dono (lacuna)",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    },
+    {
+      "id": "ops-01",
+      "nome": "Funil cabível vs capacidade operacional",
+      "ref_playbook": "Passo 6; componentes críticos",
+      "semaforo": "",
+      "evidencia": "",
+      "gap": ""
+    }
+  ],
+  "conciliacao_etapas": [
+    {
+      "etapa": "",
+      "fonte_declarada": "",
+      "observado_pratica": "",
+      "semaforo": "",
+      "nota": ""
+    }
+  ],
+  "etapas_sem_dono": [
+    {
+      "etapa": "",
+      "impacto": "",
+      "nota": ""
+    }
+  ],
+  "eventos_tracking": [
+    {
+      "evento": "",
+      "declarado_funil": "",
+      "observado": "",
+      "semaforo": "",
+      "nota": ""
+    }
+  ],
+  "campos_minimos": [
+    {
+      "campo": "",
+      "evidencia_adesao": "",
+      "semaforo": "",
+      "nota": ""
+    }
+  ],
+  "kpis": [
+    {
+      "id": "kpi-status",
+      "nome": "% leads com status válido",
+      "valor": "",
+      "meta_referencia": "",
+      "semaforo": ""
+    },
+    {
+      "id": "kpi-campos",
+      "nome": "% campos mínimos preenchidos",
+      "valor": "",
+      "meta_referencia": "",
+      "semaforo": ""
+    },
+    {
+      "id": "kpi-ciclo",
+      "nome": "Tempo de ciclo por etapa",
+      "valor": "",
+      "meta_referencia": "",
+      "semaforo": ""
+    }
+  ],
+  "backlog": [
+    {
+      "item": "",
+      "prioridade": "",
+      "dono_sugerido": "",
+      "link": ""
+    }
+  ],
+  "proxima_revisao": ""
+}

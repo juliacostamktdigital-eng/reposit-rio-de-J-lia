@@ -1,0 +1,269 @@
+{
+  "schema_version": "v2",
+  "cliente": "HS Prevent",
+  "contrato": "marketing-crm-backup-utms",
+  "camadas": {
+    "1": {
+      "nome": "URL",
+      "descricao": "UTMs + click-IDs chegam na LP",
+      "campos": ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid", "wbraid", "gbraid", "ttclid", "li_fat_id"]
+    },
+    "2": {
+      "nome": "Cookie/Storage browser",
+      "descricao": "Persiste estado da camada 1 em first-party cookies (prefixo mn_ ou _v4_), TTL 90-365 dias",
+      "campos": ["mn_first_utm_source", "mn_first_utm_medium", "mn_first_utm_campaign", "mn_first_utm_timestamp", "mn_last_utm_source", "mn_last_utm_medium", "mn_last_utm_campaign", "mn_last_utm_timestamp", "mn_gclid", "mn_fbclid", "mn_wbraid", "mn_gbraid", "_fbp", "_fbc"]
+    },
+    "3": {
+      "nome": "Form hidden",
+      "descricao": "Snapshot do estado da camada 2 no submit + Consent Mode v2",
+      "campos": ["first_touch_source", "last_touch_source", "v4_creative_id", "event_id", "cf_lead_id", "consent_analytics", "consent_ads", "consent_ad_user_data", "consent_ad_personalization"]
+    },
+    "4": {
+      "nome": "dataLayer",
+      "descricao": "window.dataLayer.push() — fonte da verdade pra GTM/CAPI/dedup. Mesmo event_id em pixel browser e CAPI server",
+      "campos": ["event", "event_id", "event_time", "user_data.email_sha256", "user_data.phone_sha256", "user_data.fbp", "user_data.fbc", "marketing.first_touch", "marketing.last_touch", "consent.analytics", "consent.ads", "ids.cf_lead_id"]
+    },
+    "5": {
+      "nome": "Backup planilha",
+      "descricao": "Google Sheets / Supabase / fallback. Cinto de segurança quando webhook falha",
+      "campos": ["timestamp", "email_raw", "phone_raw", "nome_raw", "lead_id", "cf_lead_id", "first_touch_*", "last_touch_*", "click_ids_*", "consent_*"]
+    },
+    "6": {
+      "nome": "CRM",
+      "descricao": "RD Station / HubSpot / Pipedrive / Bitrix. Match primária por cf_lead_id, fallback email_sha256",
+      "campos": ["cf_lead_id", "email_raw", "phone_raw", "nome_raw", "first_touch_*", "last_touch_*", "is_mql", "is_sql", "motivo_perda", "receita"]
+    },
+    "7": {
+      "nome": "Servidor CAPI",
+      "descricao": "Server-side GTM (Stape/Cloud Run) ou N8N. Consome camada 4 e dispara Meta CAPI + Google Ads ECfL/OCI + TikTok/LinkedIn API. EMQ Meta meta >= 7.0",
+      "campos": ["event_id", "event_time", "event_name", "user_data.em (email_sha256)", "user_data.ph (phone_sha256)", "user_data.fbp", "user_data.fbc", "user_data.client_ip_address", "user_data.client_user_agent", "custom_data.value", "custom_data.currency"]
+    },
+    "8": {
+      "nome": "Base analitica",
+      "descricao": "BigQuery / Looker Studio / Metabase. Cruza midia + leads + CRM + UTMs + qualidade comercial",
+      "campos": ["all_layers_joined", "mql_rate_by_creative", "cpl_by_campaign", "win_rate_by_icp"]
+    }
+  },
+  "camadas_legacy_6": {
+    "_comentario": "Estrutura v1 preservada pra backwards-compat. Auditor v2 le ambos.",
+    "1": "URL",
+    "2": "Cookie/storage browser",
+    "3": "Form hidden",
+    "4": "Backup planilha",
+    "5": "CRM",
+    "6": "Base analitica"
+  },
+  "dicionario_campos": {
+    "pii_bruto": [
+      {"campo": "email_raw", "tipo": "string", "origem": "form", "regra": "trim", "exemplo": "pessoa@empresa.com", "destino_permitido": ["CRM", "backup"]},
+      {"campo": "phone_raw", "tipo": "string", "origem": "form", "regra": "conforme_digitado", "exemplo": "(11) 99999-9999", "destino_permitido": ["CRM", "backup"]},
+      {"campo": "nome_raw", "tipo": "string", "origem": "form", "regra": "trim", "exemplo": "Maria Silva", "destino_permitido": ["CRM", "backup"]}
+    ],
+    "pii_hash": [
+      {"campo": "email_sha256", "tipo": "string_64hex", "origem": "transform_front", "regra": "lowercase->trim->sha256_hex (Gmail: remove . antes do @)", "exemplo": "8b94...", "destino_permitido": ["Meta_CAPI", "Google_Ads_ECfL", "Google_Ads_OCI", "dataLayer"]},
+      {"campo": "phone_e164", "tipo": "string", "origem": "transform_front", "regra": "E.164 (+5511999999999)", "exemplo": "+5511999998888", "destino_permitido": ["CRM", "backup", "transformar_antes_hash"]},
+      {"campo": "phone_sha256", "tipo": "string_64hex", "origem": "transform_front", "regra": "E.164->sha256_hex", "exemplo": "c3a1...", "destino_permitido": ["Meta_CAPI", "Google_Ads_ECfL"]},
+      {"campo": "first_name_sha256", "tipo": "string_64hex", "origem": "transform_front", "regra": "lowercase->trim->sha256_hex", "exemplo": "e2b1...", "destino_permitido": ["Meta_CAPI"]},
+      {"campo": "user_id", "tipo": "string_64hex", "origem": "transform_front", "regra": "sha256(email_lowercased)", "exemplo": "8b94...", "destino_permitido": ["GA4_UserID", "dataLayer"]}
+    ],
+    "id_tecnico": [
+      {"campo": "event_id", "tipo": "uuid_v4", "origem": "front_submit", "regra": "mesmo_uuid_pixel_e_capi", "exemplo": "8c6f4b2a-...", "nota": "CHAVE_DEDUP_CAPI"},
+      {"campo": "session_id", "tipo": "string", "origem": "front_storage", "regra": "ttl_30min", "exemplo": "sess_abc123"},
+      {"campo": "client_id", "tipo": "string", "origem": "ga4_cookie_ga", "regra": "gerado_ga4", "exemplo": "1234567890.1234567890"},
+      {"campo": "lead_id", "tipo": "uuid_v4", "origem": "front_submit", "regra": "unico_por_lead", "exemplo": "7a3e..."},
+      {"campo": "cf_lead_id", "tipo": "uuid_v4", "origem": "front_submit", "regra": "custom_field_crm", "exemplo": "7a3e...", "nota": "MATCH_KEY_PRIMARIA_CRM"}
+    ],
+    "metadata_marketing": [
+      {"campo": "gclid", "tipo": "string", "origem": "url->cookie_mn_gclid", "quando": "sempre_que_presente"},
+      {"campo": "fbclid", "tipo": "string", "origem": "url->cookie_mn_fbclid", "quando": "sempre_que_presente"},
+      {"campo": "wbraid", "tipo": "string", "origem": "url->cookie_mn_wbraid", "quando": "ios14+_google_ads_web"},
+      {"campo": "gbraid", "tipo": "string", "origem": "url->cookie_mn_gbraid", "quando": "ios14+_google_ads_app"},
+      {"campo": "fbp", "tipo": "string", "origem": "cookie_fbp_pixel_gera", "quando": "sempre_meta_capi"},
+      {"campo": "fbc", "tipo": "string", "origem": "cookie_fbc_pixel_grava_do_fbclid", "quando": "sempre_que_houve_fbclid"},
+      {"campo": "ttclid", "tipo": "string", "origem": "url->cookie", "quando": "tiktok_ads"},
+      {"campo": "li_fat_id", "tipo": "string", "origem": "url->cookie", "quando": "linkedin_ads"},
+      {"campo": "first_touch_source", "tipo": "string", "regra": "write_once_cookie", "exemplo": "linkedin"},
+      {"campo": "first_touch_medium", "tipo": "string", "regra": "write_once_cookie", "exemplo": "cpc"},
+      {"campo": "first_touch_campaign", "tipo": "string", "regra": "write_once_cookie", "exemplo": "cmp-cli001-2026q2-leadgen-001"},
+      {"campo": "first_touch_timestamp", "tipo": "unix_int", "regra": "write_once_cookie", "exemplo": "1714838400"},
+      {"campo": "last_touch_source", "tipo": "string", "regra": "update_on_conversion", "exemplo": "google"},
+      {"campo": "last_touch_medium", "tipo": "string", "regra": "update_on_conversion", "exemplo": "cpc"},
+      {"campo": "last_touch_campaign", "tipo": "string", "regra": "update_on_conversion", "exemplo": "cmp-cli001-2026q2-brand-002"},
+      {"campo": "last_touch_timestamp", "tipo": "unix_int", "regra": "update_on_conversion", "exemplo": "1715443200"}
+    ],
+    "consent": [
+      {"campo": "consent_analytics", "tipo": "bool", "origem": "banner_lgpd", "controla": "GA4 + Clarity"},
+      {"campo": "consent_ads", "tipo": "bool", "origem": "banner_lgpd", "controla": "pixels remarketing"},
+      {"campo": "consent_ad_user_data", "tipo": "bool", "origem": "banner_lgpd_consent_mode_v2", "controla": "envio_dados_meta_google"},
+      {"campo": "consent_ad_personalization", "tipo": "bool", "origem": "banner_lgpd_consent_mode_v2", "controla": "personalizacao_custom_audiences"}
+    ]
+  },
+  "regras_match": {
+    "match_key_primaria": "cf_lead_id",
+    "match_key_primaria_tipo": "uuid_v4_custom_field",
+    "match_key_fallback": "email_sha256",
+    "tag_ambos_ausentes": "dedupe-pendente",
+    "dedup_capi": {
+      "estrategia": "mesmo_event_id_uuid_v4_em_pixel_browser_e_capi_server",
+      "event_name_match": true,
+      "event_time_tolerancia_min": 5,
+      "consequencia_se_quebrado": "Meta_conta_em_duplicidade_distorce_CPL_e_polui_custom_audiences"
+    }
+  },
+  "lgpd_compliance": {
+    "banner_4_categorias": {
+      "necessario": "sempre_ativo_sessao_seguranca",
+      "funcional": "preferencias_idioma_layout",
+      "analytics": "controla_consent_analytics",
+      "marketing": "controla_consent_ads_e_ad_user_data_e_ad_personalization"
+    },
+    "consent_mode_v2_sinais": {
+      "analytics_storage": "consent_analytics",
+      "ad_storage": "consent_ads",
+      "ad_user_data": "consent_ad_user_data",
+      "ad_personalization": "consent_ad_personalization"
+    },
+    "regra_inviolavel": "PII_raw_nunca_enviar_para_Meta_Google_TikTok_LinkedIn (somente sha256_hex apos normalizacao canonica)",
+    "hashing_canonico": {
+      "email": "lowercase -> trim -> SHA-256 hex (Gmail: remove . antes do @)",
+      "phone": "E.164 (+5511999999999) -> SHA-256 hex",
+      "encoding_default": "hex_lowercase_64_chars"
+    }
+  },
+  "referencias_cruzadas": {
+    "upstream": [
+      {"skill": "gerador-taxonomia-utm-ids", "tipo": "workshop", "fornece": "IDs canonicos cli-/cmp-/adg-/crv-/tst-"},
+      {"skill": "instrumentation-engineer", "tipo": "global", "fornece": "measurement plan + snippets dataLayer.push()"}
+    ],
+    "downstream": [
+      {"skill": "tracking-engineer", "tipo": "global", "consome": "contrato pra config GTM + tags CAPI + EMQ >= 7.0"},
+      {"skill": "qa-tracking-utm-crm", "tipo": "workshop", "consome": "contrato pra audit pos go-live (dedup CAPI, crm_match_rate, fill rate)"}
+    ]
+  },
+  "campos": [
+    {
+      "campo": "lead_id",
+      "tipo": "string",
+      "fonte": "conversion",
+      "camada": "backup_crm",
+      "obrigatorio": true,
+      "regra": "unique_per_lead",
+      "exemplo": "8c6f4b2a",
+      "descricao": "Identificador unico do lead",
+      "classe_lgpd": "id-tecnico"
+    },
+    {
+      "campo": "cf_lead_id",
+      "tipo": "uuid_v4",
+      "fonte": "front_submit",
+      "camada": "form_backup_crm_capi",
+      "obrigatorio": true,
+      "regra": "match_key_primaria",
+      "exemplo": "7a3e1c44-9d12-4f8a-b6c0-1e2f3d4c5b6a",
+      "descricao": "Match key primaria CRM (custom field UUID v4)",
+      "classe_lgpd": "id-tecnico"
+    },
+    {
+      "campo": "event_id",
+      "tipo": "uuid_v4",
+      "fonte": "front_submit",
+      "camada": "datalayer_capi",
+      "obrigatorio": true,
+      "regra": "mesmo_uuid_pixel_e_capi",
+      "exemplo": "8c6f4b2a-2f9e-4abc-9b34-cd1234ef5678",
+      "descricao": "Chave de dedup CAPI pixel/server",
+      "classe_lgpd": "id-tecnico"
+    },
+    {
+      "campo": "email_sha256",
+      "tipo": "string",
+      "fonte": "transform_front",
+      "camada": "datalayer_capi",
+      "obrigatorio": true,
+      "regra": "lowercase_trim_sha256_hex",
+      "exemplo": "8b94...",
+      "descricao": "Email hash canonico para Meta CAPI / Google Ads ECfL",
+      "classe_lgpd": "pii-hash"
+    },
+    {
+      "campo": "phone_sha256",
+      "tipo": "string",
+      "fonte": "transform_front",
+      "camada": "datalayer_capi",
+      "obrigatorio": false,
+      "regra": "e164_sha256_hex",
+      "exemplo": "c3a1...",
+      "descricao": "Phone hash canonico para Meta CAPI",
+      "classe_lgpd": "pii-hash"
+    },
+    {
+      "campo": "first_utm_source",
+      "tipo": "string",
+      "fonte": "cookie_form",
+      "camada": "form_backup_crm",
+      "obrigatorio": true,
+      "regra": "write_once",
+      "exemplo": "linkedin",
+      "descricao": "Primeira fonte conhecida",
+      "classe_lgpd": "metadata-marketing"
+    },
+    {
+      "campo": "last_utm_source",
+      "tipo": "string",
+      "fonte": "cookie_form",
+      "camada": "form_backup_crm",
+      "obrigatorio": true,
+      "regra": "update_on_conversion",
+      "exemplo": "google",
+      "descricao": "Ultima fonte conhecida",
+      "classe_lgpd": "metadata-marketing"
+    },
+    {
+      "campo": "v4_creative_id",
+      "tipo": "string",
+      "fonte": "url_form",
+      "camada": "form_backup_crm",
+      "obrigatorio": true,
+      "regra": "per_conversion",
+      "exemplo": "crv-cli001-2026q2-hook-001",
+      "descricao": "ID canonico do criativo",
+      "classe_lgpd": "metadata-marketing"
+    },
+    {
+      "campo": "consent_analytics",
+      "tipo": "bool",
+      "fonte": "banner_lgpd",
+      "camada": "form_datalayer",
+      "obrigatorio": true,
+      "regra": "captura_no_aceite",
+      "exemplo": "true",
+      "descricao": "Sinal Consent Mode v2 - GA4/Clarity",
+      "classe_lgpd": "consent"
+    },
+    {
+      "campo": "consent_ad_user_data",
+      "tipo": "bool",
+      "fonte": "banner_lgpd",
+      "camada": "form_datalayer",
+      "obrigatorio": true,
+      "regra": "captura_no_aceite",
+      "exemplo": "true",
+      "descricao": "Sinal Consent Mode v2 - envio dados Meta/Google",
+      "classe_lgpd": "consent"
+    }
+  ],
+  "criterios_n2": {
+    "backup_padronizado": true,
+    "utms_chegam_conversao": true,
+    "ids_chegam_planilha": true,
+    "crm_recebe_origem_ou_match": false,
+    "first_last_touch_preservados": true,
+    "dicionario_dados_existe": true,
+    "teste_ponta_a_ponta_existe": false,
+    "analise_pos_campanha_possivel": false
+  },
+  "scope_plataformas": ["Meta", "Google_Ads", "GA4"],
+  "capi_ativo": true,
+  "banner_lgpd_ativo": true,
+  "hashing_canonico_declarado": true
+}

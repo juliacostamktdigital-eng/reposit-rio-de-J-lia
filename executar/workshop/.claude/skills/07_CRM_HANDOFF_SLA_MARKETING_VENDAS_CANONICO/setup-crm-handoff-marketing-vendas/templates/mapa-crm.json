@@ -1,0 +1,70 @@
+{
+  "cliente": "HS Prevent",
+  "crm": "HubSpot",
+  "campos_existentes": [
+    "lead_id",
+    "created_at",
+    "nome",
+    "email",
+    "telefone",
+    "empresa",
+    "cargo",
+    "first_utm_source",
+    "first_utm_medium",
+    "first_utm_campaign",
+    "last_utm_source",
+    "last_utm_medium",
+    "last_utm_campaign",
+    "campaign_id",
+    "creative_id",
+    "lead_status",
+    "sales_owner",
+    "assigned_at",
+    "first_contact_at",
+    "contact_attempts",
+    "lead_quality",
+    "disqualification_reason",
+    "feedback_notes"
+  ],
+  "status_configurados": {
+    "lead_status": [
+      "novo",
+      "atribuido",
+      "contatado",
+      "qualificado",
+      "desqualificado"
+    ],
+    "mql_status": [
+      "pendente-validacao",
+      "enviado-vendas"
+    ],
+    "sql_status": [
+      "pendente-vendas",
+      "aceito-vendas"
+    ],
+    "opportunity_status": [
+      "aberta",
+      "ganha",
+      "perdida"
+    ]
+  },
+  "motivos_desqualificacao": [
+    "sem-fit",
+    "sem-budget",
+    "timing-ruim",
+    "nao-responde",
+    "duplicado",
+    "dados-invalidos",
+    "outro"
+  ],
+  "sla": {
+    "lead_quente_minutos": 5,
+    "lead_morno_minutos": 120,
+    "tentativas_primeiro_dia": 3,
+    "tentativas_7_dias": 6
+  },
+  "evidencias": [
+    "print campos CRM",
+    "lead teste parcial"
+  ]
+}

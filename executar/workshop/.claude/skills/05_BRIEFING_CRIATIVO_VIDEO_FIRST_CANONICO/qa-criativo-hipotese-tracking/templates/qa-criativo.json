@@ -1,0 +1,98 @@
+{
+  "cliente": "HS Prevent",
+  "campanha": "Onboarding digital seguro",
+  "criativos": [
+    {
+      "creative_id": "crv-hs-prevent-202605-014",
+      "brief_id": "brf-hs-prevent-202605-001",
+      "test_id": "tst-hs-prevent-202605-hooks-cfo",
+      "formato": "video",
+      "canal": "Meta Ads",
+      "placement": "Reels/Stories",
+      "criterios": {
+        "objetivo_claro": "ok",
+        "hipotese_explicita": "ok",
+        "variavel_isolada": "ok",
+        "persona_definida": "ok",
+        "hook_claro": "ok",
+        "dor_preservada": "ok",
+        "promessa_alinhada": "ok",
+        "prova_presente": "pendencia",
+        "cta_coerente": "ok",
+        "claim_permitido": "pendencia",
+        "lp_coerente": "ok",
+        "asset_disponivel": "ok",
+        "tracking_completo": "ok"
+      },
+      "tracking": {
+        "creative_id": "crv-hs-prevent-202605-014",
+        "fmt": "video",
+        "icp": "cfo",
+        "hook": "dor",
+        "mot": "seguranca",
+        "dor": "fraude",
+        "ang": "risco-financeiro",
+        "stage": "tofu",
+        "ver": "v01",
+        "utm_content": "crv-hs-prevent-202605-014__fmt-video__icp-cfo__hook-dor__mot-seguranca__dor-fraude__ang-risco-financeiro__stage-tofu__ver-v01"
+      },
+      "pendencias": [
+        {
+          "pendencia": "validar número exato do case antes de usar como texto em tela",
+          "categoria": "prova",
+          "severidade": "alta",
+          "dono": "growth",
+          "decisao": "go_com_pendencia",
+          "prazo": "antes da publicação",
+          "impacto": "claim pode ficar fraco ou arriscado sem fonte"
+        }
+      ]
+    },
+    {
+      "creative_id": "crv-hs-prevent-202605-015",
+      "brief_id": "brf-hs-prevent-202605-002",
+      "test_id": "tst-hs-prevent-202605-friccao-produto",
+      "formato": "carousel",
+      "canal": "LinkedIn Ads",
+      "placement": "Feed",
+      "criterios": {
+        "objetivo_claro": "ok",
+        "hipotese_explicita": "ok",
+        "variavel_isolada": "ok",
+        "persona_definida": "ok",
+        "hook_claro": "ok",
+        "dor_preservada": "ok",
+        "promessa_alinhada": "ok",
+        "prova_presente": "ok",
+        "cta_coerente": "ok",
+        "claim_permitido": "ok",
+        "lp_coerente": "pendencia",
+        "asset_disponivel": "ok",
+        "tracking_completo": "bloqueio"
+      },
+      "tracking": {
+        "creative_id": "crv-hs-prevent-202605-015",
+        "fmt": "carousel",
+        "icp": "head-produto",
+        "hook": "contraintuitivo",
+        "mot": "conversao",
+        "dor": "friccao",
+        "ang": "seguranca-sem-friccao",
+        "stage": "mofu",
+        "ver": "",
+        "utm_content": ""
+      },
+      "pendencias": [
+        {
+          "pendencia": "preencher versão e utm_content final",
+          "categoria": "tracking",
+          "severidade": "critica",
+          "dono": "midia",
+          "decisao": "bloquear_tracking",
+          "prazo": "antes do upload",
+          "impacto": "peça não será analisável por atributo"
+        }
+      ]
+    }
+  ]
+}

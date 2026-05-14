@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marketing OS | Workflow Canvas</title>
+    <meta
+      name="description"
+      content="Board estilo Miro/Excalidraw para iterar o workflow do Marketing OS a partir de JSON."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__brand">
+        <div class="topbar__mark" aria-hidden="true">
+          <svg class="topbar__mark-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 7.5c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-9Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+            <path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="topbar__titles">
+          <p class="topbar__kicker">Marketing OS · OS do Executar</p>
+          <h1 class="topbar__title" id="boardTitle">Workflow Canvas</h1>
+        </div>
+      </div>
+
+      <div class="topbar__toolbar" aria-label="Controles do canvas">
+        <div class="topbar__cluster">
+          <label class="topbar__label" for="workflowVersion">Workflow</label>
+          <select id="workflowVersion" class="topbar__select" aria-label="Versão do workflow"></select>
+        </div>
+        <div class="topbar__divider" role="presentation" aria-hidden="true"></div>
+        <div class="topbar__cluster topbar__cluster--push">
+          <div class="topbar__zoom-controls" aria-label="Zoom do canvas">
+            <button id="zoomOut" type="button" class="topbar__icon-btn" title="Diminuir zoom" aria-label="Diminuir zoom">
+              −
+            </button>
+            <span id="zoomLabel" class="topbar__zoom-readout">100%</span>
+            <button id="zoomIn" type="button" class="topbar__icon-btn" title="Aumentar zoom" aria-label="Aumentar zoom">
+              +
+            </button>
+          </div>
+          <button id="fitView" type="button" class="topbar__btn">Ajustar</button>
+          <button id="resetView" type="button" class="topbar__btn topbar__btn--outline">Reset</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="canvas-shell" aria-label="Workflow board">
+        <div id="viewport" class="viewport">
+          <div id="canvas" class="canvas">
+            <div id="groups" class="groups"></div>
+            <div id="nodes" class="nodes">
+              <div id="assetCards" class="asset-cards-layer" aria-hidden="true"></div>
+              <div id="stepNodes" class="step-nodes"></div>
+            </div>
+            <svg id="edges" class="edges" aria-hidden="true"></svg>
+            <div id="peekBackdrop" class="peek-backdrop" hidden aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="hint">
+          <strong>Pan</strong> arraste o fundo · <strong>Zoom</strong> roda do mouse ·
+          <strong>Assets</strong> clique na etapa e navegue pelo painel ·
+          <strong>Suporte</strong> texto no hover · <strong>Esc</strong> fecha painel expandido
+        </div>
+
+        <div class="legend-overlay" aria-label="Legenda das conexões">
+          <div><span class="legend-line legend-line-main"></span><strong>Principal</strong></div>
+          <div><span class="legend-line legend-line-support"></span><strong>Suporte</strong></div>
+          <div><span class="legend-line legend-line-loop"></span><strong>Loop</strong></div>
+          <div class="legend-asset-hint"><span class="legend-asset-mini"></span><strong>Micro</strong> vínculos</div>
+        </div>
+      </section>
+
+      <div class="inspector-dock" id="inspectorDock">
+        <div
+          class="inspector-backdrop"
+          id="inspectorBackdrop"
+          hidden
+          aria-hidden="true"
+        ></div>
+
+        <aside
+          id="inspector"
+          class="inspector"
+          role="complementary"
+          aria-label="Detalhes da etapa selecionada"
+          aria-live="polite"
+        >
+          <div class="inspector__chrome">
+            <div class="inspector__header">
+              <span id="selectedKind">Node</span>
+              <strong id="selectedId">-</strong>
+            </div>
+            <button
+              type="button"
+              id="inspectorToggleExpand"
+              class="inspector-expand-btn"
+              aria-expanded="false"
+              aria-controls="inspector"
+              title="Abrir painel em tela cheia"
+            >
+              Expandir
+            </button>
+          </div>
+
+          <div class="inspector__body">
+            <h2 id="selectedTitle">Selecione uma etapa</h2>
+            <p id="selectedDescription">
+              Clique em um card do board para ver objetivo, inputs, outputs e evidência.
+            </p>
+
+            <section id="sectionParent" hidden>
+              <h3>Macro pai</h3>
+              <p id="parentMeta">-</p>
+            </section>
+
+            <section id="sectionOperatorGuide" hidden>
+              <h3>Guia da etapa</h3>
+              <div id="selectedOperatorGuide" class="operator-guide"></div>
+            </section>
+
+            <section id="sectionAssets" hidden>
+              <h3>Assets desta etapa · clique para abrir</h3>
+              <ul id="selectedAssets" class="asset-list"></ul>
+            </section>
+
+            <section id="sectionPageContent" hidden>
+              <h3>Conteúdo do card</h3>
+              <div id="selectedPageContent" class="stage-content"></div>
+            </section>
+
+            <section>
+              <h3>Inputs / decisões</h3>
+              <ul id="selectedInputs"></ul>
+            </section>
+
+            <section>
+              <h3>Outputs</h3>
+              <ul id="selectedOutputs"></ul>
+            </section>
+
+            <section class="evidence">
+              <h3>Evidência / critério</h3>
+              <p id="selectedEvidence">-</p>
+            </section>
+
+            <section id="sectionDoc" hidden>
+              <div class="playbook-doc-stack">
+                <section id="playbookSkillsSection" class="playbook-doc-stack__skills" hidden>
+                  <header class="playbook-doc-stack__head">
+                    <h3 class="playbook-doc-stack__title">Skills deste playbook</h3>
+                    <p class="playbook-doc-stack__kicker">
+                      Capacidades em <code>.claude/skills</code>, agrupadas pela pasta do playbook · clique para
+                      abrir o preview
+                    </p>
+                  </header>
+                  <ul id="playbookSkillsList" class="playbook-skills-list" aria-label="Lista de skills"></ul>
+                </section>
+
+                <section class="playbook-doc-stack__canonical">
+                  <h3 class="playbook-doc-stack__title playbook-doc-stack__title--canonical">
+                    Documento canônico (playbook)
+                  </h3>
+                  <div class="doc-actions">
+                    <code id="selectedDocPath">-</code>
+                    <button id="copyDocMarkdown" type="button">Copiar markdown</button>
+                  </div>
+                  <article id="selectedDocContent" class="doc-content"></article>
+                </section>
+              </div>
+            </section>
+          </div>
+        </aside>
+
+        <div
+          id="assetModalBackdrop"
+          class="asset-modal-backdrop"
+          hidden
+          aria-hidden="true"
+        ></div>
+
+        <section
+          id="assetModal"
+          class="asset-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="assetModalTitle"
+          hidden
+        >
+          <header class="asset-modal__header">
+            <div>
+              <span id="assetModalMeta" class="asset-modal__meta">Asset</span>
+              <h2 id="assetModalTitle">Asset</h2>
+              <p id="assetModalSummary">-</p>
+            </div>
+            <button id="assetModalClose" type="button" aria-label="Fechar asset">Fechar</button>
+          </header>
+
+          <div class="asset-modal__body">
+            <section class="asset-modal__section">
+              <h3>Detalhes operacionais</h3>
+              <div id="assetModalDetails" class="asset-detail-grid"></div>
+            </section>
+
+            <section id="assetModalDocSection" class="asset-modal__section" hidden>
+              <div class="playbook-doc-stack playbook-doc-stack--modal">
+                <section id="assetModalSkillsSection" class="playbook-doc-stack__skills" hidden>
+                  <header class="playbook-doc-stack__head">
+                    <h3 class="playbook-doc-stack__title">Skills deste playbook</h3>
+                    <p class="playbook-doc-stack__kicker">
+                      Mesmas capacidades do painel lateral · clique para abrir o preview (o asset permanece aberto
+                      atrás)
+                    </p>
+                  </header>
+                  <ul id="assetModalSkillsList" class="playbook-skills-list" aria-label="Skills do playbook"></ul>
+                </section>
+                <section class="playbook-doc-stack__canonical">
+                  <h3 class="playbook-doc-stack__title playbook-doc-stack__title--canonical">
+                    Documento canônico (playbook)
+                  </h3>
+                  <div class="doc-actions">
+                    <code id="assetModalDocPath">-</code>
+                    <button id="assetModalCopyMarkdown" type="button">Copiar markdown</button>
+                  </div>
+                  <article id="assetModalDocContent" class="doc-content"></article>
+                </section>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <div
+          id="skillModalBackdrop"
+          class="asset-modal-backdrop skill-modal-backdrop"
+          hidden
+          aria-hidden="true"
+        ></div>
+
+        <section
+          id="skillModal"
+          class="asset-modal skill-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="skillModalTitle"
+          hidden
+        >
+          <header class="asset-modal__header">
+            <div>
+              <span id="skillModalMeta" class="asset-modal__meta">Skill</span>
+              <h2 id="skillModalTitle">Skill</h2>
+              <p id="skillModalPlaybook" class="skill-modal__playbook-label">-</p>
+            </div>
+            <button id="skillModalClose" type="button" aria-label="Fechar skill">Fechar</button>
+          </header>
+
+          <div class="asset-modal__body">
+            <section class="asset-modal__section">
+              <div class="doc-actions">
+                <code id="skillModalPath">-</code>
+                <button id="skillModalCopyMarkdown" type="button">Copiar markdown</button>
+              </div>
+              <article id="skillModalContent" class="doc-content"></article>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script defer src="./js/app.bundle.js"></script>
+  </body>
+</html>

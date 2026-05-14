@@ -1,0 +1,12 @@
+{
+  "client_id": "cli-hs-prevent",
+  "periodo": "2026-05",
+  "cliente": "HS Prevent",
+  "dono": "Growth Ops",
+  "links": {
+    "lp": "https://example.com/lp",
+    "crm": "https://crm.example.com",
+    "plano_midia": "https://docs.example.com/plano",
+    "taxonomia_utm": "https://docs.example.com/taxonomia"
+  }
+}

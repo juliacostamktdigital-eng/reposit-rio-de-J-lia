@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "cliente_projeto": "[Nome]",
+    "data": "YYYY-MM-DD",
+    "nota_contexto": "Booleans true = condição ativa. Ver reference.md gatilhos."
+  },
+  "meta_plano": false,
+  "google_plano": false,
+  "google_search": false,
+  "vendas_envolvida": true,
+  "sem_integracao_auto": false,
+  "risco_falso_positivo": false,
+  "mapa_2x2": false,
+  "swot": false,
+  "voz_cliente_disponivel": false,
+  "video_audio_roteiro": false,
+  "base_qualidade": false,
+  "asset_estavel": false
+}

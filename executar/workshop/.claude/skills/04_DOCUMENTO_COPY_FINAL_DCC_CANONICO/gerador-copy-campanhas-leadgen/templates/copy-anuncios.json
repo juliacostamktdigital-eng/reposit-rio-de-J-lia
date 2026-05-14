@@ -1,0 +1,73 @@
+{
+  "cliente": "HS Prevent",
+  "campanha": "Onboarding digital seguro",
+  "campaign_id": "cmp-hs-prevent-202605-001",
+  "anuncios": [
+    {
+      "creative_id": "crv-hs-prevent-202605-014",
+      "persona": "CFO",
+      "etapa": "tofu",
+      "formato": "video",
+      "oferta": "Diagnóstico de risco no onboarding digital",
+      "cta": "Solicitar diagnóstico",
+      "hipotese": "Hooks de risco financeiro geram MQLs mais qualificados para CFOs",
+      "variavel_testada": "hook",
+      "dor": "fraude passa no onboarding",
+      "desejo": "aprovar clientes bons sem expor margem",
+      "angulo": "risco financeiro",
+      "tipo_hook": "dor",
+      "hook": "A fraude que não aparece no dashboard já pode estar corroendo sua margem.",
+      "promessa": "reduzir risco financeiro sem criar gargalo comercial",
+      "prova": "case de redução de fraude e melhoria de aprovação",
+      "objecao_atacada": "segurança trava conversão",
+      "claim": "reduz risco financeiro no onboarding",
+      "texto_principal": "A fraude que não aparece no dashboard já pode estar corroendo sua margem. O problema não é só barrar usuários ruins, é aprovar bons clientes sem abrir brecha para risco. Veja como diagnosticar pontos cegos no onboarding digital.",
+      "headline": "Seu onboarding está protegendo a margem?",
+      "descricao": "Diagnóstico para times que precisam crescer com segurança e menos fricção.",
+      "tracking": {
+        "fmt": "video",
+        "icp": "cfo",
+        "hook": "dor",
+        "mot": "seguranca",
+        "dor": "fraude",
+        "ang": "risco-financeiro",
+        "stage": "tofu",
+        "ver": "v01"
+      },
+      "risco": "claim financeiro precisa de prova no destino"
+    },
+    {
+      "creative_id": "crv-hs-prevent-202605-015",
+      "persona": "Head de Produto",
+      "etapa": "mofu",
+      "formato": "carrossel",
+      "oferta": "Diagnóstico de risco no onboarding digital",
+      "cta": "Ver como funciona",
+      "hipotese": "Ângulo de segurança sem fricção reduz objeção de produto",
+      "variavel_testada": "angulo",
+      "dor": "segurança aumenta fricção de ativação",
+      "desejo": "manter conversão sem abrir mão de controle",
+      "angulo": "segurança sem fricção",
+      "tipo_hook": "contraintuitivo",
+      "hook": "Segurança não deveria ser o motivo da sua conversão cair.",
+      "promessa": "proteger a jornada sem travar usuários bons",
+      "prova": "fluxo adaptativo e métricas de aprovação",
+      "objecao_atacada": "meu time não pode piorar onboarding",
+      "claim": "segurança com menos fricção para bons usuários",
+      "texto_principal": "Segurança não deveria ser o motivo da sua conversão cair. Quando o onboarding trata todo usuário como risco igual, bons clientes também pagam o preço. Conheça uma forma de adaptar controle por sinal de risco.",
+      "headline": "Segurança sem travar bons usuários",
+      "descricao": "Uma leitura prática para times de produto e growth.",
+      "tracking": {
+        "fmt": "carousel",
+        "icp": "head-produto",
+        "hook": "contraintuitivo",
+        "mot": "conversao",
+        "dor": "friccao",
+        "ang": "seguranca-sem-friccao",
+        "stage": "mofu",
+        "ver": "v01"
+      },
+      "risco": "evitar promessa absoluta de aumento de conversão"
+    }
+  ]
+}

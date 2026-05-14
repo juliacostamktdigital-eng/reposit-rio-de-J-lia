@@ -1,0 +1,284 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuditoriaComunicacao",
+  "description": "Output estruturado da skill auditoria-comunicacao: auditoria por canal, matriz de gaps e quick wins.",
+  "type": "object",
+  "required": ["summary", "channels_audited", "gap_matrix", "executive_summary", "quick_wins"],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "description": "Resumo de 1-2 frases da auditoria. Usado como referência rápida por outras skills."
+    },
+    "icp_reference": {
+      "type": "string",
+      "description": "Resumo do ICP usado como referência para avaliar alinhamento da comunicação."
+    },
+    "channels_audited": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "score", "gaps", "recommendations"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nome do canal auditado (ex: 'site', 'instagram', 'google_meu_negocio', 'whatsapp', 'anuncios')."
+          },
+          "url_or_handle": {
+            "type": "string",
+            "description": "URL ou handle do canal auditado."
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Score do canal (0-100)."
+          },
+          "classification": {
+            "type": "string",
+            "enum": ["critical", "low", "medium", "good", "excellent"],
+            "description": "Classificação do canal."
+          },
+          "screenshots_analyzed": {
+            "type": "boolean",
+            "description": "Se screenshots foram fornecidos e analisados para este canal."
+          },
+          "audit_details": {
+            "type": "object",
+            "description": "Detalhes da auditoria específicos por canal.",
+            "properties": {
+              "value_proposition": {
+                "type": "object",
+                "properties": {
+                  "present": { "type": "boolean" },
+                  "clear": { "type": "boolean" },
+                  "aligned_with_icp": { "type": "boolean" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "social_proof": {
+                "type": "object",
+                "properties": {
+                  "present": { "type": "boolean" },
+                  "type": { "type": "string" },
+                  "quality": { "type": "string", "enum": ["none", "weak", "moderate", "strong"] },
+                  "notes": { "type": "string" }
+                }
+              },
+              "cta": {
+                "type": "object",
+                "properties": {
+                  "present": { "type": "boolean" },
+                  "visible": { "type": "boolean" },
+                  "action_oriented": { "type": "boolean" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "visual_consistency": {
+                "type": "object",
+                "properties": {
+                  "consistent": { "type": "boolean" },
+                  "professional": { "type": "boolean" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "mobile_experience": {
+                "type": "object",
+                "properties": {
+                  "responsive": { "type": "boolean" },
+                  "speed": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "content_quality": {
+                "type": "object",
+                "properties": {
+                  "speaks_to_icp": { "type": "boolean" },
+                  "frequency": { "type": "string" },
+                  "engagement_level": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "additional_notes": {
+                "type": "string",
+                "description": "Observações adicionais específicas do canal."
+              }
+            }
+          },
+          "gaps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["gap", "impact"],
+              "properties": {
+                "gap": {
+                  "type": "string",
+                  "description": "Descrição específica do gap encontrado."
+                },
+                "evidence": {
+                  "type": "string",
+                  "description": "Evidência concreta do gap (o que foi observado)."
+                },
+                "impact": {
+                  "type": "string",
+                  "enum": ["high", "medium", "low"],
+                  "description": "Impacto na conversão/resultado."
+                }
+              }
+            },
+            "description": "Gaps identificados neste canal."
+          },
+          "recommendations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["action", "priority"],
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "description": "Ação recomendada para corrigir o gap."
+                },
+                "priority": {
+                  "type": "string",
+                  "enum": ["immediate", "short_term", "medium_term"],
+                  "description": "Quando implementar."
+                },
+                "effort": {
+                  "type": "string",
+                  "enum": ["low", "medium", "high"],
+                  "description": "Esforço para implementar."
+                }
+              }
+            },
+            "description": "Recomendações para este canal."
+          }
+        }
+      },
+      "description": "Auditoria detalhada de cada canal digital."
+    },
+    "gap_matrix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rank", "channel", "gap", "impact", "effort", "recommended_action"],
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Posição na prioridade."
+          },
+          "channel": {
+            "type": "string",
+            "description": "Canal onde o gap foi encontrado."
+          },
+          "gap": {
+            "type": "string",
+            "description": "Descrição do gap."
+          },
+          "impact": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Impacto na conversão."
+          },
+          "effort": {
+            "type": "string",
+            "enum": ["low", "medium", "high"],
+            "description": "Esforço para resolver."
+          },
+          "recommended_action": {
+            "type": "string",
+            "description": "Ação recomendada."
+          },
+          "quadrant": {
+            "type": "string",
+            "enum": ["quick_win", "strategic_project", "fill_time", "deprioritize"],
+            "description": "Classificação na matriz impacto x esforço."
+          }
+        }
+      },
+      "description": "Matriz consolidada de todos os gaps, priorizada por impacto x esforço."
+    },
+    "executive_summary": {
+      "type": "object",
+      "required": ["top_problems", "overall_assessment"],
+      "properties": {
+        "overall_assessment": {
+          "type": "string",
+          "description": "Avaliação geral da comunicação digital do cliente (1-2 parágrafos)."
+        },
+        "top_problems": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["problem", "evidence", "impact", "action"],
+            "properties": {
+              "problem": {
+                "type": "string",
+                "description": "Descrição do problema."
+              },
+              "evidence": {
+                "type": "string",
+                "description": "Evidência concreta."
+              },
+              "impact": {
+                "type": "string",
+                "description": "Impacto estimado na conversão/resultado."
+              },
+              "action": {
+                "type": "string",
+                "description": "Ação para resolver."
+              }
+            }
+          },
+          "description": "Top 3 problemas de comunicação que mais custam conversão."
+        },
+        "communication_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Score geral de comunicação (média dos canais auditados)."
+        }
+      }
+    },
+    "quick_wins": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["action", "channel", "time_estimate", "expected_impact"],
+        "properties": {
+          "action": {
+            "type": "string",
+            "description": "Ação concreta passo a passo."
+          },
+          "channel": {
+            "type": "string",
+            "description": "Canal onde implementar."
+          },
+          "time_estimate": {
+            "type": "string",
+            "description": "Tempo estimado para implementar (ex: '1h', '30min', '2h')."
+          },
+          "expected_impact": {
+            "type": "string",
+            "description": "O que melhora com essa ação."
+          },
+          "who_does_it": {
+            "type": "string",
+            "enum": ["operator", "client", "client_team", "designer"],
+            "description": "Quem implementa."
+          },
+          "steps": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Passos detalhados para implementar."
+          }
+        }
+      },
+      "description": "Ações implementáveis em menos de 1 semana sem custo adicional."
+    }
+  }
+}

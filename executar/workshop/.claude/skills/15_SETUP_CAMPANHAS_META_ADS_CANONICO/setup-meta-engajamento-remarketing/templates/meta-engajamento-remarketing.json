@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "cliente": "[Nome]",
+    "versao_doc": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel_media": "",
+    "link_plano_midia": "",
+    "ref_setup_meta": ""
+  },
+  "funcao_funil": {
+    "objetivo": "",
+    "etapa_que_aquece": "",
+    "campanha_ou_etapa_seguinte": "",
+    "metrica_leitura": "",
+    "janela_leitura": ""
+  },
+  "publicos": {
+    "publico_inicial": {
+      "temperatura": "frio",
+      "descricao": "",
+      "origem": ""
+    },
+    "exclusoes": {
+      "anti_icp": "",
+      "leads_clientes_convertidos": "",
+      "saturados": "",
+      "outras": ""
+    }
+  },
+  "pool_aquecido": {
+    "nome_publico": "",
+    "criterio_entrada": "",
+    "janela": "",
+    "tamanho_minimo_esperado": "",
+    "destino_campanha_seguinte": "",
+    "regra_saida": ""
+  },
+  "criativos": [
+    {
+      "creative_id": "",
+      "formato": "",
+      "tema_angulo": "",
+      "hipotese": "",
+      "cta_proximo_passo": "",
+      "criterio_leitura": ""
+    }
+  ],
+  "matriz_testes": {
+    "o_que_varia": "",
+    "o_que_constante": ""
+  },
+  "orcamento_governanca": {
+    "budget": "",
+    "modo_orcamento": "CBO",
+    "frequencia_pressao": "",
+    "condicao_pausar": "",
+    "condicao_levar_publico_remarketing": ""
+  },
+  "pre_go_live_engajamento": {
+    "funcao_funil_definida": false,
+    "publico_inicial_definido": false,
+    "exclusoes_definidas": false,
+    "pool_aquecido_definido": false,
+    "campanha_seguinte_definida": false,
+    "criativos_ids_hipoteses": false,
+    "matriz_testes_registrada": false,
+    "subtipo_marcado_setup_meta": false,
+    "qa_go_live_meta_rodado": false
+  },
+  "n2_gaps": ""
+}

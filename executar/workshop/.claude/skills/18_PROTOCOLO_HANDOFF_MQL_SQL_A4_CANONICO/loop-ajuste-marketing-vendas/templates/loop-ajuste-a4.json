@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "data_rodada": "YYYY-MM-DD",
+    "periodo_dados": "",
+    "facilitador": "",
+    "cadencia": "semanal_operacional",
+    "link_protocolo_a4": "",
+    "link_plano_midia": "",
+    "link_auditoria_aderencia": ""
+  },
+  "leitura_kpis": [
+    {
+      "kpi": "Taxa MQL → SQL",
+      "valor": "",
+      "faixa": "",
+      "threshold_ref": "",
+      "nota": ""
+    },
+    {
+      "kpi": "Taxa SQL → venda",
+      "valor": "",
+      "faixa": "",
+      "threshold_ref": "",
+      "nota": ""
+    },
+    {
+      "kpi": "Tempo até 1º contato",
+      "valor": "",
+      "faixa": "",
+      "threshold_ref": "",
+      "nota": ""
+    },
+    {
+      "kpi": "% rejeições por motivo (resumo)",
+      "valor": "",
+      "faixa": "",
+      "threshold_ref": "",
+      "nota": ""
+    },
+    {
+      "kpi": "% leads sem status válido",
+      "valor": "",
+      "faixa": "",
+      "threshold_ref": "",
+      "nota": ""
+    }
+  ],
+  "sinais_qualitativos": {
+    "rejeicoes_por_motivo_resumo": "",
+    "atrasos_sla_resumo": "",
+    "feedback_vendas_resumo": ""
+  },
+  "hipoteses_causa": [
+    {
+      "hipotese": "",
+      "evidencia": "",
+      "confianca": ""
+    }
+  ],
+  "plano_acao": [
+    {
+      "id": "A01",
+      "descricao": "",
+      "leva_em": "",
+      "faixa_origem": "",
+      "kpi_alvo": "",
+      "responsavel": "",
+      "prazo": "",
+      "impacto_esperado": ""
+    }
+  ],
+  "registro": {
+    "ata_ou_card": "",
+    "changelog_funil_ou_protocolo": "",
+    "proxima_revisao": "",
+    "justificativa_sem_acao": ""
+  }
+}

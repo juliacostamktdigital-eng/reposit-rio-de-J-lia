@@ -1,0 +1,5 @@
+lead_id,captured_at,source,medium,campaign_id,adgroup_id,creative_id,match_confidence,crm_contact_id,mql_status,feedback_quality,feedback_notes,disqualification_reason
+lead-001,2026-05-01T10:00:00,linkedin,paid_social,cmp-001,adg-001,crt-001,high,crm-001,sim,alta,Boa aderencia,
+lead-002,2026-05-01T11:00:00,unknown,paid_social,cmp-001,adg-001,,none,,nao,,,
+lead-003,2026-05-02T09:30:00,google,paid_search,cmp-002,adg-002,crt-010,medium,crm-003,sim,,Sem budget,no_budget
+lead-003,2026-05-02T09:30:00,google,paid_search,cmp-002,adg-002,crt-010,medium,crm-003,sim,,Sem budget,no_budget

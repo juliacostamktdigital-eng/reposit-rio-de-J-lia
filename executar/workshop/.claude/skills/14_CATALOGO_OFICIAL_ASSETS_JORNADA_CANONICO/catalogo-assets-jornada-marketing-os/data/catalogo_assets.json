@@ -1,0 +1,565 @@
+{
+  "versao_catalogo": "2026-04-30",
+  "fonte_canonica": "14_CATALOGO_OFICIAL_ASSETS_JORNADA_CANONICO.md",
+  "grupos": [
+    {
+      "id": "2_transversais",
+      "titulo": "2. Assets transversais",
+      "itens": [
+        {
+          "nome": "Notação N1/N2/N3",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Critério comum para diagnóstico, assets, auditoria e growth.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Catálogo oficial de assets",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Fonte de verdade do que pode ou deve existir.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Glossário operacional",
+          "classificacao": "Condicional",
+          "quando_entra": "Evita ambiguidades em termos como cohort, segmento, MQL, SQL, pack e asset.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "3_entrada_handoff",
+      "titulo": "3. Entrada e handoff",
+      "itens": [
+        {
+          "nome": "Pacote de handoff operacional EXECUTAR",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do diagnóstico.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Plano de ROI",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Insumo do handoff.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Transcrição da call de vendas",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Insumo do handoff.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Transcrição da Growth Class",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Insumo do handoff.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Análise de desvio venda vs Growth Class",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do planning quando houver desalinhamento.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Escopo contratado e exclusões",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do diagnóstico e da decisão do pacote v1.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Pendências de informação/acesso",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de execução.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "4_diagnostico_gtm",
+      "titulo": "4. Diagnóstico GTM",
+      "itens": [
+        {
+          "nome": "Roteiro de leitura da tese GTM v2",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de classificar maturidade.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Matriz de diagnóstico GTM",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Durante diagnóstico.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Evidências por pilar/componente",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Durante diagnóstico.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Auditoria inicial de marketing e vendas",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de decidir o pacote v1.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Lista de gaps e packs candidatos",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Saída do diagnóstico.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Registro de falso positivo N2/N3",
+          "classificacao": "Condicional",
+          "quando_entra": "Quando há risco de classificar setup como implementação.",
+          "gatilhos_condicionais": [
+            "risco_falso_positivo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5_benchmark_mercado",
+      "titulo": "5. Benchmark e mercado",
+      "itens": [
+        {
+          "nome": "Benchmark de mercado, concorrentes e TAM/SAM/SOM",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de construir DEOC, plano de mídia, LP e criativos.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "TAM/SAM/SOM",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de definir meta e mercado capturável.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Estudo de concorrentes",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do DEOC e do plano de mídia.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Mapa de ruído de mercado",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de escrever narrativa e claims.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Mapa competitivo 2x2",
+          "classificacao": "Condicional",
+          "quando_entra": "Quando posicionamento precisa ser visualizado.",
+          "gatilhos_condicionais": [
+            "mapa_2x2"
+          ]
+        },
+        {
+          "nome": "SWOT específica",
+          "classificacao": "Condicional",
+          "quando_entra": "Quando a decisão estratégica exige síntese interna/externa.",
+          "gatilhos_condicionais": [
+            "swot"
+          ]
+        },
+        {
+          "nome": "Scorecard de beachhead",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de escolher segmento foco.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "6_pacote_v1",
+      "titulo": "6. Decisão do pacote v1",
+      "itens": [
+        {
+          "nome": "Lista curta de assets v1",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Após diagnóstico e benchmark, dentro da etapa de construção de assets.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Lista de assets fora do ciclo",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Para não transformar tudo em card/entrega.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Matriz de dependências do cliente",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de tracking e setup.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Critérios de N2 por componente",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes da auditoria.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "7_estrategia_oferta",
+      "titulo": "7. Estratégia, oferta e comunicação",
+      "itens": [
+        {
+          "nome": "DEOC - Dossiê Estratégico de Oferta e Comunicação",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de mídia, LP, criativo e vendas.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "UCM legado",
+          "classificacao": "Legado",
+          "quando_entra": "Referência incorporada ao DEOC.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "DCC legado",
+          "classificacao": "Legado",
+          "quando_entra": "Referência incorporada ao DEOC.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Claims permitidos e proibidos",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Dentro do DEOC.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Voz do cliente",
+          "classificacao": "Condicional",
+          "quando_entra": "Obrigatório quando houver transcrições, reviews ou CRM suficientes.",
+          "gatilhos_condicionais": [
+            "voz_cliente_disponivel"
+          ]
+        },
+        {
+          "nome": "Matriz de problemas, impactos e provas",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Dentro do DEOC.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Tradução para mídia, LP, criativo e vendas",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Última seção do DEOC.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "8_midia_criativo",
+      "titulo": "8. Mídia, criativo e conversão",
+      "itens": [
+        {
+          "nome": "Plano de mídia",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes da campanha.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Estrutura planejada de campanha",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do setup de campanhas.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Planilha de testes growth",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes ou no início da execução.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Briefing criativo video-first",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de produzir criativos.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Roteiros criativos",
+          "classificacao": "Condicional",
+          "quando_entra": "Obrigatório quando houver vídeo, áudio ou carrossel roteirizado.",
+          "gatilhos_condicionais": [
+            "video_audio_roteiro"
+          ]
+        },
+        {
+          "nome": "Biblioteca de referências e exemplos",
+          "classificacao": "Suporte",
+          "quando_entra": "Antes da produção criativa.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "LP / ponto de conversão",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de rodar mídia.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Especificação de formulário/WhatsApp/agenda",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do tracking.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Checklist de QA de asset",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de publicar.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "9_tracking_crm",
+      "titulo": "9. Tracking, CRM e dados",
+      "itens": [
+        {
+          "nome": "Taxonomia UTM, IDs e subparâmetros",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do setup de campanhas.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Nomenclatura de campanha/conjunto/criativo",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do setup de campanhas.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Creative ID",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de publicar criativos.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Contrato de dados MKT -> CRM",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de coletar leads.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Backup de UTMs",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de coletar leads.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Mapa de campos CRM",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do handoff comercial.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "SLA marketing-vendas",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do go-live quando há vendas envolvidas.",
+          "gatilhos_condicionais": [
+            "vendas_envolvida"
+          ]
+        },
+        {
+          "nome": "Rotina manual de match",
+          "classificacao": "Condicional",
+          "quando_entra": "Quando integração automática ainda não existe.",
+          "gatilhos_condicionais": [
+            "sem_integracao_auto"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10_setup_campanhas",
+      "titulo": "10. Setup de campanhas",
+      "itens": [
+        {
+          "nome": "Setup de Campanhas Meta Ads",
+          "classificacao": "Obrigatório quando Meta entra no plano",
+          "quando_entra": "Antes do go-live.",
+          "gatilhos_condicionais": [
+            "meta_plano"
+          ]
+        },
+        {
+          "nome": "Setup de Campanhas Google Ads",
+          "classificacao": "Obrigatório quando Google entra no plano",
+          "quando_entra": "Antes do go-live.",
+          "gatilhos_condicionais": [
+            "google_plano"
+          ]
+        },
+        {
+          "nome": "Checklist de conta e permissões",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de criar/ativar campanha.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Pixel/CAPI Meta validado",
+          "classificacao": "Obrigatório para Meta",
+          "quando_entra": "Antes de coletar leads.",
+          "gatilhos_condicionais": [
+            "meta_plano"
+          ]
+        },
+        {
+          "nome": "GTM/tag/conversões Google validadas",
+          "classificacao": "Obrigatório para Google",
+          "quando_entra": "Antes de coletar leads.",
+          "gatilhos_condicionais": [
+            "google_plano"
+          ]
+        },
+        {
+          "nome": "Públicos frios, mornos e quentes Meta",
+          "classificacao": "Obrigatório para Meta",
+          "quando_entra": "Antes da campanha ir ao ar.",
+          "gatilhos_condicionais": [
+            "meta_plano"
+          ]
+        },
+        {
+          "nome": "Listas, Customer Match e audience signals Google",
+          "classificacao": "Condicional",
+          "quando_entra": "Quando houver base e maturidade.",
+          "gatilhos_condicionais": [
+            "google_plano",
+            "base_qualidade"
+          ]
+        },
+        {
+          "nome": "Negativas iniciais Google",
+          "classificacao": "Obrigatório para Search",
+          "quando_entra": "Antes do go-live.",
+          "gatilhos_condicionais": [
+            "google_search"
+          ]
+        },
+        {
+          "nome": "Campanhas em rascunho com IDs e UTMs",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de ativar verba.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Lead teste com planilha backup",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes do go-live.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "11_execucao_evidencia",
+      "titulo": "11. Execução e evidência",
+      "itens": [
+        {
+          "nome": "Checklist de go-live",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes da campanha ir ao ar.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Campanhas no ar com links/prints",
+          "classificacao": "Evidência",
+          "quando_entra": "Após publicação.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Criativos publicados com IDs",
+          "classificacao": "Evidência",
+          "quando_entra": "Após publicação.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Teste de tracking",
+          "classificacao": "Evidência",
+          "quando_entra": "Antes/depois do go-live.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Pacote de evidências N2",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes da auditoria.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Relatório v1 / dashboard",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Após coleta inicial.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Feedback de qualidade do lead",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Durante execução.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    },
+    {
+      "id": "12_auditoria_growth",
+      "titulo": "12. Auditoria, growth e aprendizado",
+      "itens": [
+        {
+          "nome": "Checklist de resultados e qualidade",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Após rodar campanhas.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Registro de gaps corretivos",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Após auditoria.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Debrief de performance",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Em cadência N3.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Decisão de escalar, ajustar ou matar",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Após leitura de dados.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Backlog de hipóteses",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Para N3.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Biblioteca de aprendizados",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Após ciclos relevantes.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Anti-padrões",
+          "classificacao": "Suporte",
+          "quando_entra": "Quando falhas se repetem.",
+          "gatilhos_condicionais": []
+        },
+        {
+          "nome": "Skill candidata",
+          "classificacao": "Condicional",
+          "quando_entra": "Quando um asset estabiliza e pode ser operacionalizado por agente.",
+          "gatilhos_condicionais": [
+            "asset_estavel"
+          ]
+        },
+        {
+          "nome": "Rebrief do próximo ciclo",
+          "classificacao": "Obrigatório",
+          "quando_entra": "Antes de nova rodada de execução.",
+          "gatilhos_condicionais": []
+        }
+      ]
+    }
+  ]
+}

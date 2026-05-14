@@ -1,0 +1,58 @@
+{
+  "cliente": "Cliente exemplo",
+  "data_analise": "2026-04-30",
+  "responsavel": "Coordenador ops",
+  "referencia_roi": "https://docs.example.com/roi",
+  "eixos": [
+    {
+      "eixo": "Escopo",
+      "call_vendas": "Pacote Growth: planning + mídia + tracking backup + 1 ciclo testes.",
+      "growth_class": "Cliente mencionou apenas plano de mídia e criativos; tracking não citado.",
+      "risco": "medio",
+      "evidencia": "Transcrição GC minuto 12; call vendas minuto 45.",
+      "acao_corretiva": "Email de realinhamento de escopo e atualização do handoff.",
+      "dono": "Account",
+      "prazo": "2026-05-02"
+    },
+    {
+      "eixo": "Resultado esperado",
+      "call_vendas": "Cenário provável: leads qualificados com CPL referência.",
+      "growth_class": "Cliente espera volume máximo do cenário otimista.",
+      "risco": "alto",
+      "evidencia": "ROI anexo seção 3; GC expectativa verbal explícita.",
+      "acao_corretiva": "Call curta de expectativa com referência ao ROI assinado.",
+      "dono": "Coordenador",
+      "prazo": "2026-05-03"
+    },
+    {
+      "eixo": "Prazo",
+      "call_vendas": "Primeiros sinais em 6–8 semanas.",
+      "growth_class": "Cliente espera resultados visíveis em 3 semanas.",
+      "risco": "medio",
+      "evidencia": "",
+      "acao_corretiva": "Cronograma explícito anexo ao handoff.",
+      "dono": "PM",
+      "prazo": "2026-05-05"
+    },
+    {
+      "eixo": "Responsabilidades",
+      "call_vendas": "Cliente envia acessos CRM e marca aprovações jurídicas.",
+      "growth_class": "Cliente acha que time faz tudo sem dependências.",
+      "risco": "medio",
+      "evidencia": "",
+      "acao_corretiva": "Checklist de dependências assinado.",
+      "dono": "Account",
+      "prazo": "2026-05-04"
+    },
+    {
+      "eixo": "Próximo passo",
+      "call_vendas": "Kickoff planning na semana seguinte.",
+      "growth_class": "Cliente espera reunião de status dia seguinte ao GC.",
+      "risco": "baixo",
+      "evidencia": "Datas alinhadas após ajuste de agenda.",
+      "acao_corretiva": "",
+      "dono": "",
+      "prazo": ""
+    }
+  ]
+}

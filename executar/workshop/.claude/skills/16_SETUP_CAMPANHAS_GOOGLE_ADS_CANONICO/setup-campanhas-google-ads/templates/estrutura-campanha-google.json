@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "cliente": "[Nome]",
+    "versao_doc": "0.1",
+    "data": "YYYY-MM-DD",
+    "responsavel_media": "",
+    "google_ads_customer_id": "",
+    "link_planilha_growth_backup": "",
+    "link_contrato_dados": "",
+    "ga4_property": "",
+    "gtm_container": ""
+  },
+  "escopo": {
+    "search": true,
+    "pmax": false,
+    "display": false
+  },
+  "conta": {
+    "checklist_conta": {
+      "conta_correta": false,
+      "faturamento_ativo": false,
+      "permissoes_time": false,
+      "auto_tagging_avaliado": false,
+      "ga4_vinculado": false,
+      "gtm_publicado": false,
+      "tag_google_instalada": false,
+      "conversoes_principais_config": false,
+      "enhanced_conversions": false,
+      "import_offline_planejada": false,
+      "listas_remarketing": false,
+      "customer_match_preparado": false,
+      "utms_crm_backup": false
+    }
+  },
+  "conversoes": {
+    "otimizacao_principal": "",
+    "principais_vs_secundarias": "",
+    "justificativa_profundidade_volume": ""
+  },
+  "gtm": {
+    "gclid_ok": false,
+    "gbraid_wbraid_ok": false,
+    "utms_ok": false,
+    "v4_client_id_ok": false,
+    "v4_campaign_id_ok": false,
+    "v4_adgroup_id_ok": false,
+    "v4_creative_id_ok": false,
+    "v4_test_id_ok": false,
+    "hidden_form_ok": false,
+    "backup_ok": false,
+    "crm_ok": false,
+    "submissao_lead_testada": false
+  },
+  "negativas_resumo": [],
+  "orcamento": {
+    "estrategia_lance": "",
+    "tcpa_troas_nota": "",
+    "regra_mudanca_budget": ""
+  },
+  "estrutura_plano": "minimo_leadgen",
+  "campanhas": [
+    {
+      "campaign_id": "",
+      "nome_taxonomia": "",
+      "canal": "search",
+      "objetivo_google": "",
+      "orcamento_modo": "",
+      "valor_ou_logica_orcamento": "",
+      "hipotese": "",
+      "grupos": [
+        {
+          "adgroup_id": "",
+          "nome_taxonomia": "",
+          "intencao_temperatura_tipo": "",
+          "detalhe_keywords_signals_targeting": "",
+          "criativos": [
+            {
+              "creative_id": "",
+              "formato": "",
+              "hipotese_leitura": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "matriz_testes": {
+    "o_que_varia": "",
+    "o_que_constante": ""
+  },
+  "pre_go_live": {
+    "conversoes_testadas": false,
+    "enhanced_conv_avaliadas": false,
+    "utms_ids_aplicados": false,
+    "lead_teste_backup": false,
+    "crm_conciliado": false,
+    "search_negativas_iniciais": false,
+    "pmax_assets_suficientes": false,
+    "audience_signals_config": false,
+    "search_clusters_rsa_ok": false,
+    "pmax_assetgroups_url_brand_ok": false,
+    "display_placements_freq_safety_ok": false,
+    "urls_finais_ok": false,
+    "orcamento_lances_datas_ok": false,
+    "hipotese_planilha_ok": false,
+    "changelog_preparado": false
+  },
+  "n2_gaps": ""
+}

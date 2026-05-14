@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "projeto": "[Nome]",
+    "periodo_analise": "",
+    "data_relatorio": "YYYY-MM-DD",
+    "responsavel": "",
+    "link_banco_tipos": "",
+    "link_pack_origem": "",
+    "fontes_dados": "",
+    "notas_amostra": ""
+  },
+  "analise": [
+    {
+      "tipo_id": "",
+      "nome_tipo_ref": "",
+      "campanhas_creative_refs": "",
+      "metrica_primaria": "",
+      "valor_observado": "",
+      "baseline_ou_esperado": "",
+      "volume_notas": "",
+      "veredito": "",
+      "evidencia_resumida": "",
+      "mudanca_proposta": "",
+      "nova_hipotese": "",
+      "novas_variacoes_sugeridas": [],
+      "prioridade_proximo_pack": ""
+    }
+  ],
+  "change_log_sugerido": []
+}

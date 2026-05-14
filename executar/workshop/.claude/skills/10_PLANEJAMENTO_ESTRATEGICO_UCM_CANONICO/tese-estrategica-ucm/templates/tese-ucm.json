@@ -1,0 +1,59 @@
+{
+  "cliente": "HS Prevent",
+  "produto": "Onboarding antifraude",
+  "objetivo": "Gerar conversas com decisores de risco e produto",
+  "canal_conversao": "LP com formulario",
+  "batalha": "Combater a falsa economia do onboarding manual que deixa fraude e abandono corroerem margem.",
+  "problemas": [
+    {
+      "nome": "Fraude invisivel no cadastro",
+      "impacto": "Perda financeira e retrabalho operacional",
+      "voz_cliente": "A fraude aparece quando o cliente bom ja desistiu",
+      "funil": "MOFU"
+    }
+  ],
+  "personas": [
+    {
+      "nome": "Diretor de risco",
+      "papel": "decisor economico",
+      "dores": ["Fraude", "falso positivo", "pressao por margem"],
+      "objecoes": ["Integracao complexa", "risco de bloquear cliente bom"],
+      "provas": ["Case", "reducao de falso positivo", "tempo de implantacao"],
+      "cta": "Diagnosticar gargalo de onboarding"
+    }
+  ],
+  "champion_tipo": {
+    "nome_funcional": "Diretor de Risco que perdeu margem 2 trimestres seguidos",
+    "dor_especifica": "Falso positivo subiu junto com fraude — processo manual chegou no limite e ele responde pessoalmente pela margem.",
+    "credito_interno": "Reduzir perda em 30% no semestre desbloqueia bônus e visibilidade no comitê executivo.",
+    "risco_interno": "Se Q4 fechar pior que Q3, perde autonomia orçamentária e o tema migra pra TI.",
+    "vocabulario_proprio": ["perda invisível", "margem", "falso positivo", "aprovação segura", "comitê de risco"],
+    "comportamento_esperado": "Skepticism saudável, faz perguntas provocativas sobre falso positivo, quer mobilizar produto e jurídico, busca crédito interno pelo projeto."
+  },
+  "jtbd_core": {
+    "statement": "Minimizar tempo entre detecção de fraude e bloqueio do CPF antes que prejuízo se materialize.",
+    "verbo": "Minimizar",
+    "objeto": "tempo entre detecção de fraude e bloqueio do CPF",
+    "contexto": "antes que prejuízo se materialize",
+    "solution_free": true
+  },
+  "forces_of_progress": {
+    "struggling_moment": "Diretor de Risco abriu report de Q3 numa segunda-feira e viu falso positivo +18% e fraude também subindo — percebeu que processo manual estourou.",
+    "push": "Margem caindo dois trimestres seguidos, comitê de risco cobrando explicação, conselho aumentou pressão.",
+    "pull": "Aprovar mais clientes legítimos sem aumentar perda, recuperar previsibilidade de fluxo, virar referência interna.",
+    "anxiety": "Bloquear cliente bom durante migração, integração técnica complexa, depender de fornecedor crítico.",
+    "habit": "Equipe acostumada com regras manuais, jurídico já validou processo atual, mudar exige reaprovar comitê."
+  },
+  "alternativas_percebidas": [],
+  "proposta_valor": "Para diretor de risco, que sofre com fraude e falso positivo no onboarding, a solucao entrega aprovacao mais segura por meio de score e verificacao inteligente, sem travar cliente bom, comprovado por cases e reducao de perda.",
+  "inimigo": "Onboarding manual tratado como economia, mas que escala fraude e abandono.",
+  "narrativa": {
+    "contexto": "Aquisição digital aumentou o volume de cadastros.",
+    "tensao": "O processo manual não distingue risco real de cliente legítimo rápido o suficiente.",
+    "inimigo": "A falsa segurança do processo antigo.",
+    "nova_crenca": "Onboarding precisa equilibrar conversão e risco em tempo real.",
+    "mecanismo": "Score antifraude e validação inteligente.",
+    "prova": "Cases e métricas de redução de falso positivo.",
+    "convite": "Conversar com especialista para mapear perdas invisíveis."
+  }
+}

@@ -1,0 +1,241 @@
+# Base de Dados DPOnet — Relatório por Canal de Aquisição
+
+**Período solicitado:** $ARGUMENTS
+
+---
+
+## ANTES DE EXECUTAR
+
+**Solicite ao usuário a API key do GS Engage:**
+
+> "Para prosseguir, me passe a API key do GS Engage."
+
+Aguarde a resposta com a chave antes de fazer qualquer chamada à API.
+Use a chave fornecida como `{API_KEY}` em todos os endpoints abaixo.
+**Nunca use chave hardcoded.**
+
+---
+
+## PASSO 1 — GS Engage: Leads, SQLs e MQLs
+
+**Base URL:** `https://api.gsengage.com/api/v1`
+**Auth:** query param `?apiKey={API_KEY}`
+
+Execute o script Python abaixo via Bash após receber a API key:
+
+```python
+import urllib.request, json, time
+from collections import Counter
+
+API_KEY = input("Cole a API key: ").strip()  # substituir pelo valor recebido do usuário
+BASE = "https://api.gsengage.com/api/v1"
+
+def get_json(url, retries=3):
+    for i in range(retries):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url)) as r:
+                return json.loads(r.read())
+        except Exception as e:
+            if '429' in str(e) and i < retries-1:
+                time.sleep(3)
+            else:
+                raise
+
+def lead_email(l):
+    e = l.get('emails', [])
+    return (e[0].get('value','') if e else '').lower().strip()
+
+# --- Parsear período ---
+import re
+PERIODO = "$ARGUMENTS".strip().lower()
+MESES = {"janeiro":"01","fevereiro":"02","março":"03","abril":"04","maio":"05",
+         "junho":"06","julho":"07","agosto":"08","setembro":"09","outubro":"10",
+         "novembro":"11","dezembro":"12"}
+
+ano, mes = None, None
+for nome, num in MESES.items():
+    if nome in PERIODO:
+        mes = num
+        break
+m = re.search(r'20\d\d', PERIODO)
+if m: ano = m.group()
+if not ano or not mes:
+    m2 = re.match(r'(\d{4})-(\d{2})', PERIODO)
+    if m2: ano, mes = m2.group(1), m2.group(2)
+
+if not ano or not mes:
+    print("ERRO: informe o período (ex: 'abril 2026' ou '2026-04')")
+    exit(1)
+
+PREFIX = f"{ano}-{mes}"
+print(f"\nPeríodo: {PREFIX}")
+
+# --- Rotinas ACTIVE_INBOUND excl. DPOday e UP ---
+EXCLUIR = ['dpoday', 'universidade da privacidade']
+routines = get_json(f"{BASE}/routines?apiKey={API_KEY}&limit=100").get('data', [])
+target = [r for r in routines
+          if r.get('acquisitionType') == 'ACTIVE_INBOUND'
+          and not any(kw in r.get('name','').lower() for kw in EXCLUIR)]
+ids_param = ','.join(r['id'] for r in target)
+print(f"Cadências INBOUND (excl. DPOday/UP): {len(target)}")
+
+# --- Leads do período ---
+all_leads = []
+for page in range(1, 51):
+    raw = get_json(f"{BASE}/leads?apiKey={API_KEY}&routineIds={ids_param}&orderBy=createdAt&limit=100&page={page}")
+    leads = raw.get('data', [])
+    if not leads: break
+    all_leads.extend([l for l in leads if (l.get('createdAt') or '').startswith(PREFIX)])
+    meta = raw.get('meta', {})
+    if meta.get('page', page) >= meta.get('totalPages', page): break
+    dates = [l.get('createdAt','') for l in leads if l.get('createdAt')]
+    if dates and max(dates) > f"{PREFIX}-31T": break
+    time.sleep(0.2)
+
+gs_by_email = {lead_email(l): l for l in all_leads if lead_email(l)}
+gs_by_id    = {l['id']: l for l in all_leads}
+print(f"Leads inbound no período: {len(all_leads)}")
+
+# --- SQLs e MQLs ---
+MOTIVOS = ["já é cliente","sendo trabalhado","já entrou outra vez",
+           "não é o momento certo","cliente sendo abordado por parceiro"]
+
+def get_prosps(status):
+    results, page = [], 1
+    while True:
+        raw = get_json(f"{BASE}/prospections?apiKey={API_KEY}&status={status}&routineIds={ids_param}&orderBy=endDate&limit=100&page={page}")
+        prosps = raw.get('data', [])
+        if not prosps: break
+        results.extend([p for p in prosps if (p.get('endDate') or '').startswith(PREFIX)])
+        meta = raw.get('meta', {})
+        if meta.get('page', page) >= meta.get('totalPages', page): break
+        dates = [p.get('endDate','') for p in prosps if p.get('endDate')]
+        if dates and max(dates) > f"{PREFIX}-31": break
+        page += 1
+        time.sleep(0.2)
+        if page > 50: break
+    return results
+
+won  = get_prosps('WON')
+lost = get_prosps('LOST')
+
+sql_ids      = {p.get('lead',{}).get('id') for p in won}
+mql_lost_ids = {p.get('lead',{}).get('id') for p in lost
+                if any(kw in (p.get('lostReason') or '').lower() for kw in MOTIVOS)}
+all_mql_ids  = sql_ids | mql_lost_ids
+
+print(f"SQLs: {len(sql_ids)} | LOST qualificantes: {len(mql_lost_ids)} | MQLs: {len(all_mql_ids)}")
+
+# Buscar leads de SQLs/MQLs criados fora do período
+extra_ids = [lid for lid in all_mql_ids if lid not in gs_by_id]
+for lid in extra_ids:
+    try:
+        data = get_json(f"{BASE}/leads/{lid}?apiKey={API_KEY}")
+        l = data.get('data', data)
+        if isinstance(l, dict) and lead_email(l):
+            gs_by_id[lid] = l
+            gs_by_email[lead_email(l)] = l
+    except: pass
+    time.sleep(0.2)
+
+sql_emails = {lead_email(gs_by_id[lid]) for lid in sql_ids      if lid in gs_by_id}
+mql_emails = {lead_email(gs_by_id[lid]) for lid in all_mql_ids  if lid in gs_by_id}
+
+# Salvar para cruzamento
+import json as _json
+with open('/tmp/dponet_leads.json', 'w') as f:
+    _json.dump({
+        'periodo': PREFIX,
+        'leads': all_leads,
+        'sql_emails': list(sql_emails),
+        'mql_emails': list(mql_emails),
+        'all_emails': list(gs_by_email.keys())
+    }, f, ensure_ascii=False, indent=2)
+
+print(f"\nDados salvos em /tmp/dponet_leads.json")
+print(f"\n{'='*45}")
+print(f"SUMÁRIO GS ENGAGE — {PREFIX}")
+print(f"{'='*45}")
+print(f"  Leads inbound: {len(all_leads)}")
+print(f"  SQLs:          {len(sql_emails)}")
+print(f"  MQLs:          {len(mql_emails)}")
+print(f"{'='*45}")
+```
+
+---
+
+## PASSO 2 — Cruzamento UTM (se CSV disponível)
+
+Pergunte ao usuário se possui um CSV do RD Station ou Sheets Backup para cruzar UTMs.
+Se sim, solicite o caminho do arquivo e execute o cruzamento:
+
+```python
+import csv, json
+from collections import Counter
+
+with open('/tmp/dponet_leads.json') as f:
+    data = json.load(f)
+
+all_emails  = set(data['all_emails'])
+sql_emails  = set(data['sql_emails'])
+mql_emails  = set(data['mql_emails'])
+
+CSV_PATH = "/caminho/para/o/arquivo.csv"  # substituir pelo caminho real
+UTM = ['utm_source','utm_campaign','utm_medium','utm_content','utm_adset',
+       'utm source','utm campaign','utm medium']
+
+best = {}
+with open(CSV_PATH, encoding='utf-8') as f:
+    for row in csv.DictReader(f):
+        e = (row.get('email') or row.get('Email') or '').lower().strip()
+        if e not in all_emails: continue
+        score = sum(1 for c in UTM if row.get(c,'').strip())
+        if score > best.get(e, {}).get('_score', -1):
+            best[e] = {c: row.get(c,'').strip() for c in UTM if row.get(c,'').strip()}
+            best[e]['_score'] = score
+
+META_SRC   = {'fb','ig','facebook','facebook_mobile_feed','facebook_stories',
+              'instagram','instagram_feed','instagram_stories','meta'}
+GOOGLE_SRC = {'google','googleads','google_ads','sitelink'}
+
+def canal(e):
+    u = best.get(e, {})
+    src  = u.get('utm_source', u.get('utm source','')).lower().strip()
+    camp = u.get('utm_campaign', u.get('utm campaign','')).lower().strip()
+    med  = u.get('utm_medium', u.get('utm medium','')).lower().strip()
+    if src in META_SRC:   return 'Meta Ads'
+    if src in GOOGLE_SRC: return 'Google Ads'
+    if '[v4]' in camp or 'form-nativo' in camp or 'criativos' in camp: return 'Meta Ads'
+    if med == 'cpc' and camp: return 'Google Ads'
+    if src: return f'Outro ({src})'
+    return 'Sem UTM / Orgânico'
+
+L = Counter(canal(e) for e in all_emails)
+S = Counter(canal(e) for e in sql_emails)
+M = Counter(canal(e) for e in mql_emails)
+all_c = sorted(set(list(L)+list(S)+list(M)))
+
+print(f"\n{'='*60}")
+print(f"RELATÓRIO CANAIS DE AQUISIÇÃO — {data['periodo']}")
+print(f"{'='*60}")
+print(f"{'Canal':<30} {'Leads':>7} {'MQLs':>7} {'SQLs':>7}")
+print(f"{'-'*54}")
+for c in sorted(all_c):
+    print(f"{c:<30} {L.get(c,0):>7} {M.get(c,0):>7} {S.get(c,0):>7}")
+print(f"{'-'*54}")
+print(f"{'TOTAL':<30} {sum(L.values()):>7} {sum(M.values()):>7} {sum(S.values()):>7}")
+print(f"{'='*60}")
+```
+
+---
+
+## Regras de negócio (referência rápida)
+
+- **INBOUND:** `acquisitionType = ACTIVE_INBOUND` — excluir DPOday e UP
+- **SQL:** `status=WON`, `endDate` no período
+- **MQL:** SQL + LOST com: "Já é cliente/Sendo trabalhado", "Já entrou outra vez e tem contato com Executivo", "Não é o momento certo", "Cliente sendo abordado por parceiro"
+- **Meta:** utm_source ∈ {fb, ig, instagram_feed...} OU campaign com `[V4]`
+- **Google:** utm_source ∈ {google, googleads, sitelink} OU medium=cpc sem `[V4]`
+- **Email do lead:** `lead.emails[0].value` (não `lead.email`)
+- **Paginação:** chave `data` (não `leads`) na resposta
+- **Rate limit:** 0.2s entre páginas, retry com 3s em 429

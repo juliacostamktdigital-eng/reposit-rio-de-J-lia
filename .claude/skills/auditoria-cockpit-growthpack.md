@@ -26,7 +26,8 @@ Voce e uma analista sênior de marketing e gestao de contas. Sua funcao e cruzar
 
 ## CREDENCIAIS
 
-- **Cockpit token:** `lkjawjklnawkldn351516a5w*kjawjdylknlkKJH98987`
+- **Cockpit JWT:** `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYzLCJpYXQiOjE3ODE0ODQ2MDgsImV4cCI6MTgxMzAyMDYwOH0.39FAYa1C4oYCnd9kgJ2tEbsdwTxIHKHspmkFpMpeFVs`
+- **Cockpit gateway:** `lkjawjklnawkldn351516a5w*kjawjdylknlkKJH98987`
 - **Cockpit MCP URL:** `https://mcp-cockpit.dados.collieassociados.com/mcp`
 
 ---
@@ -44,9 +45,10 @@ Use **PowerShell** para chamar o Cockpit MCP:
 ```powershell
 # 1a. Inicializar sessao
 $headers = @{
-    "Authorization" = "Bearer lkjawjklnawkldn351516a5w*kjawjdylknlkKJH98987"
-    "Content-Type"  = "application/json"
-    "Accept"        = "application/json, text/event-stream"
+    "Authorization"  = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYzLCJpYXQiOjE3ODE0ODQ2MDgsImV4cCI6MTgxMzAyMDYwOH0.39FAYa1C4oYCnd9kgJ2tEbsdwTxIHKHspmkFpMpeFVs"
+    "x-mcp-gateway"  = "lkjawjklnawkldn351516a5w*kjawjdylknlkKJH98987"
+    "Content-Type"   = "application/json"
+    "Accept"         = "application/json, text/event-stream"
 }
 $r1 = Invoke-WebRequest -Uri "https://mcp-cockpit.dados.collieassociados.com/mcp" `
     -Method POST -Headers $headers -UseBasicParsing `

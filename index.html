@@ -1,0 +1,730 @@
+<title>Sprint + ROPRE · Minha carteira</title>
+<style>
+  :root {
+    --bg: #f5f4ef; --bg-raised: #ffffff; --ink: #20262a; --ink-soft: #565f66; --ink-faint: #8b9298;
+    --line: #dcdad2; --accent: #1c7480; --accent-soft: #e3eeef; --accent-ink: #0f4c55;
+    --danger: #b23b28; --danger-soft: #f6e4df; --warning: #93650f; --warning-soft: #f7ecd8;
+    --good: #2f7a4f; --good-soft: #e2efe5; --neutral: #565f66; --neutral-soft: #e7e6e0;
+    --shadow: 0 1px 2px rgba(32,38,42,0.06), 0 8px 24px rgba(32,38,42,0.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181a; --bg-raised: #1c2124; --ink: #e9e7e0; --ink-soft: #a8afb3; --ink-faint: #737b80;
+      --line: #2c3234; --accent: #4fb3bf; --accent-soft: #1b3437; --accent-ink: #9fe0e8;
+      --danger: #e2735c; --danger-soft: #3a2420; --warning: #d8ac5c; --warning-soft: #3a2f18;
+      --good: #6fbf8e; --good-soft: #1f3327; --neutral: #a8afb3; --neutral-soft: #262b2d;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181a; --bg-raised: #1c2124; --ink: #e9e7e0; --ink-soft: #a8afb3; --ink-faint: #737b80;
+    --line: #2c3234; --accent: #4fb3bf; --accent-soft: #1b3437; --accent-ink: #9fe0e8;
+    --danger: #e2735c; --danger-soft: #3a2420; --warning: #d8ac5c; --warning-soft: #3a2f18;
+    --good: #6fbf8e; --good-soft: #1f3327; --neutral: #a8afb3; --neutral-soft: #262b2d;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+  :root[data-theme="light"] {
+    --bg: #f5f4ef; --bg-raised: #ffffff; --ink: #20262a; --ink-soft: #565f66; --ink-faint: #8b9298;
+    --line: #dcdad2; --accent: #1c7480; --accent-soft: #e3eeef; --accent-ink: #0f4c55;
+    --danger: #b23b28; --danger-soft: #f6e4df; --warning: #93650f; --warning-soft: #f7ecd8;
+    --good: #2f7a4f; --good-soft: #e2efe5; --neutral: #565f66; --neutral-soft: #e7e6e0;
+    --shadow: 0 1px 2px rgba(32,38,42,0.06), 0 8px 24px rgba(32,38,42,0.05);
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; line-height: 1.5; }
+  .num { font-family: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 40px 24px 90px; }
+
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 22px; flex-wrap: wrap; }
+  .eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 6px; }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 8px; text-wrap: balance; }
+  .meta-line { color: var(--ink-soft); font-size: 14px; }
+  .meta-line .num { color: var(--ink); }
+
+  /* client tab switcher */
+  .client-tabs { display: flex; gap: 8px; margin-bottom: 26px; flex-wrap: wrap; }
+  .client-tab {
+    font: inherit; font-size: 14px; font-weight: 700; color: var(--ink-soft); background: var(--bg-raised);
+    border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; cursor: pointer;
+    display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow);
+  }
+  .client-tab:hover { border-color: var(--accent); }
+  .client-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .client-tab[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-ink); }
+  .client-tab .flagdot { width: 8px; height: 8px; border-radius: 50%; }
+  .client-tab .flagdot.danger { background: var(--danger); }
+  .client-tab .flagdot.warn { background: var(--warning); }
+  .client-tab .flagdot.good { background: var(--good); }
+  .client-tab .sub { font-weight: 500; font-size: 12px; color: var(--ink-faint); }
+
+  .client-panel { display: none; }
+  .client-panel.active { display: block; }
+
+  .flag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 100px; font-size: 13px; font-weight: 700; letter-spacing: 0.01em; }
+  .flag.danger { background: var(--danger-soft); color: var(--danger); }
+  .flag.warning { background: var(--warning-soft); color: var(--warning); }
+  .flag.good { background: var(--good-soft); color: var(--good); }
+  .flag-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .top-right { text-align: right; }
+  .flag-note { font-size: 12px; color: var(--ink-faint); margin-top: 6px; max-width: 260px; }
+
+  .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 32px; }
+  .kpis.kpis-4 { grid-template-columns: repeat(4, 1fr); }
+  .kpi { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 12px; box-shadow: var(--shadow); }
+  .kpi-label { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .kpi-value { font-size: 22px; font-weight: 700; }
+  .kpi-sub { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+  .pill { display: inline-block; padding: 1px 7px; border-radius: 100px; font-size: 11px; font-weight: 700; margin-top: 6px; }
+  .pill.good { background: var(--good-soft); color: var(--good); }
+  .pill.warning { background: var(--warning-soft); color: var(--warning); }
+  .pill.danger { background: var(--danger-soft); color: var(--danger); }
+  .pill.neutral { background: var(--neutral-soft); color: var(--neutral); }
+
+  section { margin-bottom: 36px; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; gap: 12px; flex-wrap: wrap; }
+  h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-ink); margin: 0; }
+  .sec-sub { font-size: 13px; color: var(--ink-faint); }
+
+  .funnel { display: flex; flex-direction: column; gap: 8px; }
+  .fstage { display: grid; grid-template-columns: 108px 1fr 168px; align-items: center; gap: 14px; background: var(--bg-raised); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; }
+  .fstage-name { font-size: 13px; font-weight: 600; }
+  .fbar-track { position: relative; height: 8px; background: var(--accent-soft); border-radius: 100px; overflow: hidden; }
+  .fbar-fill { position: absolute; inset: 0; border-radius: 100px; background: var(--accent); }
+  .fbar-fill.warning { background: var(--warning); }
+  .fbar-fill.danger { background: var(--danger); }
+  .fstage-nums { text-align: right; font-size: 13px; }
+  .fstage-nums .pct { font-weight: 700; }
+
+  .budget-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); font-weight: 600; padding: 0 10px 8px; }
+  th.r, td.r { text-align: right; }
+  td { padding: 9px 10px; border-top: 1px solid var(--line); }
+  tr.total td { font-weight: 700; border-top: 1px solid var(--ink-faint); }
+  .card { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); overflow-x: auto; }
+  .pacing-rows { display: flex; flex-direction: column; gap: 12px; }
+  .pacing-row { display: grid; grid-template-columns: 70px 1fr 56px; align-items: center; gap: 10px; font-size: 13px; }
+
+  .maturity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .mchip { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .mchip-label { font-size: 11.5px; color: var(--ink-soft); margin-bottom: 4px; }
+  .mchip-value { font-size: 13px; font-weight: 700; color: var(--warning); }
+
+  .day-group { margin-bottom: 14px; }
+  .day-label { font-size: 12px; font-weight: 700; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .task { display: grid; grid-template-columns: 20px 1fr auto; gap: 10px; align-items: start; padding: 8px 0; border-top: 1px solid var(--line); font-size: 13.5px; }
+  .day-group .task:first-of-type { border-top: none; }
+  .task-status { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; }
+  .task-status.overdue { background: var(--danger); }
+  .task-status.today { background: var(--warning); }
+  .task-status.ok { background: var(--good); }
+  .task-title { line-height: 1.4; }
+  .task-owner { font-size: 12px; color: var(--ink-faint); white-space: nowrap; }
+
+  .diag p { font-size: 14.5px; color: var(--ink); margin: 0 0 12px; max-width: 68ch; }
+  .diag strong { color: var(--accent-ink); }
+  .chain { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 14px 0; font-size: 13px; }
+  .chain .node { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; font-weight: 600; }
+  .chain .node.danger { border-color: var(--danger); color: var(--danger); }
+  .chain .node.warning { border-color: var(--warning); color: var(--warning); }
+  .chain .arrow { color: var(--ink-faint); }
+
+  .action-list { display: flex; flex-direction: column; gap: 10px; }
+  .action { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; box-shadow: var(--shadow); }
+  .action-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+  .action-title { font-weight: 700; font-size: 14px; }
+  .action-owner { font-size: 12px; color: var(--accent-ink); background: var(--accent-soft); padding: 2px 8px; border-radius: 100px; white-space: nowrap; height: fit-content; }
+  .action-why { font-size: 13px; color: var(--ink-soft); }
+  .action-problem { font-size: 12px; font-weight: 700; color: var(--danger); margin-bottom: 6px; }
+  .action-flag { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 100px; margin-bottom: 8px; letter-spacing: 0.01em; }
+  .action-flag.new { background: var(--accent-soft); color: var(--accent-ink); }
+  .action-flag.existing { background: var(--neutral-soft); color: var(--ink-soft); }
+  .action-flag.watch { background: transparent; border: 1px dashed var(--line); color: var(--ink-faint); }
+  .action-goal { font-size: 12.5px; font-weight: 700; color: var(--good); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+
+  .goal-banner { display: flex; align-items: center; gap: 12px; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 12px 16px; margin-bottom: 18px; font-size: 13.5px; color: var(--accent-ink); }
+  .goal-banner strong { font-weight: 700; }
+
+  .frente { margin-bottom: 22px; }
+  .frente:last-child { margin-bottom: 0; }
+  .frente-label { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); margin-bottom: 10px; }
+  .sev { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .sev.crit { background: var(--danger); }
+  .sev.warn { background: var(--warning); }
+  .sev.watch { background: var(--ink-faint); }
+
+  .note-box { font-size: 12.5px; color: var(--ink-faint); background: var(--neutral-soft); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; }
+  .stale-banner { display: flex; gap: 10px; align-items: flex-start; background: var(--warning-soft); border: 1px solid var(--warning); border-radius: 10px; padding: 12px 16px; margin-bottom: 22px; font-size: 13px; color: var(--warning); line-height: 1.5; }
+  .stale-banner strong { color: var(--warning); }
+
+  footer { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 44px; font-size: 12px; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width: 620px) {
+    .kpis, .kpis.kpis-4 { grid-template-columns: repeat(2, 1fr); }
+    .budget-grid { grid-template-columns: 1fr; }
+    .maturity-grid { grid-template-columns: repeat(2, 1fr); }
+    .fstage { grid-template-columns: 90px 1fr; }
+    .fstage-nums { grid-column: 1 / -1; text-align: left; }
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Sprint semanal · leitura combinada Cockpit + Ekyte + GrowthPack</p>
+      <h1>Minha carteira</h1>
+      <div class="meta-line">Natuclean · New Safes · Solução Locação — atualiza a cada 8h · Ekyte reconfirmado em <span class="num">25/07</span> (sem mudanças desde a leitura anterior), Cockpit e GrowthPack seguem do último pull em <span class="num">20/07</span> (5 dias sem atualizar)</div>
+    </div>
+  </div>
+
+  <div class="stale-banner">
+    <span>⚠</span>
+    <div><strong>Cockpit e GrowthPack não puderam ser lidos nesta rodada, pelo terceiro pull seguido</strong> (bloqueio de rede no ambiente de automação: docs.google.com, mcp-cockpit.dados.collieassociados.com e api.vercel.com todos retornam 403 na política de saída deste ambiente, confirmado por teste direto nesta rodada). Os KPIs, funil, mídia, budget e taxas abaixo continuam sendo os da leitura de 20/07, agora com 5 dias de defasagem. Ekyte foi checado de novo agora, em 25/07, e confirma o mesmo estado da leitura anterior, nenhuma tarefa nova, concluída ou alterada nas três carteiras, então as seções de entregas, diagnóstico e plano de ação abaixo permanecem válidas. Publicação no Vercel também bloqueada nesta rodada pelo mesmo motivo de rede.</div>
+  </div>
+
+  <div class="client-tabs" role="tablist">
+    <button class="client-tab" data-client="natuclean" role="tab" aria-selected="true"><span class="flagdot danger"></span>Natuclean <span class="sub">Danger</span></button>
+    <button class="client-tab" data-client="newsafes" role="tab" aria-selected="false"><span class="flagdot warn"></span>New Safes <span class="sub">Safe no papel, travado no onboarding</span></button>
+    <button class="client-tab" data-client="solucao" role="tab" aria-selected="false"><span class="flagdot warn"></span>Solução Locação <span class="sub">Care</span></button>
+  </div>
+
+  <!-- ============ NATUCLEAN ============ -->
+  <div class="client-panel active" data-panel="natuclean">
+
+  <div class="top" style="border:none; padding-bottom:0; margin-bottom:20px;">
+    <div>
+      <div class="meta-line">Ticker <span class="num">NTCLN</span> · Fee <span class="num">R$ 8.364,36</span> · LT <span class="num">1</span> (mês 1 de operação) · Fase execução, checkin 1</div>
+    </div>
+    <div class="top-right">
+      <span class="flag danger"><span class="flag-dot"></span>Flag: Danger</span>
+      <div class="flag-note">Customer care marcado como "Saudável" no mesmo pull. As duas leituras divergem, vale confirmar com a coordenação qual pesa mais essa semana.</div>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-label">Health Score</div><div class="kpi-value num">74,8%</div><div class="kpi-sub">18 / pontuação bruta</div><span class="pill danger">Danger</span></div>
+    <div class="kpi"><div class="kpi-label">Leads (MTD)</div><div class="kpi-value num">108,2%</div><div class="kpi-sub num">211 de 195</div><span class="pill good">acima do ritmo</span></div>
+    <div class="kpi"><div class="kpi-label">SQL (MTD)</div><div class="kpi-value num">79,2%</div><div class="kpi-sub num">19 de 24</div><span class="pill warning">atenção</span></div>
+    <div class="kpi"><div class="kpi-label">Vendas (MTD)</div><div class="kpi-value num">20,0%</div><div class="kpi-sub num">2 de 10</div><span class="pill danger">crítico</span></div>
+    <div class="kpi"><div class="kpi-label">Meta de faturamento</div><div class="kpi-value num">7,3%</div><div class="kpi-sub num">R$ 2.494 de R$ 34.000</div><span class="pill danger">crítico</span></div>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Funil, mês corrente</h2><span class="sec-sub">GrowthPack · pacing MTD do pull de 20/07, dia 20 de 31 (64% do mês decorrido na leitura)</span></div>
+    <div class="funnel">
+      <div class="fstage"><div class="fstage-name">Leads</div><div class="fbar-track"><div class="fbar-fill" style="width:100%"></div></div><div class="fstage-nums"><span class="num">211</span> / <span class="num">195</span> <span class="pct num">108,2%</span></div></div>
+      <div class="fstage"><div class="fstage-name">MQL</div><div class="fbar-track"><div class="fbar-fill" style="width:100%"></div></div><div class="fstage-nums"><span class="num">77</span> / <span class="num">68</span> <span class="pct num">113,2%</span></div></div>
+      <div class="fstage"><div class="fstage-name">SQL</div><div class="fbar-track"><div class="fbar-fill warning" style="width:79.2%"></div></div><div class="fstage-nums"><span class="num">19</span> / <span class="num">24</span> <span class="pct num">79,2%</span></div></div>
+      <div class="fstage"><div class="fstage-name">Vendas</div><div class="fbar-track"><div class="fbar-fill danger" style="width:20%"></div></div><div class="fstage-nums"><span class="num">2</span> / <span class="num">10</span> <span class="pct num">20,0%</span></div></div>
+      <div class="fstage"><div class="fstage-name">Receita</div><div class="fbar-track"><div class="fbar-fill danger" style="width:2%"></div></div><div class="fstage-nums"><span class="num">R$ 2.494</span> <span class="pct num">0,4%</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Mídia e budget</h2><span class="sec-sub">Cockpit (pacing) + GrowthPack (plano do mês), ambos do pull de 20/07</span></div>
+    <div class="budget-grid">
+      <div class="card">
+        <table>
+          <thead><tr><th>Canal</th><th>Campanha</th><th class="r">% budget</th><th class="r">R$ / mês</th></tr></thead>
+          <tbody>
+            <tr><td>Facebook Ads</td><td>Formulário nativo</td><td class="r num">33%</td><td class="r num">1.000,00</td></tr>
+            <tr><td></td><td>Remarketing WhatsApp</td><td class="r num">17%</td><td class="r num">500,00</td></tr>
+            <tr><td>Google Ads</td><td>Search</td><td class="r num">50%</td><td class="r num">1.500,00</td></tr>
+            <tr class="total"><td>Total</td><td></td><td class="r num">100%</td><td class="r num">3.000,00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="pacing-rows">
+          <div class="pacing-row"><div>Total</div><div class="fbar-track"><div class="fbar-fill" style="width:58.9%"></div></div><div class="r num">58,9%</div></div>
+          <div class="pacing-row"><div>Meta</div><div class="fbar-track"><div class="fbar-fill" style="width:59.5%"></div></div><div class="r num">59,5%</div></div>
+          <div class="pacing-row"><div>Google</div><div class="fbar-track"><div class="fbar-fill" style="width:58.2%"></div></div><div class="r num">58,2%</div></div>
+        </div>
+        <p style="font-size:12.5px; color:var(--ink-faint); margin:14px 0 0;">Investido R$ 1.766,24 de R$ 3.000,00 do mês (aba INSIDE SALES do GrowthPack, leitura de 20/07). Sem pull novo desta fonte nesta rodada para atualizar o pacing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Taxas e custos</h2><span class="sec-sub">espelho GrowthPack, aba de acompanhamento mensal, julho, pull de 20/07</span></div>
+    <div class="budget-grid">
+      <div class="card">
+        <table>
+          <tbody>
+            <tr><td>Ticket médio</td><td class="r num">R$ 1.247,00</td></tr>
+            <tr><td>ROAS</td><td class="r num">1,41</td></tr>
+            <tr><td>Taxa de conversão (clique → lead)</td><td class="r num">19,81%</td></tr>
+            <tr><td>Custo por clique</td><td class="r num">R$ 1,66</td></tr>
+            <tr><td>Custo por lead</td><td class="r num">R$ 8,37</td></tr>
+            <tr><td>Custo por MQL</td><td class="r num">R$ 22,94</td></tr>
+            <tr><td>Custo por SQL</td><td class="r num">R$ 92,96</td></tr>
+            <tr><td>Custo por compra</td><td class="r num">R$ 883,12</td></tr>
+            <tr><td>% Lead → MQL</td><td class="r num">36,49%</td></tr>
+            <tr><td>% MQL → SQL</td><td class="r num">24,68%</td></tr>
+            <tr><td>% SQL → Vendas</td><td class="r num">10,53%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <table>
+          <thead><tr><th>Canal</th><th class="r">Invest.</th><th class="r">Cliques</th><th class="r">CTR</th><th class="r">Leads</th><th class="r">Custo/lead</th></tr></thead>
+          <tbody>
+            <tr><td>Meta</td><td class="r num">893,12</td><td class="r num">772</td><td class="r num">1,30%</td><td class="r num">189</td><td class="r num">4,73</td></tr>
+            <tr><td>Google</td><td class="r num">873,12</td><td class="r num">293</td><td class="r num">15,13%</td><td class="r num">22</td><td class="r num">39,69</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12.5px; color:var(--ink-faint); margin:14px 0 0;">Impressões: 61.294 · Cliques totais: 1.065. Meta tem CTR menor mas custo por lead 8x mais barato que o Google (dados de 20/07).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Diagnóstico</h2><span class="sec-sub">causa raiz</span></div>
+    <div class="diag">
+      <p>O gargalo não está em geração de demanda. <strong>Leads está a 108% do ritmo e MQL a 113%</strong> na última leitura do GrowthPack (20/07), topo de funil forte e mídia paga entregando acima do plano. O funil quebra a partir da qualificação comercial: SQL cai para 79%, Vendas despenca para 20% e a meta de faturamento do mês está em 7,3%.</p>
+      <div class="chain">
+        <span class="node">Leads 108%</span><span class="arrow">→</span><span class="node">MQL 113%</span><span class="arrow">→</span><span class="node danger">SQL 79%</span><span class="arrow">→</span><span class="node danger">Vendas 20%</span><span class="arrow">→</span><span class="node danger">Receita 7%</span>
+      </div>
+      <p>Vale registrar a divergência entre o milestone de receita do GrowthPack (R$ 600.000, pacing de 0,4%) e a meta alinhada com o cliente no Cockpit (R$ 34.000, pacing de 7,3%), ambas do pull de 20/07 e ainda sem confirmação de qual vale para reporte.</p>
+      <p><strong>Leitura do Ekyte de 25/07 (reconfirmada nesta rodada, sem mudanças):</strong> a automação de CRM (distribuição de leads e mensagens automáticas) segue sem conclusão e chega a <strong>8 dias de atraso</strong>, continua sendo a peça mais crítica do sprint. A Documentação de Marca e Interface também segue vencida, agora há 4 dias. Ponto positivo da semana: o Planejamento de Stories de julho, que estava vencido desde 23/07, foi reagendado para 27/07 e saiu da lista de atraso, o estouro de tempo (356 min lançados contra 120 min estimados) segue registrado mas o prazo deixou de ser um risco imediato. Os destaques de produto (9 itens) seguem na fila entre 27/07 e 31/07, sem atraso. Nenhuma dessas tarefas mudou de estado desde a última checagem.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Maturidade</h2><span class="sec-sub">todas as frentes em N1, esperado para LT 1</span></div>
+    <div class="maturity-grid">
+      <div class="mchip"><div class="mchip-label">Handoff</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Estratégia</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Mídia</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Tracking</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Growth</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Contexto / OS AI</div><div class="mchip-value">N1</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Entregas da semana</h2><span class="sec-sub">Ekyte · Sprint Julho 26 · reconfirmado em 25/07, idêntico à leitura anterior · 15 tarefas ativas</span></div>
+    <div class="card">
+      <div class="day-group">
+        <div class="day-label">Vencidas</div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Configuração de automação de CRM (distribuição de leads + mensagens automáticas) <span class="num">(17/07, 8 dias)</span></div><div class="task-owner">Júlia Costa</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Documentação de marca e interface (design system) <span class="num">(21/07, 4 dias)</span></div><div class="task-owner">Rafael Camargo</div></div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">27 a 31/07</div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Planejamento de stories, julho, reagendado <span style="color:var(--warning); font-weight:600;">(356 min já lançados contra 120 min estimados)</span> <span class="num">(27/07)</span></div><div class="task-owner">Júlia Costa</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">9 destaques de produto na fila (lava louças, limpeza geral, limpador perfumado, linha eco, linha unique, essência concentrada, aromatizantes, automotivo, como comprar)</div><div class="task-owner">Rafael Camargo</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Atendimento diário até 10:30 (recorrente, próxima ocorrência)</div><div class="task-owner">Júlia Costa</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Check-in quinzenal, PPT</div><div class="task-owner">Júlia Costa</div></div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">Agosto</div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Pauta de setembro, revisão da copy <span class="num">(prazo 13/08)</span></div><div class="task-owner">Kamila Gabrieli</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Plano de ação, sair do Danger</h2><span class="sec-sub">4 frentes · tag em cada ação indica se já é task, vira task nova ou é só acompanhamento</span></div>
+    <div class="goal-banner">Objetivo da semana: <strong>tirar o SQL→Vendas do vermelho e validar o tracking</strong>. Meta de checagem no check-in de 31/07: SQL ≥ 90%, Vendas ≥ 60%, tracking validado.</div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev crit"></span>Comercial / CRM, crítico</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Concluir a automação de distribuição de leads e mensagens no Kommo</div><div class="action-owner">Júlia · atrasada, escalar hoje</div></div>
+          <span class="action-flag existing">já é task no Ekyte (vencida há 8 dias)</span>
+          <div class="action-problem">Problema: tarefa vencida desde 17/07, sem movimento há mais de uma semana</div>
+          <div class="action-why">É a peça que mais provavelmente está travando a passagem de MQL para SQL. Já era a prioridade número um dos dois últimos sprints e segue parada.</div>
+          <div class="action-goal">Meta de saída: automação ativa o quanto antes, prazo já estourado</div>
+        </div>
+        <div class="action">
+          <div class="action-top"><div class="action-title">Revisar velocidade de resposta comercial com o cliente</div><div class="action-owner">Júlia + Natuclean · até 31/07</div></div>
+          <span class="action-flag new">→ vira task nova</span>
+          <div class="action-problem">Problema: SQL para vendas é a maior queda do funil, 79% para 20%</div>
+          <div class="action-why">Geração de demanda não é o problema. Mapear onde o closer está perdendo negociação.</div>
+          <div class="action-goal">Meta de saída: pacing de Vendas subindo de 20% para pelo menos 60%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev warn"></span>Tracking / dados, atenção</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Validar tracking de mídia paga (Meta e Google)</div><div class="action-owner">Emanuelle · esta semana</div></div>
+          <span class="action-flag new">→ vira task nova</span>
+          <div class="action-problem">Problema: tracking validado = false no Cockpit (leitura de 20/07, sem confirmação nova)</div>
+          <div class="action-why">Sem validação, o funil reportado pode estar distorcido.</div>
+          <div class="action-goal">Meta de saída: flag de tracking validado = true</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev warn"></span>Governança de meta, atenção</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Confirmar qual meta de receita vale para reporte, R$ 34 mil ou R$ 600 mil</div><div class="action-owner">Júlia + coordenação (Thaina)</div></div>
+          <span class="action-flag watch">só acompanhamento</span>
+          <div class="action-problem">Problema: Cockpit e GrowthPack têm dois números de meta diferentes</div>
+          <div class="action-why">Sem alinhar isso, o relato para o cliente fica inconsistente.</div>
+          <div class="action-goal">Meta de saída: Cockpit atualizado com uma única meta de referência</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev watch"></span>Ritmo de acompanhamento, monitorar</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Retomar cadência semanal de acompanhamento comercial</div><div class="action-owner">Júlia · a partir desta semana</div></div>
+          <span class="action-flag watch">só acompanhamento</span>
+          <div class="action-problem">Problema: Cockpit registrava "semana sem check-in" na leitura de 20/07</div>
+          <div class="action-why">Cadência semanal ajuda a pegar o problema comercial mais cedo.</div>
+          <div class="action-goal">Meta de saída: check-in registrado toda semana</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <!-- ============ /NATUCLEAN ============ -->
+
+  <!-- ============ NEW SAFES ============ -->
+  <div class="client-panel" data-panel="newsafes">
+
+  <div class="top" style="border:none; padding-bottom:0; margin-bottom:20px;">
+    <div>
+      <div class="meta-line">Ticker <span class="num">NEWS</span> · Fee <span class="num">R$ 6.328,70</span> · LT <span class="num">0</span> (primeiro mês) · Fase setup</div>
+    </div>
+    <div class="top-right">
+      <span class="flag warning"><span class="flag-dot"></span>Flag Cockpit: Safe</span>
+      <div class="flag-note">O algoritmo marca Safe (entregas no prazo 100%), mas o comitê OPS de 20/07 relatou cliente muito insatisfeita numa call recente. O flag automático não captura esse risco de relacionamento. Leitura de Cockpit não atualizou desde então.</div>
+    </div>
+  </div>
+
+  <div class="kpis kpis-4">
+    <div class="kpi"><div class="kpi-label">Health Score</div><div class="kpi-value num">58,3%</div><div class="kpi-sub">17,5 / pontuação bruta</div><span class="pill good">Safe</span></div>
+    <div class="kpi"><div class="kpi-label">Customer care</div><div class="kpi-value" style="font-size:16px;">Antecipação</div><div class="kpi-sub">status do algoritmo</div></div>
+    <div class="kpi"><div class="kpi-label">Meta alinhada</div><div class="kpi-value num">100%</div><div class="kpi-sub">Entregas no prazo, 1 de 1</div><span class="pill good">em dia</span></div>
+    <div class="kpi"><div class="kpi-label">Handoff Saber → Executar</div><div class="kpi-value" style="font-size:16px; color:var(--danger);">Travado</div><div class="kpi-sub">aguardando revisão da Aline</div><span class="pill danger">crítico</span></div>
+  </div>
+
+  <div class="note-box">Projeto ainda em setup (LT 0, começou 01/07). Sem mídia paga rodando ainda (budget R$ 0) e sem GrowthPack cadastrado no Cockpit, por isso não há seção de funil aqui nesta fase.</div>
+
+  <section>
+    <div class="sec-head"><h2>Diagnóstico</h2><span class="sec-sub">causa raiz</span></div>
+    <div class="diag">
+      <p>O risco real deste projeto não aparece no flag automático do Cockpit (Safe). Segundo o comitê OPS de 20/07, a gravação de uma call recente mostra a cliente <strong>muito insatisfeita</strong>: ela não autoriza nada, nem a contratação do CRM, até ver o planejamento final com todos os ajustes solicitados. Isso trava tudo, exceto o que é estritamente necessário para o Go Live.</p>
+      <p>O bloqueio concreto segue sendo a <strong>revisão final da Aline</strong> (time Saber). A Documentação de Marca e Interface foi entregue em 24/07, mas as tarefas de contratação de CRM e criativos estáticos de julho continuam pausadas, aguardando o mesmo destravamento.</p>
+      <p><strong>Leitura do Ekyte de 25/07 (reconfirmada nesta rodada, sem mudanças):</strong> nenhuma das pendências segue concluída. O setup de WordPress/staging e a etapa S4/S5 do CRM, que estavam previstas para "hoje" na leitura anterior, venceram sem entrega e seguem na lista de atraso. As etapas S1, S2 e S3 do CRM seguem paradas, com S2 já em 8 dias de atraso. Seguem em aberto duas pendências mais antigas, fora do fluxo do sprint corrente: um <strong>Diagnóstico de Ambientes (CRO)</strong> sob responsabilidade de Vinícius Colli, vencido desde 01/06 (54 dias), e uma tarefa de <strong>Landing Page</strong> pausada desde 03/06 (52 dias). Ambas parecem esquecidas e merecem uma checagem rápida sobre se ainda fazem sentido ou devem ser encerradas. A tarefa "Subir LP no V4 Pags" segue pausada. Nenhuma tarefa mudou de estado desde a última checagem.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Maturidade</h2><span class="sec-sub">todas as frentes em N1, esperado para LT 0</span></div>
+    <div class="maturity-grid">
+      <div class="mchip"><div class="mchip-label">Handoff</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Estratégia</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Mídia</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Tracking</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Growth</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Contexto / OS AI</div><div class="mchip-value">N1</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Entregas da semana</h2><span class="sec-sub">Ekyte · workspace New Safes (136295), inclui CRM e Novo Site · reconfirmado em 25/07, idêntico à leitura anterior · 43 tarefas ativas ou pausadas</span></div>
+    <div class="card">
+      <div class="day-group">
+        <div class="day-label">Vencidas, mais antigas primeiro</div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Diagnóstico de Ambientes (CRO), análise de design e usabilidade <span class="num">(01/06, 54 dias)</span></div><div class="task-owner">Vinícius Colli</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">CRM, estruturação de dados (S2) <span class="num">(17/07, 8 dias)</span></div><div class="task-owner">Vinicius Santos</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">CRM, kickoff técnico e planejamento (S1) <span class="num">(20/07, 5 dias)</span></div><div class="task-owner">Vinicius Santos</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Novo Site: design e copy da Home <span class="num">(22/07, 3 dias)</span></div><div class="task-owner">Luís Santos</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">CRM, estruturação de funil comercial (S3) <span class="num">(22/07, 3 dias)</span></div><div class="task-owner">Vinicius Santos</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Pré-pauta de agosto, social <span class="num">(23/07, 2 dias)</span></div><div class="task-owner">Kamila Gabrieli</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Novo Site: setup WordPress e staging <span class="num">(24/07, 1 dia)</span></div><div class="task-owner">Luís Santos</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">CRM, automações básicas, cadências e playbook (S4/S5) <span class="num">(24/07, 1 dia)</span></div><div class="task-owner">Vinicius Santos</div></div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">27 a 31/07</div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Meta Ads, configuração de BM e criação de públicos, e trackeamento de conversões <span class="num">(27/07)</span></div><div class="task-owner">Emanuelle Lourenço</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Palavras-chave Google, GMB e reunião de alinhamento de Go Live <span class="num">(27/07)</span></div><div class="task-owner">Emanuelle Lourenço / Júlia Costa</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Critérios MQL/SQL, acompanhamento e configuração de CRM <span class="num">(28/07)</span></div><div class="task-owner">Júlia Costa</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">CRM, integrações externas (S6) e configuração de pipeline <span class="num">(29/07)</span></div><div class="task-owner">Júlia Costa</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">GA4/GTM, Clarity, campanha de engajamento e treinamento CRM (S7) <span class="num">(31/07)</span></div><div class="task-owner">Emanuelle Lourenço / Júlia Costa</div></div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">Agosto em diante</div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Novo Site: aprovação da Home, captação de fotos/vídeos e restante da construção (design system, páginas internas, homologação, go live) <span class="num">(05/08 a 18/09)</span></div><div class="task-owner">Luís Santos</div></div>
+      </div>
+    </div>
+    <p style="font-size:12.5px; color:var(--ink-faint); margin-top:10px;">Nenhuma tarefa foi concluída desde a leitura de 24/07, confirmado novamente nesta rodada. Seguem pausadas: contratação da ferramenta de CRM (9 dias), criativos estáticos de julho (5 dias), Landing Page (52 dias) e Subir LP no V4 Pags.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Plano de ação</h2><span class="sec-sub">3 frentes · tag em cada ação indica se já é task, vira task nova ou é só acompanhamento</span></div>
+    <div class="goal-banner">Objetivo da semana: <strong>destravar a revisão da Aline</strong> e dar visibilidade semanal para a cliente, que está no limite da paciência com o handoff.</div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev crit"></span>Handoff Saber → Executar, crítico</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Cobrar a revisão final da Aline</div><div class="action-owner">Thaina, reportando ao Clarindo · o quanto antes</div></div>
+          <span class="action-flag watch">só acompanhamento</span>
+          <div class="action-problem">Problema: sem essa revisão, contratação de CRM e criativos ficam travados</div>
+          <div class="action-why">Cliente já sinalizou, em call gravada, que não autoriza nada até ver o planejamento final ajustado. A Documentação de Marca já foi concluída (24/07), mas as outras duas pendências seguem paradas.</div>
+          <div class="action-goal">Meta de saída: as 2 tarefas ainda pausadas (contratação de CRM e criativos estáticos) retomadas</div>
+        </div>
+        <div class="action">
+          <div class="action-top"><div class="action-title">Enviar report semanal de visibilidade para a cliente</div><div class="action-owner">Júlia · toda segunda</div></div>
+          <span class="action-flag new">→ vira task nova (recorrente)</span>
+          <div class="action-problem">Problema: cliente cobrando por falta de visibilidade do que já foi feito</div>
+          <div class="action-why">Combinado no comitê OPS: mostrar o que foi concluído na semana anterior e o que está em andamento até sexta.</div>
+          <div class="action-goal">Meta de saída: report enviado toda segunda-feira</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev crit"></span>Setup técnico, crítico</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Recuperar as etapas do CRM (S1 a S5) e a revisão da Home do site</div><div class="action-owner">Vinicius + Luís Santos · urgente</div></div>
+          <span class="action-flag existing">já são tasks no Ekyte (vencidas)</span>
+          <div class="action-problem">Problema: nenhuma etapa foi concluída desde 24/07. CRM S1/S2/S3 seguem vencidos (S2 já com 8 dias) e S4/S5, que venceriam "hoje" na leitura anterior, também venceram sem entrega. A revisão da Home segue parada, agora 3 dias de atraso</div>
+          <div class="action-why">São pré-requisitos para o Go Live e para o restante do CRM. O acúmulo de etapas vencidas em sequência aumenta o risco de atraso no cronograma inteiro.</div>
+          <div class="action-goal">Meta de saída: CRM S1 a S5 concluídos o quanto antes, já ultrapassaram o prazo que sustentava S6/S7</div>
+        </div>
+        <div class="action">
+          <div class="action-top"><div class="action-title">Revisar se o Diagnóstico de Ambientes (CRO) e a Landing Page ainda fazem sentido</div><div class="action-owner">Vinícius Colli / Júlia · esta semana</div></div>
+          <span class="action-flag existing">já são tasks no Ekyte (vencida há 54 dias e pausada há 52 dias)</span>
+          <div class="action-problem">Problema: duas tarefas antigas, fora do fluxo do sprint atual, seguem abertas sem movimento há quase 2 meses</div>
+          <div class="action-why">Item apareceu na leitura de hoje pela primeira vez neste relatório. Pode ser tarefa esquecida ou pré-requisito real ainda pendente, vale confirmar com os responsáveis antes de decidir se conclui, cancela ou retoma.</div>
+          <div class="action-goal">Meta de saída: decisão registrada (concluir, cancelar ou retomar) até o fim da semana</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev watch"></span>Novo Site, monitorar</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Acompanhar o cronograma do site após o atraso na Home</div><div class="action-owner">Luís Santos</div></div>
+          <span class="action-flag watch">só acompanhamento</span>
+          <div class="action-problem">Problema: revisão de design e copy da Home venceu em 22/07, sem entrega registrada</div>
+          <div class="action-why">Cronograma do site roda até 18/09 com muitas etapas encadeadas, um atraso na Home no início empurra toda a fila.</div>
+          <div class="action-goal">Meta de saída: Home revisada e staging no ar o quanto antes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <!-- ============ /NEW SAFES ============ -->
+
+  <!-- ============ SOLUÇÃO LOCAÇÃO ============ -->
+  <div class="client-panel" data-panel="solucao">
+
+  <div class="top" style="border:none; padding-bottom:0; margin-bottom:20px;">
+    <div>
+      <div class="meta-line">Ticker <span class="num">SOL</span> · Fee <span class="num">R$ 5.149,57</span> · LT <span class="num">1</span> · Fase execução, técnica</div>
+    </div>
+    <div class="top-right">
+      <span class="flag warning"><span class="flag-dot"></span>Flag: Care</span>
+      <div class="flag-note">Customer care "Saudável", sem sinal de risco de relacionamento no Cockpit (leitura de 20/07).</div>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-label">Health Score</div><div class="kpi-value num">71,1%</div><div class="kpi-sub">21,3 / pontuação bruta</div><span class="pill warning">Care</span></div>
+    <div class="kpi"><div class="kpi-label">Leads (MTD)</div><div class="kpi-value num">19,2%</div><div class="kpi-sub num">23 de 120</div><span class="pill danger">crítico</span></div>
+    <div class="kpi"><div class="kpi-label">SQL (MTD)</div><div class="kpi-value num">26,3%</div><div class="kpi-sub num">5 de 19</div><span class="pill danger">crítico</span></div>
+    <div class="kpi"><div class="kpi-label">Vendas (MTD)</div><div class="kpi-value num">0,0%</div><div class="kpi-sub num">0 de 10</div><span class="pill danger">crítico</span></div>
+    <div class="kpi"><div class="kpi-label">Budget investido</div><div class="kpi-value num">34,0%</div><div class="kpi-sub num">R$ 1.024,79 de R$ 3.010</div><span class="pill warning">recuperando</span></div>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Funil, mês corrente</h2><span class="sec-sub">Cockpit · pacing MTD do pull de 20/07, dia 20 de 31 (64% do mês decorrido na leitura). Meta alinhada com o cliente: SQL</span></div>
+    <div class="funnel">
+      <div class="fstage"><div class="fstage-name">Leads</div><div class="fbar-track"><div class="fbar-fill danger" style="width:19.2%"></div></div><div class="fstage-nums"><span class="num">23</span> / <span class="num">120</span> <span class="pct num">19,2%</span></div></div>
+      <div class="fstage"><div class="fstage-name">MQL</div><div class="fbar-track"><div class="fbar-fill danger" style="width:16.7%"></div></div><div class="fstage-nums"><span class="num">8</span> / <span class="num">48</span> <span class="pct num">16,7%</span></div></div>
+      <div class="fstage"><div class="fstage-name">SQL</div><div class="fbar-track"><div class="fbar-fill danger" style="width:26.3%"></div></div><div class="fstage-nums"><span class="num">5</span> / <span class="num">19</span> <span class="pct num">26,3%</span></div></div>
+      <div class="fstage"><div class="fstage-name">Vendas</div><div class="fbar-track"><div class="fbar-fill danger" style="width:0%"></div></div><div class="fstage-nums"><span class="num">0</span> / <span class="num">10</span> <span class="pct num">0,0%</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Mídia e budget</h2><span class="sec-sub">Cockpit (pacing), pull de 20/07. GrowthPack não tem detalhamento por campanha preenchido ainda.</span></div>
+    <div class="budget-grid">
+      <div class="card">
+        <table>
+          <thead><tr><th>Canal</th><th class="r">Investido</th><th class="r">Meta do mês</th><th class="r">Pacing</th></tr></thead>
+          <tbody>
+            <tr><td>Meta Ads</td><td class="r num">211,19</td><td class="r num">750,00</td><td class="r num">28,2%</td></tr>
+            <tr><td>Google Ads</td><td class="r num">813,60</td><td class="r num">2.260,00</td><td class="r num">36,0%</td></tr>
+            <tr class="total"><td>Total</td><td class="r num">1.024,79</td><td class="r num">3.010,00</td><td class="r num">34,0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="pacing-rows">
+          <div class="pacing-row"><div>Total</div><div class="fbar-track"><div class="fbar-fill warning" style="width:34%"></div></div><div class="r num">34,0%</div></div>
+          <div class="pacing-row"><div>Meta</div><div class="fbar-track"><div class="fbar-fill warning" style="width:28.2%"></div></div><div class="r num">28,2%</div></div>
+          <div class="pacing-row"><div>Google</div><div class="fbar-track"><div class="fbar-fill warning" style="width:36%"></div></div><div class="r num">36,0%</div></div>
+        </div>
+        <p style="font-size:12.5px; color:var(--ink-faint); margin:14px 0 0;">34% do budget investido com 64% do mês decorrido na leitura de 20/07. Sem pull novo desta fonte nesta rodada para confirmar se o ritmo seguiu subindo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Taxas e custos</h2><span class="sec-sub">espelho GrowthPack, aba de acompanhamento mensal, julho, pull de 20/07</span></div>
+    <div class="budget-grid">
+      <div class="card">
+        <table>
+          <tbody>
+            <tr><td>Ticket médio</td><td class="r">sem vendas no mês</td></tr>
+            <tr><td>ROAS</td><td class="r num">0,00</td></tr>
+            <tr><td>Taxa de conversão (clique → lead)</td><td class="r num">12,43%</td></tr>
+            <tr><td>Custo por clique</td><td class="r num">R$ 5,54</td></tr>
+            <tr><td>Custo por lead</td><td class="r num">R$ 44,56</td></tr>
+            <tr><td>Custo por MQL</td><td class="r num">R$ 128,10</td></tr>
+            <tr><td>Custo por SQL</td><td class="r num">R$ 204,96</td></tr>
+            <tr><td>Custo por compra</td><td class="r">sem vendas no mês</td></tr>
+            <tr><td>% Lead → MQL</td><td class="r num">34,78%</td></tr>
+            <tr><td>% MQL → SQL</td><td class="r num">62,50%</td></tr>
+            <tr><td>% SQL → Vendas</td><td class="r num">0,00%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <table>
+          <thead><tr><th>Canal</th><th class="r">Invest.</th><th class="r">Cliques</th><th class="r">CTR</th><th class="r">Leads</th><th class="r">Custo/lead</th></tr></thead>
+          <tbody>
+            <tr><td>Meta</td><td class="r num">211,19</td><td class="r num">79</td><td class="r num">0,48%</td><td class="r num">9</td><td class="r num">23,47</td></tr>
+            <tr><td>Google</td><td class="r num">813,60</td><td class="r num">106</td><td class="r num">11,92%</td><td class="r num">14</td><td class="r num">58,11</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12.5px; color:var(--ink-faint); margin:14px 0 0;">Impressões: 16.622 · Cliques totais: 185, dados de 20/07. Meta segue mais barato por lead que o Google.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Diagnóstico</h2><span class="sec-sub">causa raiz</span></div>
+    <div class="diag">
+      <p>Na última leitura de mídia (20/07), o problema começava no <strong>topo de funil</strong>: Leads a 19,2% do ritmo, MQL a 16,7%, com o investimento atrás do calendário (34% investido com 64% do mês decorrido). O Meta Ads já tinha reagido, quase dobrando o investido no pull anterior. Sem pull novo de GrowthPack/Cockpit nesta rodada, não é possível confirmar se essa recuperação de ritmo se manteve nos últimos 5 dias.</p>
+      <p>A frente comercial (Estruturação Comercial, com o Denis Orosco) segue travada, com o mesmo motivo registrado no Cockpit em 20/07: "Estamos fazendo E.C com o Denis". Margem de contribuição é alta (86%), então cada lead recuperado tem bastante alavancagem, o gargalo é mais de volume e processo do que de rentabilidade.</p>
+      <p><strong>Leitura do Ekyte de 25/07 (reconfirmada nesta rodada, sem mudanças):</strong> estagnação total segue, nenhuma tarefa foi concluída. A <strong>Implementação de CRM</strong>, que venceu sem entrega na leitura anterior, segue na lista de atraso. As 4 tarefas de E.C. do Denis (DRE, comissionamento, reunião de gestão e stack tecnológico) seguem em <strong>11 dias de atraso</strong>. Playbook Comercial e Documentação de Marca seguem em 10 dias. O Treinamento de CRM do comercial do cliente está 3 dias atrasado. E o GMB, a pendência mais antiga do workspace, passa de 3 semanas: <strong>25 dias vencido</strong>. As 3 tarefas pausadas (contratação de CRM, acompanhamento inicial do CRM, design do carrossel) seguem sem nenhum movimento.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Maturidade</h2><span class="sec-sub">todas as frentes em N1, esperado para LT 1</span></div>
+    <div class="maturity-grid">
+      <div class="mchip"><div class="mchip-label">Handoff</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Estratégia</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Mídia</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Tracking</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Growth</div><div class="mchip-value">N1</div></div>
+      <div class="mchip"><div class="mchip-label">Contexto / OS AI</div><div class="mchip-value">N1</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Entregas da semana</h2><span class="sec-sub">Ekyte · workspace Soluções Locação (139042) · reconfirmado em 25/07, idêntico à leitura anterior · 15 tarefas ativas ou pausadas</span></div>
+    <div class="card">
+      <div class="day-group">
+        <div class="day-label">Vencidas, mais antigas primeiro</div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">GMB, configuração Google Meu Negócio <span class="num">(30/06, 25 dias)</span></div><div class="task-owner">Emanuelle Lourenço</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">E.C.: DRE projetado, política de comissionamento, reunião de gestão e performance, stack tecnológico <span class="num">(14/07, 4 tarefas, 11 dias)</span></div><div class="task-owner">Denis Orosco</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Criação de Playbook Comercial (CRM + automação de atendimento) <span class="num">(15/07, 10 dias)</span></div><div class="task-owner">Júlia Costa</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Documentação de Marca e Interface <span class="num">(15/07, 10 dias)</span></div><div class="task-owner">Rafael Camargo</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Treinamento CRM (comercial do cliente) <span class="num">(22/07, 3 dias)</span></div><div class="task-owner">Denis Orosco</div></div>
+        <div class="task"><div class="task-status overdue"></div><div class="task-title">Implementação de CRM <span class="num">(24/07, 1 dia)</span></div><div class="task-owner">Denis Orosco</div></div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">28 e 29/07</div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Otimização de campanhas <span class="num">(28/07, recorrente)</span></div><div class="task-owner">Emanuelle Lourenço</div></div>
+        <div class="task"><div class="task-status ok"></div><div class="task-title">Encerramento E.C. + treinamento de imersão <span class="num">(29/07)</span></div><div class="task-owner">Denis Orosco</div></div>
+      </div>
+    </div>
+    <p style="font-size:12.5px; color:var(--ink-faint); margin-top:10px;">Nenhuma tarefa foi concluída desde a leitura de 24/07, confirmado novamente nesta rodada. Seguem pausadas, sem nenhum movimento: contratação de CRM, acompanhamento inicial do CRM e design do carrossel Instagram.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Plano de ação</h2><span class="sec-sub">3 frentes · tag em cada ação indica se já é task, vira task nova ou é só acompanhamento</span></div>
+    <div class="goal-banner">Objetivo da semana: <strong>recuperar o pacing de investimento</strong> e destravar as tarefas do Denis que sustentam a reestruturação comercial, agora incluindo a própria Implementação de CRM, que venceu sem entrega.</div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev crit"></span>Mídia, crítico</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Manter o ritmo acelerado de investimento, principalmente Meta Ads</div><div class="action-owner">Emanuelle · esta semana</div></div>
+          <span class="action-flag watch">só acompanhamento (já coberto pela task recorrente de otimização)</span>
+          <div class="action-problem">Problema: 34% do budget investido com 64% do mês decorrido na leitura de 20/07, sem pull novo para confirmar se a recuperação continuou</div>
+          <div class="action-why">A reação do Meta já tinha aparecido na leitura anterior. Falta confirmar, no próximo pull de GrowthPack, se o ritmo se manteve.</div>
+          <div class="action-goal">Meta de saída: pacing de budget total acima de 60% até fim do mês</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev crit"></span>Estruturação comercial, crítico</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Destravar as 4 tarefas de E.C. vencidas e a Implementação de CRM</div><div class="action-owner">Denis Orosco · urgente</div></div>
+          <span class="action-flag existing">já são tasks no Ekyte (vencidas há 11 dias e 1 dia)</span>
+          <div class="action-problem">Problema: DRE, comissionamento, reunião de gestão e stack tecnológico seguem vencidos desde 14/07 sem nenhum movimento, e agora a própria Implementação de CRM também venceu (estava marcada para 24/07)</div>
+          <div class="action-why">São pré-requisitos pra reestruturação comercial. A implementação de CRM rodar sem essa base pronta é exatamente o risco que o sprint passado já sinalizava, e se concretizou.</div>
+          <div class="action-goal">Meta de saída: as 4 tarefas de E.C. e a Implementação de CRM concluídas o quanto antes, já bem além do prazo original</div>
+        </div>
+        <div class="action">
+          <div class="action-top"><div class="action-title">Finalizar o Playbook Comercial (CRM + automação)</div><div class="action-owner">Júlia · o quanto antes</div></div>
+          <span class="action-flag existing">já é task no Ekyte (vencida há 10 dias)</span>
+          <div class="action-problem">Problema: vencido desde 15/07, sem movimento em 10 dias</div>
+          <div class="action-why">Alimenta diretamente a implementação de CRM, que já venceu sem essa base.</div>
+          <div class="action-goal">Meta de saída: playbook publicado antes do próximo treinamento de CRM</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frente">
+      <div class="frente-label"><span class="sev watch"></span>Tracking, monitorar</div>
+      <div class="action-list">
+        <div class="action">
+          <div class="action-top"><div class="action-title">Validar tracking de mídia paga</div><div class="action-owner">Emanuelle</div></div>
+          <span class="action-flag new">→ vira task nova</span>
+          <div class="action-problem">Problema: campo de validação em branco no Cockpit (leitura de 20/07)</div>
+          <div class="action-why">Sem confirmação, fica difícil garantir que o funil reportado reflete a realidade.</div>
+          <div class="action-goal">Meta de saída: campo preenchido com status validado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <!-- ============ /SOLUÇÃO LOCAÇÃO ============ -->
+
+  <footer>
+    <span>Fontes: Cockpit (HS/maturidade/entregas, última leitura 20/07, não atualizou nesta rodada, mcp-cockpit.dados.collieassociados.com bloqueado) · GrowthPack, aba de acompanhamento mensal (Leads/MQL/SQL/Vendas/investimento, última leitura 20/07, não atualizou nesta rodada, docs.google.com bloqueado) · Ekyte (Natuclean 138928, New Safes 136295, Soluções Locação 139042, reconfirmado em 25/07, sem mudanças) · atualização automática a cada 8h</span>
+    <span>Cockpit e GrowthPack não atualizaram por 3 rodadas seguidas (mesmo bloqueio de rede na política de saída deste ambiente). Publicação no Vercel também não foi possível nesta rodada, api.vercel.com e sprint-ropre-carteira.vercel.app igualmente bloqueados.</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.client-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var client = btn.dataset.client;
+      document.querySelectorAll('.client-tab').forEach(function(b){ b.setAttribute('aria-selected', b.dataset.client === client ? 'true' : 'false'); });
+      document.querySelectorAll('.client-panel').forEach(function(p){ p.classList.toggle('active', p.dataset.panel === client); });
+    });
+  });
+</script>
+
